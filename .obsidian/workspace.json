@@ -1,0 +1,354 @@
+{
+  "main": {
+    "id": "3217a3d890a670b4",
+    "type": "split",
+    "children": [
+      {
+        "id": "00d6db2a61c308c9",
+        "type": "tabs",
+        "dimension": 63.594470046082954,
+        "children": [
+          {
+            "id": "904d2c69cc525bda",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "programming.md",
+                "mode": "preview",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "f6cccfc67852ac14",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "css.md",
+                "mode": "preview",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "be4541826f976a9a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "css/declarationlist.md",
+                "mode": "preview",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "29deee1b46b4639c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "js/allevent.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "34a5bd97d5c59760",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "todo.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ],
+        "currentTab": 2
+      },
+      {
+        "id": "ad9f2568e7be8e00",
+        "type": "tabs",
+        "dimension": 36.405529953917046,
+        "children": [
+          {
+            "id": "86636de7b0156109",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "js.md",
+                "mode": "preview",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "4c8abd3a20472a73",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "js/canvas.md",
+                "mode": "preview",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "352a6fd7b3e515a4",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "todo.md",
+                "mode": "preview",
+                "source": false
+              }
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "a860ca7bad27d174",
+    "type": "split",
+    "children": [
+      {
+        "id": "418c0a3e9bbf3155",
+        "type": "tabs",
+        "dimension": 63.942307692307686,
+        "children": [
+          {
+            "id": "3929df2516f4c227",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "a600fe101ddc23e8",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          },
+          {
+            "id": "81468aef40e4aee6",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      },
+      {
+        "id": "0f083c168c0ec19d",
+        "type": "tabs",
+        "dimension": 36.05769230769231,
+        "children": [
+          {
+            "id": "f85d7d6e09d62c7d",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 288.5
+  },
+  "right": {
+    "id": "344edc35be0aae1d",
+    "type": "split",
+    "children": [
+      {
+        "id": "0d90932009575566",
+        "type": "tabs",
+        "dimension": 25.26416906820365,
+        "children": [
+          {
+            "id": "570f12661a777b08",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "4933bc8277df677b",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "css/declarationlist.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "76b89ead5106aa7f",
+        "type": "tabs",
+        "dimension": 32.37271853986552,
+        "children": [
+          {
+            "id": "7928b7406f7be5e5",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "css/declarationlist.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "cc6ffc986fabb81a",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "css/declarationlist.md"
+              }
+            }
+          },
+          {
+            "id": "16ef3af211a3289b",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {}
+            }
+          },
+          {
+            "id": "01c23ddcfeb3d3cd",
+            "type": "leaf",
+            "state": {
+              "type": "reminder-list",
+              "state": {}
+            }
+          }
+        ]
+      },
+      {
+        "id": "d7aa03d199554215",
+        "type": "tabs",
+        "dimension": 42.363112391930834,
+        "children": [
+          {
+            "id": "b335ba995ea3d912",
+            "type": "leaf",
+            "pinned": true,
+            "state": {
+              "type": "graph",
+              "state": {},
+              "pinned": true
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 285.5
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "publish:Publish changes...": false,
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "markdown-importer:Open format converter": false,
+      "zk-prefixer:Create new unique note": false,
+      "audio-recorder:Start/stop recording": false,
+      "workspaces:Manage workspace layouts": false,
+      "obsidian-excalidraw-plugin:Create new drawing": false
+    }
+  },
+  "active": "be4541826f976a9a",
+  "lastOpenFiles": [
+    "Obsidian",
+    "css.md",
+    "programming.md",
+    "css/declarationlist.md",
+    "todo.md",
+    "css/grid.md",
+    "website/webstorage.md",
+    "regularexpression.md",
+    "php.md",
+    "js.md",
+    "html.md",
+    "websitenote.md",
+    "css/cursordef.md",
+    "html/body.md",
+    "website/plugin",
+    "website/webstorage",
+    "website",
+    "python/website",
+    "python/pymysql.md",
+    "js/getcontext.md",
+    "python.md",
+    "python",
+    "php/functionlista-l.md",
+    "php/functionlistm-z.md",
+    "php/functionlistaa.md",
+    "php/functionlistm-z copy.md",
+    "php/functionlist.md",
+    "php/functionlista-n.md",
+    "php/functionlist copy.md",
+    "websitebasic.md",
+    "websitebasic,md",
+    "css/keyword.md",
+    "picture/cssexp3-1.png",
+    "picture/Picture3.png",
+    "picture/cssexp2-1.png",
+    "picture/Picture2.png",
+    "function",
+    "js/Untitled",
+    "picture/cssps8-1.png",
+    "picture",
+    "cssps8-1.png",
+    "cssps8_!.png",
+    "cssps8.png",
+    "Picture1.png",
+    "index.html",
+    "Untitled.canvas"
+  ]
+}
