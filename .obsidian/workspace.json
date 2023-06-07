@@ -38,7 +38,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "css/declarationlist.md",
+                "file": "css.md",
                 "mode": "preview",
                 "source": false
               }
@@ -207,7 +207,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "css/declarationlist.md",
+                "file": "css.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -231,7 +231,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "css/declarationlist.md",
+                "file": "css.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -243,7 +243,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "css/declarationlist.md"
+                "file": "css.md"
               }
             }
           },
@@ -304,10 +304,10 @@
   },
   "active": "be4541826f976a9a",
   "lastOpenFiles": [
+    "css/declarationlist.md",
     "Obsidian",
     "css.md",
     "programming.md",
-    "css/declarationlist.md",
     "todo.md",
     "css/grid.md",
     "website/webstorage.md",
@@ -348,7 +348,6 @@
     "cssps8_!.png",
     "cssps8.png",
     "Picture1.png",
-    "index.html",
     "Untitled.canvas"
   ]
 }

@@ -237,9 +237,11 @@ css:
 - 附錄1-[css指令一覽表](css/keyword.md):
 - 附錄2-[顏色表](css/color.md):
 - 附錄3-大小(位置):
+- 附錄4-[css wiki](https://zh.wikipedia.org/zh-tw/CSS)
+- 附錄5-[css mozilla](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks)
+- 附錄6-[css w3c](https://www.w3schools.com/cssref/)
+- 附錄7-[css偽類選擇器](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes)
+- 附錄8-[css偽元素](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements)
 
-- 註解1-[css wiki](https://zh.wikipedia.org/zh-tw/CSS)
-- 註解2-[css mozilla](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks)
-- 註解3-[css w3c](https://www.w3schools.com/cssref/)
-- 註解4-[css偽類選擇器](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes)
-- 註解5-[css偽元素](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements)
+
+小賀chris:) 2023/06/07 v1.0.0

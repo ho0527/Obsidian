@@ -473,4 +473,4 @@ top \| bottom \| left \| right *\[size\]*: px,pt,%,em,ex,vw,vh
 11. [單位]()
 12. [其他]()
 
-小賀chris:) 2023/06/06 v1.2.1
+小賀chris:) 2023/06/07 v1.2.2
