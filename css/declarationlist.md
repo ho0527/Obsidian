@@ -13,7 +13,7 @@
 | animation-direction | Specifies whether an animation should be played forwards, backwards or in alternate cycles | 自創動畫 | | | [動畫]() |
 | animation-duration | Specifies how long an animation should take to complete one cycle | 自創動畫 | | | [動畫]() |
 | animation-fill-mode | Specifies a style for the element when the animation is not playing (before it starts, after it ends, or both) | 自創動畫 | | | [動畫]() |
-| animation-iteration-count | Specifies the number of times an animation should be played | 自創動畫之重複次數 | animation-iteration-count: *\[time\] | infinite* | | [動畫]() |
+| animation-iteration-count | Specifies the number of times an animation should be played | 自創動畫之重複次數 | animation-iteration-count: *\[number\] | infinite* | | [動畫]() |
 | animation-name | Specifies a name for the @keyframes animation | 自創動畫名字 | animation-name: *\[name\]* | | [動畫]() |
 | animation-play-state | Specifies whether the animation is running or paused | 自創動畫 | | | [動畫]() |
 | animation-timing-function | Specifies the speed curve of an animation | 自創動畫 | | | [動畫]() |
@@ -170,7 +170,7 @@
 | grid-template-rows | Specifies the size of the rows in a grid layout | | | | [網格](css/grid.md) |
 | H | H | H | H | H | H |
 | hanging-punctuation | Specifies whether a punctuation character may be placed outside the line box | | | | |
-| height | Sets the height of an element | 物件高度 | height: *\[size\]* | | |
+| height | Sets the height of an element | 物件高度 | height: *\[size\]* | | [定位]() |
 | hyphens | Sets how to split words to improve the layout of paragraphs | | | | |
 | I | I | I | I | I | I |
 | image-rendering | Specifies the type of algorithm to use for image scaling | | | | |
@@ -188,28 +188,28 @@
 | justify-items | Is set on the grid container. Specifies the alignment of grid items in the inline direction | | | | |
 | justify-self | Is set on the grid item. Specifies the alignment of the grid item in the inline direction | | | | |
 | K | K | K | K | K | K |
-| none | none | none | none | |
+| none | none | none | none | none | none |
 | L | L | L | L | L | L |
 | left | Specifies the left position of a positioned element | 距左邊之單位長 | left: *\[size\]* | 須搭配position使用 | [定位]() |
-| letter-spacing | Increases or decreases the space between characters in a text | | | | |
-| line-break | Specifies how/if to break lines | | | | |
-| line-height | Sets the line height | | | | |
-| list-style | Sets all the properties for a list in one declaration | | | | |
-| list-style-image | Specifies an image as the list-item marker | | | | |
-| list-style-position | Specifies the position of the list-item markers (bullet points) | | | | |
-| list-style-type | Specifies the type of list-item marker | | | | |
+| letter-spacing | Increases or decreases the space between characters in a text | 文字間格 | | | [文字]() |
+| line-break | Specifies how/if to break lines | 換行設定 | | | [文字]() |
+| line-height | Sets the line height | 行高 | line-height: *\[size\]* | | [文字]() |
+| list-style | Sets all the properties for a list in one declaration | 清單設定 | | 縮減函式 | [表單]() |
+| list-style-image | Specifies an image as the list-item marker | 清單圖片 | list-style-image: url("*\[url\]*") | | [表單]() |
+| list-style-position | Specifies the position of the list-item markers (bullet points) | 清單定位 | list-style-position: *\[size\]* | | [表單]() |
+| list-style-type | Specifies the type of list-item marker | 清單樣式 | list-style-type: ** | | [表單]() |
 | M | M | M | M | M | M |
-| margin | Sets all the margin properties in one declaration | | | | |
+| margin | Sets all the margin properties in one declaration | 外距設定 | | 縮減函式 | [容器]() |
 | margin-block | Specifies the margin in the block direction | | | | |
 | margin-block-end | Specifies the margin at the end in the block direction | | | | |
 | margin-block-start | Specifies the margin at the start in the block direction | | | | |
-| margin-bottom | Sets the bottom margin of an element | | | | |
+| margin-bottom | Sets the bottom margin of an element | 下外距 | margin-bottom: *\[size\]* | | [容器]() |
 | margin-inline | Specifies the margin in the inline direction | | | | |
 | margin-inline-end | Specifies the margin at the end in the inline direction | | | | |
 | margin-inline-start | Specifies the margin at the start in the inline direction | | | | |
-| margin-left | Sets the left margin of an element | | | | |
-| margin-right | Sets the right margin of an element | | | | |
-| margin-top | Sets the top margin of an element | | | | |
+| margin-left | Sets the left margin of an element | 左外距 | margin-left: *\[size\]* | | [容器]() |
+| margin-right | Sets the right margin of an element | 右外距 | margin-right: *\[size\]* | | [容器]() |
+| margin-top | Sets the top margin of an element | 上外距 | margin-top: *\[size\]* | | [容器]() |
 | mask | Hides parts of an element by masking or clipping an image at specific places | | | | |
 | mask-clip | Specifies the mask area | | | | |
 | mask-composite | Represents a compositing operation used on the current mask layer with the mask layers below it | | | | |
@@ -220,14 +220,14 @@
 | mask-repeat | Specifies how the mask layer image is repeated | | | | |
 | mask-size | Specifies the size of a mask layer image | | | | |
 | mask-type | Specifies whether an SVG &lt;mask&gt; element is treated as a luminance mask or as an alpha mask | | | | |
-| max-height | Sets the maximum height of an element | | | | |
-| max-width | Sets the maximum width of an element | | | | |
+| max-height | Sets the maximum height of an element | 最大高度 | max-height: *\[size\]* \| *auto* | | [定位]() |
+| max-width | Sets the maximum width of an element | 最大寬度 | max-width: *\[size\]* \| *auto* | | [定位]() |
 | max-block-size | Sets the maximum size of an element in the block direction | | | | |
 | max-inline-size | Sets the maximum size of an element in the inline direction | | | | |
 | min-block-size | Sets the minimum size of an element in the block direction | | | | |
 | min-inline-size | Sets the minimum size of an element in the inline direction | | | | |
-| min-height | Sets the minimum height of an element | | | | |
-| min-width | Sets the minimum width of an element | | | | |
+| min-height | Sets the minimum height of an element | 最小高度 | min-height: *\[size\]* \| *auto* | | [定位]() |
+| min-width | Sets the minimum width of an element | 最小寬度 | min-width: *\[size\]* \| *auto* | | [定位]() |
 | mix-blend-mode | Specifies how an element's content should blend with its direct parent background | | | | |
 | O | O | O | O | O | O |
 | object-fit | Specifies how the contents of a replaced element should be fitted to the box established by its used height and width | | | | |
@@ -256,7 +256,7 @@
 | overscroll-behavior-x | Specifies whether to have scroll chaining or overscroll affordance in x-direction | | | | |
 | overscroll-behavior-y | Specifies whether to have scroll chaining or overscroll affordance in y-directions | | | | |
 | P | P | P | P | P | P |
-| padding | A shorthand property for all the padding-* properties | | | | |
+| padding | A shorthand property for all the padding-* properties | 內距設定 | padding: *\[udlr\]* \| *\[udlr\]* \| *\[udlr\]* \| *\[udlr\]* | 縮減函式 | [容器]() |
 | padding-block | Specifies the padding in the block direction | | | | |
 | padding-block-end | Specifies the padding at the end in the block direction | | | | |
 | padding-block-start | Specifies the padding at the start in the block direction | | | | |
@@ -358,17 +358,17 @@
 | word-wrap | Allows long, unbreakable words to be broken and wrap to the next line | | | | |
 | writing-mode | Specifies whether lines of text are laid out horizontally or vertically | | | | |
 | X | X | X | X | X | X |
-| none | none | none | none | |
+| none | none | none | none | none | none |
 | Y | Y | Y | Y | Y | Y |
-| none | none | none | none | |
+| none | none | none | none | none | none |
 | Z | Z | Z | Z | Z | Z |
-| z-index | Sets the stack order of a positioned element | | | | |
+| z-index | Sets the stack order of a positioned element | 物件階層 | z-index: *\[number\]* | | [容器]() |
 | @ | @ | @ | @ | @ | @ |
-| @charset | Specifies the character encoding used in the style sheet | | | | |
-| @font-face | A rule that allows websites to download and use fonts other than the "web-safe" fonts | | | | |
-| @font-feature-values | Allows authors to use a common name in font-variant-alternate for feature activated differently in OpenType | | | | |
-| @import | Allows you to import a style sheet into another style sheet | | | | |
-| @keyframes | Specifies the animation code | | | | |
+| @charset | Specifies the character encoding used in the style sheet | | | | [文字]() |
+| @font-face | A rule that allows websites to download and use fonts other than the "web-safe" fonts | | | | [文字]() |
+| @font-feature-values | Allows authors to use a common name in font-variant-alternate for feature activated differently in OpenType | | | | [文字]() |
+| @import | Allows you to import a style sheet into another style sheet | 匯入其他樣式表 | | | |
+| @keyframes | Specifies the animation code | 關鍵影格設定 | @keyframes *\[name\]*{ /\* *context* \*/ } | | [動畫]() |
 | @media | Sets the style rules for different media types/devices/sizes | | | | |
 | | | pseudo | element | | |
 | ::after | | | | | |
@@ -393,9 +393,9 @@
 | :checked | | 已勾選事件 | *checkbox \| radio \| option @ \| label*:checked{ /\* declaration \*/ } | | |
 | :default | | | | | |
 | :dir() | | | | | |
-| :disabled | | disabled之區塊事件 | *input: \| select \| textarea \[type="disabled"\]*:disabled{ /\* declaration \*/ } | | |
+| :disabled | | 禁用之區塊事件 | *input: \| select \| textarea \[type="disabled"\]*:disabled{ /\* declaration \*/ } | | |
 | :empty | | | | | |
-| :enabled | | | | | |
+| :enabled | | 啟用之區塊事件 | | | |
 | :first | | | | | |
 | :first-child | | | | | |
 | :first-of-type | | | | | |
@@ -419,7 +419,7 @@
 | :only-of-type | | | | | |
 | :optional | | | | | |
 | :out-of-range | | | | | |
-| :read-only | | readonly之區塊事件 | *input: \| textarea \[type="readonly"\]*:disabled{ /\* declaration \*/ } | | |
+| :read-only | | 唯讀之區塊事件 | *input: \| textarea \[type="readonly"\]*:disabled{ /\* declaration \*/ } | | |
 | :read-write | | | | | |
 | :required | | 必填之區塊事件 | *input: \| select \| textarea \[type="required"\]*:required{ /\* declaration \*/ } | | |
 | :right | | | | | |
