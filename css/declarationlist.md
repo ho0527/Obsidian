@@ -7,7 +7,7 @@
 | align-content | Specifies the alignment between the lines inside a flexible container when the items do not use all available space | | align-context: * center \| flex-start \| flex-end \| space-between \| space-around \| space-evenly \| **\*stretch** \| initial \| inherit * | 要加display:flex才可以使用 | |
 | align-items | Specifies the alignment for items inside a flexible container | | | | |
 | align-self | Specifies the alignment for selected items inside a flexible container | | | | |
-| all | Resets all properties (except unicode-bidi and direction) | | | | |
+| all | Resets all properties (except unicode-bidi and direction) | 重製所有函式 | all: *\[global values\]* | | [其他]() |
 | animation | A shorthand property for all the animation-* properties | 自創動畫可搭配關鍵影格製作(@keyframe) | animation: **\[time\]** **\[name\]** **\[repet time\]** ***\[anthor fucntion\]*** | 縮減函式 | [動畫]() |
 | animation-delay | Specifies a delay for the start of an animation | 自創動畫延遲 | animation-delay: *\[time\]* | | [動畫]() |
 | animation-direction | Specifies whether an animation should be played forwards, backwards or in alternate cycles | 自創動畫 | | | [動畫]() |
@@ -430,7 +430,7 @@
 | :visited | | | | | |
 
 ## 註解及參見
-因通用關鍵字(inherit \| initial \| revert \| revert-layer \| unset)幾乎每一個韓式皆可使用因以本表用法不將通用關鍵字寫入
+因通用關鍵字*\[global values\]*(inherit \| initial \| revert \| revert-layer \| unset)幾乎每一個韓式皆可使用因以本表用法不將通用關鍵字寫入
 粗體加前墜*為預設元素
 @表依瀏覽器不同決定
 粗體為不限位置
