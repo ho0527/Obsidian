@@ -6,7 +6,7 @@
       {
         "id": "00d6db2a61c308c9",
         "type": "tabs",
-        "dimension": 63.594470046082954,
+        "dimension": 50.153609831029186,
         "children": [
           {
             "id": "904d2c69cc525bda",
@@ -74,7 +74,7 @@
       {
         "id": "ad9f2568e7be8e00",
         "type": "tabs",
-        "dimension": 36.405529953917046,
+        "dimension": 49.846390168970814,
         "children": [
           {
             "id": "86636de7b0156109",
@@ -207,7 +207,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "css.md",
+                "file": "todo.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -231,7 +231,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "css.md",
+                "file": "todo.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -243,7 +243,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "css.md"
+                "file": "todo.md"
               }
             }
           },
@@ -302,11 +302,11 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "be4541826f976a9a",
+  "active": "352a6fd7b3e515a4",
   "lastOpenFiles": [
+    "css.md",
     "css/declarationlist.md",
     "Obsidian",
-    "css.md",
     "programming.md",
     "todo.md",
     "css/grid.md",
