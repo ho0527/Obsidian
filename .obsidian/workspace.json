@@ -111,6 +111,18 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "d5c099ec82a87242",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "html/body.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
         "currentTab": 2
@@ -304,12 +316,17 @@
   },
   "active": "352a6fd7b3e515a4",
   "lastOpenFiles": [
+    "js/canvas.md",
+    "todo.md",
+    "website/note",
+    "note",
+    "websitenote",
+    "html/body.md",
     "css.md",
     "css/declarationlist.md",
     "Obsidian",
     "programming.md",
-    "todo.md",
-    "css/grid.md",
+    "website/note/grid.md",
     "website/webstorage.md",
     "regularexpression.md",
     "php.md",
@@ -317,7 +334,6 @@
     "html.md",
     "websitenote.md",
     "css/cursordef.md",
-    "html/body.md",
     "website/plugin",
     "website/webstorage",
     "website",
@@ -340,10 +356,7 @@
     "picture/Picture3.png",
     "picture/cssexp2-1.png",
     "picture/Picture2.png",
-    "function",
-    "js/Untitled",
     "picture/cssps8-1.png",
-    "picture",
     "cssps8-1.png",
     "cssps8_!.png",
     "cssps8.png",

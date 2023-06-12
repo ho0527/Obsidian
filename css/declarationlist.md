@@ -150,24 +150,24 @@
 | font-weight | Specifies the weight of a font | 文字粗度 | | | |
 | G | G | G | G | G | G |
 | gap | A shorthand property for the row-gap and the column-gap properties | | | | |
-| grid | A shorthand property for the grid-template-rows, grid-template-columns, grid-template-areas, grid-auto-rows, grid-auto-columns, and the grid-auto-flow properties | 網格系統 | | | [網格](css/grid.md) |
-| grid-area | Either specifies a name for the grid item, or this property is a shorthand property for the grid-row-start, grid-column-start, grid-row-end, and grid-column-end properties| | | | [網格](css/grid.md) |
-| grid-auto-columns | Specifies a default column size | | | | [網格](css/grid.md) |
-| grid-auto-flow | Specifies how auto-placed items are inserted in the grid | | | | [網格](css/grid.md) |
-| grid-auto-rows | Specifies a default row size | | | | [網格](css/grid.md) |
-| grid-column | A shorthand property for the grid-column-start and the grid-column-end properties | | | | [網格](css/grid.md) |
-| grid-column-end | Specifies where to end the grid item | | | | [網格](css/grid.md) |
-| grid-column-gap | Specifies the size of the gap between columns | | | | [網格](css/grid.md) |
-| grid-column-start | Specifies where to start the grid item | | | | [網格](css/grid.md) |
-| grid-gap | A shorthand property for the grid-row-gap and grid-column-gap properties | | | | [網格](css/grid.md) |
-| grid-row | A shorthand property for the grid-row-start and the grid-row-end properties | | | | [網格](css/grid.md) |
-| grid-row-end | Specifies where to end the grid item | | | | [網格](css/grid.md) |
-| grid-row-gap | Specifies the size of the gap between rows | | | | [網格](css/grid.md) |
-| grid-row-start | Specifies where to start the grid item | | | | [網格](css/grid.md) |
-| grid-template | A shorthand property for the grid-template-rows, grid-template-columns and grid-areas properties | | | | [網格](css/grid.md) |
-| grid-template-areas | Specifies how to display columns and rows, using named grid items | | | | [網格](css/grid.md) |
-| grid-template-columns | Specifies the size of the columns, and how many columns in a grid layout | | | | [網格](css/grid.md) |
-| grid-template-rows | Specifies the size of the rows in a grid layout | | | | [網格](css/grid.md) |
+| grid | A shorthand property for the grid-template-rows, grid-template-columns, grid-template-areas, grid-auto-rows, grid-auto-columns, and the grid-auto-flow properties | 網格系統 | | | [網格](grid.md) |
+| grid-area | Either specifies a name for the grid item, or this property is a shorthand property for the grid-row-start, grid-column-start, grid-row-end, and grid-column-end properties| | | | [網格](grid.md) |
+| grid-auto-columns | Specifies a default column size | | | | [網格](grid.md) |
+| grid-auto-flow | Specifies how auto-placed items are inserted in the grid | | | | [網格](grid.md) |
+| grid-auto-rows | Specifies a default row size | | | | [網格](grid.md) |
+| grid-column | A shorthand property for the grid-column-start and the grid-column-end properties | | | | [網格](grid.md) |
+| grid-column-end | Specifies where to end the grid item | | | | [網格](grid.md) |
+| grid-column-gap | Specifies the size of the gap between columns | | | | [網格](grid.md) |
+| grid-column-start | Specifies where to start the grid item | | | | [網格](grid.md) |
+| grid-gap | A shorthand property for the grid-row-gap and grid-column-gap properties | | | | [網格](grid.md) |
+| grid-row | A shorthand property for the grid-row-start and the grid-row-end properties | | | | [網格](grid.md) |
+| grid-row-end | Specifies where to end the grid item | | | | [網格](grid.md) |
+| grid-row-gap | Specifies the size of the gap between rows | | | | [網格](grid.md) |
+| grid-row-start | Specifies where to start the grid item | | | | [網格](grid.md) |
+| grid-template | A shorthand property for the grid-template-rows, grid-template-columns and grid-areas properties | | | | [網格](grid.md) |
+| grid-template-areas | Specifies how to display columns and rows, using named grid items | | | | [網格](grid.md) |
+| grid-template-columns | Specifies the size of the columns, and how many columns in a grid layout | | | | [網格](grid.md) |
+| grid-template-rows | Specifies the size of the rows in a grid layout | | | | [網格](grid.md) |
 | H | H | H | H | H | H |
 | hanging-punctuation | Specifies whether a punctuation character may be placed outside the line box | | | | |
 | height | Sets the height of an element | 物件高度 | height: *\[size\]* | | [定位]() |
@@ -237,7 +237,7 @@
 | offset-distance | Specifies the position along a path where an animated element is placed | | | | |
 | offset-path | Specifies the path an element is animated along | | | | |
 | offset-rotate | Specifies rotation of an element as it is animated along a path | | | | |
-| opacity | Sets the opacity level for an element | | | | |
+| opacity | Sets the opacity level for an element | 不透明度 | opacity: 0=~=1 \| 0=~=100% | | [容器]() |
 | order | Sets the order of the flexible item, relative to the rest | | | | |
 | orphans | Sets the minimum number of lines that must be left at the bottom of a page or column | | | | |
 | outline | A shorthand property for the outline-width, outline-style, and the outline-color properties | 外框線 | | 縮減函式 | |
@@ -245,11 +245,11 @@
 | outline-offset | Offsets an outline, and draws it beyond the border edge | 外框線 | | | |
 | outline-style | Sets the style of an outline | 外框線樣式 | | | |
 | outline-width | Sets the width of an outline | 外框線大小 | | | |
-| overflow | Specifies what happens if content overflows an element's box | 物件溢位設定 | | | |
+| overflow | Specifies what happens if content overflows an element's box | 物件溢位設定 | overflow: * **\*visable** \| hidden \| scroll \| auto \| clip * (* **\*visable** \| hidden \| scroll \| auto \| clip *)? | 縮減函式 | [容器]() |
 | overflow-anchor | Specifies whether or not content in viewable area in a scrollable contianer should be pushed down when new content is loaded above | | | | |
 | overflow-wrap | Specifies whether or not the browser can break lines with long words, if they overflow the container | | | | |
-| overflow-x | Specifies whether or not to clip the left/right edges of the content, if it overflows the element's content area | 物件x軸溢位設定 | | | |
-| overflow-y | Specifies whether or not to clip the top/bottom edges of the content, if it overflows the element's content area | 物件y軸溢位設定 | | | |
+| overflow-x | Specifies whether or not to clip the left/right edges of the content, if it overflows the element's content area | 物件x軸溢位設定 | overflow-x: * **\*visable** \| hidden \| scroll \| auto \| clip * | | [容器]() |
+| overflow-y | Specifies whether or not to clip the top/bottom edges of the content, if it overflows the element's content area | 物件y軸溢位設定 | overflow-y: * **\*visable** \| hidden \| scroll \| auto \| clip * | | [容器]() |
 | overscroll-behavior | Specifies whether to have scroll chaining or overscroll affordance in x- and y-directions | | | | |
 | overscroll-behavior-block | Specifies whether to have scroll chaining or overscroll affordance in the block direction | | | | |
 | overscroll-behavior-inline | Specifies whether to have scroll chaining or overscroll affordance in the inline direction | | | | |
@@ -463,7 +463,7 @@ top \| bottom \| left \| right *\[size\]*: px,pt,%,em,ex,vw,vh
 1. [背景及其副屬]()
 2. [文字及其副屬]()
 3. [display及基本排版]()
-4. [網格系統](css/grid.md)
+4. [網格系統](grid.md)
 5. [容器及其副屬]()
 6. [基本動畫]()
 7. [表單及其副屬]()

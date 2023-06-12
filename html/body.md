@@ -9,125 +9,125 @@ tag:
 | 標籤 | 介紹 | 自動換行? | 註解 |
 | ----- | ----- | ----- | ------ |
 | `<a>` | 可以用成超連結讓使用者點選 | X | |
-| `<abbr>` | | | |
-| `<acronym>` | |  | 已棄用 |
-| `<address>` | | | |
+| `<abbr>` | 縮寫 | X | |
+| ~~`<acronym>`~~ | 縮寫 | X |  |
+| `<address>` | 作者細節 | X | |
 | `<area>` | | | |
 | `<article>` | | | |
 | `<aside>` | 強調側邊攔 |  | 醒目標籤 |
 | `<audio>` | | | |
-| `<b>` | | | |
+| `<b>` | 粗體 | X | |
 | `<base>` | | | |
 | `<bdi>` | | | |
 | `<bdo>` | | | |
-| `<big>` | |  | 已棄用 |
-| `<blockquote>` | | | |
+| ~~`<big>`~~ | |  |  |
+| `<blockquote>` | 長引述 | O | |
 | `<body>` | 主標籤 |  | 其餘標籤要標在此標籤之中 |
 | `<br>` | 換行標籤 |  | 無結尾標籤 |
 | `<button>` | | | |
 | `<canvas>` | | | |
 | `<caption>` | | | |
-| `<center>` | 水平置中 | X | 已棄用(以[css內建置中](../css.md)取代(如:text-align: center)) |
-| `<cite>` | | | |
+| ~~`<center>`~~ | 水平置中 | X | (以[css內建置中](../css.md)取代(如:text-align: center)) |
+| `<cite>` | 引用 | X | |
 | `<code>` | | | |
 | `<col>` | | | |
 | `<colgroup>` | | | |
 | `<data>` | | | |
 | `<datalist>` | | | |
 | `<dd>` | | | |
-| `<del>` | | | |
+| `<del>` | 刪除線 | X | |
 | `<details>` | | | |
-| `<dfn>` | | | |
+| `<dfn>` | 定義 | X | |
 | `<dialog>` | | | |
-| `<dir>` | |  | 已棄用 |
+| ~~`<dir>`~~ | |  | |
 | `<div>` | | O |  |
 | `<dl>` | | | |
 | `<dt>` | | | |
-| `<em>` | | | |
+| `<em>` | 文字強調 | X | |
 | `<embed>` | | | |
 | `<fieldset>` | | | |
 | `<figcaption>` | | | |
 | `<figure>` | | | |
-| `<font>` | |  | 已棄用 |
+| ~~`<font>`~~ | |  |  |
 | `<footer>` | | | |
 | `<form>` | | | |
-| `<frame>` | |  | 已棄用 |
-| `<frameset>` | |  | 已棄用 |
-| `<h1>` | 1級文字 | | O |
-| `<h2>` | 2級文字 | | O |
-| `<h3>` | 3級文字 | | O |
-| `<h4>` | 4級文字 | | O |
-| `<h5>` | 5級文字 | | O |
-| `<h6>` | 6級文字 | | O |
+| ~~`<frame>`~~ | |  |  |
+| ~~`<frameset>`~~ | |  |  |
+| `<h1>` | 1級文字 | O | |
+| `<h2>` | 2級文字 | O | |
+| `<h3>` | 3級文字 | O | |
+| `<h4>` | 4級文字 | O | |
+| `<h5>` | 5級文字 | O | |
+| `<h6>` | 6級文字 | O | |
 | `<header>` | | | |
 | `<hgroup>` | | | |
-| `<hr>` | | | |
+| `<hr>` | 分隔線標籤 | O | 無結尾標籤 |
 | `<html>` | | | |
-| `<i>` | | | |
+| `<i>` | 斜體 | X | |
 | `<iframe>` | | | |
-| `<image>` | |  | 非標準已棄用 |
+| ~~`<image>`~~ | | | 非標準 |
 | `<img>` | | | |
 | `<input>` | | | |
-| input:button | 一般按鈕 | | |
-| input:checkbox | 勾選框(可複選) | | |
-| input:color | 檢色器 | | |
-| input:date | 日期選擇器 | | |
-| input:datetime-local | 日期選擇器(含時間) | | |
-| input:email | 電子郵箱-內建規則 | | |
-| input:file | 上傳檔案 | | |
-| input:hidden | 隱藏元素 | | |
-| input:image | 使背景有自創圖片 | | |
-| input:month | 日期選擇器(無日期) | | |
-| input:number | 數字-內建規則 | | |
-| input:password | 密碼欄位 | | |
-| input:radio | 勾選框(不可複選) | | |
-| input:range | 範圍選擇器 | | |
-| input:reset | 表單重製-配合表單 | | |
-| input:search | 搜尋-特別標示 | | |
-| input:submit | 表單送出按鈕-配合表單 | | |
-| input:tel | 電話-內建規則 | | |
-| \***input:text** | 一般輸入框 | | |
-| input:time | 日期選擇器(含時間) | | |
-| input:url | url-內建規則 | | |
-| input:week | 日期週數選擇器 | | |
-| `<ins>` | | | |
+| input:button | 一般按鈕 | X | |
+| input:checkbox | 勾選框(可複選) | X | |
+| input:color | 檢色器 | X | |
+| input:date | 日期選擇器 | X | |
+| input:datetime-local | 日期選擇器(含時間) | X | |
+| input:email | 電子郵箱-內建規則 | X | |
+| input:file | 上傳檔案 | X | |
+| input:hidden | 隱藏元素 | X | |
+| input:image | 使背景有自創圖片 | X | |
+| input:month | 日期選擇器(無日期) | X | |
+| input:number | 數字-內建規則 | X | |
+| input:password | 密碼欄位 | X | |
+| input:radio | 勾選框(不可複選) | X | |
+| input:range | 範圍選擇器 | X | |
+| input:reset | 表單重製-配合表單 | X | |
+| input:search | 搜尋-特別標示 | X | |
+| input:submit | 表單送出按鈕-配合表單 | X | |
+| input:tel | 電話-內建規則 | X | |
+| \***input:text** | 一般輸入框 | X | |
+| input:time | 日期選擇器(含時間) | X | |
+| input:url | url-內建規則 | X | |
+| input:week | 日期週數選擇器 | X | |
+| `<ins>` | 底線 | X | |
 | `<kbd>` | | | |
 | `<label>` | | | |
 | `<legend>` | | | |
-| `<li>` | | | |
+| `<li>` | 清單內文 | O | |
 | `<link>` | | | |
 | `<main>` | | | |
 | `<map>` | | | |
 | `<mark>` | | | |
-| `<marquee>` | |  | 已棄用 |
+| ~~`<marquee>`~~ | |  |  |
 | `<menu>` | | | |
-| `<menuitem>` | |  | 非標準已棄用 |
+| ~~`<menuitem>`~~ | |  | 非標準 |
 | `<meta>` | | | |
 | `<meter>` | | | |
 | `<nav>` | | | |
-| `<nobr>` | |  | 已棄用 |
-| `<noembed>` | |  | 已棄用 |
-| `<noframes>` | |  | 已棄用 |
+| ~~`<nobr>`~~ | |  |  |
+| ~~`<noembed>`~~ | |  |  |
+| ~~`<noframes>`~~ | |  |  |
 | `<noscript>` | | | |
 | `<object>` | | | |
-| `<ol>` | | | |
+| `<ol>` | 有序清單 | O | |
 | `<optgroup>` | | | |
 | `<option>` | | | |
 | `<output>` | | | |
-| `<p>` | 文字標籤 | O | |
-| `<param>` | |  | 已棄用 |
+| `<p>` | 段落標籤 | O | |
+| ~~`<param>`~~ | |  |  |
 | `<picture>` | | | |
-| `<plaintext>` | |  | 已棄用 |
+| ~~`<plaintext>`~~ | |  |  |
 | `<portal>` | |  | 實驗性質 |
 | `<pre>` | | | |
 | `<progress>` | | | |
-| `<q>` | | | |
-| `<rb>` | |  | 已棄用 |
+| `<q>` | 短引述 | X | |
+| ~~`<rb>`~~ | |  |  |
 | `<rp>` | | | |
 | `<rt>` | | | |
-| `<rtc>` | |  | 已棄用 |
+| ~~`<rtc>`~~ | |  |  |
 | `<ruby>` | | | |
-| `<s>` | | | |
+| `<s>` | 刪除線 | X | |
 | `<samp>` | | | |
 | `<script>` | | | |
 | `<section>` | | | |
@@ -136,12 +136,12 @@ tag:
 | `<small>` | | | |
 | `<source>` | | | |
 | `<span>` | | | |
-| `<strike>` | |  | 已棄用 |
-| `<strong>` | | | |
+| ~~`<strike>`~~ | |  |  |
+| `<strong>` | 文字加強 | X | |
 | `<style>` | | | |
-| `<sub>` | | | |
+| `<sub>` | 下標 | X | |
 | `<summary>` | | | |
-| `<sup>` | | | |
+| `<sup>` | 上標 | X | |
 | `<table>` | | | |
 | `<tbody>` | | | |
 | `<td>` | | | |
@@ -154,13 +154,13 @@ tag:
 | `<title>` | | | |
 | `<tr>` | | | |
 | `<track>` | | | |
-| `<tt>` | |  | 已棄用 |
+| ~~`<tt>`~~ | |  |  |
 | `<u>` | | | |
-| `<ul>` | | | |
+| `<ul>` | 無序清單 | O | |
 | `<var>` | | | |
 | `<video>` | | | |
 | `<wbr>` | | | |
-| `<xmp>` | | | 已棄用 |
+| ~~`<xmp>`~~ | | |  |
 
 
 global attribute:
@@ -172,7 +172,7 @@ global attribute:
 | autofocus | | |
 | class | | |
 | contenteditable | | |
-| contextmenu | | 非標準已棄用 |
+| ~~contextmenu~~ | | 非標準 |
 | data-* | | |
 | dir | | |
 | draggable | | |
@@ -232,4 +232,7 @@ attribute:
 ```
 
 ## 註解及參見
-前墜*加粗體為預設
+前墜\*加粗體為預設
+刪除線為已棄用
+
+小賀chris:) 2023/06/12 v1.0.0
