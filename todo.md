@@ -7,7 +7,7 @@
 - [ ] python django
 - [ ] api上傳圖片
 - [ ] indexeddb
-- [ ] todo
+- [ ] iRiver 開會6/25
 - [ ] todo
 - [ ] todo
 

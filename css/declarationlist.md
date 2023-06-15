@@ -256,17 +256,17 @@
 | overscroll-behavior-x | Specifies whether to have scroll chaining or overscroll affordance in x-direction | | | | |
 | overscroll-behavior-y | Specifies whether to have scroll chaining or overscroll affordance in y-directions | | | | |
 | P | P | P | P | P | P |
-| padding | A shorthand property for all the padding-* properties | 內距設定 | padding: *\[udlr\]* \| *\[udlr\]* \| *\[udlr\]* \| *\[udlr\]* | 縮減函式 | [容器]() |
+| padding | A shorthand property for all the padding-* properties | 內距設定 | padding: *\[udlr size\]* \| *\[ud size\] \[lr size\]* \| *\[u size\] \[lr size\] \[d size\]* \| *\[u size\] \[r size\] \[d size\] \[l size\]* | 縮減函式 | [容器]() |
 | padding-block | Specifies the padding in the block direction | | | | |
 | padding-block-end | Specifies the padding at the end in the block direction | | | | |
 | padding-block-start | Specifies the padding at the start in the block direction | | | | |
-| padding-bottom | Sets the bottom padding of an element | | | | |
+| padding-bottom | Sets the bottom padding of an element | 下內距 | padding-bottom: *\[size\]* | | [容器]() |
 | padding-inline | Specifies the padding in the inline direction | | | | |
 | padding-inline-end | Specifies the padding at the end in the inline direction | | | | |
 | padding-inline-start | Specifies the padding at the start in the inline direction | | | | |
-| padding-left | Sets the left padding of an element | | | | |
-| padding-right | Sets the right padding of an element | | | | |
-| padding-top | Sets the top padding of an element | | | | |
+| padding-left | Sets the left padding of an element | 左內距 | padding-left: *\[size\]* | | [容器]() |
+| padding-right | Sets the right padding of an element | 右內距 | padding-right: *\[size\]* | | [容器]() |
+| padding-top | Sets the top padding of an element | 上內距 | padding-top: *\[size\]* | | [容器]() |
 | page-break-after | Sets the page-break behavior after an element | | | | |
 | page-break-before | Sets the page-break behavior before an element | | | | |
 | page-break-inside | Sets the page-break behavior inside an element | | | | |
@@ -277,7 +277,7 @@
 | place-items | Specifies align-items and justify-items property values for grid layouts | | | | |
 | place-self | Specifies align-self and justify-self property values for grid layouts | | | | |
 | pointer-events | Defines whether or not an element reacts to pointer events | | | | |
-| position | Specifies the type of positioning method used for an element (static, relative, absolute or fixed) | | | | [定位]() |
+| position | Specifies the type of positioning method used for an element (static, relative, absolute or fixed) | 定位設定 | | | [定位]() |
 | Q | Q | Q | Q | Q | Q |
 | quotes | Sets the type of quotation marks for embedded quotations | | | | |
 | R | R | R | R | R | R |

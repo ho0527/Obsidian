@@ -49,8 +49,8 @@ tag:
 | `<figcaption>` | | | |
 | `<figure>` | | | |
 | ~~`<font>`~~ | |  |  |
-| `<footer>` | | | |
-| `<form>` | | | |
+| `<footer>` | | | 醒目標籤 |
+| `<form>` | 表單 | O | |
 | ~~`<frame>`~~ | |  |  |
 | ~~`<frameset>`~~ | |  |  |
 | `<h1>` | 1級文字 | O | |
@@ -67,7 +67,7 @@ tag:
 | `<iframe>` | | | |
 | ~~`<image>`~~ | | | 非標準 |
 | `<img>` | | | |
-| `<input>` | | | |
+| `<input>` | 一般輸入框 | X | |
 | input:button | 一般按鈕 | X | |
 | input:checkbox | 勾選框(可複選) | X | |
 | input:color | 檢色器 | X | |
