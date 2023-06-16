@@ -137,7 +137,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -231,7 +231,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "css/declarationlist.md",
+                "file": "todo.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -255,7 +255,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "css/declarationlist.md",
+                "file": "todo.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -267,7 +267,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "css/declarationlist.md"
+                "file": "todo.md"
               }
             }
           },
@@ -326,8 +326,9 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "f8db644067fe61dd",
+  "active": "352a6fd7b3e515a4",
   "lastOpenFiles": [
+    "css/declarationlist.md",
     "css.md",
     "todo.md",
     "js/canvas.md",
@@ -335,7 +336,6 @@
     "note",
     "websitenote",
     "html/body.md",
-    "css/declarationlist.md",
     "Obsidian",
     "programming.md",
     "website/note/grid.md",
