@@ -277,13 +277,13 @@
 | place-items | Specifies align-items and justify-items property values for grid layouts | | | | |
 | place-self | Specifies align-self and justify-self property values for grid layouts | | | | |
 | pointer-events | Defines whether or not an element reacts to pointer events | | | | |
-| position | Specifies the type of positioning method used for an element (static, relative, absolute or fixed) | 定位設定 | | | [定位]() |
+| position | Specifies the type of positioning method used for an element (static, relative, absolute or fixed) | 定位設定 | position: *absolute* \| *fixed* \| *relative* \| *staic* \| *sticky* | | [定位]() |
 | Q | Q | Q | Q | Q | Q |
 | quotes | Sets the type of quotation marks for embedded quotations | | | | |
 | R | R | R | R | R | R |
 | resize | Defines if (and how) an element is resizable by the user | | | | |
 | right | Specifies the right position of a positioned element | 距右邊之單位長 | right: *\[size\]* | 須搭配position使用 | [定位]() |
-| rotate | Specifies the rotation of an element | | | | |
+| rotate | Specifies the rotation of an element | 物件旋轉角度 | rotate: *\[x,y,z\]* *\[size\]* \| *none* | | [定位]() |
 | row-gap | Specifies the gap between the grid rows | | | | |
 | S | S | S | S | S | S |
 | scale | Specifies the size of an element by scaling up or down | | | | |
@@ -317,7 +317,7 @@
 | T | T | T | T | T | T |
 | tab-size | Specifies the width of a tab character | | | | |
 | table-layout | Defines the algorithm used to lay out table cells, rows, and columns | | | | |
-| text-align | Specifies the horizontal alignment of text | | | | |
+| text-align | Specifies the horizontal alignment of text | 文字設定 | text-align:  *start* \| *end*\| *left*\| *right*\| *center*\| *justify*\| *justify-all*\| *match-parent* | | [文字]() |
 | text-align-last | Describes how the last line of a block or a line right before a forced line break is aligned when text-align is "justify" | | | | |
 | text-combine-upright | Specifies the combination of multiple characters into the space of a single character | | | | |
 | text-decoration | Specifies the decoration added to text | | | | |
@@ -326,7 +326,7 @@
 | text-decoration-style | Specifies the style of the line in a text decoration | | | | |
 | text-decoration-thickness | Specifies the thickness of the decoration line | | | | |
 | text-emphasis | Applies emphasis marks to text | | | | |
-| text-indent | Specifies the indentation of the first line in a text-block | | | | |
+| text-indent | Specifies the indentation of the first line in a text-block | 首行縮排 | text-indent: *\[size\]* \| *auto* | | [文字]() |
 | text-justify | Specifies the justification method used when text-align is "justify" | | | | |
 | text-orientation | Defines the orientation of characters in a line | | | | |
 | text-overflow | Specifies what should happen when text overflows the containing element | | | | |
@@ -460,17 +460,18 @@ top \| bottom \| left \| right *\[size\]*: px,pt,%,em,ex,vw,vh
 
 
 
-1. [背景及其副屬]()
-2. [文字及其副屬]()
-3. [display及基本排版]()
-4. [網格系統](grid.md)
-5. [容器及其副屬]()
-6. [基本動畫]()
-7. [表單及其副屬]()
-8. [定位及其副屬]()
-9. [偽元素]()
-10. [偽類選擇器]()
-11. [單位]()
-12. [其他]()
+1. [css基本](../css.md)
+2. [文字及段落]()
+3. [背景]()
+4. [容器及其副屬]()
+5. [基本動畫]()
+6. [清單及表單]()
+7. [排版及定位]()
+8. [display及基本排版]()
+9. [網格系統](grid.md)
+10. [偽元素]()
+11. [偽類選擇器]()
+12. [單位]()
+13. [其他]()
 
-小賀chris:) 2023/06/07 v1.2.2
+小賀chris:) 2023/06/18 v1.2.6

@@ -9,8 +9,8 @@ tag:
 | 標籤 | 介紹 | 自動換行? | 註解 |
 | ----- | ----- | ----- | ------ |
 | `<a>` | 可以用成超連結讓使用者點選 | X | |
-| `<abbr>` | 縮寫 | X | |
-| ~~`<acronym>`~~ | 縮寫 | X |  |
+| `<abbr>` | 強調縮寫 | X | 醒目標籤 |
+| ~~`<acronym>`~~ | 強調縮寫 | X | 醒目標籤(以`<abbr>`取代) |
 | `<address>` | 作者細節 | X | |
 | `<area>` | | | |
 | `<article>` | | | |
@@ -21,7 +21,7 @@ tag:
 | `<bdi>` | | | |
 | `<bdo>` | | | |
 | ~~`<big>`~~ | |  |  |
-| `<blockquote>` | 長引述 | O | |
+| `<blockquote>` | 強調長引述 | O | 醒目標籤 |
 | `<body>` | 主標籤 |  | 其餘標籤要標在此標籤之中 |
 | `<br>` | 換行標籤 |  | 無結尾標籤 |
 | `<button>` | | | |
@@ -49,7 +49,7 @@ tag:
 | `<figcaption>` | | | |
 | `<figure>` | | | |
 | ~~`<font>`~~ | |  |  |
-| `<footer>` | | | 醒目標籤 |
+| `<footer>` | 強調頁尾 | | 醒目標籤 |
 | `<form>` | 表單 | O | |
 | ~~`<frame>`~~ | |  |  |
 | ~~`<frameset>`~~ | |  |  |
@@ -66,7 +66,7 @@ tag:
 | `<i>` | 斜體 | X | |
 | `<iframe>` | | | |
 | ~~`<image>`~~ | | | 非標準 |
-| `<img>` | | | |
+| `<img>` | 圖片 | X | |
 | `<input>` | 一般輸入框 | X | |
 | input:button | 一般按鈕 | X | |
 | input:checkbox | 勾選框(可複選) | X | |
@@ -118,10 +118,10 @@ tag:
 | ~~`<param>`~~ | |  |  |
 | `<picture>` | | | |
 | ~~`<plaintext>`~~ | |  |  |
-| `<portal>` | |  | 實驗性質 |
+| `<portal>` | | | 實驗性質 |
 | `<pre>` | | | |
 | `<progress>` | | | |
-| `<q>` | 短引述 | X | |
+| `<q>` | 強調短引述 | X | 醒目標籤 |
 | ~~`<rb>`~~ | |  |  |
 | `<rp>` | | | |
 | `<rt>` | | | |
@@ -131,13 +131,13 @@ tag:
 | `<samp>` | | | |
 | `<script>` | | | |
 | `<section>` | | | |
-| `<select>` | | | |
+| `<select>` | 選擇列表 | X | |
 | `<slot>` | | | |
 | `<small>` | | | |
 | `<source>` | | | |
 | `<span>` | | | |
 | ~~`<strike>`~~ | |  |  |
-| `<strong>` | 文字加強 | X | |
+| `<strong>` | 文字加強(粗體字) | X | |
 | `<style>` | | | |
 | `<sub>` | 下標 | X | |
 | `<summary>` | | | |
@@ -175,7 +175,7 @@ global attribute:
 | ~~contextmenu~~ | | 非標準 |
 | data-* | | |
 | dir | | |
-| draggable | | |
+| draggable | 控制元件是否可以拖動 | `<img>`,`<>`預設為真 |
 | enterkeyhint | | |
 | exportparts | | |
 | hidden | | |
@@ -194,7 +194,7 @@ global attribute:
 | popover | | 實驗性質 |
 | slot | | |
 | spellcheck | | |
-| style | | |
+| style | 控制元件樣式(行內) | 參見[css](../css.md) |
 | tabindex | | |
 | title | | |
 | translate | | |
@@ -219,7 +219,7 @@ attribute:
 | pattern | | |
 | readonly | | |
 | rel | | |
-| required | | |
+| required | 必填欄位 | |
 | size | | |
 | step | | |
 
@@ -235,4 +235,4 @@ attribute:
 前墜\*加粗體為預設
 刪除線為已棄用
 
-小賀chris:) 2023/06/12 v1.0.0
+小賀chris:) 2023/06/18 v1.0.1
