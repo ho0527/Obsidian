@@ -4,7 +4,7 @@
 1. [website](websitenote.md)
    - [html](html)
    - [css](css)
-   - [js](js)
+   - [javascript](javascript.md)
    - [php](php)
    - [regular expression](regularexpression.md)
    - [web storage](website/webstorage.md)

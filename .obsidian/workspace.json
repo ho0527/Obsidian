@@ -82,7 +82,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "js.md",
+                "file": "javascript.md",
                 "mode": "preview",
                 "source": false
               }
@@ -328,9 +328,9 @@
   },
   "active": "be4541826f976a9a",
   "lastOpenFiles": [
-    "php/functionlista-l.md",
-    "css.md",
     "todo.md",
+    "css.md",
+    "php/functionlista-l.md",
     "css/declarationlist.md",
     "js/canvas.md",
     "website/note",
@@ -343,7 +343,7 @@
     "website/webstorage.md",
     "regularexpression.md",
     "php.md",
-    "js.md",
+    "javascript.md",
     "html.md",
     "websitenote.md",
     "css/cursordef.md",
