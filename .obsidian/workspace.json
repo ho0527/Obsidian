@@ -6,7 +6,7 @@
       {
         "id": "00d6db2a61c308c9",
         "type": "tabs",
-        "dimension": 43.70199692780338,
+        "dimension": 47.26840855106889,
         "children": [
           {
             "id": "904d2c69cc525bda",
@@ -15,18 +15,6 @@
               "type": "markdown",
               "state": {
                 "file": "programming.md",
-                "mode": "preview",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "f6cccfc67852ac14",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "css.md",
                 "mode": "preview",
                 "source": false
               }
@@ -45,6 +33,18 @@
             }
           },
           {
+            "id": "352a6fd7b3e515a4",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "javascript.md",
+                "mode": "preview",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "29deee1b46b4639c",
             "type": "leaf",
             "state": {
@@ -55,26 +55,14 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "34a5bd97d5c59760",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "todo.md",
-                "mode": "source",
-                "source": false
-              }
-            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       },
       {
         "id": "ad9f2568e7be8e00",
         "type": "tabs",
-        "dimension": 56.29800307219662,
+        "dimension": 52.73159144893111,
         "children": [
           {
             "id": "86636de7b0156109",
@@ -89,24 +77,24 @@
             }
           },
           {
-            "id": "4c8abd3a20472a73",
+            "id": "ac1fd164f1388eb8",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "js/canvas.md",
+                "file": "todo.md",
                 "mode": "preview",
                 "source": false
               }
             }
           },
           {
-            "id": "352a6fd7b3e515a4",
+            "id": "ea27a9bdf8347f85",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "todo.md",
+                "file": "website/plugin/seltmake.md",
                 "mode": "preview",
                 "source": false
               }
@@ -137,7 +125,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -231,7 +219,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "css.md",
+                "file": "todo.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -247,7 +235,7 @@
       {
         "id": "76b89ead5106aa7f",
         "type": "tabs",
-        "dimension": 32.37271853986552,
+        "dimension": 27.281460134486068,
         "children": [
           {
             "id": "7928b7406f7be5e5",
@@ -255,7 +243,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "css.md",
+                "file": "todo.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -267,7 +255,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "css.md"
+                "file": "todo.md"
               }
             }
           },
@@ -292,7 +280,7 @@
       {
         "id": "d7aa03d199554215",
         "type": "tabs",
-        "dimension": 42.363112391930834,
+        "dimension": 47.45437079731028,
         "children": [
           {
             "id": "b335ba995ea3d912",
@@ -308,7 +296,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 285.5
+    "width": 324.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -326,10 +314,15 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "be4541826f976a9a",
+  "active": "ac1fd164f1388eb8",
   "lastOpenFiles": [
+    "website/plugin/seltmake.md",
     "todo.md",
     "css.md",
+    "javascript.md",
+    "website/webstorage.md",
+    "programming.md",
+    "js/ajax.md",
     "php/functionlista-l.md",
     "css/declarationlist.md",
     "js/canvas.md",
@@ -338,12 +331,9 @@
     "websitenote",
     "html/body.md",
     "Obsidian",
-    "programming.md",
     "website/note/grid.md",
-    "website/webstorage.md",
     "regularexpression.md",
     "php.md",
-    "javascript.md",
     "html.md",
     "websitenote.md",
     "css/cursordef.md",
@@ -361,9 +351,7 @@
     "php/functionlist.md",
     "php/functionlista-n.md",
     "php/functionlist copy.md",
-    "websitebasic.md",
     "websitebasic,md",
-    "css/keyword.md",
     "picture/cssexp3-1.png",
     "picture/Picture3.png",
     "picture/cssexp2-1.png",

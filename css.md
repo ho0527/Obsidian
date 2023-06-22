@@ -18,7 +18,7 @@ style 屬性(行內樣式) &gt; style標籤(嵌入樣式)  &gt; 載入 CSS 檔�
 
 
 2:ex:
-```
+```css
 body{
     color: white;
 }
@@ -44,14 +44,14 @@ body{
 5:
 指定在父標籤的屬性，有分為有繼承與無繼承性的屬性，有繼承性的例如 font- family、font-size 等等，無繼承性的例如有 display、margin、padding。
 html:
-```
+```html
 <p>
     <strong>text</strong>
 </p>
 ```
 
 css:
-```
+```css
 p{
     color: white
 }
@@ -102,7 +102,7 @@ p{
 2.	類別選擇器(class selector)
 類別選擇器是以隸屬於指定類別的 HTML 元素做為要套用樣式規則的對象，以『.』為始命名的類別，如.main、.photo、.row、.user-name
 html:
-```
+```html
 <table>
     <tr class="odd">
         <td>01</td>
@@ -124,7 +124,7 @@ html:
 ```
 
 css:
-```
+```css
 .odd{background:red}
 .even{background: lightblue;}
 ```
@@ -138,13 +138,13 @@ ID 選擇器是以符合指定id(識別字)的HTML 元素做為要套用樣式�
 範例：將兩個按鈕的 ID 屬性設為”btn1”和”btn2”，然後定義#btn1 和#btn2 兩個 ID
 選擇器，以便將按鈕的前景色彩設定為紅色和綠色。
 html:
-```
+```html
 <button id="btn1">按鈕 1</button>
 <button id="btn2">按鈕 2</button>
 ```
 
 css:
-```
+```css
 #btn1{font-size: 20px;color:red;}
 #btn2{font-size: 20px;color:green;}
 ```
