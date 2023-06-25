@@ -330,7 +330,7 @@
 | text-justify | Specifies the justification method used when text-align is "justify" | | | | |
 | text-orientation | Defines the orientation of characters in a line | | | | |
 | text-overflow | Specifies what should happen when text overflows the containing element | | | | |
-| text-shadow | Adds shadow to text | | | | |
+| text-shadow | Adds shadow to text | 文字陰影 | | | |
 | text-transform | Controls the capitalization of text | | | | |
 | text-underline-position | Specifies the position of the underline which is set using the text-decoration property | | | | |
 | top | Specifies the top position of a positioned element | 距頂部之單位長 | top: *\[size\]* | 須搭配position使用 | [定位]() |
