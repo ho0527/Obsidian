@@ -77,7 +77,7 @@
             }
           },
           {
-            "id": "ac1fd164f1388eb8",
+            "id": "783bbe8085ac6179",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -96,30 +96,6 @@
               "state": {
                 "file": "website/plugin/seltmake.md",
                 "mode": "preview",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "f8db644067fe61dd",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "css/declarationlist.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "d5c099ec82a87242",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "html/body.md",
-                "mode": "source",
                 "source": false
               }
             }
@@ -314,13 +290,18 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "ac1fd164f1388eb8",
+  "active": "783bbe8085ac6179",
   "lastOpenFiles": [
+    "javascript.md",
+    "sever/ssl.md",
+    "sever/openansever.md",
+    "todo.md",
+    "sever/openansever.ms",
+    "sever/openansever",
+    "sever",
     "variablenamingstyles.md",
     "website/plugin/seltmake.md",
-    "todo.md",
     "css.md",
-    "javascript.md",
     "website/webstorage.md",
     "programming.md",
     "js/ajax.md",
@@ -341,17 +322,12 @@
     "website/plugin",
     "website/webstorage",
     "website",
-    "python/website",
     "python/pymysql.md",
     "js/getcontext.md",
     "python.md",
-    "python",
     "php/functionlistm-z.md",
     "php/functionlistaa.md",
     "php/functionlistm-z copy.md",
-    "php/functionlist.md",
-    "php/functionlista-n.md",
-    "websitebasic,md",
     "picture/cssexp3-1.png",
     "picture/Picture3.png",
     "picture/cssexp2-1.png",
