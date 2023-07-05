@@ -42,9 +42,6 @@ ex:
 </style>
 <div class="div macosselectiondiv">
 </div>
-<script>
-    startmacossection()
-</script>
 ```
 
 #### #sort -> css&js
