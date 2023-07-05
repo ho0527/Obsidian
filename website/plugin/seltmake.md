@@ -1,7 +1,6 @@
 # 網頁自創外掛
 
 ## 列表
-
 - html
 - css
   - #macosselection
@@ -12,6 +11,9 @@
 - php
 
 ## 外掛簡介
+
+#### #chrisplugin -> css&js Bata 1.0.3
+[介紹位於此](chrisplugin.md)
 
 ### js
 
@@ -74,6 +76,5 @@ ex:
 ```
 ##### 下載地址及參考示例
 [sortdiv download](http://hiiamchris.hopto.org/website/template/sort/)
-
 
 ## 註解及參見

@@ -189,7 +189,7 @@ array[].forEach(function(event){
 *\[name\]*: name
 *inf.*: infinite
 *arb.*: arbitrarily(隨意值)
-**bold**: 預設值
+(\*)?**bold**: 預設值
 *itiaic*: 可選值
 ?: 不必要(可選)
 
