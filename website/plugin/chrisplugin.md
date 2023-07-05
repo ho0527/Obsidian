@@ -44,15 +44,15 @@ ex:
 </div>
 ```
 
-#### #sort -> css&js
+#### #divsort -> css&js
 ##### 簡介
 物件排序
 
 ##### 使用方式
-### 語法: sort("*class no selector*","*selector*")
+### 語法: divsort("*class no selector*","*selector*")
 在要用的div上加上class 任意
 在要排序(被拖)的div上加上selector 任意
-之後再js中傳入兩值  sort(在要用的div(不加selector),在要排序的div(要加selector))
+之後再js中傳入兩值  divsort(在要用的div(不加selector),在要排序的div(要加selector))
 
 ex:
 ```html
@@ -77,7 +77,7 @@ ex:
     </div>
 </div>
 <script>
-    sort("div",".sort")
+    divsort("div",".sort")
 </script>
 ```
 
@@ -85,6 +85,7 @@ ex:
 ##### 列表
 | 元件 | 功用 | 用法 | 可用版本 | 註解 |
 | ----- | ----- | ----- | ----- | ----- |
+| docget | document.getElement... | ("*id|animation|class|name|tag|tagns|qtor|all*",*\[selector\]*) | Bata 1.0.0~ | |
 | docgetid | document.getElementById | (*\[selector\]*) | Bata 1.0.0~ | |
 | docgetall | document.querySelectorAll | (*\[selector\]*) | Bata 1.0.0~ | |
 | conlog | consloe.log 值出來 | (*\[any\]*) | Bata 1.0.0~ | |
@@ -92,6 +93,7 @@ ex:
 | blank | 看值是否不為空 | (*\[var\]*) | Bata 1.0.0~ | |
 | weblsset | \[localStorage\](../webstorage.md).setItem | (*\[string\]*,*\[any\]*) | Bata 1.0.0~ | |
 | weblsget | \[localStorage\](../webstorage.md).getItem | (*\[string\]*) | Bata 1.0.0~ | |
+| doccreate | document.createElement | (*\[element\]*) | Bata 1.0.4~ | |
 
 ## 註解及參見
 
