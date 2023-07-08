@@ -6,7 +6,7 @@
       {
         "id": "00d6db2a61c308c9",
         "type": "tabs",
-        "dimension": 55.819477434679335,
+        "dimension": 54.156769596199524,
         "children": [
           {
             "id": "904d2c69cc525bda",
@@ -45,6 +45,18 @@
             }
           },
           {
+            "id": "41b5fbacc8954a0c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "git/commit.md",
+                "mode": "preview",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "352a6fd7b3e515a4",
             "type": "leaf",
             "state": {
@@ -69,12 +81,12 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       },
       {
         "id": "ad9f2568e7be8e00",
         "type": "tabs",
-        "dimension": 44.180522565320665,
+        "dimension": 45.843230403800476,
         "children": [
           {
             "id": "86636de7b0156109",
@@ -192,7 +204,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#TYPE類型",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -207,7 +219,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "website/plugin/chrisplugin.md",
+                "file": "git/commit.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -231,7 +243,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "website/plugin/chrisplugin.md",
+                "file": "git/commit.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -243,7 +255,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "website/plugin/chrisplugin.md"
+                "file": "git/commit.md"
               }
             }
           },
@@ -302,11 +314,15 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "46dfb9b813ec0206",
+  "active": "41b5fbacc8954a0c",
   "lastOpenFiles": [
     "todo.md",
-    "css.md",
+    "git/commit.md",
+    "programming.md",
     "website/plugin/chrisplugin.md",
+    "git/comment.md",
+    "git",
+    "css.md",
     "python/plugin/django.md",
     "python/plugin",
     "javascript.md",
@@ -318,7 +334,6 @@
     "variablenamingstyles.md",
     "website/plugin/seltmake.md",
     "website/webstorage.md",
-    "programming.md",
     "js/ajax.md",
     "php/functionlista-l.md",
     "css/declarationlist.md",
@@ -335,11 +350,8 @@
     "websitenote.md",
     "css/cursordef.md",
     "website/plugin",
-    "website/webstorage",
     "python/pymysql.md",
     "js/getcontext.md",
-    "python.md",
-    "php/functionlistm-z.md",
     "picture/cssexp3-1.png",
     "picture/Picture3.png",
     "picture/cssexp2-1.png",

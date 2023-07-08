@@ -85,7 +85,7 @@ ex:
 ##### 列表
 | 元件 | 功用 | 用法 | 可用版本 | 註解 |
 | ----- | ----- | ----- | ----- | ----- |
-| docget | document.getElement... | ("*id|animation|class|name|tag|tagns|qtor|all*",*\[selector\]*) | Bata 1.0.0~ | |
+| docget | document.getElement... | ("*id \| animation \| class \| name \| tag \| tagns \| qtor \| all*",*\[selector\]*) | Bata 1.0.0~ | |
 | docgetid | document.getElementById | (*\[selector\]*) | Bata 1.0.0~ | |
 | docgetall | document.querySelectorAll | (*\[selector\]*) | Bata 1.0.0~ | |
 | conlog | consloe.log 值出來 | (*\[any\]*) | Bata 1.0.0~ | |
