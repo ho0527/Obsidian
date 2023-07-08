@@ -1,354 +1,234 @@
+# js event list
 
-- abort
-- ended
-- addtrack
-- change
-- removetrack
-- messageerror
-- message
-- messageerror
-- message
-- animationcancel
-- animationend
-- animationiteration
-- animationstart
-- copy
-- cut
-- DOMContentLoaded
-- dragend
-- dragenter
-- dragleave
-- dragover
-- dragstart
-- drag
-- drop
-- fullscreenchange
-- fullscreenerror
-- gotpointercapture
-- keydown
-- keypress
-- keyup
-- lostpointercapture
-- paste
-- pointercancel
-- pointerdown
-- pointerenter
-- pointerleave
-- pointerlockchange
-- pointerlockerror
-- pointermove
-- pointerout
-- pointerover
-- pointerup
-- readystatechange
-- scroll
-- selectionchange
-- touchcancel
-- touchend
-- touchmove
-- touchstart
-- transitioncancel
-- transitionend
-- transitionrun
-- transitionstart
-- visibilitychange
-- wheel
-- animationcancel
-- animationend
-- animationiteration
-- animationstart
-- afterscriptexecute
-- auxclick
-- beforescriptexecute
-- blur
-- click
-- compositionend
-- compositionstart
-- compositionupdate
-- contextmenu
-- copy
-- cut
-- dblclick
-- DOMActivate
-- DOMMouseScroll
-- error
-- focusin
-- focusout
-- focus
-- fullscreenchange
-- fullscreenerror
-- gesturechange
-- gestureend
-- gesturestart
-- gotpointercapture
-- keydown
-- keypress
-- keyup
-- lostpointercapture
-- mousedown
-- mouseenter
-- mouseleave
-- mousemove
-- mouseout
-- mouseover
-- mouseup
-- mousewheel
-- paste
-- pointercancel
-- pointerdown
-- pointerenter
-- pointerleave
-- pointermove
-- pointerout
-- pointerover
-- pointerup
-- scroll
-- select
-- touchcancel
-- touchend
-- touchmove
-- touchstart
-- transitioncancel
-- transitionend
-- transitionrun
-- transitionstart
-- webkitmouseforcechanged
-- webkitmouseforcedown
-- webkitmouseforceup
-- webkitmouseforcewillbegin
-- wheel
-- error
-- message
-- open
-- abort
-- error
-- loadend
-- loadstart
-- load
-- progress
-- webglcontextcreationerror
-- webglcontextlost
-- webglcontextrestored
-- toggle
-- cancel
-- close
-- beforeinput
-- change
-- input
-- formdata
-- reset
-- submit
-- invalid
-- search
-- abort
-- canplaythrough
-- canplay
-- durationchange
-- emptied
-- ended
-- error
-- loadeddata
-- loadedmetadata
-- loadstart
-- pause
-- playing
-- play
-- progress
-- ratechange
-- seeked
-- seeking
-- stalled
-- suspend
-- timeupdate
-- volumechange
-- waiting
-- slotchange
-- cuechange
-- enterpictureinpicture
-- leavepictureinpicture
-- IDBDatabase
-- abort
-- close
-- error
-- versionchange
-- blocked
-- upgradeneeded
-- IDBRequest
-- error
-- success
-- IDBTransaction
-- abort
-- complete
-- error
-- devicechange
-- error
-- MediaStream
-- addtrack
-- removetrack
-- ended
-- mute
-- unmute
-- change
-- messageerror
-- message
-- complete
-- merchantvalidation
-- paymentmethodchange
-- shippingaddresschange
-- shippingoptionchange
-- payerdetailchange
-- resourcetimingbufferfull
-- resize
-- bufferedamountlow
-- close
-- closing
-- error
-- message
-- open
-- error
-- tonechange
-- gatheringstatechange
-- selectedcandidatepairchange
-- statechange
-- addstream
-- connectionstatechange
-- datachannel
-- icecandidateerror
-- icecandidate
-- iceconnectionstatechange
-- icegatheringstatechange
-- negotiationneeded
-- removestream
-- signalingstatechange
-- track
-- ScriptProcessorNode
-- audioprocess
-- ServiceWorkerContainer
-- message
-- activate
-- contentdelete
-- install
-- message
-- notificationclick
-- pushsubscriptionchange
-- push
-- connect
-- SpeechRecognition
-- audioend
-- audiostart
-- end
-- error
-- nomatch
-- result
-- soundend
-- soundstart
-- speechend
-- speechstart
-- start
-- voiceschanged
-- boundary
-- end
-- error
-- mark
-- pause
-- resume
-- start
-- beginEvent
-- endEvent
-- repeatEvent
-- SVGElement
-- abort
-- error
-- load
-- resize
-- scroll
-- unload
-- copy
-- cut
-- paste
-- cuechange
-- TextTrackList
-- addtrack
-- change
-- removeTrack
-- VideoTrackList
-- addtrack
-- change
-- removetrack
-- resize
-- scroll
-- WebSocket
-- close
-- error
-- message
-- open
-- afterprint
-- animationcancel
-- animationend
-- animationiteration
-- animationstart
-- appinstalled
-- beforeprint
-- beforeunload
-- blur
-- copy
-- cut
-- devicemotion
-- deviceorientation
-- DOMContentLoaded
-- error
-- focus
-- gamepadconnected
-- gamepaddisconnected
-- hashchange
-- languagechange
-- load
-- messageerror
-- message
-- offline
-- online
-- orientationchange
-- pagehide
-- pageshow
-- paste
-- popstate
-- rejectionhandled
-- resize
-- storage
-- transitioncancel
-- transitionend
-- transitionrun
-- transitionstart
-- unhandledrejection
-- unload
-- vrdisplayactivate
-- vrdisplayblur
-- vrdisplayconnect
-- vrdisplaydeactivate
-- vrdisplaydisconnect
-- vrdisplayfocus
-- vrdisplaypointerrestricted
-- vrdisplaypointerunrestricted
-- vrdisplaypresentchange
-- messageerror
-- message
-- WorkerGlobalScope
-- languagechange
-- abort
-- error
-- loadend
-- loadstart
-- load
-- progress
-- timeout
-- reset
-- end
-- inputsourceschange
-- selectend
-- selectstart
-- select
-- squeezeend
-- squeezestart
-- squeeze
-- visibilitychange
-- devicechange
+## 列表
+| 名稱 | 用處 | 註解 |
+| ----- | ----- | ----- |
+| abort | | |
+| activate | | |
+| addstream | | |
+| addtrack | | |
+| afterprint | | |
+| afterscriptexecute | | |
+| animationcancel | | |
+| animationend | | |
+| animationiteration | | |
+| animationstart | | |
+| appinstalled | | |
+| audioend | | |
+| audioprocess | | |
+| audiostart | | |
+| auxclick | | |
+| beforeinput | | |
+| beforeprint | | |
+| beforescriptexecute | | |
+| beforeunload | | |
+| beginEvent | | |
+| blocked | | |
+| blur | | |
+| boundary | | |
+| bufferedamountlow | | |
+| cancel | | |
+| canplay | | |
+| canplaythrough | | |
+| change | | |
+| click | | |
+| close | | |
+| closing | | |
+| complete | | |
+| compositionend | | |
+| compositionstart | | |
+| compositionupdate | | |
+| connect | | |
+| connectionstatechange | | |
+| contentdelete | | |
+| contextmenu | | |
+| copy | | |
+| cuechange | | |
+| cut | | |
+| datachannel | | |
+| dblclick | | |
+| devicechange | | |
+| devicemotion | | |
+| deviceorientation | | |
+| DOMActivate | | |
+| DOMContentLoaded | | |
+| DOMMouseScroll | | |
+| drag | 拖放 | |
+| dragend | 拖放結束 | |
+| dragenter | 拖放進入 | |
+| dragleave | 拖放離開 | |
+| dragover | 拖放一過 | |
+| dragstart | 拖放開始 | |
+| drop | 拖放結束 | |
+| durationchange | | |
+| emptied | | |
+| end | | |
+| ended | | |
+| endEvent | | |
+| enterpictureinpicture | | |
+| error | | |
+| focus | | |
+| focusin | | |
+| focusout | | |
+| formdata | | |
+| fullscreenchange | 全螢幕變化 | |
+| fullscreenerror | | |
+| gamepadconnected | | |
+| gamepaddisconnected | | |
+| gatheringstatechange | | |
+| gesturechange | | |
+| gestureend | | |
+| gesturestart | | |
+| gotpointercapture | | |
+| hashchange | | |
+| icecandidate | | |
+| icecandidateerror | | |
+| iceconnectionstatechange | | |
+| icegatheringstatechange | | |
+| IDBDatabase | | |
+| IDBRequest | | |
+| IDBTransaction | | |
+| input | | |
+| inputsourceschange | | |
+| install | | |
+| invalid | | |
+| keydown | 按鍵按下 | |
+| keypress | | |
+| keyup | 按鍵放開 | |
+| languagechange | | |
+| leavepictureinpicture | | |
+| load | | |
+| loadeddata | | |
+| loadedmetadata | | |
+| loadend | | |
+| loadstart | | |
+| lostpointercapture | | |
+| mark | | |
+| MediaStream | | |
+| merchantvalidation | | |
+| message | | |
+| messageerror | | |
+| mousedown | | |
+| mouseenter | | |
+| mouseleave | | |
+| mousemove | | |
+| mouseout | | |
+| mouseover | | |
+| mouseup | | |
+| mousewheel | | |
+| mute | | |
+| negotiationneeded | | |
+| nomatch | | |
+| notificationclick | | |
+| offline | | |
+| online | | |
+| open | | |
+| orientationchange | | |
+| pagehide | | |
+| pageshow | | |
+| paste | | |
+| pause | | |
+| payerdetailchange | | |
+| paymentmethodchange | | |
+| play | | |
+| playing | | |
+| pointercancel | | |
+| pointerdown | 滑鼠(指標)按下 | |
+| pointerenter | 滑鼠(指標)進入 | |
+| pointerleave | 滑鼠(指標)離開 | |
+| pointerlockchange | | |
+| pointerlockerror | | |
+| pointermove | 滑鼠(指標)移動 | |
+| pointerout | | |
+| pointerover | | |
+| pointerup | 滑鼠(指標)放開 | |
+| popstate | | |
+| progress | | |
+| push | | |
+| pushsubscriptionchange | | |
+| ratechange | | |
+| readystatechange | | |
+| rejectionhandled | | |
+| removestream | | |
+| removetrack | | |
+| removeTrack | | |
+| repeatEvent | | |
+| reset | | |
+| resize | | |
+| resourcetimingbufferfull | | |
+| result | | |
+| resume | | |
+| ScriptProcessorNode | | |
+| scroll | | |
+| search | | |
+| seeked | | |
+| seeking | | |
+| select | | |
+| selectedcandidatepairchange | | |
+| selectend | | |
+| selectionchange | | |
+| selectstart | | |
+| ServiceWorkerContainer | | |
+| shippingaddresschange | | |
+| shippingoptionchange | | |
+| signalingstatechange | | |
+| slotchange | | |
+| soundend | | |
+| soundstart | | |
+| speechend | | |
+| SpeechRecognition | | |
+| speechstart | | |
+| squeeze | | |
+| squeezeend | | |
+| squeezestart | | |
+| stalled | | |
+| start | | |
+| statechange | | |
+| storage | | |
+| submit | | |
+| success | | |
+| suspend | | |
+| SVGElement | | |
+| TextTrackList | | |
+| timeout | | |
+| timeupdate | | |
+| toggle | | |
+| tonechange | | |
+| touchcancel | | |
+| touchend | | |
+| touchmove | | |
+| touchstart | | |
+| track | | |
+| transitioncancel | | |
+| transitionend | | |
+| transitionrun | | |
+| transitionstart | | |
+| unhandledrejection | | |
+| unload | | |
+| unmute | | |
+| upgradeneeded | | |
+| versionchange | | |
+| VideoTrackList | | |
+| visibilitychange | | |
+| voiceschanged | | |
+| volumechange | | |
+| vrdisplayactivate | | |
+| vrdisplayblur | | |
+| vrdisplayconnect | | |
+| vrdisplaydeactivate | | |
+| vrdisplaydisconnect | | |
+| vrdisplayfocus | | |
+| vrdisplaypointerrestricted | | |
+| vrdisplaypointerunrestricted | | |
+| vrdisplaypresentchange | | |
+| waiting | | |
+| webglcontextcreationerror | | |
+| webglcontextlost | | |
+| webglcontextrestored | | |
+| webkitmouseforcechanged | | |
+| webkitmouseforcedown | | |
+| webkitmouseforceup | | |
+| webkitmouseforcewillbegin | | |
+| WebSocket | | |
+| wheel | | |
+| WorkerGlobalScope | | |
