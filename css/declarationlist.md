@@ -213,7 +213,7 @@
 | mask | Hides parts of an element by masking or clipping an image at specific places | | | | |
 | mask-clip | Specifies the mask area | | | | |
 | mask-composite | Represents a compositing operation used on the current mask layer with the mask layers below it | | | | |
-| mask-image | Specifies an image to be used as a mask layer for an element | | | | |
+| mask-image | Specifies an image to be used as a mask layer for an element |1 | | | |
 | mask-mode | Specifies whether the mask layer image is treated as a luminance mask or as an alpha mask | | | | |
 | mask-origin | Specifies the origin position (the mask position area) of a mask layer image | | | | |
 | mask-position | Sets the starting position of a mask layer image (relative to the mask position area) | | | | |
