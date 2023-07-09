@@ -187,6 +187,7 @@ array[].forEach(function(event){
 *\[context\]*: context
 *\[deg\]*: degree
 *\[name\]*: name
+*\[method\]*: method
 *inf.*: infinite
 *arb.*: arbitrarily(隨意值)
 (\*)?**bold**: 預設值

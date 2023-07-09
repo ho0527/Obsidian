@@ -94,6 +94,7 @@ ex:
 | weblsset | \[localStorage\](../webstorage.md).setItem | (*\[string\]*,*\[any\]*) | Bata 1.0.0~ | |
 | weblsget | \[localStorage\](../webstorage.md).getItem | (*\[string\]*) | Bata 1.0.0~ | |
 | doccreate | document.createElement | (*\[element\]*) | Bata 1.0.4~ | |
+| newajax | 快捷創建ajax | (*\[method\]*,*\[url\]*,*\[string\]*?=null) | Bata 1.0.5~ | |
 
 ## 註解及參見
 
@@ -115,6 +116,7 @@ ex:
 *\[context\]*: context
 *\[deg\]*: degree
 *\[name\]*: name
+*\[method\]*: method
 *inf.*: infinite
 *arb.*: arbitrarily(隨意值)
 (\*)?**bold**: 預設值
@@ -133,4 +135,4 @@ ex:
 
 ##### 目前版本:Bata 1.0.3
 
-小賀chris:) 2023/07/05 v1.0.1
+小賀chris:) 2023/07/05 v1.0.2
