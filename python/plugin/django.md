@@ -47,7 +47,7 @@ pip install django
 
 6. 開啟sever
 ```cmd
-python manage.py startsever
+python manage.py runserver
 ```
 
 7. 如果您想要退出虚拟环境，可以在命令行中运行以下命令：
