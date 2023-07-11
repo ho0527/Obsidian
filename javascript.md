@@ -1,29 +1,152 @@
-# javascript語言介紹(.js)
+# javascript語言基本(.js)
 
-## Chr1-介紹
+## 架構
+- #介紹
+- #語彙結構
+- #註解方式
+- #型別
+- #變數
+  - #命名規定
+- #運算式及運算元
+  - #運算式
+  - #運算元
+- #述句
+- #迴圈
+  - #forloop
+  - #while
+  - #do-while
+  - #forEach
+  - #while及do-while之差異
+- #陣列
+- #物件
+- #函式
+- #例外處理
+- #註解及參見
+  - #關鍵字 #保留字 一覽
 
-## Chr2-語彙結構
+## Chr1 #介紹
+js 可以用來做很多事例如:
+1. 存取網頁內容(access content)
+2. 調整網頁內容(modify content)
+3. 計畫運作規則(porgram rules)
+4. 回應網頁事件(react to events)
+主要就是為了增加網頁的互動性而出現的
 
-## Chr3-註解方式
-// 單行註解
+## Chr2 #語彙結構
+
+## Chr3 #註解方式
+```js
+// 這是一個單行註解
+
 /*
-多行註解
+這是一個多行註解
 */
 
-## Chr4-型別
+/*
+*甚至有人喜歡
+*這
+*樣
+*打
+*!
+*/
 
-## Chr4-變數
-### 4.1-命名規定
-須以 \$ 或 \_ 或 英文字母a-z(大小寫皆可)開始，之後可以使用數字在中間，但不得使用 #關鍵字(keyword) 和 #保留字(reserved word)
+```
 
+## Chr4 #型別
+js中的型別共計有7種分別為**boolean**,**null**,**undefined**,**number**,**bigint**,**string**,**symbol**,**object**
+### boolean
+布林值: 只有兩個型態**true**或**false**
 
-## Chr5-運算式及運算元
+### null
+空值: 通常是指一個**不存在**的或無效的物件或地址(反正就是沒有東西)
 
-## Chr6-述句
+### undefined
+未定義: 是自動分配給剛剛聲明的變量或**沒有實際參數**的形式參數的原始值。
 
-## Chr7-迴圈
+### number
+數字: 就數字XD 分別有integer,float,double,bignum
+例如:
+123456
+4564151.12312
+4546513123.4566
+13132.123123132132
+皆為數字
+
+### bigint
+大整數: 是一種數字數據類型，可以表示任意精度格式的**整數**
+
+### string
+字串: 就文本(大小引號模糊)
+例如:
+"132156456"
+"abcdefg"
+"小賀大帥哥"
+"123.123"
+皆為字串
+
+### symbol
+象徵(ECMAScript 6 new): 是一個內置對象，其構造函數返回一個symbol 原語（也稱為符號值或只是符號），保證是唯一的。符號通常用於向對象添加唯一的屬性鍵，這些屬性鍵不會與任何其他代碼可能添加到該對象的鍵發生衝突，並且對於其他代碼通常用於訪問該對象的任何機制都是隱藏的。這實現了一種弱封裝形式，或者一種弱形式的信息隱藏。
+
+### object
+物件: 是一個包含資料與處理資料指令的資料結構(array也是物件)
+
+## Chr5 #變數
+程式碼如果需要**暫時**儲存資料就會放在**變數**中
+### 5-1 #命名規定
+1. js的最一開始的變數會需要用let或const或var開始
+2. 不能被重複宣告
+3. 常數(const)不能被更改
+4. 須以 \$ 或 \_ 或 英文字母a-z(大小寫皆可)開始，之後可以使用數字在中間，但不得使用 #關鍵字(keyword) 和 #保留字(reserved word)
+
+例如以下都是合法的變數
+```js
+let abc=123
+let $345678
+var _adv
+// 上面是一般的變數
+const aaa // 這是一個常數(不能被更改)
+```
+
+建議要先使用let const var
+```js
+abc=456 // 正常輸出
+```
+
+變數不能被**重複宣告**
+```js
+let abc=123
+let abc=456 // X: Uncaught SyntaxError: Identifier 'abc' has already been declared
+```
+
+如果要交換就直接換即可
+```js
+let abc=123
+abc=456
+```
+
+常數不能被更改
+```js
+const abc=123
+abc=456 // X: Uncaught TypeError: Assignment to constant variable. at <anonymous>:1:4
+```
+
+變數須以 \$ 或 \_ 或 英文字母a-z(大小寫皆可)開始
+```js
+let 1aa // X: Uncaught SyntaxError: Invalid or unexpected token
+```
+
+## Chr6 #運算式及運算元
+### #運算式
+運算式是一個
+
+### #運算元
+運算式是一個
+
+## Chr7 #述句
+
+## Chr8 #迴圈
 在本章收錄了js的 #forloop #while #do-while #forEach 迴圈
-#### 7.1 #forloop
+#### 8-1 #forloop
 
 ##### 語法架構
 ```
@@ -32,7 +155,7 @@ for(let i=0;i<count;i=i+1){
 }
 ```
 
-#### 7.2 #while
+#### 8-2 #while
 
 ##### 語法架構
 ```
@@ -43,7 +166,7 @@ while(i<count){
 }
 ```
 
-#### 7.3 #do-while
+#### 8-3 #do-while
 
 ##### 語法架構
 ```
@@ -54,29 +177,29 @@ do{
 }while(i<count)
 ```
 
-#### 7.4 #forEach
+#### 8-4 #forEach
 
 ##### 語法架構
-```
+```js
 array[].forEach(function(event){
     // function...
-}
+})
 ```
 
-### 7.5 while 及 do-while 之差異
+### 8-5 #while及do-while之差異
 
 
-## 陣列
+## Chr9 #陣列
 
-## 物件
+## Chr10 #物件
 
-## 函式
+## Chr11 #函式
 
-## 例外處理
+## Chr12 #例外處理
 
 網頁動畫及互動效果
 
-## 註解及參見
+## #註解及參見
 - A
     - [ajax](ajax.md)
 - B
@@ -210,4 +333,4 @@ array[].forEach(function(event){
 *inf.*: infinite
 <!-- *inf.*: infinite -->
 
-小賀chris:) 2023/06/22 v1.0.1
+小賀chris:) 2023/06/22 v1.1.0
