@@ -1,4 +1,4 @@
-# php function list
+# php function list m~z
 
 | declaration | descriptionEN | descriptionCH | how to use | ps |
 | ----- | ----- | ----- | ----- | ----- |

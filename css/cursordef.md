@@ -39,3 +39,5 @@
 
 ## 註解及參見
 1. [mozilla](https://developer.mozilla.org/en-US/docs/Web/CSS/cursor)
+
+[簡寫一覽](../abbreviationslist.md)

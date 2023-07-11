@@ -95,3 +95,5 @@ See also: #456, #789
 [How to Write a Git Commit Message](https://cbea.ms/git-commit/)
 [Angular Commit Messages Guideline](https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#commit)
 [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
+
+[簡寫一覽](../abbreviationslist.md)

@@ -73,3 +73,5 @@ query.fetchmany(size=X) # 指定取回查詢筆數 (X為一數字)
 ```
 
 ## 註解及參見
+
+[簡寫一覽](../../abbreviationslist.md)

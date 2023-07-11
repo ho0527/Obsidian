@@ -15,4 +15,4 @@
 
 
 ## 註解及參見
-1. [connect to mysql](python/pymysql.md)
+1. [connect to mysql](pymysql.md)

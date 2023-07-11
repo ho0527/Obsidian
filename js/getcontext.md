@@ -18,3 +18,5 @@ document.querySelector([tag]).addEventListener("[event]",function(){})
 ## 註解及參見
 
 [所有事件列表](allevent.md)
+
+[簡寫一覽](../abbreviationslist.md)

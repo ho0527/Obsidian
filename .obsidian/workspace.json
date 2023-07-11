@@ -326,8 +326,9 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "dd96cbd7c3eee3f5",
+  "active": "3929df2516f4c227",
   "lastOpenFiles": [
+    "abbreviationslist.md",
     "js/canvas.md",
     "javascript.md",
     "git/commit.md",
@@ -362,8 +363,7 @@
     "websitenote.md",
     "css/cursordef.md",
     "website/plugin",
-    "python/pymysql.md",
-    "js/getcontext.md",
+    "python/plugin/pymysql.md",
     "picture/cssexp3-1.png",
     "picture/Picture3.png",
     "picture/cssexp2-1.png",

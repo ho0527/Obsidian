@@ -19,3 +19,5 @@
 
 
 ## 註解及參見
+
+[簡寫一覽](../abbreviationslist.md)

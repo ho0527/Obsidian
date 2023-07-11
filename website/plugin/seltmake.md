@@ -78,3 +78,5 @@ ex:
 [sortdiv download](http://hiiamchris.hopto.org/website/template/sort/)
 
 ## 註解及參見
+
+[簡寫一覽](../../abbreviationslist.md)

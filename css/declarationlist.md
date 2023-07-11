@@ -431,12 +431,9 @@
 
 ## 註解及參見
 因通用關鍵字*\[global values\]*(inherit \| initial \| revert \| revert-layer \| unset)幾乎每一個韓式皆可使用因以本表用法不將通用關鍵字寫入
-粗體加前墜*為預設元素
-@表依瀏覽器不同決定
-粗體為不限位置
-?表不必要
 
-簡寫一覽:
+[簡寫一覽](../abbreviationslist.md)
+
 u: up
 d: down
 l: left
@@ -448,16 +445,6 @@ font-size *\[size\]*: px,pt,pc,cm,mm,in,%,em,ex,rem,vw,vh,vmin,vmax
 top \| bottom \| left \| right *\[size\]*: px,pt,%,em,ex,vw,vh
  *\[size\]*: px,pt,%,em,ex,vw,vh
  *\[size\]*: px,pt,%,em,ex,vw,vh
-*\[time\]*: *\[number\]*s,ms
-*\[number\]*: all number
-*\[number-nn\]*: all number no negative
-*\[url\]*: url
-*\[name\]*: name
-*\[context\]*: context
-*\[deg\]*: degree
-*\[inf.\]*: infinite
-*\[name\]*: name
-
 
 
 1. [css基本](../css.md)
