@@ -231,7 +231,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "js/canvas.md",
+                "file": "javascript.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -255,7 +255,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "js/canvas.md",
+                "file": "javascript.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -267,7 +267,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "js/canvas.md"
+                "file": "javascript.md"
               }
             }
           },
@@ -326,8 +326,9 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "d8271c220929e223",
+  "active": "dd96cbd7c3eee3f5",
   "lastOpenFiles": [
+    "js/canvas.md",
     "javascript.md",
     "git/commit.md",
     "todo.md",
@@ -349,7 +350,6 @@
     "js/ajax.md",
     "php/functionlista-l.md",
     "css/declarationlist.md",
-    "js/canvas.md",
     "website/note",
     "note",
     "websitenote",

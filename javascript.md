@@ -17,7 +17,6 @@
   - #do-while
   - #forEach
   - #while及do-while之差異
-- #陣列
 - #物件
 - #函式
 - #例外處理
@@ -189,13 +188,11 @@ array[].forEach(function(event){
 ### 8-5 #while及do-while之差異
 
 
-## Chr9 #陣列
+## Chr9 #物件
 
-## Chr10 #物件
+## Chr10 #函式
 
-## Chr11 #函式
-
-## Chr12 #例外處理
+## Chr11 #例外處理
 
 網頁動畫及互動效果
 
