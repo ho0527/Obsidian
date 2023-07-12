@@ -22,6 +22,7 @@
 - #例外處理
   - #例外介紹
   - #處理例外
+- #表單
 - #註解及參見
   - #關鍵字 #保留字 一覽
 
@@ -31,9 +32,12 @@ js 可以用來做很多事例如:
 2. 調整網頁內容(modify content)
 3. 計畫運作規則(porgram rules)
 4. 回應網頁事件(react to events)
-主要就是為了增加網頁的互動性而出現的
+主要就是為了增加網頁的互動性而出現的程式語言
 
 ## Chr2 #語彙結構
+1. 大小寫敏感
+    - 但true false null undefined 不敏感
+2. 結尾分號模糊
 
 ## Chr3 #註解方式
 ```js
@@ -55,6 +59,7 @@ js 可以用來做很多事例如:
 
 ## Chr4 #型別
 js中的型別共計有7種分別為**boolean**,**null**,**undefined**,**number**,**bigint**,**string**,**symbol**,**object**
+
 ### boolean
 布林值: 只有兩個型態**true**或**false**
 
@@ -252,6 +257,8 @@ decodeURIComponent("%");   // X: URIError: URI malformed
 此例外並非正式例外是數學在運算時出現錯誤會拋出的值
 
 ### #處理例外
+
+## Chr12 #表單
 
 ## #註解及參見
 - A
