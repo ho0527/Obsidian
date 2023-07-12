@@ -10,12 +10,17 @@
     - .macossectiondivy
   - #sort(Bata 1.0.0)
     - divsortdragging
+  - #lightbox(Bata 1.0.6)
+    - lightboxmask
+    - lightboxmain
 - js
   - #macosselection(Bata 1.0.0)
     - startmacossection()
   - #sort(Bata 1.0.0)
     - divsort()
-  - #元件縮寫(Bata 1.0.0~Bata 1.0.3)
+  - #lightbox(Bata 1.0.6)
+    - lightbox()
+  - #元件縮寫(Bata 1.0.0~Bata 1.0.5)
 - php
 
 ## 外掛簡介
@@ -81,6 +86,66 @@ ex:
 </script>
 ```
 
+
+#### #lightbox -> css&js
+##### 簡介
+燈箱效果
+
+##### 使用方式
+### 語法: lightbox(*\[element\]*,*\[element\]*,*\[string\]*,*\[boolean\]*?=true)
+被點的按鈕元素加上id
+燈箱id
+燈箱要顯示的內文
+是否使用esc關閉燈箱(預設為真)
+
+**使用macosselection可以獲得更好的效果**
+
+如果要換樣式此為lightbox樣式表看要怎麼改刪都可以
+```css
+.lightboxmask{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    background: rgb(26, 34, 51, 0.8);
+    z-index: 999;
+}
+
+.lightboxmain{
+    border: 1px white solid;
+    background: rgb(35, 35, 35);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+    font-weight: bold;
+    padding: 40px 20px;
+    border-radius: 5px;
+    z-index: 1000;
+}
+```
+
+ex:
+```html
+<input type="button" class="navigationbarbutton" id="newform" value="新增問卷">
+<div id="lightbox"></div>
+<script>
+    let html=`
+        <form>
+            問卷名稱: <input type="text" class="input" name="title" placeholder="問卷名稱"><br><br>
+            問卷題數: <input type="text" class="input" name="count" placeholder="問卷題數"><br><br>
+            問卷分頁題數: <input type="text" class="inputshort" name="pagelen" placeholder="分頁題數">
+            <input type="button" class="button" onclick="location.reload()" value="取消">
+            <input type="submit" class="button" name="submit" value="確定">
+        </form>
+    `
+
+    lightbox("newform","lightbox",html)
+</script>
+```
+
 #### #元件縮寫 -> js
 ##### 列表
 | 元件 | 功用 | 用法 | 可用版本 | 註解 |
@@ -100,6 +165,6 @@ ex:
 
 [簡寫一覽](../../abbreviationslist.md)
 
-##### 目前版本:Bata 1.0.3
+##### 目前版本:Bata 1.0.6
 
-小賀chris:) 2023/07/05 v1.0.2
+小賀chris:) 2023/07/05 v1.0.3
