@@ -36,7 +36,7 @@ FOOTER
 | docs | 更新文件，如 README.md | X |
 | style | 程式碼格式調整(formatting)、缺少分號(missing semi colons)等 | X |
 | refactor | 重構針對已上線的功能程式碼調整與優化，且不改變記有邏輯 | O |
-| Test | 測試新增測試、重構測試等 | X |
+| test | 測試新增測試、重構測試等 | X |
 | chore | 更新專案建置設定、更新版本號等瑣事 | X |
 | revert | 撤銷之前的commit revert: type(scope): subject (回覆版本：xxxx) | O |
 | copy | 複製檔案 | X |

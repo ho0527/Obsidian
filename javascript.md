@@ -349,4 +349,4 @@ decodeURIComponent("%");   // X: URIError: URI malformed
 
 [簡寫一覽](abbreviationslist.md)
 
-小賀chris:) 2023/06/22 v1.1.0
+小賀chris:) 2023/06/22 v1.1.1
