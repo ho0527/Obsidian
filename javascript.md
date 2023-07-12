@@ -25,7 +25,7 @@
   - #處理例外
 - #表單
 - #註解及參見
-  - #關鍵字 #保留字 一覽
+  - #關鍵保留字 一覽
 
 ## Chr1 #介紹
 js 可以用來做很多事例如:
@@ -103,7 +103,7 @@ js中的型別共計有7種分別為**boolean**,**null**,**undefined**,**number*
 1. js的最一開始的變數會需要用let或const或var開始
 2. 不能被重複宣告
 3. 常數(const)不能被更改
-4. 須以 \$ 或 \_ 或 英文字母a-z(大小寫皆可)開始，之後可以使用數字在中間，但不得使用 #關鍵字(keyword) 和 #保留字(reserved word)
+4. 須以 \$ 或 \_ 或 英文字母a-z(大小寫皆可)開始，之後可以使用數字在中間，但不得使用 #關鍵保留字
 
 例如以下都是合法的變數
 ```js
@@ -215,6 +215,10 @@ console.log(array2) // => ["1","2","3"]
 // 如果要拿到陣列的第一個值要這樣寫
 consloe.log(array1[0]) // => "1"
 consloe.log(array2.item(0)) // => "1"
+
+// 如果要改變陣列的直可以這麼做
+array1[2]="4"
+console.log(array1) // => ["1","2","4"]
 ```
 建議使用第一種方式，本篇教學也都以第一種方式寫
 
@@ -346,7 +350,7 @@ decodeURIComponent("%");   // X: URIError: URI malformed
     - [事件]()
     - [擴充功能]()
 
-#關鍵字(keyword) 和 #保留字(reserved word) 一覽
+#關鍵保留字(keyword and reserved word) 一覽
 - await
 - break
 - case
