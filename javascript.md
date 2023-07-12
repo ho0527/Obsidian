@@ -18,6 +18,7 @@
   - #forEach
   - #while及do-while之差異
 - #物件
+  - #陣列
 - #函式
 - #例外處理
   - #例外介紹
@@ -196,6 +197,45 @@ array[].forEach(function(event){
 
 
 ## Chr9 #物件
+再說物件之前我們先來說說 #陣列
+### #陣列
+陣列是一個特殊的物件主要的功能就是**儲存大量資料**
+陣列元素從一開始
+
+js的陣列語法如下:
+```js
+// 1
+let array1=["1","2","3"] // 以,分隔每隔值
+console.log(array1) // => ["1","2","3"]
+
+// 2
+let array2=new Array("1","2","3") // 以,分隔每隔值
+console.log(array2) // => ["1","2","3"]
+
+// 如果要拿到陣列的第一個值要這樣寫
+consloe.log(array1[0]) // => "1"
+consloe.log(array2.item(0)) // => "1"
+```
+建議使用第一種方式，本篇教學也都以第一種方式寫
+
+二維及多維陣列:
+範例:
+```js
+let array3=[
+    ["1", "2", "3"],
+    ["a", "b", "c"]
+] // 像這樣子一個陣列又有一個就是二維(有兩個就是三維以此類推)
+
+console.log(array3) /*
+0:(3) ['1', '2', '3']
+1:(3) ['a', 'b', 'c']
+*/
+```
+
+### #物件
+物件(object)
+
+
 
 ## Chr10 #函式
 
@@ -356,4 +396,4 @@ decodeURIComponent("%");   // X: URIError: URI malformed
 
 [簡寫一覽](abbreviationslist.md)
 
-小賀chris:) 2023/06/22 v1.1.1
+小賀chris:) 2023/06/22 v1.1.2

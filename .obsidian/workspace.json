@@ -231,7 +231,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "javascript.md",
+                "file": "website/webstorage.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -255,7 +255,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "javascript.md",
+                "file": "website/webstorage.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -267,7 +267,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "javascript.md"
+                "file": "website/webstorage.md"
               }
             }
           },
@@ -326,11 +326,11 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "3929df2516f4c227",
+  "active": "b26a88bd6a1c1dc5",
   "lastOpenFiles": [
+    "javascript.md",
     "abbreviationslist.md",
     "js/canvas.md",
-    "javascript.md",
     "git/commit.md",
     "todo.md",
     "programming.md",
