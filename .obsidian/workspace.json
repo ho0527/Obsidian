@@ -6,7 +6,7 @@
       {
         "id": "00d6db2a61c308c9",
         "type": "tabs",
-        "dimension": 54.15676959619952,
+        "dimension": 60.80760095011877,
         "children": [
           {
             "id": "904d2c69cc525bda",
@@ -57,19 +57,19 @@
             }
           },
           {
-            "id": "dd96cbd7c3eee3f5",
+            "id": "6815dd87e50ba5b8",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "javascript.md",
+                "file": "css/declarationlist.md",
                 "mode": "preview",
                 "source": false
               }
             }
           },
           {
-            "id": "352a6fd7b3e515a4",
+            "id": "dd96cbd7c3eee3f5",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -93,25 +93,13 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       },
       {
         "id": "ad9f2568e7be8e00",
         "type": "tabs",
-        "dimension": 45.84323040380048,
+        "dimension": 39.19239904988123,
         "children": [
-          {
-            "id": "86636de7b0156109",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "javascript.md",
-                "mode": "preview",
-                "source": false
-              }
-            }
-          },
           {
             "id": "783bbe8085ac6179",
             "type": "leaf",
@@ -136,8 +124,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -231,7 +218,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "javascript.md",
+                "file": "git/commit.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -255,7 +242,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "javascript.md",
+                "file": "git/commit.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -267,7 +254,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "javascript.md"
+                "file": "git/commit.md"
               }
             }
           },
@@ -326,16 +313,17 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "dd96cbd7c3eee3f5",
+  "active": "41b5fbacc8954a0c",
   "lastOpenFiles": [
-    "todo.md",
+    "css/declarationlist.md",
+    "git/commit.md",
+    "website/plugin/chrisplugin.md",
     "javascript.md",
+    "todo.md",
     "website/webstorage.md",
     "abbreviationslist.md",
     "js/canvas.md",
-    "git/commit.md",
     "programming.md",
-    "website/plugin/chrisplugin.md",
     "git/comment.md",
     "git",
     "css.md",
@@ -350,7 +338,6 @@
     "website/plugin/seltmake.md",
     "js/ajax.md",
     "php/functionlista-l.md",
-    "css/declarationlist.md",
     "website/note",
     "note",
     "websitenote",
