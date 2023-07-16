@@ -161,6 +161,8 @@ ex:
 | doccreate | document.createElement | (*\[element\]*) | Bata 1.0.4~ | |
 | newajax | 快捷創建ajax | (*\[method\]*,*\[url\]*,*\[string\]*?=null) | Bata 1.0.5~ | |
 | docappendchild | document.getElement....appendChlid() | (*\[element\]*,*\[element\]*) | Bata 1.0.7~ | |
+| regexpmatch | 正規表達式確定文本 | (*\[string(要檢測的文本)\]*,*\[regexp\]*,*\[string(特殊全域語法)\]*) | Bata 1.0.8~ | |
+| regexpchange | 正規表達式換文本 | (*\[string(要檢測的文本)\]*,*\[any(交換成?)\]*,*\[regexp\]*,*\[string(特殊全域語法)\]*) | Bata 1.0.8~ | |
 
 ## 註解及參見
 
