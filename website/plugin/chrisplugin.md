@@ -153,7 +153,8 @@ ex:
 | docget | document.getElement... | ("*id \| animation \| class \| name \| tag \| tagns \| qtor \| all*",*\[selector\]*) | Bata 1.0.0~ | |
 | docgetid | document.getElementById | (*\[selector\]*) | Bata 1.0.0~ | |
 | docgetall | document.querySelectorAll | (*\[selector\]*) | Bata 1.0.0~ | |
-| conlog | consloe.log 值出來 | (*\[any\]*) | Bata 1.0.0~ | |
+| ~~conlog~~ | consloe.log 值出來 | (*\[any\]*) | Bata 1.0.0~Bata 1.0.9 | 已被修改 |
+| conlog | consloe.log 值出來 | (*\[string(要輸出的文本)\]*,*\[color(文字顏色)\]*,*\[font-size(文字大小)\]*,*\[font-weight(文字粗體)\]*) | Bata 1.0.9~ | |
 | isset | 看值是否存在 | (*\[var\]*) | Bata 1.0.0~ | |
 | blank | 看值是否不為空 | (*\[var\]*) | Bata 1.0.0~ | |
 | weblsset | \[localStorage\](../webstorage.md).setItem | (*\[string\]*,*\[any\]*) | Bata 1.0.0~ | |
@@ -168,6 +169,6 @@ ex:
 
 [簡寫一覽](../../abbreviationslist.md)
 
-##### 目前版本:Bata 1.0.7
+##### 目前版本:Bata 1.0.9
 
 小賀chris:) 2023/07/05 v1.0.3
