@@ -164,7 +164,7 @@ ex:
 | docappendchild | document.getElement....appendChlid() | (*\[element\]*,*\[element\]*) | Bata 1.0.7~ | |
 | regexpmatch | 正規表達式確定文本 | (*\[string(要檢測的文本)\]*,*\[regexp\]*,*\[string(特殊全域語法)\]*) | Bata 1.0.8~ | |
 | regexpchange | 正規表達式換文本 | (*\[string(要檢測的文本)\]*,*\[any(交換成?)\]*,*\[regexp\]*,*\[string(特殊全域語法)\]*) | Bata 1.0.8~ | |
-| ajaxdata | new FormData.append(key,data) | (*\[string(key)\]*,*\[string(text)\]*) | Bata 1.0.10~ | |
+| ajaxdata | new FormData.append(key,data) | (*\[array(key,text)\]*) | Bata 1.0.10~ | |
 
 ## 註解及參見
 
