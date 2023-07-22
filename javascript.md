@@ -146,8 +146,8 @@ let 1aa // X: Uncaught SyntaxError: Invalid or unexpected token
 ### #運算式
 運算式是一個
 
-### #運算元
-運算式是一個
+### #運算子
+運算子是一個
 
 ## Chr7 #述句
 
