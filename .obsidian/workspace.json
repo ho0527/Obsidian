@@ -327,9 +327,12 @@
   },
   "active": "41b5fbacc8954a0c",
   "lastOpenFiles": [
-    "python/plugin/django.md",
+    "mojo/functionlist.md",
+    "mojo",
     "todo.md",
     "git/commit.md",
+    "mojo.md",
+    "python/plugin/django.md",
     "css/cursordef.md",
     "css/cursorimage/not-allowed.gif",
     "css/cursorimage/nwse-resize.gif",
@@ -350,7 +353,6 @@
     "css/cursorimage/se-resize.gif.crdownload",
     "css/cursorimage/nw-resize.gif.crdownload",
     "css/cursorimage/ne-resize.gif.crdownload",
-    "css/cursorimage/w-resize.gif.crdownload",
     "css/declarationlist.md",
     "website/plugin/chrisplugin.md",
     "javascript.md",
@@ -371,7 +373,6 @@
     "regularexpression.md",
     "php.md",
     "html.md",
-    "websitenote.md",
     "Untitled.canvas"
   ]
 }

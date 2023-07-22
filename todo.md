@@ -3,8 +3,6 @@
 - [ ] 編輯問卷
 - [ ] 線上撥放器
 - [ ] 網頁oop
-- [ ] iRiver python 後端
-- [ ] python django
 - [ ] indexeddb
 - [ ] todo
 - [ ] todo
@@ -15,6 +13,8 @@
 - [x] iRiver 開會(21:00) ✅ 2023-06-09
 - [x] 移動物件(換位置) ✅ 2023-06-10
 - [x] api上傳圖片 ✅ 2023-06-25
+- [x] iRiver python 後端 ✅ 2023-07-22
+- [x] python django ✅ 2023-07-22
 
 ## 取消之任務
 - [x] py自動發文 ✅ 2023-05-24 已被完成
