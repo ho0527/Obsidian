@@ -4,6 +4,10 @@
 - [ ] 線上撥放器
 - [ ] 網頁oop
 - [ ] indexeddb
+- [ ] iriver user connect sql bug
+- [ ] todo
+- [ ] todo
+- [ ] todo
 - [ ] todo
 - [ ] todo
 

@@ -93,7 +93,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 5
       },
       {
         "id": "ad9f2568e7be8e00",
@@ -218,7 +218,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "git/commit.md",
+                "file": "javascript.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -242,7 +242,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "git/commit.md",
+                "file": "javascript.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -254,7 +254,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "git/commit.md"
+                "file": "javascript.md"
               }
             }
           },
@@ -313,11 +313,12 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "41b5fbacc8954a0c",
+  "active": "dd96cbd7c3eee3f5",
   "lastOpenFiles": [
+    "js/promiss.md",
+    "git/commit.md",
     "website/plugin/chrisplugin.md",
     "javascript.md",
-    "git/commit.md",
     "mojo/functionlist.md",
     "mojo",
     "todo.md",
@@ -360,7 +361,6 @@
     "website/note/grid.md",
     "regularexpression.md",
     "php.md",
-    "html.md",
     "Untitled.canvas"
   ]
 }
