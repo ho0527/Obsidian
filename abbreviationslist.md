@@ -17,6 +17,7 @@
 | *\[deg\]* | degree | |
 | *\[name\]* | name | |
 | *\[method\]* | method | |
+| *\[value\]* | 鍵、值 | |
 | *inf.* | infinite | |
 | *arb.* | arbitrarily(隨意值) | |
 | (\*)?**bold** | 預設值 | |
@@ -33,6 +34,5 @@
 | *\[ctx2d\]* | *\[canva\]*.getContext("2d") | |
 | *\[ctx3d\]* | *\[canva\]*.getContext("3d") | |
 | *\[ctx\]* | *\[canva\]*.getContext(*arb.*) | |
-| *\[number\]* | all number no negative | |
 | *\[number\]* | all number no negative | |
 | *\[number\]* | all number no negative | |

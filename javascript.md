@@ -780,7 +780,38 @@ console.log(array3) /*
 ```
 
 ### #物件
-物件(object)
+物件(object)是一個包含資料與處理資料指令的資料結構。
+語法
+// Object initialiser or literal
+{
+    *\[value\]*: *\[any\]*
+    // *inf.*
+}
+// Called as a constructor
+new Object(*\[any\]*)
+
+描述
+構造Object函數為給定值創建對象包裝器。如果值為null或undefined，它將創建並返回一個空對象，否則，它將返回與給定值對應的 Type 的對象。如果該值已經是一個對象，它將返回該值。
+
+當在非構造函數上下文中調用時，Object其行為與 相同new Object()。
+
+Object 物件實體與 Object 原型物件
+JavaScript 中的所有對像都源自Object; 所有對像都繼承自 的方法和屬性Object.prototype，儘管它們可能會被覆蓋。
+例如，其他構造函數的原型重寫該constructor屬性並提供它們自己的toString()方法。對原型對象的更改Object將傳播到所有對象，除非受這些更改影響的屬性和方法沿著原型鏈進一步被覆蓋。
+
+範例
+下面例子儲存一個空物件至變數o
+```js
+let o=new Object()
+let o=new Object(undefined)
+let o=new Object(null)
+```
+
+下面例子儲存 Boolean 物件在 o:
+```js
+let o=new Object(true) // equivalent to o=new Boolean(true)
+let o=new Object(Boolean()) // equivalent to o=new Boolean(false)
+```
 
 ## Chr10 #函式
 函數 - 可重複使用的程式碼區塊
@@ -794,37 +825,33 @@ Overview: Building blocks
 我在哪能找到函數？
 在 JavaScript 裡，你到處都能看到函數的蹤影。事實上，我們在前面的課程中一直都在用函數，只是沒什麼提及而已。如今是時候讓我們詳細探討函數並認真探索它們的語法了。
 
-幾乎每當你使用了包含一對小括號 — () — 的 JavaScritp 結構，並且沒有用到諸如 for 迴圈、while 與 do...while 迴圈或 if...else 敘述等常見的內建語言結構時，你就是在使用函數。
+幾乎每當你使用了包含一對小括號的js結構，並且沒有用到諸如 for 迴圈、while 與 do...while 迴圈或 if...else 敘述等常見的內建語言結構時，你就是在使用函數。
 
 瀏覽器內建函數
 到目前為止，我們已在課程中大量使用了瀏覽器內建的函數。例如，每當我們操控一個字串時：
 
-JS
-Copy to Clipboard
-
-var myText = "I am a string";
-var newString = myText.replace("string", "sausage");
-console.log(newString);
+```js
+let myText="I am a string"
+let newString=myText.replace("string","sausage")
+console.log(newString)
 // 字串的 replace() 函數會先替換一段子字串，
 // 再回傳替換過後的新字串
+```
+
 或是每當我們操控一個陣列時：
-
-JS
-Copy to Clipboard
-
-var myArray = ["I", "love", "chocolate", "frogs"];
-var madeAString = myArray.join(" ");
-console.log(madeAString);
+```js
+let myArray=["I","love","chocolate","frogs"]
+let madeAString=myArray.join(" ")
+console.log(madeAString)
 // 陣列的 join() 函數會先將所有陣列元素合併，
 // 形成一個新字串，再回傳該新字串
+```
 或是每當我們產生一個亂數：
-
-JS
-Copy to Clipboard
-
-var myNumber = Math.random();
+```js
+let myNumber=Math.random()
 // random() 函數會先產生一個介於 0 到 1 之間
 // 的亂數，再回傳該數字
+```
 ……我們其實當在使用函數。
 
 備註： 若有需要，你可以瀏覽器的 JavaScript 主控台中輸入以上指令碼，藉此重新熟悉這些功能。
