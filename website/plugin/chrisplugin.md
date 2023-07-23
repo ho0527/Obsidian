@@ -20,6 +20,8 @@
     - divsort()
   - #lightbox(Bata 1.0.6)
     - lightbox()
+  - #pagechanger(Bata 1.0.10)
+    - pagechanger()
   - #元件縮寫(Bata 1.0.0~Bata 1.0.5)
 - php
 
@@ -146,6 +148,42 @@ ex:
 </script>
 ```
 
+#### #pagechanger -> js (Bata 1.0.12~)
+##### 簡介
+換頁效果
+
+##### 使用方式
+### 語法: pagechanger(*\[array(data)\]*,*\[number(item per page)\]*,*\[string("first"|"prev"|"next"|"end")\]*,*\[function\]*)
+回呼函式會帶data[i]個值
+ex:
+```js
+let data=[["a1","a2","a3","a4"],["a5","a6","a7","a8"],["a9","a10","a11","a12"],["a9","a10","a11","a12"],["a9","a10","a11","a12"]]
+pagechanger(data,4,"first",function(event){
+    console.log(event[0])
+    console.log(event[1])
+    console.log(event[2])
+    console.log(event[3])
+    /* =>
+    a1
+    a2
+    a3
+    a4
+    a5
+    a6
+    a7
+    a8
+    a9
+    a10
+    a11
+    a12
+    a9
+    a10
+    a11
+    a12
+    */
+});
+```
+
 #### #元件縮寫 -> js
 ##### 列表
 | 元件 | 功用 | 用法 | 可用版本 | 註解 |
@@ -170,6 +208,6 @@ ex:
 
 [簡寫一覽](../../abbreviationslist.md)
 
-##### 目前版本:Bata 1.0.10
+##### 目前版本:Bata 1.0.12
 
 小賀chris:) 2023/07/05 v1.0.3
