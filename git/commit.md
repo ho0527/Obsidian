@@ -40,6 +40,7 @@ FOOTER
 | chore | 更新專案建置設定、更新版本號等瑣事 | X |
 | revert | 撤銷之前的commit revert: type(scope): subject (回覆版本：xxxx) | O |
 | copy | 複製檔案 | X |
+| del | 刪除檔案 | X |
 
 ### 3-2 #SUBJECT主旨
 主旨不應超過50個字元，若用英文書寫則需大寫開頭，中英文都不用句號結尾。

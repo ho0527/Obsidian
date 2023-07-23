@@ -57,18 +57,6 @@
             }
           },
           {
-            "id": "98860ce043b72bd0",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "python/plugin/django.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "6815dd87e50ba5b8",
             "type": "leaf",
             "state": {
@@ -215,7 +203,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#TYPE類型",
+                "query": "tag:#比較運算子",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -327,10 +315,12 @@
   },
   "active": "41b5fbacc8954a0c",
   "lastOpenFiles": [
+    "website/plugin/chrisplugin.md",
+    "javascript.md",
+    "git/commit.md",
     "mojo/functionlist.md",
     "mojo",
     "todo.md",
-    "git/commit.md",
     "mojo.md",
     "python/plugin/django.md",
     "css/cursordef.md",
@@ -354,8 +344,6 @@
     "css/cursorimage/nw-resize.gif.crdownload",
     "css/cursorimage/ne-resize.gif.crdownload",
     "css/declarationlist.md",
-    "website/plugin/chrisplugin.md",
-    "javascript.md",
     "website/webstorage.md",
     "abbreviationslist.md",
     "js/canvas.md",
