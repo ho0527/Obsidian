@@ -315,6 +315,11 @@
   },
   "active": "783bbe8085ac6179",
   "lastOpenFiles": [
+    "websafety/index.md",
+    "websafety/sqliinjection.md",
+    "websafety/xssattack.md",
+    "websafety/xss",
+    "websafety",
     "git/commit.md",
     "javascript.md",
     "js/promiss.md",
@@ -342,8 +347,6 @@
     "css/cursorimage/3-resize.gif.crdownload",
     "css/cursorimage/sw-resize.gif.crdownload",
     "css/cursorimage/se-resize.gif.crdownload",
-    "css/cursorimage/nw-resize.gif.crdownload",
-    "css/cursorimage/ne-resize.gif.crdownload",
     "css/declarationlist.md",
     "website/webstorage.md",
     "abbreviationslist.md",
@@ -358,9 +361,6 @@
     "js/ajax.md",
     "php/functionlista-l.md",
     "html/body.md",
-    "website/note/grid.md",
-    "regularexpression.md",
-    "php.md",
     "Untitled.canvas"
   ]
 }

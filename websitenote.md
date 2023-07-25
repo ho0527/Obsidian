@@ -6,3 +6,4 @@
 4. [php](php)
 5. [regular expression](regularexpression.md)
 6. [web storage](website/webstorage.md)
+7. [web safety](websafety/index.md)
