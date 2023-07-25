@@ -106,33 +106,34 @@ ex:
 ```css
 .lightboxmask{
     position: fixed;
-    top: 0px;
-    left: 0px;
-    bottom: 0px;
-    right: 0px;
-    background: rgb(26, 34, 51, 0.8);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+    display: none;
     z-index: 999;
 }
 
 .lightboxmain{
-    border: 1px white solid;
-    background: rgb(35, 35, 35);
-    position: fixed;
+    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 30px;
-    font-weight: bold;
-    padding: 40px 20px;
-    border-radius: 5px;
-    z-index: 1000;
+    background: rgb(214, 214, 214);
+    color: black;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 ```
 
 ex:
 ```html
 <input type="button" class="navigationbarbutton" id="newform" value="新增問卷">
-<div id="lightbox"></div>
+<div class="lightboxmask" id="lightbox"></div>
+<!-- 記得一定要加 class="lightboxmask"! -->
 <script>
     let html=`
         <form>
@@ -144,7 +145,40 @@ ex:
         </form>
     `
 
-    lightbox("newform","lightbox",html)
+    lightbox("#newform","lightbox",function(){
+        return html
+    })
+</script>
+```
+
+如果想要用該funciton的event可以這樣做(按鈕的event)
+```html
+<input type="button" class="navigationbarbutton" id="newform" value="新增問卷">
+<div class="lightboxmask" id="lightbox"></div>
+<!-- 記得一定要加 class="lightboxmask"! -->
+<script>
+    let html=`
+        <form>
+            問卷名稱: <input type="text" class="input" name="title" placeholder="問卷名稱"><br><br>
+            問卷題數: <input type="text" class="input" name="count" placeholder="問卷題數"><br><br>
+            問卷分頁題數: <input type="text" class="inputshort" name="pagelen" placeholder="分頁題數">
+            <input type="button" class="button" onclick="location.reload()" value="取消">
+            <input type="submit" class="button" name="submit" value="確定">
+        </form>
+    `
+
+    lightbox("#newform","lightbox",function(event){
+        return `
+            <h1>${event.value}</h1>
+            <form>
+                問卷名稱: <input type="text" class="input" name="title" placeholder="問卷名稱"><br><br>
+                問卷題數: <input type="text" class="input" name="count" placeholder="問卷題數"><br><br>
+                問卷分頁題數: <input type="text" class="inputshort" name="pagelen" placeholder="分頁題數">
+                <input type="button" class="button" onclick="location.reload()" value="取消">
+                <input type="submit" class="button" name="submit" value="確定">
+            </form>
+        `
+    })
 </script>
 ```
 
