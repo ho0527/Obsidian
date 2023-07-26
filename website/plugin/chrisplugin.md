@@ -94,7 +94,7 @@ ex:
 燈箱效果
 
 ##### 使用方式
-### 語法: lightbox(*\[element\]*,*\[element\]*,*\[string\]*,*\[boolean\]*?=true)
+### 語法: lightbox(*\[element\]*,*\[element\]*,*\[string\]*,*\[element(id)\]*?=null,*\[boolean\]*?=true)
 被點的按鈕元素加上id
 燈箱id
 燈箱要顯示的內文
@@ -242,6 +242,6 @@ pagechanger(data,4,"first",function(event){
 
 [簡寫一覽](../../abbreviationslist.md)
 
-##### 目前版本:Bata 1.0.12
+##### 目前版本:Bata 1.0.14
 
 小賀chris:) 2023/07/05 v1.0.3
