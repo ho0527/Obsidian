@@ -6,7 +6,7 @@
       {
         "id": "00d6db2a61c308c9",
         "type": "tabs",
-        "dimension": 60.80760095011877,
+        "dimension": 67.6959619952494,
         "children": [
           {
             "id": "904d2c69cc525bda",
@@ -98,7 +98,7 @@
       {
         "id": "ad9f2568e7be8e00",
         "type": "tabs",
-        "dimension": 39.19239904988123,
+        "dimension": 32.304038004750595,
         "children": [
           {
             "id": "783bbe8085ac6179",
@@ -218,7 +218,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "todo.md",
+                "file": "git/commit.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -242,7 +242,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "todo.md",
+                "file": "git/commit.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -254,7 +254,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "todo.md"
+                "file": "git/commit.md"
               }
             }
           },
@@ -313,8 +313,9 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "783bbe8085ac6179",
+  "active": "41b5fbacc8954a0c",
   "lastOpenFiles": [
+    "todo.md",
     "websafety/index.md",
     "websafety/sqliinjection.md",
     "websafety/xssattack.md",
@@ -326,7 +327,6 @@
     "website/plugin/chrisplugin.md",
     "mojo/functionlist.md",
     "mojo",
-    "todo.md",
     "mojo.md",
     "python/plugin/django.md",
     "css/cursordef.md",
