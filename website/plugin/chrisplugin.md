@@ -215,7 +215,7 @@ pagechanger(data,4,"first",function(event){
     a11
     a12
     */
-});
+})
 ```
 
 #### #元件縮寫 -> js
