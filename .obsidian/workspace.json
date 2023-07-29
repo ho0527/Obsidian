@@ -203,7 +203,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#比較運算子",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -316,7 +316,10 @@
   "active": "41b5fbacc8954a0c",
   "lastOpenFiles": [
     "javascript.md",
+    "css/declarationlist.md",
+    "website/plugin/chrisplugin.md",
     "git/commit.md",
+    "abbreviationslist.md",
     "todo.md",
     "websafety/index.md",
     "websafety/sqliinjection.md",
@@ -324,7 +327,6 @@
     "websafety/xss",
     "websafety",
     "js/promiss.md",
-    "website/plugin/chrisplugin.md",
     "mojo/functionlist.md",
     "mojo",
     "mojo.md",
@@ -347,9 +349,7 @@
     "css/cursorimage/3-resize.gif.crdownload",
     "css/cursorimage/sw-resize.gif.crdownload",
     "css/cursorimage/se-resize.gif.crdownload",
-    "css/declarationlist.md",
     "website/webstorage.md",
-    "abbreviationslist.md",
     "js/canvas.md",
     "programming.md",
     "git/comment.md",
