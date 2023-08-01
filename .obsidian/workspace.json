@@ -315,10 +315,11 @@
   },
   "active": "41b5fbacc8954a0c",
   "lastOpenFiles": [
+    "html/body.md",
+    "git/commit.md",
     "javascript.md",
     "css/declarationlist.md",
     "website/plugin/chrisplugin.md",
-    "git/commit.md",
     "abbreviationslist.md",
     "todo.md",
     "websafety/index.md",
@@ -360,7 +361,6 @@
     "website/plugin/seltmake.md",
     "js/ajax.md",
     "php/functionlista-l.md",
-    "html/body.md",
     "Untitled.canvas"
   ]
 }
