@@ -817,16 +817,22 @@ let o=new Object(Boolean()) // equivalent to o=new Boolean(false)
 ## Chr10 #函式
 函數 - 可重複使用的程式碼
 
-程式設計的另一個基本概念是函數，它允許您儲存一段程式碼，該程式碼在定義的區塊內執行單個任務，然後在需要時使用一個簡短命令調用該程式碼區塊，而不必多次輸入相同的程式碼。 在本文中，我們將探索函數背後的基本概念，例如基本語法、如何調用和定義它們、作用域範圍與參數。
+程式設計的另一個基本概念是函數，它允許您儲存一段程式碼，該程式碼在定義的區塊內執行單個任務，然後在需要時使用一個簡短命令調用該程式碼區塊，而不必多次輸入相同的程式碼。
+在本文中，我們將探索函數背後的基本概念，例如基本語法、如何調用和定義它們、作用域範圍與參數。
 
-先備知識：	基礎電腦術語、對 HTML 及 CSS 有基本認識、JavaScript 的第一步。
-學習目標：	了解 JavaScript 函數背後的基本概念。
-我在哪能找到函數？
-在 JavaScript 裡，你到處都能看到函數的蹤影。事實上，我們在前面的課程中一直都在用函數，只是沒什麼提及而已。如今是時候讓我們詳細探討函數並認真探索它們的語法了。
+### 先備知識：
+- 基礎電腦術語
+- 對html及css有基本認識
+- js的第一步。
 
+### 學習目標
+- 了解js函數背後的基本概念
+
+### 我在哪能找到函數？
+在js裡，你到處都能看到函數的蹤影。事實上，我們在前面的課程中一直都在用函數，只是沒什麼提及而已。如今是時候讓我們詳細探討函數並認真探索它們的語法了。
 幾乎每當你使用了包含一對小括號的js結構，並且沒有用到諸如 for 迴圈、while 與 do...while 迴圈或 if...else 敘述等常見的內建語言結構時，你就是在使用函數。
 
-瀏覽器內建函數
+### 瀏覽器內建函數
 到目前為止，我們已在課程中大量使用了瀏覽器內建的函數。例如，每當我們操控一個字串時：
 
 ```js
@@ -853,159 +859,132 @@ let myNumber=Math.random()
 ```
 ……我們其實當在使用函數。
 
-備註： 若有需要，你可以瀏覽器的 JavaScript 主控台中輸入以上指令碼，藉此重新熟悉這些功能。
+備註： 若有需要，你可以瀏覽器的js主控台中輸入以上指令碼，藉此重新熟悉這些功能。
 
-JavaScript 語言有很多內建函數，讓你不用重覆寫所有程式碼就能做很多事。事實上，在你執行瀏覽器的內建函數時，你呼叫到的某些程式碼並不能用 JavaScript 來寫——很多這種函數是在部分呼叫瀏覽器背景語言，大多是由 C++ 這種低階系統語言寫成，而非 JavaScript 這種網際網路語言。
+JavaScript 語言有很多內建函數，讓你不用重覆寫所有程式碼就能做很多事。事實上，在你執行瀏覽器的內建函數時，你呼叫到的某些程式碼並不能用js來寫——很多這種函數是在部分呼叫瀏覽器背景語言，大多是由 C++ 這種低階系統語言寫成，而非js這種網際網路語言。
 
-麻煩謹記在心，有些瀏覽器內建函數不是 JavaScript 語言核心的一部份——有些被定義為瀏覽器 API 的一部份，它們已預設語言為基礎來提供更多功能（先前的章節裡有更多說明）。在未來的模組中我們會更深入探討瀏覽器 API 的用法。
+麻煩謹記在心，有些瀏覽器內建函數不是js語言核心的一部份——有些被定義為瀏覽器 API 的一部份，它們已預設語言為基礎來提供更多功能（先前的章節裡有更多說明）。在未來的模組中我們會更深入探討瀏覽器 API 的用法。
 
-函數（function） vs 方法（method）
+#### 函數（function）vs方法（method）
 在我們繼續前，有件事需要先釐清——技術上來說，瀏覽器內建函數並不是函數（function）——它們是方法（method）。這聽起來有點令人疑惑，不過別擔心——在你目前的學習階段，「函數」與「方法」這兩個詞彙大多時候是可以互換的，至少對我們的目標而言。
 
 這兩個詞的區別在方法（method）是定義在物件裡的函數（function）。瀏覽器內建函數（方法）和變數（此處被稱作屬性（property））被儲存在建構好的物件裡，令程式碼控制起來更有效率也更簡單。
 
-你還不需要了解 JavaScript 物件的內部運作——在之後的模組我們會學到物件內部的所有運作方式，以及如何創建你自己的物件。此時，我們只需要釐清方法與函數之間任何可能搞混的地方——在你上網查相關教學資源時很可能兩個詞彙都會碰到。
+你還不需要了解js物件的內部運作——在之後的模組我們會學到物件內部的所有運作方式，以及如何創建你自己的物件。此時，我們只需要釐清方法與函數之間任何可能搞混的地方——在你上網查相關教學資源時很可能兩個詞彙都會碰到。
 
-自訂函數
-You've also seen a lot of custom functions in the course so far — functions defined in your code,not inside the browser. Anytime you saw a custom name with parentheses straight after it,you were using a custom function. In our random-canvas-circles.html example (see also the full source code) from our loops article,we included a custom draw() function that looked like this:
-
-JS
-Copy to Clipboard
-
+#### 自訂函數
+你在課程中也見過很多自訂函數 — 函數是在你的程式碼中定義的，而不是內建在瀏覽器中。每當你看到一個帶有括號的自訂名稱時，你就是在使用一個自訂函數。
+例如:
+```js
 function draw(){
-  ctx.clearRect(0,0,WIDTH,HEIGHT)
-  for (let i=0; i < 100; i++){
-    ctx.beginPath();
-    ctx.fillStyle="rgba(255,0,0,0.5)";
-    ctx.arc(random(WIDTH),random(HEIGHT),random(50),0,2 * Math.PI);
-    ctx.fill();
-  }
+    ctx.clearRect(0,0,WIDTH,HEIGHT)
+    for(let i=0;i<100;i=i+1){
+        ctx.beginPath()
+        ctx.fillStyle="rgba(255,0,0,0.5)"
+        ctx.arc(random(WIDTH),random(HEIGHT),random(50),0,2*Math.PI)
+        ctx.fill()
+    }
 }
-This function draws 100 random circles inside an <canvas> element. Every time we want to do that,we can just invoke the function with this
+```
 
-JS
-Copy to Clipboard
-
-draw();
-rather than having to write all that code out again every time we want to repeat it. And functions can contain whatever code you like — you can even call other functions from inside functions. The above function for example calls the random() function three times,which is defined by the following code:
-
-JS
-Copy to Clipboard
-
+這個函數在一個canvas元素內繪製了100個隨機圓形。每次我們想要這麼做，只需使用以下方式調用該函數：
+```js
+draw()
+```
+而不用每次都重寫所有的程式碼。函數可以包含任何程式碼 — 你甚至可以在函數內呼叫其他函數。例如上面的函數在內部三次調用了 random() 函數，而 random() 函數是由以下程式碼定義的：
+```js
 function random(number){
-  return Math.floor(Math.random() * number);
+  return Math.floor(Math.random()*number);
 }
-We needed this function because the browser's built-in Math.random() function only generates a random decimal number between 0 and 1. We wanted a random whole number between 0 and a specified number.
+```
+我們需要這個函數是因為瀏覽器內建的 Math.random() 函數只會產生 0 到 1 之間的亂數，而我們想要產生介於 0 到指定數字之間的整數。
 
-呼叫函數
-You are probably clear on this by now,but just in case ... to actually use a function after it has been defined,you've got to run — or invoke — it. This is done by including the name of the function in the code somewhere,followed by parentheses.
-
-JS
-Copy to Clipboard
-
+### 呼叫函數
+你可能已經明白了，但為了確認實際使用一個函數之後，你必須運行它(或者說調用它)。這可以通過在程式碼中的某個地方包含函數名稱，後面跟著括號來完成。
+```js
 function myFunction(){
   alert("hello");
 }
 
 myFunction();
 // 呼叫一次函數
-匿名函數
-You may see functions defined and invoked in slightly different ways. So far we have just created a function like so:
+```
 
-JS
-Copy to Clipboard
-
+### 匿名函數
+你可能會看到以稍微不同的方式定義和調用函數。到目前為止，我們創建的函數通常像這樣：
+```js
 function myFunction(){
-  alert("hello");
+    alert("hello")
 }
+```
 But you can also create a function that doesn't have a name:
-
-JS
-Copy to Clipboard
-
+```js
 function(){
-  alert('hello');
+  alert("hello")
 }
-This is called an anonymous function — it has no name! It also won't do anything on its own. You generally use an anonymous function along with an event handler,for example the following would run the code inside the function whenever the associated button is clicked:
+```
 
-JS
-Copy to Clipboard
+這被稱為匿名函數—它沒有名稱！它自己並不會執行任何動作。通常，你會將匿名函數與事件處理程式一起使用，例如以下範例將在按鈕被點擊時運行函數內的程式碼：
+```js
+let myButton=document.querySelector("button")
+myButton.onclick=function(){
+    alert("hello")
+}
+```
+以上的範例要求頁面上有一個`<button>`元素，以便選取並點擊。在課程中你已經多次見過這種結構，你將在下一篇文章中學到更多並且使用它。
 
-let myButton=document.querySelector("button");
+你還可以將匿名函數指派為變數的值，例如：
+```js
+let myGreeting=function(){
+    alert("hello")
+}
+```
+這個函數現在可以這樣調用：
+```js
+myGreeting()
+```
 
-myButton.onclick=function (){
-  alert("hello");
+這實際上就是給這個函數取了個名字；你也可以將這個函數指派為多個變數的值，例如：
+```js
+let anotherGreeting=function(){
+    alert("hello")
 };
-The above example would require there to be a <button> element available on the page to select and click. You've already seen this structure a few times throughout the course,and you'll learn more about and see it in use in the next article.
-
-You can also assign an anonymous function to be the value of a variable,for example:
-
-JS
-Copy to Clipboard
-
-let myGreeting=function (){
-  alert("hello");
-};
-This function could now be invoked using:
-
-JS
-Copy to Clipboard
-
-myGreeting();
-This effectively gives the function a name; you can also assign the function to be the value of multiple variables,for example:
-
-JS
-Copy to Clipboard
-
-let anotherGreeting=function (){
-  alert("hello");
-};
-This function could now be invoked using either of
-
-JS
-Copy to Clipboard
-
-myGreeting();
-anotherGreeting();
-But this would just be confusing,so don't do it! When creating functions,it is better to just stick to this form:
-
-JS
-Copy to Clipboard
-
+```
+這個函數現在可以這樣調用：
+```js
+myGreeting()
+anotherGreeting()
+```
+但這只會造成混亂，所以不要這麼做！在創建函數時，最好堅持以下形式：
+```js
 function myGreeting(){
-  alert("hello");
+  alert("hello")
 }
-You will mainly use anonymous functions to just run a load of code in response to an event firing — like a button being clicked — using an event handler. Again,this looks something like this:
+```
+你主要使用匿名函數只是為了在事件觸發時執行一系列程式碼 — 像按下按鈕之後運行一些程式碼 — 使用事件處理程式。再次強調，它看起來像這樣：
+```js
+myButton.onclick=function(){
+    // 程式碼在這
+}
+```
 
-JS
-Copy to Clipboard
-
-myButton.onclick=function (){
-  alert("hello");
-  // 這邊你的程式碼想寫多長就寫多長
-};
-函數參數
-Some functions require parameters to be specified when you are invoking them — these are values that need to be included inside the function parentheses,which it needs to do its job properly.
-
-備註： Parameters are sometimes called arguments,properties,or even attributes.
-
-As an example,the browser's built-in Math.random() function doesn't require any parameters. When called,it always returns a random number between 0 and 1:
+### 函數參數
+有些函數在調用時需要指定參數 — 這些參數是需要放在函數括號內的值，這些值是函數正確運作所需的。
+備註： 有時參數被稱為引數、屬性或特性。
+舉個例子，瀏覽器內建的 Math.random() 函數不需要任何參數。當調用它時，它總是返回 0 到 1 之間的一個隨機數：
 
 ```js
 let myNumber=Math.random();
 ```
 
-The browser's built-in string replace() function however needs two parameters — the substring to find in the main string,and the substring to replace that string with:
-
+而瀏覽器內建的字串 replace() 函數則需要兩個參數 — 在主字串中要查找的子字串，以及要用來替換該字串的子字串：
 ```js
 let myText="I am a string";
 let newString=myText.replace("string","sausage");
 ```
 
-備註： When you need to specify multiple parameters,they are separated by commas.
-
-It should also be noted that sometimes parameters are optional — you don't have to specify them. If you don't,the function will generally adopt some kind of default behavior. As an example,the array join() function's parameter is optional:
-
+備註： 當你需要指定多個參數時，它們之間用**半形逗號**分隔。
+還要注意，有時參數是可選的 — 你不一定要指定它們。如果不指定，該函數通常會使用一些預設行為。舉個例子，陣列 join() 函數的參數是可選的：
 ```js
 let myArray=["I","love","chocolate","frogs"];
 let madeAString=myArray.join(" ");
@@ -1013,13 +992,13 @@ let madeAString=myArray.join(" ");
 let madeAString=myArray.join();
 // 回傳 'I,love,chocolate,frogs'
 ```
-If no parameter is included to specify a joining/delimiting character,a comma is used by default.
+如果不包含參數來指定連接/分隔字符，則默認使用逗號。
 
-函數作用域及衝突
-Let's talk a bit about scope— a very important concept when dealing with functions. When you create a function,the variables and other things defined inside the function are inside their own separate scope,meaning that they are locked away in their own separate compartments,unreachable from inside other functions or from code outside the functions.
-The top level outside all your functions is called the global scope. Values defined in the global scope are accessible from everywhere in the code.
-JavaScript is set up like this for various reasons — but mainly because of security and organization. Sometimes you don't want variables to be accessible from everywhere in the code — external scripts that you call in from elsewhere could start to mess with your code and cause problems because they happen to be using the same variable names as other parts of the code,causing conflicts. This might be done maliciously,or just by accident.
-For example,say you have an HTML file that is calling in two external JavaScript files,and both of them have a variable and a function defined that use the same name:
+### 函數作用域及衝突
+讓我們來談談作用域 — 這是處理函數時非常重要的概念。當你創建一個函數時，該函數內定義的變量和其他內容會位於自己單獨的作用域中，這意味著它們被封鎖在自己單獨的區域內，無法從其他函數內部或外部程式碼訪問。
+在所有函數之外的頂層稱為全局作用域。在全局作用域中定義的值可以在程式碼的任何地方訪問。
+JavaScript 之所以這樣設計，是基於多種原因 — 主要是出於安全和組織考慮。有時你不希望變數在程式碼的任何地方都是可訪問的 — 從其他地方引入的外部腳本可能會開始干擾你的程式碼，並造成問題，因為它們可能恰好使用與程式碼其他部分相同的變數名稱，造成衝突。這可能是惡意的，也可能是無意的。
+例如，假設你有一個 HTML 文件在調用兩個外部的js文件，並且這兩個文件都有一個使用相同名稱變數和函數的定義：
 
 ```html
 <!-- Excerpt from my HTML -->
@@ -1034,112 +1013,31 @@ For example,say you have an HTML file that is calling in two external JavaScript
 // first.js
 let name="Chris";
 function greeting(){
-  alert("Hello " + name + ": welcome to our company.");
+    alert("Hello "+name+": welcome to our company.")
 }
 ```
-JS
-Copy to Clipboard
 
+```js
 // second.js
-let name="Zaptec";
+let name="Zaptec"
 function greeting(){
-  alert("Our company is called " + name + ".");
-}
-Both functions you want to call are called greeting(),but you can only ever access the second.js file's greeting() function — it is applied to the HTML later on in the source code,so its variable and function overwrite the ones in first.js.
-
-備註： You can see this example running live on GitHub (see also the source code).
-
-Keeping parts of your code locked away in functions avoids such problems,and is considered best practice.
-
-It is a bit like a zoo. The lions,zebras,tigers,and penguins are kept in their own enclosures,and only have access to the things inside their enclosures — in the same manner as the function scopes. If they were able to get into other enclosures,problems would occur. At best,different animals would feel really uncomfortable inside unfamiliar habitats — a lion or tiger would feel terrible inside the penguins' watery,icy domain. At worst,the lions and tigers might try to eat the penguins!
-
-The zoo keeper is like the global scope — he or she has the keys to access every enclosure,to restock food,tend to sick animals,etc.
-
-互動學習：玩轉作用域
-Let's look at a real example to demonstrate scoping.
-
-First,make a local copy of our function-scope.html example. This contains two functions called a() and b(),and three variables — x,y,and z — two of which are defined inside the functions,and one in the global scope. It also contains a third function called output(),which takes a single parameter and outputs it in a paragraph on the page.
-Open the example up in a browser and in your text editor.
-Open the JavaScript console in your browser developer tools. In the JavaScript console,enter the following command:
-```js
-output(x)
-```
-You should see the value of variable x output to the screen.
-Now try entering the following in your console
-```js
-output(y)
-output(z)
-```
-Both of these should return an error along the lines of "ReferenceError: y is not defined". Why is that? Because of function scope — y and z are locked inside the a() and b() functions,so output() can't access them when called from the global scope.
-However,what about when it's called from inside another function? Try editing a() and b() so they look like this:
-```js
-function a(){
-    let y=2
-    output(y)
-}
-
-function b(){
-    let z=3
-    output(z)
+    alert("Our company is called "+name+".")
 }
 ```
+你希望呼叫的兩個函數都被稱為 greeting()，但你只能夠訪問 second.js 文件中的 greeting() 函數 — 它是在 HTML 中的後面引入，因此它的變數和函數覆蓋了 first.js 文件中的相同名稱。
+將程式碼的部分功能封閉在函數中，可以避免這樣的問題，也被視為最佳實踐。
+簡單的說後創的蓋掉了先創的函式
 
-Save the code and reload it in your browser,then try calling the a() and b() functions from the JavaScript console:
-```js
-a()
-b()
-```
 
-You should see the y and z values output in the page. This works fine,as the output() function is being called inside the other functions — in the same scope as the variables it is printing are defined in,in each case. output() itself is available from anywhere,as it is defined in the global scope.
-Now try updating your code like this:
-```js
-function a(){
-    let y=2
-    output(x)
-}
-
-function b(){
-    let z=3
-    output(x)
-}
-```
-
-Save and reload again,and try this again in your JavaScript console:
-```js
-a()
-b()
-```
-Both the a() and b() call should output the value of x — 1. These work fine because even though the output() calls are not in the same scope as x is defined in,x is a global variable so is available inside all code,everywhere.
-Finally,try updating your code like this:
-```js
-function a(){
-    let y=2
-    output(z)
-}
-
-function b(){
-    let z=3
-    output(y)
-}
-```
-Save and reload again,and try this again in your JavaScript console:
-```js
-a()
-b()
-```
-This time the a() and b() calls will both return that annoying "ReferenceError: z is not defined" error — this is because the output() calls and the variables they are trying to print are not defined inside the same function scopes — the variables are effectively invisible to those function calls.
-備註： The same scoping rules do not apply to loop (e.g. for(){ ... }) and conditional blocks (e.g. if(){ ... }) — they look very similar,but they are not the same thing! Take care not to get these confused.
-
-備註： The ReferenceError: "x" is not defined error is one of the most common you'll encounter. If you get this error and you are sure that you have defined the variable in question,check what scope it is in.
-
-函數裡的函數
-Keep in mind that you can call a function from anywhere,even inside another function. This is often used as a way to keep code tidy — if you have a big complex function,it is easier to understand if you break it down into several sub-functions:
+### 函數裡的函數
+請記住，您可以從任何地方調用函數，甚至可以在另一個函數內部調用。
+這通常被用來保持代碼整潔——如果你有一個大而復雜的函數，如果你把它分解成幾個子函數，會更容易理解：
 
 ```js
 function myBigFunction(){
     let myValue
 
-    subFunction1()
+    subFunction1() // X: ReferenceError: myValue is not Define
     subFunction2()
     subFunction3()
 }
@@ -1156,7 +1054,9 @@ function subFunction3(){
     console.log(myValue)
 }
 ```
-Just make sure that the values being used inside the function are properly in scope. The example above would throw an error ReferenceError: myValue is not defined,because although the myValue variable is defined in the same scope as the function calls,it is not defined inside the function definitions — the actual code that is run when the functions are called. To make this work,you'd have to pass the value into the function as a parameter,like this:
+
+只需確保函數內使用的值在範圍內正確即可。 上面的示例會拋出錯誤 ReferenceError: myValue is not Define，因為儘管 myValue 變量是在與函數調用相同的作用域中定義的，但它並未在函數定義內部定義 - 調用函數時運行的實際代碼。
+要實現此功能，您必須將值作為參數傳遞給函數，如下所示：
 
 ```js
 function myBigFunction(){
@@ -1180,15 +1080,15 @@ function subFunction3(value){
 }
 ```
 
+
+
 函式
 函式是構成js的基本要素之一。一個函式本身就是一段js程序—包含用於執行某一個任務或計算的語法。要呼叫某一個函式之前，你必需先在這個函式欲執行的 scope 中定義它。
-
-定義函式
+### 定義函式
 一個函式的定義由一系列的函式關鍵詞組成,依次為：
-
-函式的名稱。
-包圍在括號()中，並由逗號區隔的一個函式參數列表。
-包圍在大括號{}中，用於定義函式功能的一些js語句。
+- 函式的**名稱(不得為 #關鍵保留字 )**。
+- 包圍在**括號**中，並由**半形逗號**區隔的一個函式參數列表(可以為無參數)。
+- 包圍在**大括號**中，用於定義函式功能的一些js語句。
 例如，以下的程式碼定義了一個名為 square 的簡單函式:
 
 ```js
@@ -1196,55 +1096,51 @@ function square(number){
   return number * number
 }
 ```
-函式 square 有一個參數，叫作 number。這個函式只有一行程式碼，它會回傳 number 自乘的結果。函式的 return語法描述函式的返回值。
-```js
-return number * number
-```
-
+函式 square 有一個參數，叫作 number。這個函式只有一行程式碼，它會回傳 number 自乘的結果。函式的 return 語法描述函式的返回值。
 原始參數（例如一個數字）被作為值傳遞給函式，如果呼叫的函式改變了這個參數的值，不會影響到函式外部的原始變數。
 如果傳遞一個物件（例如Array或自定義的其它物件）作為參數，而函式改變了這個物件的屬性，這樣的改變對函式外部是有作用的(因為是傳遞物件的位址)，如下面的例子所示：
 
 ```js
+let mycar={ make: "Honda",model: "Accord",year: 1998 }
+let x
+let y
+
 function myFunc(theObject){
     theObject.make="Toyota"
 }
 
-let mycar={ make: "Honda",model: "Accord",year: 1998 },
-x,
-y
-
-x=mycar.make // x 的值為 "Honda"
+x=mycar.make // => "Honda"
 
 myFunc(mycar)
-y=mycar.make // y 的值為 "Toyota"
+y=mycar.make // => "Toyota"
 // (屬性 make 被 function 改變)
 ```
-請注意，重新給參數指定一個對象(物件)，並不會對函式的外部有任何影響，因為這樣只是改變了參數的值，而不是改變了對象的一個屬性值：
 
+請注意，重新給參數指定一個對象，並不會對函式的外部有任何影響，因為這樣只是改變了參數的值，而不是改變了對象的一個屬性值：
 ```js
+let mycar={ make: "Honda",model: "Accord",year: 1998 }
+let x
+let y
+
 function myFunc(theObject){
     theObject={ make: "Ford",model: "Focus",year: 2006 }
 }
 
-let mycar={ make: "Honda",model: "Accord",year: 1998 },
-x,
-y
-x=mycar.make // x 的值為 "Honda"
+x=mycar.make // => "Honda"
 
 myFunc(mycar)
-y=mycar.make // y 的值還是 "Honda"
+y=mycar.make // => "Honda"
 ```
 
 儘管上述函式定義都是用的是陳述式，函式也同樣可以由函式表達式來定義。這樣的函式可以是匿名的；它不必有名稱。例如，上面提到的函式 square 也可這樣來定義：
-
 ```js
 let square=function(number){
-  return number*number;
-};
-let x=square(4); //x 的值為 16
+    return number*number
+}
+let x=square(4); // => 16
 ```
-必要時，函式名稱可與函式表達式同時存在，並且可以用於在函式內部代指其本身(遞迴)：
 
+必要時，函式名稱可與函式表達式同時存在，並且可以用於在函式內部代指其本身(遞迴)：
 ```js
 let factorial=function fac(n){
     if(n<2){
@@ -1260,9 +1156,8 @@ console.log(factorial(3))
 
 ```js
 function map(f,a){
-    let result=[],// Create a new Array
-    i;
-    for(i=0;i!=a.length;i=i+1){
+    let result=[] // Create a new Array
+    for(let i=0;i!=a.length;i=i+1){
         result[i]=f(a[i])
     }
     return result
@@ -1281,13 +1176,12 @@ map(
 ```
 除了上述的定義方式以外，我們也可以透過 Function constructor來定義，類似 eval()。
 
-呼叫函式
+### 呼叫函式
 定義一個函式並不會自動的執行它。定義了函式僅僅是賦予函式以名稱並明確函式被呼叫時該做些什麼。呼叫函式才會以給定的參數真正執行這些動作。例如，一旦你定義了函式 square，你可以如下這樣呼叫它：
 ```js
 square(5)
 ```
 上述程式碼把 5 傳遞給 square 函式。函式執行完會回傳 25。
-
 函式必須在呼叫區塊的可視範圍內，但函數也可以宣告在使用處的下面，如下列範例:
 ```js
 console.log(square(5))
@@ -1296,8 +1190,8 @@ function square(n){
     return n*n
 }
 ```
-The scope of a function is the function in which it is declared,or the entire program if it is declared at the top level. Note that this works only when defining the function using the above syntax (i.e. function funcName(){}). The code below will not work.
 
+函數的作用域是聲明它的函數，如果是在頂層聲明的，則為整個程序。請注意，這僅在使用上述語法定義函數時有效（即 function funcName(){}）。 下面的代碼將不起作用。
 ```js
 console.log(square(5))
 square=function(n){
@@ -1305,9 +1199,8 @@ square=function(n){
 };
 ```
 
-The arguments of a function are not limited to strings and numbers. You can pass whole objects to a function,too. The show_props function (defined in Working with Objects) is an example of a function that takes an object as an argument.
-A function can be recursive; that is,it can call itself. For example,here is a function that computes factorials recursively:
-
+函數的參數不限於字符串和數字。 您也可以將整個對像傳遞給函數。 show_props 函數（在使用對像中定義）是將對像作為參數的函數示例。
+函數可以是遞歸的； 也就是說，它可以調用自己。 例如，這是一個遞歸計算階乘的函數：
 ```js
 function factorial(n){
     if(n==0||n==1){
@@ -1318,7 +1211,7 @@ function factorial(n){
 }
 ```
 
-You could then compute the factorials of one through five as follows:
+然後，您可以計算一到五的階乘，如下所示：
 ```js
 let a,b,c,d,e
 a=factorial(1) // a gets the value 1
@@ -1327,62 +1220,61 @@ c=factorial(3) // c gets the value 6
 d=factorial(4) // d gets the value 24
 e=factorial(5) // e gets the value 120
 ```
+還有其他方法可以調用函數。 通常情況下，需要動態調用函數，或者函數的參數數量不同，或者需要將函數調用的上下文設置為運行時確定的特定對象。 事實證明，函數本身就是對象，而這些對象又具有方法（請參閱函數對象）。
+其中之一，apply()方法，可以用來實現這個目標。
 
-There are other ways to call functions. There are often cases where a function needs to be called dynamically,or the number of arguments to a function vary,or in which the context of the function call needs to be set to a specific object determined at runtime. It turns out that functions are,themselves,objects,and these objects in turn have methods (see the Function object (en-US)). One of these,the apply()method,can be used to achieve this goal.
-
-Function scope
-Variables defined inside a function cannot be accessed from anywhere outside the function,because the variable is defined only in the scope of the function. However,a function can access all variables and functions defined inside the scope in which it is defined. In other words,a function defined in the global scope can access all variables defined in the global scope. A function defined inside another function can also access all variables defined in it's parent function and any other variable to which the parent function has access.
-
+### 功能範圍
+函數內部定義的變量無法從函數外部的任何地方訪問，因為變量僅在函數範圍內定義。
+但是，函數可以訪問其定義範圍內定義的所有變量和函數。
+換句話說，在全局作用域中定義的函數可以訪問在全局作用域中定義的所有變量。
+在另一個函數內定義的函數還可以訪問其父函數中定義的所有變量以及父函數有權訪問的任何其他變量。
 ```js
 // The following variables are defined in the global scope
-let num1=20,
-  num2=3,
-  name="Chamahk";
+let num1=20
+let num2=3
+let name="Chamahk"
 
 // This function is defined in the global scope
 function multiply(){
-  return num1 * num2;
+    return num1*num2
 }
-
-multiply(); // Returns 60
+multiply(); // => 60
 
 // A nested function example
 function getScore(){
     let num1=2
     let num2=3
-
     function add(){
         return name+" scored "+(num1+num2)
     }
-
     return add()
 }
 
-getScore(); // Returns "Chamahk scored 5"
+getScore(); // => "Chamahk scored 5"
 ```
 
 閉包
-閉包是 JavaScript 最強大的特性之一。JavaScript 允許巢狀函式（nesting of functions）並給予內部函式完全訪問（full access）所有變數、與外部函式定義的函式（還有所有外部函式內的變數與函式）不過，外部函式並不能訪問內部函式的變數與函式。這保障了內部函式的變數安全。另外，由於內部函式能訪問外部函式定義的變數與函式，將存活得比外部函式還久。A closure is created when the inner function is somehow made available to any scope outside the outer function.
+閉包是js最強大的特性之一。JavaScript 允許巢狀函式（nesting of functions）並給予內部函式完全訪問（full access）所有變數，與外部函式定義的函式（還有所有外部函式內的變數與函式）。
+不過，外部函式並不能訪問內部函式的變數與函式。這保障了內部函式的變數安全。另外，由於內部函式能訪問外部函式定義的變數與函式，將存活得比外部函式還久。
 
+閉包在以下情況下被創建：當內部函式以某種方式被指定為可以在外部範圍中使用時。
 ```js
 let pet=function(name){
     // The outer function defines a variable called "name"
     let getName=function(){
         return name // The inner function has access to the "name" variable of the outer function
-    };
-
+    }
     return getName // Return the inner function,thereby exposing it to outer scopes
-},
-myPet=pet("Vivie")
+}
+let myPet=pet("Vivie")
 
-myPet() // Returns "Vivie"
-
+myPet() // => "Vivie"
 ```
-It can be much more complex than the code above. An object containing methods for manipulating the inner variables of the outer function can be returned.
+
+閉包也可以更複雜，當內部函式回傳一個包含用於操作外部函式內部變數的方法的物件時，例如：
 ```js
 let createPet=function(name){
     let sex
-
     return{
         setName:function(newName){
            name=newName
@@ -1398,7 +1290,7 @@ let createPet=function(name){
 
         setSex:function(newSex){
             if(typeof newSex=="string"&&(newSex.toLowerCase()=="male"||newSex.toLowerCase()=="female")){
-   sex=newSex
+               sex=newSex
             }
         },
     }
@@ -1412,45 +1304,18 @@ pet.setSex("male")
 pet.getSex() // male
 pet.getName() // Oliver
 ```
-In the codes above,the name variable of the outer function is accessible to the inner functions,and there is no other way to access the inner variables except through the inner functions. The inner variables of the inner function act as safe stores for the inner functions. They hold "persistent",yet secure,data for the inner functions to work with. The functions do not even have to be assigned to a variable,or have a name.
-```js
-let getCode=(function (){
-    let secureCode="0]Eal(eh&2"; // A code we do not want outsiders to be able to modify...
+在上述程式碼中，name 變數是內部函式 createPet 定義的，但是可以透過回傳的物件中的方法來操作它。這樣的特性稱為閉包，允許內部函式訪問外部函式的變數。
 
-    return function (){
-        return secureCode;
-    };
-})();
+值得注意的是，使用閉包時要小心處理 this 變數。它的值取決於函式的呼叫方式，而不是它的定義方式。一篇詳細且精緻的關於閉包的文章可以在這裡找到（英文）。
 
-getCode(); // Returns the secret code
-```
-
-There are,however,a number of pitfalls to watch out for when using closures. If an enclosed function defines a variable with the same name as the name of a variable in the outer scope,there is no way to refer to the variable in the outer scope again.
-
-```js
-let createPet=function (name){
-    // Outer function defines a variable called "name"
-    return{
-        setName:function (name){
-            // Enclosed function also defines a variable called "name"
-            name=name; // ??? How do we access the "name" defined by the outer function ???
-        },
-    };
-};
-```
-The magical this variable is very tricky in closures. They have to be used carefully,as what this refers to depends completely on where the function was called,rather than where it was defined. An excellent and elaborate article on closures can be found here.
-
-Using the arguments object
-The arguments of a function are maintained in an array-like object. Within a function,you can address the arguments passed to it as follows:
-
+### 使用arguments物件
+函式的參數保存在一個類似陣列的物件中。在函式內部，你可以使用以下方式來引用傳遞給它的參數：
 ```js
 arguments[i];
 ```
-where i is the ordinal number of the argument,starting at zero. So,the first argument passed to a function would be arguments[0]. The total number of arguments is indicated by arguments.length.
-
-Using the arguments object,you can call a function with more arguments than it is formally declared to accept. This is often useful if you don't know in advance how many arguments will be passed to the function. You can use arguments.length to determine the number of arguments actually passed to the function,and then access each argument using the arguments object.
-
-For example,consider a function that concatenates several strings. The only formal argument for the function is a string that specifies the characters that separate the items to concatenate. The function is defined as follows:
+其中 i 是參數的序數，從 0 開始。所以，傳遞給函式的第一個參數將是 arguments[0]。實際傳遞給函式的參數數量可以通過 arguments.length 屬性來獲取。
+使用 arguments 物件，你可以以比函式正式聲明的參數更多的參數來呼叫函式。這在你事先不知道會傳遞多少個參數給函式時非常有用。你可以使用 arguments.length 來確定實際傳遞給函式的參數數量，然後使用 arguments 物件來訪問每個參數。
+舉個例子，考慮一個函式，它將幾個字串連接在一起。該函式的唯一正式參數是指定連接這些項目的字符。函式定義如下：
 
 ```js
 function myConcat(separator){
@@ -1463,8 +1328,8 @@ function myConcat(separator){
     return result
 }
 ```
-You can pass any number of arguments to this function,and it concatenates each argument into a string "list":
 
+你可以傳遞任意數量的參數給該函式，並將每個參數連接成一個字串 "list"：
 ```js
 // returns "red,orange,blue,"
 myConcat(",","red","orange","blue")
@@ -1476,146 +1341,145 @@ myConcat("; ","elephant","giraffe","lion","cheetah")
 myConcat(". ","sage","basil","oregano","pepper","parsley")
 ```
 
-Please note that the arguments variable is "array-like",but not an array. It is array-like in that is has a numbered index and a length property. However,it does not possess all of the array-manipulation methods.
+請注意，arguments 變數是 "類陣列" 的，但不是真正的陣列。它被稱為 "類陣列" 是因為它具有編號索引和長度屬性，但並不具備陣列的所有操作方法。
 
-See the Function object in the JavaScript Reference for more information.
+### 可預定義的函式
+js 有幾個頂級的可預定義函式：
+1. eval
+2. isFinite
+3. isNaN
+4. parseInt
+5. parseFloat
+6. Number
+7. String
+8. encodeURI
+9. decodeURI
+10. encodeURIComponent
+11. decodeURIComponent
 
-Predefined functions
-JavaScript has several top-level predefined functions:
+以下各節將介紹這些函式。詳細的資訊可參考js參考資料。
 
-eval
-isFinite
-isNaN
-parseInt and parseFloat
-Number and String
-encodeURI,decodeURI,encodeURIComponent,and decodeURIComponent (all available with Javascript 1.5 and later).
-The following sections introduce these functions. See the JavaScript Reference for detailed information on all of these functions.
-
-eval Function
-The eval function evaluates a string of JavaScript code without reference to a particular object. The syntax of eval is:
-
-JS
-Copy to Clipboard
-
+#### #eval
+eval 函式在不參考特定物件的情況下評估js代碼的字符串。eval 的語法是：
+```js
 eval(expr);
-where expr is a string to be evaluated.
+```
 
-If the string represents an expression,eval evaluates the expression. If the argument represents one or more JavaScript statements,eval performs the statements. The scope of eval code is identical to the scope of the calling code. Do not call eval to evaluate an arithmetic expression; JavaScript evaluates arithmetic expressions automatically.
+其中 expr 是要評估的字符串。
 
-isFinite function
-The isFinite function evaluates an argument to determine whether it is a finite number. The syntax of isFinite is:
+如果該字符串表示表達式，則 eval 評估該表達式。如果該參數表示一個或多個 JavaScript 陳述式，eval 則執行這些陳述式。eval 代碼的範圍與呼叫代碼的範圍相同。不要呼叫 eval 來評估算術表達式；JavaScript 會自動評估算術表達式。
 
-JS
-Copy to Clipboard
-
+#### #isFinite
+isFinite 函式評估參數以確定它是否是一個有限數。isFinite 的語法是：
+```js
 isFinite(number);
-where number is the number to evaluate.
-
-If the argument is NaN,positive infinity or negative infinity,this method returns false,otherwise it returns true.
-
-The following code checks client input to determine whether it is a finite number.
-
-JS
-Copy to Clipboard
-
-if (isFinite(ClientInput)){
-  /* take specific steps */
+```
+其中 number 是要評估的數值。
+如果參數是 NaN、正無窮或負無窮，該方法返回false；否則返回 true。
+以下代碼檢查用戶輸入是否為有限數：
+```js
+if(isFinite(ClientInput)){
+    // code
 }
-isNaN function
-The isNaN function evaluates an argument to determine if it is "NaN" (not a number). The syntax of isNaN is:
+```
+#### #isNaN
+isNaN 函式評估參數以確定它是否為 "NaN"（不是一個數字）。isNaN 的語法是：
+```js
+isNaN(testValue)
+```
+其中 testValue 是你想要評估的值。
 
-JS
-Copy to Clipboard
+#### #parseFloat 和 #parseInt 函式
+兩個 "parse" 函式，parseFloat 和 parseInt，當傳遞一個字串作為參數時，它們會回傳一個數值。
 
-isNaN(testValue);
-where testValue is the value you want to evaluate.
-
-The parseFloat and parseInt functions return "NaN" when they evaluate a value that is not a number. isNaN returns true if passed "NaN," and false otherwise.
-
-The following code evaluates floatValue to determine if it is a number and then calls a procedure accordingly:
-
-JS
-Copy to Clipboard
-
-let floatValue=parseFloat(toFloat);
-
-if (isNaN(floatValue)){
-  notFloat();
-} else{
-  isFloat();
-}
-parseInt and parseFloat functions
-The two "parse" functions,parseInt and parseFloat,return a numeric value when given a string as an argument.
-
-The syntax of parseFloat is:
-
-JS
-Copy to Clipboard
-
+parseFloat 的語法是：
+```js
 parseFloat(str);
-where parseFloat parses its argument,the string str,and attempts to return a floating-point number. If it encounters a character other than a sign (+ or -),a numeral (0-9),a decimal point,or an exponent,then it returns the value up to that point and ignores that character and all succeeding characters. If the first character cannot be converted to a number,it returns "NaN" (not a number).
+```
+其中 parseFloat 分析其參數，即字符串 str，並嘗試回傳一個浮點數。
+如果遇到一個不是加號 (+) 或減號 (-)、數字 (0-9)、小數點或指數的字符，則它會返回該字符之前的值，並忽略該字符和所有後續字符。如果第一個字符無法轉換為數字，則它返回 "NaN"（不是一個數字）。
+parseInt 的語法是：
+```js
+parseInt(str [, radix]);
+```
+parseInt 分析其第一個參數，即字符串 str，並嘗試回傳指定基數（進制，基）的整數。
+例如，十進制數使用基數 10，八進制數使用基數 8，十六進制數使用基數 16，等等。對於大於 10 的進制，字母表的字母表示大於 9 的數字。例如，對於十六進制數（基數 16），A 到 F 用於表示大於
 
-The syntax of parseInt is:
+其中 str 是要解析的字符串，而 radix 是可選參數，表示解析時使用的基數（進制）。radix 參數可以是介於 2 到 36 之間的整數值。如果省略 radix 或基數為 0，parseInt 會根據以下規則分析字符串 str：
 
-JS
-Copy to Clipboard
+- 如果字符串以 "0x" 或 "0X" 開頭，則基數被設定為 16（十六進制）。
+- 如果字符串以 "0" 開頭且後跟非十六進制數字字符，則基數被設定為 8（八進制）。這是因為前置的 0 表示八進制數。
+- 如果字符串以任何其他字符開頭，或者 radix 為 10，則基數被設定為 10（十進制）。
+- 如果第一個字符無法轉換為數字，或者字符串是空的，parseInt 則返回 NaN。
 
-parseInt(str [,radix]);
-parseInt parses its first argument,the string str,and attempts to return an integer of the specified radix (base),indicated by the second,optional argument,radix. For example,a radix of ten indicates to convert to a decimal number,eight octal,sixteen hexadecimal,and so on. For radixes above ten,the letters of the alphabet indicate numerals greater than nine. For example,for hexadecimal numbers (base 16),A through F are used.
+以下是一些例子：
+```js
+parseInt("123") // => 123
+parseInt("12.3") // => 12
+parseInt("0x10") // => 16
+parseInt("0xAF",16) // => 175（0xAF 在十進制中是 175）
+parseInt("010") // => 8
+```
 
-If parseInt encounters a character that is not a numeral in the specified radix,it ignores it and all succeeding characters and returns the integer value parsed up to that point. If the first character cannot be converted to a number in the specified radix,it returns "NaN." The parseInt function truncates the string to integer values.
+#### #Number 和 #String 函式
+#Number 和 #String 是 JavaScript 內置的函式，分別用於將其他資料類型轉換為數字和字串。
 
-Number and String functions
-The Number and String functions let you convert an object to a number or a string. The syntax of these functions is:
+Number函式可以將其他資料類型轉換為數字，String函式可以將其他資料類型轉換為字串。
+它們的語法是：
+```js
+Number(value)
+String(value)
+```
+其中 value 是你想要轉換的值。
 
-JS
-Copy to Clipboard
+這些函式的使用方式如下：
+```js
+Number("123") // => 123
+Number("12.3") // => 12.3
+Number(true) // => 1
+Number(false) // => 0
 
-let objRef;
-objRef=Number(objRef);
-objRef=String(objRef);
-objRef 是物件的參照。 Number uses the valueOf() method of the object; String uses the toString() method of the object.
+String(123) // => "123"
+String(12.3) // => "12.3"
+String(true) // => "true"
+String(false) // => "false"
+```
 
-下列範例將 日期物件轉換為可讀字串。
+#### #encodeURI #decodeURI #encodeURIComponent #decodeURIComponent
 
-JS
-Copy to Clipboard
+這些函式用於對網址或 URI 中的特殊字符進行編碼或解碼。
+encodeURI 函式用於對整個 URI 进行編碼，但是它不會編碼以下字符：ASCII字母、數字、~!@#$&*()=:/,;?+'。
+decodeURI 函式用於解碼 encodeURI 編碼的 URI。
+encodeURIComponent 函式用於對 URI 中的個別組件進行編碼。它會對所有特殊字符進行編碼，包括對於 encodeURI 函式不進行編碼的字符。
+decodeURIComponent 函式用於解碼 encodeURIComponent 編碼的 URI 組件。
+這些函式的語法如下：
 
-let D=new Date(430054663215),
-  x;
-x=String(D); // x 等於 "星期二 八月 18 04:37:43 GMT-0700  1983"
-下列範例將 字串 物件轉換為 數字物件。
+```js
+encodeURI(uri)
+decodeURI(uri)
+encodeURIComponent(uriComponent)
+decodeURIComponent(uriComponent)
+```
+其中 uri 或 uriComponent 是你想要編碼或解碼的 URI 或 URI 組件。
 
-JS
-Copy to Clipboard
+以下是一些例子：
+```js
+let url = "https://www.example.com/my page.html"
+let encodedUrl = encodeURI(url)
+console.log(encodedUrl) // => "https://www.example.com/my%20page.html"
 
-let str="12",
-  num;
-num=Number(字串);
-使用 DOM 方法 write() 與 JavaScript typeof 運算子.
+let decodedUrl = decodeURI(encodedUrl)
+console.log(decodedUrl) // => "https://www.example.com/my page.html"
 
-JS
-Copy to Clipboard
+let query = "name=John&age=30"
+let encodedQuery = encodeURIComponent(query)
+console.log(encodedQuery) // => "name%3DJohn%26age%3D30"
 
-let str="12",
-  num;
-document.write(typeof str);
-document.write("<br/>");
-num=Number(str);
-document.write(typeof num);
-escape 與 unescape 函式(JavaScript 1.5 後去除)
-escape 與 unescape 對於非 ASCII 字元無法處理。 在 JavaScript 1.5 之後改用 encodeURI (en-US),decodeURI (en-US),encodeURIComponent (en-US),與 decodeURIComponent (en-US).
+let decodedQuery = decodeURIComponent(encodedQuery)
+console.log(decodedQuery) // => "name=John&age=30"
+```
+請注意，encodeURI 和 encodeURIComponent 函式是將 URI 組件編碼為安全的 URI 字符串的好方法，以防止 URI 中出現非法字符。這在 URL 中傳遞參數時特別重要，以確保參數的值不會影響 URL 的解析。
 
-escape 與 unescape 用於編碼與解碼字串。 escape 函式回傳十六進位編碼。 unescape 函式會將十六進位的編碼轉換回 ASCII 字串。
-
-這些函式的語法是:
-
-JS
-Copy to Clipboard
-
-escape(字串);
-unescape(字串);
-這些函式常被用於伺服器後端中處理姓名等資料。
 
 ## Chr11 #例外處理
 在js種共有7+1種不同的例外情形分別為**Error**,**RangeError**,**ReferenceError**,**SyntaxError**,**TypeError**,**URIError**,~~**EvalError**~~+NaN
@@ -1734,7 +1598,7 @@ try{
 ```
 catch 區塊
 你可以使用 catch 區塊來處理 try 區塊可能丟出的例外。
-catch 區塊指定用來保存 throw 陳述式所丟出的值的標識符（前面語法中的 catchID） 您可以使用此標識符獲取有關被拋出的例外的信息。 JavaScript 在進入catch 區塊時創建此標識符 標識符僅持續 catch 區塊的持續時間；在 catch 區塊完成執行後，標識符不再可用。
+catch 區塊指定用來保存 throw 陳述式所丟出的值的標識符（前面語法中的 catchID） 您可以使用此標識符獲取有關被拋出的例外的信息。js在進入catch 區塊時創建此標識符 標識符僅持續 catch 區塊的持續時間；在 catch 區塊完成執行後，標識符不再可用。
 例如，下列的程式碼中丟出了一個例外，當例外發生後，控制權被轉交給 catch 區塊。
 ```js
 try{
@@ -1746,7 +1610,7 @@ try{
 ```
 finally 區塊
 finally 區塊中包含在 try 和 catch 區塊執行之後但在 try...catch 陳述式之後的陳述式之前 執行的陳述式。 無論是否拋出例外，finally 區塊都會執行。 如果拋出例外，則即使沒有 catch 區塊處理例外，finally 區塊中的陳述式也會執行。
-您可以使用 finally 區塊來使腳本在發生例外時正常地結束。例如，您可能需要釋放腳本中綁定的資源。 在以下示例中，打開一個文件，然後執行使用該文件的陳述式（伺服器端 JavaScript 允許您訪問文件）。 如果在打開文件時拋出例外，finally 區塊會在腳本結束之前關閉文件。
+您可以使用 finally 區塊來使腳本在發生例外時正常地結束。例如，您可能需要釋放腳本中綁定的資源。 在以下示例中，打開一個文件，然後執行使用該文件的陳述式（伺服器端js允許您訪問文件）。 如果在打開文件時拋出例外，finally 區塊會在腳本結束之前關閉文件。
 ```js
 openMyFile()
 try{
@@ -1824,7 +1688,7 @@ try{
 }
 catch (e){
     console.log(e.name) // 紀錄 'Error'
-    console.log(e.message) // 紀錄 'The message' 或者其他 JavaScript 例外的資訊)
+    console.log(e.message) // 紀錄 'The message' 或者其他js例外的資訊)
 }
 ```
 
