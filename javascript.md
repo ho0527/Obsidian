@@ -1735,4 +1735,4 @@ catch (e){
 
 [簡寫一覽](abbreviationslist.md)
 
-小賀chris:) 2023/06/22 v1.2.2
+小賀chris:) 2023/08/04 v1.2.2
