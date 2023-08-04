@@ -4,7 +4,6 @@
 - [ ] 線上撥放器
 - [ ] 網頁oop
 - [ ] indexeddb
-- [ ] iriver user connect sql bug
 - [ ] todo
 - [ ] todo
 - [ ] todo
@@ -19,6 +18,7 @@
 - [x] api上傳圖片 ✅ 2023-06-25
 - [x] iRiver python 後端 ✅ 2023-07-22
 - [x] python django ✅ 2023-07-22
+- [x] iriver user connect sql bug ✅ 2023-08-04
 
 ## 取消之任務
 - [x] py自動發文 ✅ 2023-05-24 已被完成

@@ -6,32 +6,8 @@
       {
         "id": "00d6db2a61c308c9",
         "type": "tabs",
-        "dimension": 67.6959619952494,
+        "dimension": 62.153602533650044,
         "children": [
-          {
-            "id": "904d2c69cc525bda",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "programming.md",
-                "mode": "preview",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "be4541826f976a9a",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "css.md",
-                "mode": "preview",
-                "source": false
-              }
-            }
-          },
           {
             "id": "46dfb9b813ec0206",
             "type": "leaf",
@@ -79,26 +55,14 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "29deee1b46b4639c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "js/allevent.md",
-                "mode": "source",
-                "source": false
-              }
-            }
           }
         ],
-        "currentTab": 3
+        "currentTab": 1
       },
       {
         "id": "ad9f2568e7be8e00",
         "type": "tabs",
-        "dimension": 32.304038004750595,
+        "dimension": 37.84639746634996,
         "children": [
           {
             "id": "783bbe8085ac6179",
@@ -107,18 +71,6 @@
               "type": "markdown",
               "state": {
                 "file": "todo.md",
-                "mode": "preview",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "ea27a9bdf8347f85",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "website/plugin/seltmake.md",
                 "mode": "preview",
                 "source": false
               }
@@ -315,13 +267,18 @@
   },
   "active": "41b5fbacc8954a0c",
   "lastOpenFiles": [
-    "website/plugin/chrisplugin.md",
-    "git/commit.md",
+    "todo.md",
     "css/declarationlist.md",
+    "website/plugin/seltmake.md",
+    "website/plugin/chrisplugin.md",
+    "programming.md",
+    "css.md",
     "javascript.md",
+    "js/allevent.md",
+    "git/commit.md",
+    "python/plugin/django.md",
     "html/body.md",
     "abbreviationslist.md",
-    "todo.md",
     "websafety/index.md",
     "websafety/sqliinjection.md",
     "websafety/xssattack.md",
@@ -331,7 +288,6 @@
     "mojo/functionlist.md",
     "mojo",
     "mojo.md",
-    "python/plugin/django.md",
     "css/cursordef.md",
     "css/cursorimage/not-allowed.gif",
     "css/cursorimage/nwse-resize.gif",
@@ -352,15 +308,11 @@
     "css/cursorimage/se-resize.gif.crdownload",
     "website/webstorage.md",
     "js/canvas.md",
-    "programming.md",
     "git/comment.md",
-    "css.md",
     "sever/ssl.md",
     "sever/openansever.md",
     "variablenamingstyles.md",
-    "website/plugin/seltmake.md",
     "js/ajax.md",
-    "php/functionlista-l.md",
     "Untitled.canvas"
   ]
 }
