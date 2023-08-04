@@ -44,6 +44,28 @@
 - #物件
   - #陣列
 - #函式
+  - #函式介紹
+  - #定義函式
+  - #呼叫函式
+  - #功能範圍
+  - #函式vs方法
+  - #匿名函式
+  - #函式參數
+  - #函式作用域及衝突
+  - #函式裡的函式
+  - #arguments物件
+  - #可預定義的函式
+    - #eval
+    - #isFinite
+    - #isNaN
+    - #parseInt
+    - #parseFloat
+    - #Number
+    - #String
+    - #encodeURI
+    - #decodeURI
+    - #encodeURIComponent
+    - #decodeURIComponent
 - #例外處理
   - #例外介紹
   - #處理例外
@@ -51,7 +73,7 @@
     - #try-catch
 - #表單
 - #註解及參見
-  - #關鍵保留字 一覽
+  - #關鍵保留字
 
 ## Chr1 #介紹
 js 可以用來做很多事例如:
@@ -60,6 +82,8 @@ js 可以用來做很多事例如:
 3. 計畫運作規則(porgram rules)
 4. 回應網頁事件(react to events)
 主要就是為了增加網頁的互動性而出現的程式語言
+
+[詳細介紹參見](https://developer.mozilla.org/zh-TW/docs/Learn/JavaScript/First_steps/What_is_JavaScript)
 
 ## Chr2 #語彙結構
 1. 大小寫敏感
@@ -815,282 +839,19 @@ let o=new Object(Boolean()) // equivalent to o=new Boolean(false)
 ```
 
 ## Chr10 #函式
-函數 - 可重複使用的程式碼
 
+### 函式介紹
 程式設計的另一個基本概念是函數，它允許您儲存一段程式碼，該程式碼在定義的區塊內執行單個任務，然後在需要時使用一個簡短命令調用該程式碼區塊，而不必多次輸入相同的程式碼。
-在本文中，我們將探索函數背後的基本概念，例如基本語法、如何調用和定義它們、作用域範圍與參數。
 
-### 先備知識：
-- 基礎電腦術語
-- 對html及css有基本認識
-- js的第一步。
-
-### 學習目標
-- 了解js函數背後的基本概念
-
-### 我在哪能找到函數？
-在js裡，你到處都能看到函數的蹤影。事實上，我們在前面的課程中一直都在用函數，只是沒什麼提及而已。如今是時候讓我們詳細探討函數並認真探索它們的語法了。
-幾乎每當你使用了包含一對小括號的js結構，並且沒有用到諸如 for 迴圈、while 與 do...while 迴圈或 if...else 敘述等常見的內建語言結構時，你就是在使用函數。
-
-### 瀏覽器內建函數
-到目前為止，我們已在課程中大量使用了瀏覽器內建的函數。例如，每當我們操控一個字串時：
-
-```js
-let myText="I am a string"
-let newString=myText.replace("string","sausage")
-console.log(newString)
-// 字串的 replace() 函數會先替換一段子字串，
-// 再回傳替換過後的新字串
-```
-
-或是每當我們操控一個陣列時：
-```js
-let myArray=["I","love","chocolate","frogs"]
-let madeAString=myArray.join(" ")
-console.log(madeAString)
-// 陣列的 join() 函數會先將所有陣列元素合併，
-// 形成一個新字串，再回傳該新字串
-```
-或是每當我們產生一個亂數：
-```js
-let myNumber=Math.random()
-// random() 函數會先產生一個介於 0 到 1 之間
-// 的亂數，再回傳該數字
-```
-……我們其實當在使用函數。
-
-備註： 若有需要，你可以瀏覽器的js主控台中輸入以上指令碼，藉此重新熟悉這些功能。
-
-JavaScript 語言有很多內建函數，讓你不用重覆寫所有程式碼就能做很多事。事實上，在你執行瀏覽器的內建函數時，你呼叫到的某些程式碼並不能用js來寫——很多這種函數是在部分呼叫瀏覽器背景語言，大多是由 C++ 這種低階系統語言寫成，而非js這種網際網路語言。
-
-麻煩謹記在心，有些瀏覽器內建函數不是js語言核心的一部份——有些被定義為瀏覽器 API 的一部份，它們已預設語言為基礎來提供更多功能（先前的章節裡有更多說明）。在未來的模組中我們會更深入探討瀏覽器 API 的用法。
-
-#### 函數（function）vs方法（method）
-在我們繼續前，有件事需要先釐清——技術上來說，瀏覽器內建函數並不是函數（function）——它們是方法（method）。這聽起來有點令人疑惑，不過別擔心——在你目前的學習階段，「函數」與「方法」這兩個詞彙大多時候是可以互換的，至少對我們的目標而言。
-
-這兩個詞的區別在方法（method）是定義在物件裡的函數（function）。瀏覽器內建函數（方法）和變數（此處被稱作屬性（property））被儲存在建構好的物件裡，令程式碼控制起來更有效率也更簡單。
-
-你還不需要了解js物件的內部運作——在之後的模組我們會學到物件內部的所有運作方式，以及如何創建你自己的物件。此時，我們只需要釐清方法與函數之間任何可能搞混的地方——在你上網查相關教學資源時很可能兩個詞彙都會碰到。
-
-#### 自訂函數
-你在課程中也見過很多自訂函數 — 函數是在你的程式碼中定義的，而不是內建在瀏覽器中。每當你看到一個帶有括號的自訂名稱時，你就是在使用一個自訂函數。
-例如:
-```js
-function draw(){
-    ctx.clearRect(0,0,WIDTH,HEIGHT)
-    for(let i=0;i<100;i=i+1){
-        ctx.beginPath()
-        ctx.fillStyle="rgba(255,0,0,0.5)"
-        ctx.arc(random(WIDTH),random(HEIGHT),random(50),0,2*Math.PI)
-        ctx.fill()
-    }
-}
-```
-
-這個函數在一個canvas元素內繪製了100個隨機圓形。每次我們想要這麼做，只需使用以下方式調用該函數：
-```js
-draw()
-```
-而不用每次都重寫所有的程式碼。函數可以包含任何程式碼 — 你甚至可以在函數內呼叫其他函數。例如上面的函數在內部三次調用了 random() 函數，而 random() 函數是由以下程式碼定義的：
-```js
-function random(number){
-  return Math.floor(Math.random()*number);
-}
-```
-我們需要這個函數是因為瀏覽器內建的 Math.random() 函數只會產生 0 到 1 之間的亂數，而我們想要產生介於 0 到指定數字之間的整數。
-
-### 呼叫函數
-你可能已經明白了，但為了確認實際使用一個函數之後，你必須運行它(或者說調用它)。這可以通過在程式碼中的某個地方包含函數名稱，後面跟著括號來完成。
-```js
-function myFunction(){
-  alert("hello");
-}
-
-myFunction();
-// 呼叫一次函數
-```
-
-### 匿名函數
-你可能會看到以稍微不同的方式定義和調用函數。到目前為止，我們創建的函數通常像這樣：
-```js
-function myFunction(){
-    alert("hello")
-}
-```
-But you can also create a function that doesn't have a name:
-```js
-function(){
-  alert("hello")
-}
-```
-
-這被稱為匿名函數—它沒有名稱！它自己並不會執行任何動作。通常，你會將匿名函數與事件處理程式一起使用，例如以下範例將在按鈕被點擊時運行函數內的程式碼：
-```js
-let myButton=document.querySelector("button")
-myButton.onclick=function(){
-    alert("hello")
-}
-```
-以上的範例要求頁面上有一個`<button>`元素，以便選取並點擊。在課程中你已經多次見過這種結構，你將在下一篇文章中學到更多並且使用它。
-
-你還可以將匿名函數指派為變數的值，例如：
-```js
-let myGreeting=function(){
-    alert("hello")
-}
-```
-這個函數現在可以這樣調用：
-```js
-myGreeting()
-```
-
-這實際上就是給這個函數取了個名字；你也可以將這個函數指派為多個變數的值，例如：
-```js
-let anotherGreeting=function(){
-    alert("hello")
-};
-```
-這個函數現在可以這樣調用：
-```js
-myGreeting()
-anotherGreeting()
-```
-但這只會造成混亂，所以不要這麼做！在創建函數時，最好堅持以下形式：
-```js
-function myGreeting(){
-  alert("hello")
-}
-```
-你主要使用匿名函數只是為了在事件觸發時執行一系列程式碼 — 像按下按鈕之後運行一些程式碼 — 使用事件處理程式。再次強調，它看起來像這樣：
-```js
-myButton.onclick=function(){
-    // 程式碼在這
-}
-```
-
-### 函數參數
-有些函數在調用時需要指定參數 — 這些參數是需要放在函數括號內的值，這些值是函數正確運作所需的。
-備註： 有時參數被稱為引數、屬性或特性。
-舉個例子，瀏覽器內建的 Math.random() 函數不需要任何參數。當調用它時，它總是返回 0 到 1 之間的一個隨機數：
-
-```js
-let myNumber=Math.random();
-```
-
-而瀏覽器內建的字串 replace() 函數則需要兩個參數 — 在主字串中要查找的子字串，以及要用來替換該字串的子字串：
-```js
-let myText="I am a string";
-let newString=myText.replace("string","sausage");
-```
-
-備註： 當你需要指定多個參數時，它們之間用**半形逗號**分隔。
-還要注意，有時參數是可選的 — 你不一定要指定它們。如果不指定，該函數通常會使用一些預設行為。舉個例子，陣列 join() 函數的參數是可選的：
-```js
-let myArray=["I","love","chocolate","frogs"];
-let madeAString=myArray.join(" ");
-// 回傳 'I love chocolate frogs'
-let madeAString=myArray.join();
-// 回傳 'I,love,chocolate,frogs'
-```
-如果不包含參數來指定連接/分隔字符，則默認使用逗號。
-
-### 函數作用域及衝突
-讓我們來談談作用域 — 這是處理函數時非常重要的概念。當你創建一個函數時，該函數內定義的變量和其他內容會位於自己單獨的作用域中，這意味著它們被封鎖在自己單獨的區域內，無法從其他函數內部或外部程式碼訪問。
-在所有函數之外的頂層稱為全局作用域。在全局作用域中定義的值可以在程式碼的任何地方訪問。
-JavaScript 之所以這樣設計，是基於多種原因 — 主要是出於安全和組織考慮。有時你不希望變數在程式碼的任何地方都是可訪問的 — 從其他地方引入的外部腳本可能會開始干擾你的程式碼，並造成問題，因為它們可能恰好使用與程式碼其他部分相同的變數名稱，造成衝突。這可能是惡意的，也可能是無意的。
-例如，假設你有一個 HTML 文件在調用兩個外部的js文件，並且這兩個文件都有一個使用相同名稱變數和函數的定義：
-
-```html
-<!-- Excerpt from my HTML -->
-<script src="first.js"></script>
-<script src="second.js"></script>
-<script>
-  greeting();
-</script>
-```
-
-```js
-// first.js
-let name="Chris";
-function greeting(){
-    alert("Hello "+name+": welcome to our company.")
-}
-```
-
-```js
-// second.js
-let name="Zaptec"
-function greeting(){
-    alert("Our company is called "+name+".")
-}
-```
-你希望呼叫的兩個函數都被稱為 greeting()，但你只能夠訪問 second.js 文件中的 greeting() 函數 — 它是在 HTML 中的後面引入，因此它的變數和函數覆蓋了 first.js 文件中的相同名稱。
-將程式碼的部分功能封閉在函數中，可以避免這樣的問題，也被視為最佳實踐。
-簡單的說後創的蓋掉了先創的函式
-
-
-### 函數裡的函數
-請記住，您可以從任何地方調用函數，甚至可以在另一個函數內部調用。
-這通常被用來保持代碼整潔——如果你有一個大而復雜的函數，如果你把它分解成幾個子函數，會更容易理解：
-
-```js
-function myBigFunction(){
-    let myValue
-
-    subFunction1() // X: ReferenceError: myValue is not Define
-    subFunction2()
-    subFunction3()
-}
-
-function subFunction1(){
-    console.log(myValue)
-}
-
-function subFunction2(){
-    console.log(myValue)
-}
-
-function subFunction3(){
-    console.log(myValue)
-}
-```
-
-只需確保函數內使用的值在範圍內正確即可。 上面的示例會拋出錯誤 ReferenceError: myValue is not Define，因為儘管 myValue 變量是在與函數調用相同的作用域中定義的，但它並未在函數定義內部定義 - 調用函數時運行的實際代碼。
-要實現此功能，您必須將值作為參數傳遞給函數，如下所示：
-
-```js
-function myBigFunction(){
-    let myValue=1
-
-    subFunction1(myValue)
-    subFunction2(myValue)
-    subFunction3(myValue)
-}
-
-function subFunction1(value){
-    console.log(value)
-}
-
-function subFunction2(value){
-    console.log(value)
-}
-
-function subFunction3(value){
-    console.log(value)
-}
-```
-
-
-
-函式
 函式是構成js的基本要素之一。一個函式本身就是一段js程序—包含用於執行某一個任務或計算的語法。要呼叫某一個函式之前，你必需先在這個函式欲執行的 scope 中定義它。
-### 定義函式
+
+### #定義函式
 一個函式的定義由一系列的函式關鍵詞組成,依次為：
 - 函式的**名稱(不得為 #關鍵保留字 )**。
 - 包圍在**括號**中，並由**半形逗號**區隔的一個函式參數列表(可以為無參數)。
 - 包圍在**大括號**中，用於定義函式功能的一些js語句。
-例如，以下的程式碼定義了一個名為 square 的簡單函式:
 
+例如，以下的程式碼定義了一個名為 square 的簡單函式:
 ```js
 function square(number){
   return number * number
@@ -1176,7 +937,7 @@ map(
 ```
 除了上述的定義方式以外，我們也可以透過 Function constructor來定義，類似 eval()。
 
-### 呼叫函式
+### #呼叫函式
 定義一個函式並不會自動的執行它。定義了函式僅僅是賦予函式以名稱並明確函式被呼叫時該做些什麼。呼叫函式才會以給定的參數真正執行這些動作。例如，一旦你定義了函式 square，你可以如下這樣呼叫它：
 ```js
 square(5)
@@ -1223,7 +984,7 @@ e=factorial(5) // e gets the value 120
 還有其他方法可以調用函數。 通常情況下，需要動態調用函數，或者函數的參數數量不同，或者需要將函數調用的上下文設置為運行時確定的特定對象。 事實證明，函數本身就是對象，而這些對象又具有方法（請參閱函數對象）。
 其中之一，apply()方法，可以用來實現這個目標。
 
-### 功能範圍
+### #功能範圍
 函數內部定義的變量無法從函數外部的任何地方訪問，因為變量僅在函數範圍內定義。
 但是，函數可以訪問其定義範圍內定義的所有變量和函數。
 換句話說，在全局作用域中定義的函數可以訪問在全局作用域中定義的所有變量。
@@ -1252,6 +1013,186 @@ function getScore(){
 
 getScore(); // => "Chamahk scored 5"
 ```
+### #函式vs方法
+在我們繼續前，有件事需要先釐清——技術上來說，瀏覽器內建函數並不是函數（function）——它們是方法（method）。這聽起來有點令人疑惑，不過別擔心——在你目前的學習階段，「函數」與「方法」這兩個詞彙大多時候是可以互換的，至少對我們的目標而言。
+
+這兩個詞的區別在方法（method）是定義在物件裡的函數（function）。瀏覽器內建函數（方法）和變數（此處被稱作屬性（property））被儲存在建構好的物件裡，令程式碼控制起來更有效率也更簡單。
+
+你還不需要了解js物件的內部運作——在之後的模組我們會學到物件內部的所有運作方式，以及如何創建你自己的物件。此時，我們只需要釐清方法與函數之間任何可能搞混的地方——在你上網查相關教學資源時很可能兩個詞彙都會碰到。
+
+### #匿名函式
+你可能會看到以稍微不同的方式定義和調用函數。到目前為止，我們創建的函數通常像這樣：
+```js
+function myFunction(){
+    alert("hello")
+}
+```
+But you can also create a function that doesn't have a name:
+```js
+function(){
+  alert("hello")
+}
+```
+
+這被稱為匿名函數—它沒有名稱！它自己並不會執行任何動作。通常，你會將匿名函數與事件處理程式一起使用，例如以下範例將在按鈕被點擊時運行函數內的程式碼：
+```js
+let myButton=document.querySelector("button")
+myButton.onclick=function(){
+    alert("hello")
+}
+```
+以上的範例要求頁面上有一個`<button>`元素，以便選取並點擊。在課程中你已經多次見過這種結構，你將在下一篇文章中學到更多並且使用它。
+
+你還可以將匿名函數指派為變數的值，例如：
+```js
+let myGreeting=function(){
+    alert("hello")
+}
+```
+這個函數現在可以這樣調用：
+```js
+myGreeting()
+```
+
+這實際上就是給這個函數取了個名字；你也可以將這個函數指派為多個變數的值，例如：
+```js
+let anotherGreeting=function(){
+    alert("hello")
+};
+```
+這個函數現在可以這樣調用：
+```js
+myGreeting()
+anotherGreeting()
+```
+但這只會造成混亂，所以不要這麼做！在創建函數時，最好堅持以下形式：
+```js
+function myGreeting(){
+  alert("hello")
+}
+```
+你主要使用匿名函數只是為了在事件觸發時執行一系列程式碼 — 像按下按鈕之後運行一些程式碼 — 使用事件處理程式。再次強調，它看起來像這樣：
+```js
+myButton.onclick=function(){
+    // 程式碼在這
+}
+```
+
+### #函式參數
+有些函數在調用時需要指定參數 — 這些參數是需要放在函數括號內的值，這些值是函數正確運作所需的。
+備註： 有時參數被稱為引數、屬性或特性。
+舉個例子，瀏覽器內建的 Math.random() 函數不需要任何參數。當調用它時，它總是返回 0 到 1 之間的一個隨機數：
+
+```js
+let myNumber=Math.random();
+```
+
+而瀏覽器內建的字串 replace() 函數則需要兩個參數 — 在主字串中要查找的子字串，以及要用來替換該字串的子字串：
+```js
+let myText="I am a string";
+let newString=myText.replace("string","sausage");
+```
+
+備註： 當你需要指定多個參數時，它們之間用**半形逗號**分隔。
+還要注意，有時參數是可選的 — 你不一定要指定它們。如果不指定，該函數通常會使用一些預設行為。舉個例子，陣列 join() 函數的參數是可選的：
+```js
+let myArray=["I","love","chocolate","frogs"];
+let madeAString=myArray.join(" ");
+// 回傳 'I love chocolate frogs'
+let madeAString=myArray.join();
+// 回傳 'I,love,chocolate,frogs'
+```
+如果不包含參數來指定連接/分隔字符，則默認使用逗號。
+
+### #函式作用域及衝突
+讓我們來談談作用域 — 這是處理函數時非常重要的概念。當你創建一個函數時，該函數內定義的變量和其他內容會位於自己單獨的作用域中，這意味著它們被封鎖在自己單獨的區域內，無法從其他函數內部或外部程式碼訪問。
+在所有函數之外的頂層稱為全局作用域。在全局作用域中定義的值可以在程式碼的任何地方訪問。
+JavaScript 之所以這樣設計，是基於多種原因 — 主要是出於安全和組織考慮。有時你不希望變數在程式碼的任何地方都是可訪問的 — 從其他地方引入的外部腳本可能會開始干擾你的程式碼，並造成問題，因為它們可能恰好使用與程式碼其他部分相同的變數名稱，造成衝突。這可能是惡意的，也可能是無意的。
+例如，假設你有一個 HTML 文件在調用兩個外部的js文件，並且這兩個文件都有一個使用相同名稱變數和函數的定義：
+
+```html
+<!-- Excerpt from my HTML -->
+<script src="first.js"></script>
+<script src="second.js"></script>
+<script>
+  greeting();
+</script>
+```
+
+```js
+// first.js
+let name="Chris";
+function greeting(){
+    alert("Hello "+name+": welcome to our company.")
+}
+```
+
+```js
+// second.js
+let name="Zaptec"
+function greeting(){
+    alert("Our company is called "+name+".")
+}
+```
+你希望呼叫的兩個函數都被稱為 greeting()，但你只能夠訪問 second.js 文件中的 greeting() 函數 — 它是在 HTML 中的後面引入，因此它的變數和函數覆蓋了 first.js 文件中的相同名稱。
+將程式碼的部分功能封閉在函數中，可以避免這樣的問題，也被視為最佳實踐。
+簡單的說後創的蓋掉了先創的函式
+
+
+### #函式裡的函式
+請記住，您可以從任何地方調用函數，甚至可以在另一個函數內部調用。
+這通常被用來保持代碼整潔——如果你有一個大而復雜的函數，如果你把它分解成幾個子函數，會更容易理解：
+
+```js
+function myBigFunction(){
+    let myValue
+
+    subFunction1() // X: ReferenceError: myValue is not Define
+    subFunction2()
+    subFunction3()
+}
+
+function subFunction1(){
+    console.log(myValue)
+}
+
+function subFunction2(){
+    console.log(myValue)
+}
+
+function subFunction3(){
+    console.log(myValue)
+}
+```
+
+只需確保函數內使用的值在範圍內正確即可。 上面的示例會拋出錯誤 ReferenceError: myValue is not Define，因為儘管 myValue 變量是在與函數調用相同的作用域中定義的，但它並未在函數定義內部定義 - 調用函數時運行的實際代碼。
+要實現此功能，您必須將值作為參數傳遞給函數，如下所示：
+
+```js
+function myBigFunction(){
+    let myValue=1
+
+    subFunction1(myValue)
+    subFunction2(myValue)
+    subFunction3(myValue)
+}
+
+function subFunction1(value){
+    console.log(value)
+}
+
+function subFunction2(value){
+    console.log(value)
+}
+
+function subFunction3(value){
+    console.log(value)
+}
+```
+
+
+
+
 
 閉包
 閉包是js最強大的特性之一。JavaScript 允許巢狀函式（nesting of functions）並給予內部函式完全訪問（full access）所有變數，與外部函式定義的函式（還有所有外部函式內的變數與函式）。
@@ -1308,7 +1249,7 @@ pet.getName() // Oliver
 
 值得注意的是，使用閉包時要小心處理 this 變數。它的值取決於函式的呼叫方式，而不是它的定義方式。一篇詳細且精緻的關於閉包的文章可以在這裡找到（英文）。
 
-### 使用arguments物件
+### #arguments物件
 函式的參數保存在一個類似陣列的物件中。在函式內部，你可以使用以下方式來引用傳遞給它的參數：
 ```js
 arguments[i];
@@ -1343,7 +1284,7 @@ myConcat(". ","sage","basil","oregano","pepper","parsley")
 
 請注意，arguments 變數是 "類陣列" 的，但不是真正的陣列。它被稱為 "類陣列" 是因為它具有編號索引和長度屬性，但並不具備陣列的所有操作方法。
 
-### 可預定義的函式
+### #可預定義的函式
 js 有幾個頂級的可預定義函式：
 1. eval
 2. isFinite
@@ -1356,8 +1297,6 @@ js 有幾個頂級的可預定義函式：
 9. decodeURI
 10. encodeURIComponent
 11. decodeURIComponent
-
-以下各節將介紹這些函式。詳細的資訊可參考js參考資料。
 
 #### #eval
 eval 函式在不參考特定物件的情況下評估js代碼的字符串。eval 的語法是：
@@ -1464,22 +1403,22 @@ decodeURIComponent(uriComponent)
 
 以下是一些例子：
 ```js
-let url = "https://www.example.com/my page.html"
-let encodedUrl = encodeURI(url)
+let url="https://www.example.com/my page.html"
+let encodedUrl=encodeURI(url)
 console.log(encodedUrl) // => "https://www.example.com/my%20page.html"
 
-let decodedUrl = decodeURI(encodedUrl)
+let decodedUrl=decodeURI(encodedUrl)
 console.log(decodedUrl) // => "https://www.example.com/my page.html"
 
-let query = "name=John&age=30"
-let encodedQuery = encodeURIComponent(query)
+let query="name=John&age=30"
+let encodedQuery=encodeURIComponent(query)
 console.log(encodedQuery) // => "name%3DJohn%26age%3D30"
 
-let decodedQuery = decodeURIComponent(encodedQuery)
+let decodedQuery=decodeURIComponent(encodedQuery)
 console.log(decodedQuery) // => "name=John&age=30"
 ```
-請注意，encodeURI 和 encodeURIComponent 函式是將 URI 組件編碼為安全的 URI 字符串的好方法，以防止 URI 中出現非法字符。這在 URL 中傳遞參數時特別重要，以確保參數的值不會影響 URL 的解析。
-
+請注意，encodeURI 和 encodeURIComponent 函式是將URI組件編碼為安全的URI字符串的好方法，以防止URI中出現非法字符。
+這在URL中傳遞參數時特別重要，以確保參數的值不會影響URL的解析。
 
 ## Chr11 #例外處理
 在js種共有7+1種不同的例外情形分別為**Error**,**RangeError**,**ReferenceError**,**SyntaxError**,**TypeError**,**URIError**,~~**EvalError**~~+NaN
@@ -1796,4 +1735,4 @@ catch (e){
 
 [簡寫一覽](abbreviationslist.md)
 
-小賀chris:) 2023/06/22 v1.1.2
+小賀chris:) 2023/06/22 v1.2.2
