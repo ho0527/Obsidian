@@ -242,6 +242,8 @@ css:
 - 附錄6-[css w3c](https://www.w3schools.com/cssref/)
 - 附錄7-[css偽類選擇器](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes)
 - 附錄8-[css偽元素](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements)
+- 附錄8-[css屬性](https://ithelp.ithome.com.tw/articles/10240179)
+- 附錄8-[css選取器](https://ithelp.ithome.com.tw/articles/10215667)
 
 
 1. [css基本](../css.md)
