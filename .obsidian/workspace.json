@@ -267,8 +267,9 @@
   },
   "active": "41b5fbacc8954a0c",
   "lastOpenFiles": [
-    "python/plugin/django.md",
+    "php/functionlista-l.md",
     "git/commit.md",
+    "python/plugin/django.md",
     "todo.md",
     "css/declarationlist.md",
     "website/plugin/seltmake.md",
@@ -312,7 +313,6 @@
     "sever/ssl.md",
     "sever/openansever.md",
     "variablenamingstyles.md",
-    "js/ajax.md",
     "Untitled.canvas"
   ]
 }
