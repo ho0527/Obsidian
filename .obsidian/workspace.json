@@ -267,6 +267,8 @@
   },
   "active": "41b5fbacc8954a0c",
   "lastOpenFiles": [
+    "python/plugin/django.md",
+    "git/commit.md",
     "todo.md",
     "css/declarationlist.md",
     "website/plugin/seltmake.md",
@@ -275,8 +277,6 @@
     "css.md",
     "javascript.md",
     "js/allevent.md",
-    "git/commit.md",
-    "python/plugin/django.md",
     "html/body.md",
     "abbreviationslist.md",
     "websafety/index.md",
