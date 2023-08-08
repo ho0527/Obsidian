@@ -34,5 +34,6 @@
 | *\[ctx2d\]* | *\[canva\]*.getContext("2d") | |
 | *\[ctx3d\]* | *\[canva\]*.getContext("3d") | |
 | *\[ctx\]* | *\[canva\]*.getContext(*arb.*) | |
-| *\[number\]* | all number no negative | |
-| *\[number\]* | all number no negative | |
+| *\[condition\]* | 運算式 | |
+| *\[expression\]* | 表達式 | |
+| *\[expression\]* | 表達式 | |

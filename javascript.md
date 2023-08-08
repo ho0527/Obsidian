@@ -35,6 +35,9 @@
     - #展開運算子
     - #運算子優先級
 - #判斷式
+  - #ifelse
+  - #switchcase
+  - #ifelseTOswitchcase
 - #迴圈
   - #forloop
   - #while
@@ -714,6 +717,344 @@ f(...參數)
 | 01 | 逗點運算子 | 從左至右 | , |
 
 ## Chr7 #判斷式
+### #ifelse
+當條件成立的時候會執行if陳述式裡的程式，而不成立時則執行另外一個陳述式。
+```js
+if(condition){
+    context
+}
+
+// With an else clause
+if(condition){
+    context
+}else{
+    context
+}
+```
+condition
+一個成立或不成立的運算式。
+
+context
+如果if中的條件(conditions)為真時執行陳述式(statements)。陳述式可以為任何內容，包含巢狀式(nested)的 if 陳述。當要執行多行的陳述式(statements)時，使用區塊(block)將所要執行的陳述式包覆。
+如果不需要執行任何動作時，則不撰寫任何陳述式(empty statement)。
+當條件不成立時所執行的部份，當else被撰寫時才會被執行。可以是任何的陳述式，包含使用區塊(block)及巢狀(nested)的陳述。
+
+描述
+多重的ifelse陳述式可以使用else if子句來建立一個巢狀結構的句子。要記住，在 JavaScript 中**沒有 elseif **的語法可以用。
+
+```js
+if(condition){
+    context
+}else if(condition){
+    context
+}else if(condition){
+    context
+}
+// inf.
+else{
+    context
+}
+```
+
+將巢狀結構適當的排版後，我們能更了解其背後運作的邏輯：
+
+```js
+if(condition){
+    context
+}else{
+    if(condition){
+        context
+    }else{
+        if(condition){
+            context
+        }
+    }
+}
+```
+
+如果在一個條件式中只要一行可以這樣簡化。
+
+```js
+if(condition)
+    context
+else
+    context
+```
+
+但通常來說，無論如何都使用區塊陳述式(第一種方式)是個很好的習慣，尤其是當你使用巢狀結構的 if 陳述式時，這會讓人更容易理解你的程式碼。
+
+不要被Boolean物件中，布林值的 true 和 false 給混淆了。任何值只要不是 false、 undefined、 null、 0、 NaN，或者空字串 ("")，並且任何物件，包括其值是 false的布林物件 ，仍然會被條件陳述式視為條件成立。舉例而言：
+```
+let b = new Boolean(false);
+if (b) // this condition is truthy
+```
+
+### #switchcase
+
+switch 語句會比對一個表達式裡頭的值是否符合 case 條件，然後執行跟這個條件相關的陳述式，以及此一符合條件以外，剩下其他條件裡的陳述式。
+
+嘗試一下
+
+語法
+```js
+switch(expression){
+    case value1:
+        context
+        break
+    case value2:
+        context
+        break
+    // inf..
+    case valueN:
+        context
+        break
+    default:
+        break;
+}
+```
+expression: 一個表達式其結果用來跟每個 case 條件比對。
+
+case value: 一個 case 條件是用來跟 expression 匹配的。 如果 expression 符合特定的 valueN，那在 case 條件裡的語句就會執行，直到這個 switch 陳述式結束或遇到一個 break 。
+
+default: 那在 expression 的值並不符合任何一個 case 條件的情況下，就會執行這個條件裡的語句。
+
+一個 switch 陳述式會先評估自己的 expression。然後他會按照 case 條件順序開始尋找，直到比對到第一個表達式值跟輸入 expression 的值相等的 case 條件（使用嚴格的邏輯運算子, ===）並把控制流交給該子句、並執行裡面的陳述式（如果給定值符合多個 case，就執行第一個符合的 case，就算該 case 與其他 case 不同）
+
+如果未找到匹配的 case 子句，程序將查找可選的 default 子句，如果找到，則將控制權轉移到該子句，執行關聯的語句。 如果沒有找到 default 子句，程序將繼續執行 switch 末尾後面的語句。
+按照慣例， default 語句會是最後一個條件，但**不一定要存在**。（如果給定值符合多個 case，就執行第一個符合的 case，就算該 case 與其他 case 不同）
+
+與每個 case 標籤關聯的可選的break語句確保一旦執行匹配的語句，程序就跳出switch，並在switch後面的語句處繼續執行。 如果省略break，程序將繼續執行switch 語句中的下一條語句。
+
+使用 switch
+在以下示例中，如果 expr 的計算結果為“Bananas”，則程序將該值與大小寫“Bananas”匹配並執行關聯的語句。 當遇到break時，程序跳出switch並執行switch後面的語句。 如果省略了break，則case“Cherries”的語句也將被執行。
+
+```js
+switch(expr){
+    case "Oranges":
+        console.log("Oranges are $0.59 a pound.")
+        break
+    case "Apples":
+        console.log("Apples are $0.32 a pound.")
+        break
+    case "Bananas":
+        console.log("Bananas are $0.48 a pound.")
+        break
+    case "Cherries":
+        console.log("Cherries are $3.00 a pound.")
+        break
+    case "Mangoes":
+    case "Papayas":
+        console.log("Mangoes and papayas are $2.79 a pound.")
+        break
+    default:
+        console.log("Sorry, we are out of " + expr + ".")
+}
+
+console.log("Is there anything else you'd like?")
+```
+
+如果忘記 break ，則腳本將從滿足條件的情況開始運行，並且無論是否滿足條件都將運行之後的情況。 請參閱此處的示例：
+```js
+let foo=0
+switch(foo){
+    case -1:
+        console.log("negative 1")
+        break
+    case 0: // foo is 0 so criteria met here so this block will run
+        console.log(0)
+        // NOTE: the forgotten break would have been here
+    case 1: // no break statement in 'case 0:' so this case will run as well
+        console.log(1)
+        break // it encounters this break so will not continue into 'case 2:'
+    case 2:
+        console.log(2)
+        break
+    default:
+        console.log("default")
+}
+```
+
+cases 中間可以放 default! 如果 JavaScript 找不到匹配項，它會將您返回到默認值(就算置於所有其他情況之前時，它也適用)：
+```js
+let foo=5
+switch(foo){
+    case 2:
+        console.log(2)
+        break // it encounters this break so will not continue into 'default:'
+    default:
+        console.log("default")
+    // fall-through
+    case 1:
+        console.log("1")
+}
+```
+
+同時使用多個條件 case 的方法
+此方法利用了以下事實：如果 case 語句下面沒有中斷，則無論 case 是否滿足條件，它將繼續執行下一個 case 語句。 請參閱標題為“如果我忘記休息會怎樣？”的部分。
+
+這是單個操作順序 switch 語句的示例，其中四個不同的值執行完全相同的操作。
+```js
+let Animal="Giraffe"
+switch (Animal){
+    case "Cow":
+    case "Giraffe":
+    case "Dog":
+    case "Pig":
+        console.log("This animal will go on Noah's Ark.")
+        break
+    case "Dinosaur":
+    default:
+        console.log("This animal will not.")
+}
+```
+Multi-case - 鍊式操作
+這是多操作順序 switch 語句的示例，其中根據提供的整數，您可以收到不同的輸出。 這表明它將按照放置 case 語句的順序進行遍歷，並且不必按數字順序排列。 在 JavaScript 中，您甚至可以將字符串定義混合到這些 case 語句中。
+```js
+let foo=1
+let output="Output: "
+switch (foo){
+    case 0:
+        output=output+"So "
+    case 1:
+        output=output+"What "
+        output=output+"Is "
+    case 2:
+        output=output+"Your "
+    case 3:
+        output=output+"Name"
+    case 4:
+        output=output+"?"
+        console.log(output)
+        break
+    case 5:
+        output=output+"!"
+        console.log(output)
+        break
+    default:
+        console.log("Please pick a number from 0 to 5!")
+}
+```
+
+switch 語句中的塊作用域變量
+由於大多數現代瀏覽器都提供了 ECMAScript 2015 (ES6) 支持，因此在某些情況下您可能希望使用 let 和 const 語句來聲明塊作用域變量。
+
+看一下這個例子：
+```js
+const action="say_hello"
+switch(action){
+    case "say_hello":
+        let message="hello"
+        console.log(message)
+        break
+    case "say_hi":
+        let message="hi"
+        console.log(message)
+        break
+    default:
+        console.log("Empty action received.")
+        break
+}
+```
+此示例將輸出您可能沒有預料到的錯誤 Uncaught SyntaxError: Identifier 'message' has not been displayed。
+
+這是因為第一個let message='hello'; 與第二個 let 語句衝突 let message='hi'; 即使它們在自己單獨的 case 語句中 case 'say_hello': 和 case 'say_hi';
+最終，這是由於兩個 let 語句都被解釋為同一塊作用域內相同變量名的重複聲明。
+
+我們可以通過用括號括起我們的 case 語句來輕鬆解決這個問題：
+
+```js
+const action="say_hello"
+switch(action){
+    case "say_hello":{
+        // added brackets
+        let message="hello"
+        console.log(message)
+        break
+    } // added brackets
+    case "say_hi":{
+        // added brackets
+        let message="hi"
+        console.log(message)
+        break
+    } // added brackets
+    default:{
+        // added brackets
+        console.log("Empty action received.")
+        break
+    } // added brackets
+}
+```
+
+現在，此代碼將在控制台中正常輸出 hello，完全不會出現任何錯誤。
+
+### #ifelseTOswitchcase
+例如這個switchcase
+```js
+let test=0
+switch(test){
+    case -1:
+        console.log("negative 1")
+        break
+    case 0:
+        console.log(0)
+        break
+    case 1:
+        console.log(1)
+        break
+    case 2:
+        console.log(2)
+        break
+    default:
+        console.log("default")
+}
+```
+改成if要這樣寫
+```js
+let test=0
+if(test==-1){
+    console.log("negative 1")
+}else if(test==0){
+    console.log(0)
+}else if(test==1){
+    console.log(1)
+}else if(test==2){
+    console.log(2)
+}else{
+    console.log("default")
+}
+```
+
+如果沒break，if判斷式會等效成
+```js
+let test=0
+let check=0
+
+if(test==-1){
+    console.log("negative 1")
+    check=1
+}
+
+if(test==0){
+    console.log(0)
+    check=1
+}
+
+if(test==1){
+    console.log(1)
+    check=1
+}
+
+if(test==2){
+    console.log(2)
+    check=1
+}
+
+if(!check){
+    console.log("default")
+}
+```
+
+if轉switchcase則相反這裡就不加闡述
 
 ## Chr8 #迴圈
 在本章收錄了js的 #forloop #while #do-while #forEach 迴圈
@@ -1638,6 +1979,8 @@ catch (e){
 ### 參見
 [while及do-while之差異](https://www.eztrust.com.tw/webdesign/C/94)
 [運算式與運算子](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Guide/Expressions_and_operators#%E9%97%9C%E4%BF%82%E9%81%8B%E7%AE%97%E5%AD%90)
+[ifelse](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Statements/if...else)
+[switchcase](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Statements/switch)
 
 - A
     - [ajax](ajax.md)
@@ -1735,4 +2078,4 @@ catch (e){
 
 [簡寫一覽](abbreviationslist.md)
 
-小賀chris:) 2023/08/04 v1.2.2
+小賀chris:) 2023/08/04 v1.3.0

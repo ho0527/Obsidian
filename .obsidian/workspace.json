@@ -57,7 +57,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 3
       },
       {
         "id": "ad9f2568e7be8e00",
@@ -170,7 +170,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "git/commit.md",
+                "file": "javascript.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -194,7 +194,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "git/commit.md",
+                "file": "javascript.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -206,7 +206,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "git/commit.md"
+                "file": "javascript.md"
               }
             }
           },
@@ -265,18 +265,18 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "41b5fbacc8954a0c",
+  "active": "dd96cbd7c3eee3f5",
   "lastOpenFiles": [
-    "php/functionlista-l.md",
-    "git/commit.md",
-    "python/plugin/django.md",
     "todo.md",
+    "javascript.md",
+    "git/commit.md",
+    "php/functionlista-l.md",
+    "python/plugin/django.md",
     "css/declarationlist.md",
     "website/plugin/seltmake.md",
     "website/plugin/chrisplugin.md",
     "programming.md",
     "css.md",
-    "javascript.md",
     "js/allevent.md",
     "html/body.md",
     "abbreviationslist.md",
