@@ -57,7 +57,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 1
       },
       {
         "id": "ad9f2568e7be8e00",
@@ -170,7 +170,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "javascript.md",
+                "file": "git/commit.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -194,7 +194,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "javascript.md",
+                "file": "git/commit.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -206,7 +206,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "javascript.md"
+                "file": "git/commit.md"
               }
             }
           },
@@ -265,10 +265,10 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "dd96cbd7c3eee3f5",
+  "active": "41b5fbacc8954a0c",
   "lastOpenFiles": [
-    "todo.md",
     "javascript.md",
+    "todo.md",
     "git/commit.md",
     "php/functionlista-l.md",
     "python/plugin/django.md",
