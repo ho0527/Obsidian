@@ -3,98 +3,97 @@
 | declaration | w3c description | descriptionCH | how to use | ps | tag |
 | ----- | ----- | ----- | ----- | ----- | ----- |
 | A | A | A | A | A | A |
-| accent-color | Specifies an accent color for user-interface controls | | | | |
-| align-content | Specifies the alignment between the lines inside a flexible container when the items do not use all available space | | align-context: * center \| flex-start \| flex-end \| space-between \| space-around \| space-evenly \| **\*stretch** \| initial \| inherit * | 要加display:flex才可以使用 | |
-| align-items | Specifies the alignment for items inside a flexible container | | | | |
-| align-self | Specifies the alignment for selected items inside a flexible container | | | | |
-| all | Resets all properties (except unicode-bidi and direction) | 重製所有函式 | all: *\[global values\]* | | [其他]() |
-| animation | A shorthand property for all the animation-* properties | 自創動畫可搭配關鍵影格製作(@keyframe) | animation: **\[time\]** **\[name\]** **\[repet time\]** ***\[anthor fucntion\]*** | 縮減函式 | [動畫]() |
-| animation-delay | Specifies a delay for the start of an animation | 自創動畫延遲 | animation-delay: *\[time\]* | | [動畫]() |
-| animation-direction | Specifies whether an animation should be played forwards, backwards or in alternate cycles | 自創動畫 | | | [動畫]() |
-| animation-duration | Specifies how long an animation should take to complete one cycle | 自創動畫 | | | [動畫]() |
-| animation-fill-mode | Specifies a style for the element when the animation is not playing (before it starts, after it ends, or both) | 自創動畫 | | | [動畫]() |
-| animation-iteration-count | Specifies the number of times an animation should be played | 自創動畫之重複次數 | animation-iteration-count: *\[number\] | infinite* | | [動畫]() |
-| animation-name | Specifies a name for the @keyframes animation | 自創動畫名字 | animation-name: *\[name\]* | | [動畫]() |
-| animation-play-state | Specifies whether the animation is running or paused | 自創動畫 | | | [動畫]() |
-| animation-timing-function | Specifies the speed curve of an animation | 自創動畫 | | | [動畫]() |
-| aspect-ratio | Specifies preferred aspect ratio of an element | | | | |
+| accent-color | Specifies an accent color for user-interface controls | 設定用戶界面控件的強調顏色 | | | |
+| align-content | Specifies the alignment between the lines inside a flexible container when the items do not use all available space | 當項目未使用所有可用空間時，指定彈性容器內部行之間的對齊方式 | align-content: * center \| flex-start \| flex-end \| space-between \| space-around \| space-evenly \| **\*stretch** \| initial \| inherit * | 要加 display:flex 才可以使用 | |
+| align-items | Specifies the alignment for items inside a flexible container | 指定彈性容器內項目的對齊方式 | | | |
+| align-self | Specifies the alignment for selected items inside a flexible container | 指定彈性容器內選定項目的對齊方式 | | | |
+| all | Resets all properties (except unicode-bidi and direction) | 重置所有屬性（除unicode-bidi和direction外） | all: *\[global values\]* | | [其他]() |
+| animation | A shorthand property for all the animation-* properties | 所有animation-*屬性的簡寫 | animation: **\[time\]** **\[name\]** **\[repet time\]** ***\[anthor function\]*** | 用於創建動畫，需配合@keyframes使用 | [動畫]() |
+| animation-delay | Specifies a delay for the start of an animation | 指定動畫開始的延遲 | animation-delay: *\[time\]* | | [動畫]() |
+| animation-direction | Specifies whether an animation should be played forwards, backwards or in alternate cycles | 指定動畫是否應正向播放、反向播放或交替播放 | | | [動畫]() |
+| animation-duration | Specifies how long an animation should take to complete one cycle | 指定動畫完成一個週期所需的時間 | | | [動畫]() |
+| animation-fill-mode | Specifies a style for the element when the animation is not playing (before it starts, after it ends, or both) | 指定元素在動畫未播放時（開始前、結束後或兩者都）的樣式 | | | [動畫]() |
+| animation-iteration-count | Specifies the number of times an animation should be played | 指定動畫應播放的次數 | animation-iteration-count: *\[number\] \| infinite* | | [動畫]() |
+| animation-name | Specifies a name for the @keyframes animation | 為@keyframes動畫指定名稱 | animation-name: *\[name\]* | | [動畫]() |
+| animation-play-state | Specifies whether the animation is running or paused | 指定動畫是否運行或暫停 | | | [動畫]() |
+| animation-timing-function | Specifies the speed curve of an animation | 指定動畫的速度曲線 | | | [動畫]() |
+| aspect-ratio | Specifies preferred aspect ratio of an element | 指定元素的首選寬高比 | | | |
 | B | B | B | B | B | B |
-| backdrop-filter | Defines a graphical effect to the area behind an element | | | | |
-| backface-visibility | Defines whether or not the back face of an element should be visible when facing the user | | | | |
-| background | A shorthand property for all the background-* properties | 背景樣式 | background: * (**\[color\]** **\[image\]** **\[attachment\]** **\[repeat\]** (\[positionX?Y?\] \/ \[sizew\] \[sizeh\])?) \| none * | 縮減函式 | [背景]() |
-| background-attachment | Sets whether a background image scrolls with the rest of the page, or is fixed | 背景固定方式 | background-attachment: *(scroll \| fixed \| local)* | | [背景]() |
-| background-blend-mode | Specifies the blending mode of each background layer (color/image) | 背景樣式 | | | [背景]() |
-| background-clip | Defines how far the background (color or image) should extend within an element | 背景樣式 | | | [背景]() |
-| background-color | Specifies the background color of an element | 背景顏色樣式 | background-color: *\[color\]* | | [背景]() |
-| background-image | Specifies one or more background images for an element | 背景圖片樣式 | background-image: url("*\[url\]*") | | [背景]() |
-| background-origin | Specifies the origin position of a background image | 背景樣式 | | | [背景]() |
-| background-position | Specifies the position of a background image | 背景定位 | | | [背景]() |
-| background-position-x | Specifies the position of a background image on x-axis | 背景x軸定位 | | | [背景]() |
-| background-position-y | Specifies the position of a background image on y-axis | 背景y軸定位 | | | [背景]() |
-| background-repeat | Sets if/how a background image will be repeated | 背景重複設定 | | | [背景]() |
-| background-size | Specifies the size of the background images | 背景大小設定 | | | [背景]() |
-| block-size | Specifies the size of an element in block direction | | | | |
-| border | A shorthand property for border-width, border-style and border-color | 邊框設定 | border: **\[size\]** **\[color\]** ***(\*none \| hidden \| dotted \| dashed \| solid \| double \| groove \| ridge \| inset \| outsetor \| initial \| inherit)*** | 縮減函式 | [容器]() |
-| border-block | A shorthand property for border-block-width, border-block-style and border-block-color | | | 縮減函式 | [容器]() |
-| border-block-color | Sets the color of the borders at start and end in the block direction | | | | [容器]() |
-| border-block-end-color | Sets the color of the border at the end in the block direction | | | | [容器]() |
-| border-block-end-style | Sets the style of the border at the end in the block direction | | | | [容器]() |
-| border-block-end-width | Sets the width of the border at the end in the block direction | | | | [容器]() |
-| border-block-start-color | Sets the color of the border at the start in the block direction | | | | [容器]() |
-| border-block-start-style | Sets the style of the border at the start in the block direction | | | | [容器]() |
-| border-block-start-width | Sets the width of the border at the start in the block direction | | | | [容器]() |
-| border-block-style | Sets the style of the borders at start and end in the block direction | | | | [容器]() |
-| border-block-width | Sets the width of the borders at start and end in the block direction | | | | [容器]() |
-| border-bottom | A shorthand property for border-bottom-width, border-bottom-style and border-bottom-color | 底邊框設定 | border-bottom: **\[size\]** **\[color\]** ***(\*none \| hidden \| dotted \| dashed \| solid \| double \| groove \| ridge \| inset \| outsetor \| initial \| inherit)*** | 縮減函式 | [容器]() |
-| border-bottom-color | Sets the color of the bottom border | 底邊框顏色 | border-bottom-color: *\[color\]* | | [容器]() |
-| border-bottom-left-radius | Defines the radius of the border of the bottom-left corner | 左下邊框圓角大小 | border-bottom-left-radius: *\[size\]* | | [容器]() |
-| border-bottom-right-radius | Defines the radius of the border of the bottom-right corner | 右下邊框圓角大小 | border-bottom-right-radius: *\[size\]* | | [容器]() |
-| border-bottom-style | Sets the style of the bottom border | 底邊框樣式 | border-bottom-style: *\[\***none** \| hidden \| dotted \| dashed \| solid \| double \| groove \| ridge  |\| inset \| outsetor \| initial \| inherit\]* | [容器]() |
-| border-bottom-width | Sets the width of the bottom border | 底邊框大小 | border-bottom-width: *\[size\]* | | [容器]() |
-| border-collapse | Sets whether table borders should collapse into a single border or be separated | | border-collapse | | [容器]() |
-| border-color | Sets the color of the four borders | 邊框顏色 | border-color: *\[color\]* | | [容器]() |
-| border-image | A shorthand property for all the border-image-* properties | | border-image | 縮減函式 | [容器]() |
-| border-image-outset | Specifies the amount by which the border image area extends beyond the border box | | border-image-outset | | [容器]() |
-| border-image-repeat | Specifies whether the border image should be repeated, rounded or stretched | | border-image-repeat | | [容器]() |
-| border-image-slice | Specifies how to slice the border image | | border-image-slice | | [容器]() |
-| border-image-source | Specifies the path to the image to be used as a border | | border-image-source | | [容器]() |
-| border-image-width | Specifies the width of the border image | | border-image-width | | [容器]() |
-| border-inline | A shorthand property for border-inline-width, border-inline-style and border-inline-color | | border-inline | 縮減函式 | [容器]() |
-| border-inline-color | Sets the color of the borders at start and end in the inline direction | | border-inline-color | | [容器]() |
-| border-inline-end-color | Sets the color of the border at the end in the inline direction | | border-inline-end-color | | [容器]() |
-| border-inline-end-style | Sets the style of the border at the end in the inline direction | | border-inline-end-style | | [容器]() |
-| border-inline-end-width | Sets the width of the border at the end in the inline direction | | border-inline-end-width | | [容器]() |
-| border-inline-start-color | Sets the color of the border at the start in the inline direction | | border-inline-start-color | | [容器]() |
-| border-inline-start-style | Sets the style of the border at the start in the inline direction | | border-inline-start-style | | [容器]() |
-| border-inline-start-width | Sets the width of the border at the start in the inline direction | | border-inline-start-width | | [容器]() |
-| border-inline-style | Sets the style of the borders at start and end in the inline direction | | border-inline-style | | [容器]() |
-| border-inline-width | Sets the width of the borders at start and end in the inline direction | | border-inline-width | | [容器]() |
-| border-left | A shorthand property for all the border-left-\* properties | 左邊框設定 | border-left: **\[size\]** **\[color\]** ***(\*none \| hidden \| dotted \| dashed \|solid \| double \| groove \| ridge \| inset \| outsetor \| initial \| inherit)*** | 縮減函式 | [容器]() |
-| border-left-color | Sets the color of the left border | 左邊框顏色 | border-left-color: *\[color\]* | | [容器]() |
-| border-left-style | Sets the style of the left border | 左邊框樣式 | border-left-style: *\[\***none** \| hidden \| dotted \| dashed \| solid \| double \| groove \| ridge \| inset \| outsetor \| initial \| inherit\]* | | [容器]() |
-| border-left-width | Sets the width of the left border | 左邊框大小 | border-left-width: *\[size\]* | | [容器]() |
-| border-radius | A shorthand property for the four border-\*-radius properties | 邊框圓角大小 | border-radius: *\[size\]* | 縮減函式 | [容器]() |
-| border-right | A shorthand property for all the border-right-* properties | 右邊框設定 | border-right: **\[size\]** **\[color\]** ***(\*none \| hidden \| dotted \| dashed \| solid \| double \| groove \| ridge \| inset \| outsetor \| initial \| inherit)*** | 縮減函式 | [容器]() |
-| border-right-color | Sets the color of the right border | 右邊框顏色 | border-right-color: *\[color\]* | | [容器]() |
-| border-right-style | Sets the style of the right border | 右邊框樣式 | border-right-style: *\[\***none** \| hidden \| dotted \| dashed \| solid \| double \| groove \| ridge \| inset \| outsetor \| initial \| inherit\]* | | [容器]() |
-| border-right-width | Sets the width of the right border | 右邊框大小 | border-right-width: *\[size\]* | | [容器]() |
-| border-spacing | Sets the distance between the borders of adjacent cells | | border-spacing | | [容器]() |
-| border-style | Sets the style of the four borders | 邊框樣式 | border-style: *\[\***none** \| hidden \| dotted \| dashed \| solid \| double \| groove \| ridge \| inset \| outsetor \| initial \| inherit\]* | | [容器]() |
-| border-top | A shorthand property for border-top-width, border-top-style and border-top-color | 上邊框設定 | **\[size\]** **\[color\]** ***(\*none \| hidden \| dotted \| dashed \| solid \| double \| groove \| ridge \| inset \| outsetor \| initial \| inherit)*** | 縮減函式 | [容器]() |
-| border-top-color | Sets the color of the top border | 上邊框顏色 | border-top-color: *\[color\]*  | | [容器]() |
-| border-top-left-radius | Defines the radius of the border of the top-left corner | 左上邊框圓角大小 | border-top-left-radius: *\[size\]* | | [容器]() |
-| border-top-right-radius | Defines the radius of the border of the top-right corner | 右上邊框圓角大小 | border-top-right-radius: *\[size\]* | | [容器]() |
-| border-top-style | Sets the style of the top border | 上邊框樣式 | border-top-style: *\[\***none** \| hidden \| dotted \| dashed \| solid \| double \| groove \| ridge \| inset \| outsetor \| initial \| inherit\]* | | [容器]() |
-| border-top-width | Sets the width of the top border | 上邊框大小 | border-top-width: *\[size\]* | | [容器]() |
-| border-width | Sets the width of the four borders | 邊框大小 | border-width: *\[size\]* | | [容器]() |
-| bottom | Sets the elements position, from the bottom of its parent element | 距底部之單位長 | bottom: *\[size\]* | 須搭配position使用 | [定位]() |
-| box-decoration-break | Sets the behavior of the background and border of an element at page-break, or, for in-line elements, at line-break. | | | | [容器]() |
-| box-reflect | The box-reflect property is used to create a reflection of an element. | | | | [容器]() |
-| box-shadow | Attaches one or more shadows to an element | | | | [容器]() |
-| box-sizing | Defines how the width and height of an element are calculated: should they include padding and borders, or not | | | | |
-| break-after | Specifies whether or not a page-, column-, or region-break should occur after the specified element | | | | |
-| break-before | Specifies whether or not a page-, column-, or region-break should occur before the specified element | | | | |
-| break-inside | Specifies whether or not a page-, column-, or region-break should occur inside the specified element | | | | |
+| backdrop-filter | Defines a graphical effect to the area behind an element | 定義在元素後面區域的圖形效果 | | | |
+| backface-visibility | Defines whether or not the back face of an element should be visible when facing the user | 定義元素背面在面向用戶時是否可見 | | | |
+| background | A shorthand property for all the background-* properties | 所有background-*屬性的簡寫 | background: * (**\[color\]** **\[image\]** **\[attachment\]** **\[repeat\]** (\[positionX?Y?\] \/ \[sizew\] \[sizeh\])?) \| none * | 縮減函式 | [背景]() |
+| background-attachment | Sets whether a background image scrolls with the rest of the page, or is fixed | 設定背景圖像是否隨頁面的其餘部分滾動或固定 | background-attachment: *(scroll \| fixed \| local)* | | [背景]() |
+| background-blend-mode | Specifies the blending mode of each background layer (color/image) | 指定每個背景圖層（顏色/圖像）的混合模式 | | | [背景]() |
+| background-clip | Defines how far the background (color or image) should extend within an element | 定義背景（顏色或圖像）在元素內擴展的程度 | | | [背景]() |
+| background-color | Specifies the background color of an element | 指定元素的背景顏色 | background-color: *\[color\]* | | [背景]() |
+| background-image | Specifies one or more background images for an element | 為元素指定一個或多個背景圖像 | background-image: url("*\[url\]*") | | [背景]() |
+| background-origin | Specifies the origin position of a background image | 指定背景圖像的起始位置 | | | [背景]() |
+| background-position | Specifies the position of a background image | 指定背景圖像的位置 | | | [背景]() |
+| background-position-x | Specifies the position of a background image on the x-axis | 指定背景圖像在x軸上的位置 | | | [背景]() |
+| background-position-y | Specifies the position of a background image on the y-axis | 指定背景圖像在y軸上的位置 | | | [背景]() |
+| background-repeat | Sets if/how a background image will be repeated | 設定背景圖像是否/如何重複顯示 | | | [背景]() |
+| background-size | Specifies the size of the background images | 指定背景圖像的大小 | | | [背景]() |
+| block-size | Specifies the size of an element in block direction | 指定元素在區塊方向上的大小 | | | |
+| border | A shorthand property for border-width, border-style and border-color | border-width、border-style和border-color的簡寫 | border: **\[size\]** **\[color\]** ***(\*none \| hidden \| dotted \| dashed \| solid \| double \| groove \| ridge \| inset \| outsetor \| initial \| inherit)*** | 用於設定元素的邊框 | 縮減函式 | [容器]() |
+| border-block | A shorthand property for border-block-width, border-block-style and border-block-color | border-block-width、border-block-style和border-block-color的簡寫 | | 縮減函式 | [容器]() |
+| border-block-color | Sets the color of the borders at start and end in the block direction | 設定區塊方向上起始和結束處的邊框顏色 | | | [容器]() |
+| border-block-end-color | Sets the color of the border at the end in the block direction | 設定區塊方向上結束處的邊框顏色 | | | [容器]() |
+| border-block-end-style | Sets the style of the border at the end in the block direction | 設定區塊方向上結束處的邊框樣式 | | | [容器]() |
+| border-block-end-width | Sets the width of the border at the end in the block direction | 設定區塊方向上結束處的邊框寬度 | | | [容器]() |
+| border-block-start-color | Sets the color of the border at the start in the block direction | 設定區塊方向上起始處的邊框顏色 | | | [容器]() |
+| border-block-start-style | Sets the style of the border at the start in the block direction | 設定區塊方向上起始處的邊框樣式 | | | [容器]() |
+| border-block-start-width | Sets the width of the border at the start in the block direction | 設定區塊方向上起始處的邊框寬度 | | | [容器]() |
+| border-block-style | Sets the style of the borders at start and end in the block direction | 設定區塊方向上起始和結束處的邊框樣式 | | | [容器]() |
+| border-block-width | Sets the width of the borders at start and end in the block direction | 設定區塊方向上起始和結束處的邊框寬度 | | | [容器]() |
+| border-bottom | A shorthand property for border-bottom-width, border-bottom-style and border-bottom-color | border-bottom-width、border-bottom-style和border-bottom-color的簡寫 | border-bottom: **\[size\]** **\[color\]** ***(\*none \| hidden \| dotted \| dashed \| solid \| double \| groove \| ridge \| inset \| outsetor \| initial \| inherit)*** | 用於設定元素的底部邊框 | 縮減函式 | [容器]() |
+| border-bottom-color | Sets the color of the bottom border | 設定底部邊框的顏色 | border-bottom-color: *\[color\]* | | [容器]() |
+| border-bottom-left-radius | Defines the radius of the border of the bottom-left corner | 定義左下角的邊框半徑 | border-bottom-left-radius: *\[size\]* | | [容器]() |
+| border-bottom-right-radius | Defines the radius of the border of the bottom-right corner | 定義右下角的邊框半徑 | border-bottom-right-radius: *\[size\]* | | [容器]() |
+| border-bottom-style | Sets the style of the bottom border | 設定底部邊框的樣式 | border-bottom-style: *\[\***none** \| hidden \| dotted \| dashed \| solid \| double \| groove \| ridge  |\| inset \| outsetor \| initial \| inherit\]* | | [容器]() |
+| border-bottom-width | Sets the width of the bottom border | 設定底部邊框的寬度 | border-bottom-width: *\[size\]* | | [容器]() |
+| border-collapse | Sets whether table borders should collapse into a single border or be separated | 設定表格邊框是應該合併成單個邊框還是分開 | | | [容器]() |
+| border-color | Sets the color of the four borders | 設定四個邊框的顏色 | border-color: *\[color\]* | | [容器]() |
+| border-image | A shorthand property for all the border-image-* properties | 所有border-image-*屬性的簡寫 | | 縮減函式 | [容器]() |
+| border-image-outset | Specifies the amount by which the border image area extends beyond the border box | 指定邊框圖像區域擴展超出邊框盒的量 | | | [容器]() |
+| border-image-repeat | Specifies whether the border image should be repeated, rounded or stretched | 指定邊框圖像是否應重複、圓角或拉伸 | | | [容器]() |
+| border-image-slice | Specifies how to slice the border image | 指定如何切割邊框圖像 | | | [容器]() |
+| border-image-source | Specifies the path to the image to be used as a border | 指定用作邊框的圖像的路徑 | | | [容器]() |
+| border-image-width | Specifies the width of the border image | 指定邊框圖像的寬度 | | | [容器]() |
+| border-inline | A shorthand property for border-inline-width, border-inline-style and border-inline-color | border-inline-width、border-inline-style和border-inline-color的簡寫 | | 縮減函式 | [容器]() |
+| border-inline-color | Sets the color of the borders at start and end in the inline direction | 設定內聯方向上起始和結束處的邊框顏色 | | | [容器]() |
+| border-inline-end-color | Sets the color of the border at the end in the inline direction | 設定內聯方向上結束處的邊框顏色 | | | [容器]() |
+| border-inline-end-style | Sets the style of the border at the end in the inline direction | 設定內聯方向上結束處的邊框樣式 | | | [容器]() |
+| border-inline-end-width | Sets the width of the border at the end in the inline direction | 設定內聯方向上結束處的邊框寬度 | | | [容器]() |
+| border-inline-start-color | Sets the color of the border at the start in the inline direction | 設定內聯方向上起始處的邊框顏色 | | | [容器]() |
+| border-inline-start-style | Sets the style of the border at the start in the inline direction | 設定內聯方向上起始處的邊框樣式 | | | [容器]() |
+| border-inline-start-width | Sets the width of the border at the start in the inline direction | 設定內聯方向上起始處的邊框寬度 | | | [容器]() |
+| border-inline-style | Sets the style of the borders at start and end in the inline direction | 設定內聯方向上起始和結束處的邊框樣式 | | | [容器]() |
+| border-inline-width | Sets the width of the borders at start and end in the inline direction | 設定內聯方向上起始和結束處的邊框寬度 | | | [容器]() |
+| border-left | A shorthand property for all the border-left-\* properties | border-left-\*屬性的簡寫 | border-left: **\[size\]** **\[color\]** ***(\*none \| hidden \| dotted \| dashed \| solid \| double \| groove \| ridge \| inset \| outsetor \| initial \| inherit)*** | 用於設定元素的左邊框 | 縮減函式 | [容器]() |
+| border-left-color | Sets the color of the left border | 設定左邊框的顏色 | border-left-color: *\[color\]* | | [容器]() |
+| border-left-style | Sets the style of the left border | 設定左邊框的樣式 | border-left-style: *\[\***none** \| hidden \| dotted \| dashed \| solid \| double \| groove \| ridge \| inset \| outsetor \| initial \| inherit\]* | | [容器]() |
+| border-left-width | Sets the width of the left border | 設定左邊框的寬度 | border-left-width: *\[size\]* | | [容器]() |
+| border-radius | A shorthand property for the four border-\*-radius properties | 四個border-\*-radius屬性的簡寫 | border-radius: *\[size\]* | 用於設定元素的圓角邊框 | 縮減函式 | [容器]() |
+| border-right | A shorthand property for all the border-right-* properties | border-right-*屬性的簡寫 | border-right: **\[size\]** **\[color\]** ***(\*none \| hidden \| dotted \| dashed \| solid \| double \| groove \| ridge \| inset \| outsetor \| initial \| inherit)*** | 用於設定元素的右邊框 | 縮減函式 | [容器]() |
+| border-right-color | Sets the color of the right border | 設定右邊框的顏色 | border-right-color: *\[color\]* | | [容器]() |
+| border-right-style | Sets the style of the right border | 設定右邊框的樣式 | border-right-style: *\[\***none** \| hidden \| dotted \| dashed \| solid \| double \| groove \| ridge \| inset \| outsetor \| initial \| inherit\]* | | [容器]() |
+| border-right-width | Sets the width of the right border | 設定右邊框的寬度 | border-right-width: *\[size\]* | | [容器]() |
+| border-spacing | Sets the distance between the borders of adjacent cells | 設定相鄰單元格之間的邊框間距 | | | [容器]() |
+| border-style | Sets the style of the four borders | 設定四個邊框的樣式 | border-style: *\[\***none** \| hidden \| dotted \| dashed \| solid \| double \| groove \| ridge \| inset \| outsetor \| initial \| inherit\]* | | [容器]() |
+| border-top | A shorthand property for border-top-width, border-top-style and border-top-color | border-top-width、border-top-style和border-top-color的簡寫 | **\[size\]** **\[color\]** ***(\*none \| hidden \| dotted \| dashed \| solid \| double \| groove \| ridge \| inset \| outsetor \| initial \| inherit)*** | 用於設定元素的頂部邊框 | 縮減函式 | [容器]() |
+| border-top-color | Sets the color of the top border | 設定頂部邊框的顏色 | border-top-color: *\[color\]*  | | [容器]() |
+| border-top-left-radius | Defines the radius of the border of the top-left corner | 定義左上角的邊框半徑 | border-top-left-radius: *\[size\]* | | [容器]() |
+| border-top-right-radius | Defines the radius of the border of the top-right corner | 定義右上角的邊框半徑 | border-top-right-radius: *\[size\]* | | [容器]() |
+| border-top-style | Sets the style of the top border | 設定頂部邊框的樣式 | border-top-style: *\[\***none** \| hidden \| dotted \| dashed \| solid \| double \| groove \| ridge \| inset \| outsetor \| initial \| inherit\]* | | [容器]() |
+| border-top-width | Sets the width of the top border | 設定頂部邊框的寬度 | border-top-width: *\[size\]* | | [容器]() |
+| border-width | Sets the width of the four borders | 設定四個邊框的寬度 | border-width: *\[size\]* | | [容器]() |
+| bottom | Sets the bottom edge position of a positioned element | 設定定位元素的底部邊緣位置 | bottom: *\[length\]* \| *\[percentage\]* \| *auto* | 用於設定元素底部位置 | 縮減函式 | [定位]() |
+| box-decoration-break | Specifies how an element's background, padding, border, border-image, box-shadow, margin, and clip-path apply when an element is broken across multiple lines, columns, or pages | 指定元素在跨多行、列或頁面分割時，背景、填充、邊框、邊框圖像、框陰影、邊距和剪裁路徑的應用方式 | | | |
+| box-shadow | Attaches one or more drop-shadows to the box | 附加一個或多個投影到框上 | box-shadow: **\[h-shadow\]** **\[v-shadow\]** **\[blur\]** **\[spread\]** **\[color\]** **\[inset\]** | 用於添加元素的框陰影 | 縮減函式 | [外觀]() |
+| box-sizing | Defines how the width and height of an element are calculated | 定義如何計算元素的寬度和高度 | | | [外觀]() |
+| break-after | Sets the behavior of a page break after an element | 設定元素後的分頁行為 | | | [分頁]() |
+| break-before | Sets the behavior of a page break before an element | 設定元素前的分頁行為 | | | [分頁]() |
+| break-inside | Sets the behavior of a page break inside an element | 設定元素內的分頁行為 | | | [分頁]() |
 | C | C | C | C | C | C |
 | caption-side | Specifies the placement of a table caption | | | | |
 | caret-color | Specifies the color of the cursor (caret) in inputs, textareas, or any element that is editable | | | | |
