@@ -33,6 +33,18 @@
             }
           },
           {
+            "id": "58e110c3ee68be50",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "python/plugin/django.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "6815dd87e50ba5b8",
             "type": "leaf",
             "state": {
@@ -267,9 +279,9 @@
   },
   "active": "41b5fbacc8954a0c",
   "lastOpenFiles": [
-    "css/declarationlist.md",
-    "git/commit.md",
     "python/plugin/django.md",
+    "git/commit.md",
+    "css/declarationlist.md",
     "javascript.md",
     "todo.md",
     "php/functionlista-l.md",
