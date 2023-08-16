@@ -182,7 +182,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "git/commit.md",
+                "file": "js/ajax.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -206,7 +206,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "git/commit.md",
+                "file": "js/ajax.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -218,7 +218,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "git/commit.md"
+                "file": "js/ajax.md"
               }
             }
           },
@@ -277,10 +277,10 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "41b5fbacc8954a0c",
+  "active": "72749f1952b84014",
   "lastOpenFiles": [
-    "python/plugin/django.md",
     "git/commit.md",
+    "python/plugin/django.md",
     "css/declarationlist.md",
     "javascript.md",
     "todo.md",
