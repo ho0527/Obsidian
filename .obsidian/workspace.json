@@ -279,8 +279,9 @@
   },
   "active": "41b5fbacc8954a0c",
   "lastOpenFiles": [
-    "python/plugin/django.md",
+    "abbreviationslist.md",
     "git/commit.md",
+    "python/plugin/django.md",
     "js/ajax.md",
     "css/declarationlist.md",
     "javascript.md",
@@ -292,7 +293,6 @@
     "css.md",
     "js/allevent.md",
     "html/body.md",
-    "abbreviationslist.md",
     "websafety/index.md",
     "websafety/sqliinjection.md",
     "websafety/xssattack.md",
