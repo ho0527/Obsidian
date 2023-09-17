@@ -192,6 +192,16 @@
                 "unlinkedCollapsed": true
               }
             }
+          },
+          {
+            "id": "5e26ce2bfc38ee10",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency"
+              }
+            }
           }
         ]
       },
@@ -279,13 +289,13 @@
   },
   "active": "41b5fbacc8954a0c",
   "lastOpenFiles": [
+    "python/plugin/django.md",
+    "todo.md",
     "abbreviationslist.md",
     "git/commit.md",
-    "python/plugin/django.md",
     "js/ajax.md",
     "css/declarationlist.md",
     "javascript.md",
-    "todo.md",
     "php/functionlista-l.md",
     "website/plugin/seltmake.md",
     "website/plugin/chrisplugin.md",
