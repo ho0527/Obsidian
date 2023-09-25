@@ -400,6 +400,7 @@
 | :first-of-type | | | | | |
 | :fullscreen | | | | | |
 | :focus | | | | | |
+| :has | | | | | |
 | :hover | | 滑鼠覆蓋事件 | *selector*:hover{ /* declaration */ } | | |
 | :indeterminate | | | | | |
 | :in-range | | | | | |
