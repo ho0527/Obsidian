@@ -5,7 +5,7 @@
 
 ## 主程式架構(原生)
 ```
-
+django-admin startproject {projectname}
 ```
 
 ## 啟動方式

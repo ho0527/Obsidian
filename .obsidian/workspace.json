@@ -39,7 +39,7 @@
               "type": "markdown",
               "state": {
                 "file": "python/plugin/django.md",
-                "mode": "source",
+                "mode": "preview",
                 "source": false
               }
             }
@@ -182,7 +182,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "todo.md",
+                "file": "git/commit.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -216,7 +216,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "todo.md",
+                "file": "git/commit.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -228,7 +228,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "todo.md"
+                "file": "git/commit.md"
               }
             }
           },
@@ -287,12 +287,15 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "783bbe8085ac6179",
+  "active": "41b5fbacc8954a0c",
   "lastOpenFiles": [
-    "git/commit.md",
-    "html/body.md",
     "python/plugin/django.md",
+    "git/commit.md",
     "todo.md",
+    "TOU.md",
+    "mainicon.png",
+    "python/plugin/pymysql.md",
+    "html/body.md",
     "abbreviationslist.md",
     "js/ajax.md",
     "css/declarationlist.md",
@@ -325,16 +328,12 @@
     "css/cursorimage/4-resize.gif.crdownload",
     "css/cursorimage/1-resize.gif",
     "css/cursorimage/1-resize.gif.crdownload",
-    "css/cursorimage/6-resize.gif",
     "css/cursorimage/6-resize.gif.crdownload",
     "css/cursorimage/3-resize.gif.crdownload",
     "css/cursorimage/sw-resize.gif.crdownload",
     "css/cursorimage/se-resize.gif.crdownload",
     "website/webstorage.md",
     "js/canvas.md",
-    "git/comment.md",
-    "sever/ssl.md",
-    "sever/openansever.md",
     "Untitled.canvas"
   ]
 }
