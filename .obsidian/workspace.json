@@ -55,18 +55,6 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "dd96cbd7c3eee3f5",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "javascript.md",
-                "mode": "preview",
-                "source": false
-              }
-            }
           }
         ],
         "currentTab": 1
@@ -289,8 +277,17 @@
   },
   "active": "41b5fbacc8954a0c",
   "lastOpenFiles": [
-    "python/plugin/django.md",
+    "javascript.md",
     "git/commit.md",
+    "python/plugin/django.md",
+    "temp/ca/apparchitecture.md",
+    "temp/ca/index.md",
+    "temp/ca/ms.md",
+    "temp/ca/t1.md",
+    "temp/ca/app.md",
+    "temp/ca/prd.md",
+    "temp/ca",
+    "temp",
     "todo.md",
     "TOU.md",
     "mainicon.png",
@@ -299,7 +296,6 @@
     "abbreviationslist.md",
     "js/ajax.md",
     "css/declarationlist.md",
-    "javascript.md",
     "php/functionlista-l.md",
     "website/plugin/seltmake.md",
     "website/plugin/chrisplugin.md",
@@ -312,10 +308,7 @@
     "websafety/xss",
     "websafety",
     "js/promiss.md",
-    "mojo/functionlist.md",
     "mojo",
-    "mojo.md",
-    "css/cursordef.md",
     "css/cursorimage/not-allowed.gif",
     "css/cursorimage/nwse-resize.gif",
     "css/cursorimage/nesw-resize.gif",
@@ -330,10 +323,6 @@
     "css/cursorimage/1-resize.gif.crdownload",
     "css/cursorimage/6-resize.gif.crdownload",
     "css/cursorimage/3-resize.gif.crdownload",
-    "css/cursorimage/sw-resize.gif.crdownload",
-    "css/cursorimage/se-resize.gif.crdownload",
-    "website/webstorage.md",
-    "js/canvas.md",
     "Untitled.canvas"
   ]
 }
