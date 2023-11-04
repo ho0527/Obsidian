@@ -6,7 +6,7 @@
       {
         "id": "00d6db2a61c308c9",
         "type": "tabs",
-        "dimension": 62.153602533650044,
+        "dimension": 61.67854315122724,
         "children": [
           {
             "id": "46dfb9b813ec0206",
@@ -62,7 +62,7 @@
       {
         "id": "ad9f2568e7be8e00",
         "type": "tabs",
-        "dimension": 37.84639746634996,
+        "dimension": 38.32145684877276,
         "children": [
           {
             "id": "783bbe8085ac6179",
@@ -277,9 +277,9 @@
   },
   "active": "41b5fbacc8954a0c",
   "lastOpenFiles": [
-    "javascript.md",
-    "git/commit.md",
     "python/plugin/django.md",
+    "git/commit.md",
+    "javascript.md",
     "temp/ca/apparchitecture.md",
     "temp/ca/index.md",
     "temp/ca/ms.md",
