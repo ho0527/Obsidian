@@ -6,7 +6,6 @@
       {
         "id": "00d6db2a61c308c9",
         "type": "tabs",
-        "dimension": 61.67854315122724,
         "children": [
           {
             "id": "46dfb9b813ec0206",
@@ -58,25 +57,6 @@
           }
         ],
         "currentTab": 1
-      },
-      {
-        "id": "ad9f2568e7be8e00",
-        "type": "tabs",
-        "dimension": 38.32145684877276,
-        "children": [
-          {
-            "id": "783bbe8085ac6179",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "todo.md",
-                "mode": "preview",
-                "source": false
-              }
-            }
-          }
-        ]
       }
     ],
     "direction": "vertical"
@@ -275,7 +255,7 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "41b5fbacc8954a0c",
+  "active": "570f12661a777b08",
   "lastOpenFiles": [
     "python/plugin/django.md",
     "git/commit.md",
