@@ -253,6 +253,7 @@
   "active": "58e110c3ee68be50",
   "lastOpenFiles": [
     "git/commit.md",
+    "css/declarationlist.md",
     "python/plugin/django.md",
     "website/plugin/chrisplugin.md",
     "temp.md",
@@ -272,7 +273,6 @@
     "html/body.md",
     "abbreviationslist.md",
     "js/ajax.md",
-    "css/declarationlist.md",
     "php/functionlista-l.md",
     "website/plugin/seltmake.md",
     "programming.md",
