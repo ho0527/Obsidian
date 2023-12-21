@@ -252,6 +252,11 @@
   },
   "active": "58e110c3ee68be50",
   "lastOpenFiles": [
+    "css/declarationlist.jpeg",
+    "css/declarationlist.png",
+    "css/declarationlist.pdf",
+    "css/declarationlist_tmp.html",
+    "css/declarationlist.html",
     "git/commit.md",
     "css/declarationlist.md",
     "python/plugin/django.md",
@@ -280,7 +285,6 @@
     "js/allevent.md",
     "websafety/index.md",
     "websafety/sqliinjection.md",
-    "websafety/xssattack.md",
     "websafety/xss",
     "websafety",
     "mojo",
@@ -294,10 +298,6 @@
     "css/cursorimage/zoom-in.gif.crdownload",
     "css/cursorimage/4-resize.gif",
     "css/cursorimage/4-resize.gif.crdownload",
-    "css/cursorimage/1-resize.gif",
-    "css/cursorimage/1-resize.gif.crdownload",
-    "css/cursorimage/6-resize.gif.crdownload",
-    "css/cursorimage/3-resize.gif.crdownload",
     "Untitled.canvas"
   ]
 }
