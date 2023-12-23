@@ -252,8 +252,9 @@
   },
   "active": "58e110c3ee68be50",
   "lastOpenFiles": [
-    "js/canvas.md",
+    "abbreviationslist.md",
     "python/plugin/django.md",
+    "js/canvas.md",
     "css/declarationlist.jpeg",
     "css/declarationlist.png",
     "css/declarationlist.pdf",
@@ -277,7 +278,6 @@
     "mainicon.png",
     "python/plugin/pymysql.md",
     "html/body.md",
-    "abbreviationslist.md",
     "js/ajax.md",
     "php/functionlista-l.md",
     "website/plugin/seltmake.md",
