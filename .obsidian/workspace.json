@@ -252,6 +252,7 @@
   },
   "active": "58e110c3ee68be50",
   "lastOpenFiles": [
+    "javascript.html",
     "abbreviationslist.md",
     "python/plugin/django.md",
     "js/canvas.md",
@@ -285,7 +286,6 @@
     "css.md",
     "js/allevent.md",
     "websafety/index.md",
-    "websafety/sqliinjection.md",
     "websafety/xss",
     "websafety",
     "mojo",
