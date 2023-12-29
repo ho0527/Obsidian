@@ -681,7 +681,7 @@ f(...參數)
 | 19 | 分組運算子 | 無 | () |
 | 18 | Member Access | 從左至右 | . |
 | 18 | Computed Member Access | 從左至右 | [] |
-| 19 | new (with argument list) | 無 | new name() |
+| 18 | new (with argument list) | 無 | new name() |
 | 18 | 呼叫函式 | 從左至右 | function() |
 | 18 | 可選串連（Optional chaining）| 從左至右 | ?. |
 | 17 | new (without argument list) | 從右至左 | new |
