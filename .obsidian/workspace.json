@@ -37,7 +37,7 @@
       {
         "id": "0270fad5dccf6426",
         "type": "tabs",
-        "dimension": 42.563291139240505,
+        "dimension": 42.5632911392405,
         "children": [
           {
             "id": "58e110c3ee68be50",
@@ -162,7 +162,9 @@
             "state": {
               "type": "all-properties",
               "state": {
-                "sortOrder": "frequency"
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
               }
             }
           }
@@ -252,16 +254,19 @@
   },
   "active": "58e110c3ee68be50",
   "lastOpenFiles": [
+    "css/cursordef.md",
+    "python/plugin/django.md",
+    "css/cursorimage/alias.gif",
+    "git/commit.md",
+    "js/eventlistener.md",
     "javascript.html",
     "abbreviationslist.md",
-    "python/plugin/django.md",
     "js/canvas.md",
     "css/declarationlist.jpeg",
     "css/declarationlist.png",
     "css/declarationlist.pdf",
     "css/declarationlist_tmp.html",
     "css/declarationlist.html",
-    "git/commit.md",
     "css/declarationlist.md",
     "website/plugin/chrisplugin.md",
     "temp.md",
@@ -284,8 +289,6 @@
     "website/plugin/seltmake.md",
     "programming.md",
     "css.md",
-    "js/allevent.md",
-    "websafety/index.md",
     "websafety/xss",
     "websafety",
     "mojo",
@@ -295,9 +298,7 @@
     "css/cursorimage/ns-resize.gif",
     "css/cursorimage/ew-resize.gif",
     "css/cursorimage/zoom-out.gif",
-    "css/cursorimage/zoom-in.gif",
     "css/cursorimage/zoom-in.gif.crdownload",
-    "css/cursorimage/4-resize.gif.crdownload",
     "Untitled.canvas"
   ]
 }
