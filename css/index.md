@@ -508,7 +508,7 @@ B. 使用外部樣式表
 ```
 導入外部css也是可能的.
 
-一個常見的用例是字體檔案。
+一個常見的用例是字體檔案.
 ```css
 @import "https://fonts.googleapis.com/css?family=Lato";
 ```
@@ -519,72 +519,90 @@ B. 使用外部樣式表
 @import url("landscape.css") screen and (orientation:landscape);
 ```
 
-## 1-4節: 內嵌樣式
-Use inline styles to apply styling to a specific element. Note that this is not optimal. Placing style rules in a <style>
-tag or external css file is encouraged in order to maintain a distinction between content and presentation.
-Inline styles override any css in a <style> tag or external style sheet. While this can be useful in some
-circumstances, this fact more often than not reduces a project's maintainability.
-The styles in the following example apply directly to the elements to which they are attached.
-<h1 style="color: green; text-decoration: underline;">Hello world!</h1>
+### 1-4節: 內嵌樣式
+使用內嵌樣式(inline style)將樣式套用至特定元素.
+
+請注意,這不是最佳的.
+
+仍然鼓勵將樣式規則放置在`<style>`標籤中或外部css文件,以保持內容和表示之間的差異.
+
+內嵌樣式會覆蓋`<style>`標籤或外部樣式表中的任何css.(優先及最高)
+
+雖然這在某些情況下可能有用,但在這種情況下,這一事實往往會降低專案的可維護性.
+
+以下範例中的樣式直接套用於它們所附加的元素.
+```html
+<h1 style="color: green; text-decoration: underline;">hello world!</h1>
 <p style="font-size: 25px; font-family: 'Trebuchet MS';">I ♥ css</p>
-Inline styles are generally the safest way to ensure rendering compatibility across various email clients, programs
-and devices, but can be time-consuming to write and a bit challenging to manage.
-Section 1.5: Changing css with JavaScript
-Pure JavaScript
-It's possible to add, remove or change css property values with JavaScript through an element's style property.
-var el = document.getElementById("element");
-el.style.opacity = 0.5;
-el.style.fontFamily = 'sans-serif';
-Note that style properties are named in lower camel case style. In the example you see that the css property fontfamily becomes fontFamily in javascript.
-As an alternative to working directly on elements, you can create a <style> or <link> element in JavaScript and
-append it to the <body> or <head> of the html document.
-jQuery
-Modifying css properties with jQuery is even simpler.
-$('#element').css('margin', '5px');
-If you need to change more than one style rule:
-$('#element').css({
- margin: "5px",
- padding: "10px",
- color: "black"
-});
-jQuery includes two ways to change css rules that have hyphens in them (i.e. font-size). You can put them in
-quotes or camel-case the style rule name.
-$('.example-class').css({
- "background-color": "blue",
- fontSize: "10px"
-});
-See also
-JavaScript documentation – Reading and Changing css Style.
-jQuery documentation – css Manipulation
-Section 1.6: Styling Lists with css
-There are three different properties for styling list-items: list-style-type, list-style-image, and list-styleposition, which should be declared in that order. The default values are disc, outside, and none, respectively. Each
-property can be declared separately, or using the list-style shorthand property.
-list-style-type defines the shape or type of bullet point used for each list-item.
-Some of the acceptable values for list-style-type:
-disc
-circle
-square
-decimal
-lower-roman
-upper-roman
-none
-(For an exhaustive list, see the W3C specification wiki)
-To use square bullet points for each list-item, for example, you would use the following property-value pair:
-li {
- list-style-type: square;
+```
+內嵌樣式通常是確保各種電子郵件用戶端和程式和設備之間呈現相容性的最安全方法
+
+但編寫起來可能很耗時,管理起來也有點困難.
+
+### 1-5節: 用js更改css
+js可以透過元素的style屬性使用js新增或刪除或修改css屬性值.
+
+例如:
+```js
+document.getElementById("element").style.opacity=0.5
+document.getElementById("element").style.fontFamily="sans-serif"
+```
+
+請注意**樣式屬性以小駝峰式命名**
+
+在範例中,您會看到css屬性font-family在js中變成了fontFamily.
+
+作為直接處理元素的替代方法,您可以在js中建立`<style>`或`<link>`元素然後將其附加到html文件的`<body>`或`<head>`中.
+
+### 1-6節: 使用css設定清單樣式
+有三個不同屬性可以設定清單項目樣式: list-style-type list-style-image list-styleposition
+
+應依該順序宣告.
+
+預設值分別為disc outside none.
+
+每個屬性可以單獨聲明,也可以使用列表樣式的簡寫屬性.
+
+list-style-type 定義用於每個清單項目的項目符號點的形狀或類型.
+
+list-style-type 的一些可接受的值：
+- disc
+- circle
+- square
+- decimal
+- lower-roman
+- upper-roman
+- none
+(有關詳盡列表,請參閱 W3C 規範 wiki)
+
+例如,若要為每個清單項目使用方形項目符號點,您可以使用下列屬性-值對：
+```css
+li{
+    list-style-type: square;
 }
-The list-style-image property determines whether the list-item icon is set with an image, and accepts a value of
-none or a URL that points to an image.
-li {
- list-style-image: url(images/bullet.png);
+```
+
+list-style-image 屬性決定清單項目圖示是否設定有影像,並接受下列值
+- none
+- 圖像url
+
+```css
+li{
+ 	list-style-image: url(images/bullet.png);
 }
-The list-style-position property defines where to position the list-item marker, and it accepts one of two values:
-"inside" or "outside".
-li {
- list-style-position: inside;
+```
+
+list-style-position 屬性定義清單項目標記的位置,它接受兩個值之一：
+- inside
+- outside
+
+```css
+li{
+	list-style-position: inside;
 }
-Chapter 2: Structure and Formatting of a
-css Rule
+```
+
+Chapter 2: Structure and Formatting of a css Rule
 Section 2.1: Property Lists
 Some properties can take multiple values, collectively known as a property list.
 /* Two values in this property list */
