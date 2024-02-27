@@ -25,13 +25,11 @@
   - 1-4節: 內嵌樣式
   - 1-5節: 用js更改css
   - 1-6節: 使用css設定清單樣式
-Chapter 2: Structure and Formatting of a css Rule .................................................................................. 7
-Section 2.1: Property Lists ............................................................................................................................................. 7
-Section 2.2: Multiple Selectors ...................................................................................................................................... 7
-Section 2.3: Rules, Selectors, and Declaration Blocks ............................................................................................... 7
-Chapter 3: Comments ................................................................................................................................................. 8
-Section 3.1: Single Line ................................................................................................................................................... 8
-Section 3.2: Multiple Line ............................................................................................................................................... 8
+- 第2章-css規則的結構與格式
+  - 2-1節: 屬性清單
+  - 2-2節: 多重選擇器
+  - 2-3節: 規則,選擇器,聲明區塊
+- 第3章-註解
 Chapter 4: Selectors ................................................................................................................................................... 9
 Section 4.1: Basic selectors ........................................................................................................................................... 9
 Section 4.2: Attribute Selectors .................................................................................................................................... 9
@@ -320,7 +318,7 @@ You may also like ..............................................................
 
 請隨時免費與任何人分享此 PDF,
 
-本書的最新版本可以從以下網址下載：
+本書的最新版本可以從以下網址下載:
 
 https://goalkicker.com/cssBook
 
@@ -448,7 +446,7 @@ p.green{
 
 文件只需將其包含在index.css之後即可.您可以在index.css之後使用override.css並使用以下程式碼.
 
-例如：
+例如:
 ```css
 p.green{
 	color: #006600;
@@ -465,7 +463,7 @@ p.green{
 
 由於瀏覽器(快取)[]外部樣式表,您的頁面載入速度更快.
 
-### 1-2節：內部樣式
+### 1-2節:內部樣式
 html文件中`<style></style>`標籤中包含的css功能類似於外部樣式表,
 
 不同之處在於**它存在於其樣式的html文件中而不是單獨的文件中,因此只能應用於它所在的文檔**.
@@ -494,7 +492,7 @@ html文件中`<style></style>`標籤中包含的css功能類似於外部樣式�
 ### 1-3節: css @import規則(css at-rule 之一)
 @import是一個可以用來連結其他樣式表的規則
 
-您可以透過以下方式使用@import規則：
+您可以透過以下方式使用@import規則:
 A. 帶有內部`<style>`標籤
 ```html
 <style>
@@ -502,7 +500,7 @@ A. 帶有內部`<style>`標籤
 </style>
 ```
 B. 使用外部樣式表
-以下行將根目錄中名為index.css的css檔案匯入到它所在的css檔案中：
+以下行將根目錄中名為index.css的css檔案匯入到它所在的css檔案中:
 ```css
 @import "/index.css";
 ```
@@ -513,7 +511,7 @@ B. 使用外部樣式表
 @import "https://fonts.googleapis.com/css?family=Lato";
 ```
 
-@import規則的可選第二個參數是媒體查詢清單：
+@import規則的可選第二個參數是媒體查詢清單:
 ```css
 @import "/print-styles.css" print;
 @import url("landscape.css") screen and (orientation:landscape);
@@ -565,7 +563,7 @@ document.getElementById("element").style.fontFamily="sans-serif"
 
 list-style-type 定義用於每個清單項目的項目符號點的形狀或類型.
 
-list-style-type 的一些可接受的值：
+list-style-type 的一些可接受的值:
 - disc
 - circle
 - square
@@ -575,7 +573,7 @@ list-style-type 的一些可接受的值：
 - none
 (有關詳盡列表,請參閱 W3C 規範 wiki)
 
-例如,若要為每個清單項目使用方形項目符號點,您可以使用下列屬性-值對：
+例如,若要為每個清單項目使用方形項目符號點,您可以使用下列屬性-值對:
 ```css
 li{
     list-style-type: square;
@@ -592,7 +590,7 @@ li{
 }
 ```
 
-list-style-position 屬性定義清單項目標記的位置,它接受兩個值之一：
+list-style-position 屬性定義清單項目標記的位置,它接受兩個值之一:
 - inside
 - outside
 
@@ -602,52 +600,79 @@ li{
 }
 ```
 
-Chapter 2: Structure and Formatting of a css Rule
-Section 2.1: Property Lists
-Some properties can take multiple values, collectively known as a property list.
-/* Two values in this property list */
-span {
- text-shadow: yellow 0 0 3px, green 4px 4px 10px;
+## 第2章-css規則的結構與格式
+### 2-1節: 屬性清單
+某些屬性(property)可以採用多個值,統稱為屬性清單(property list).
+```css
+/* 該屬性清單中有兩個值 */
+span{
+ 	text-shadow: yellow 0 0 3px, green 4px 4px 10px;
 }
-/* Alternate Formatting */
-span {
- text-shadow:
- yellow 0 0 3px,
- green 4px 4px 10px;
+
+/* 替代格式 */
+span{
+	text-shadow:
+		yellow 0 0 3px,
+		green 4px 4px 10px;
 }
-Section 2.2: Multiple Selectors
-When you group css selectors, you apply the same styles to several different elements without repeating the styles
-in your style sheet. Use a comma to separate multiple grouped selectors.
-div, p { color: blue }
-So the blue color applies to all <div> elements and all <p> elements. Without the comma only <p> elements that are
-a child of a <div> would be red.
-This also applies to all types of selectors.
-p, .blue, #first, div span{ color : blue }
-This rule applies to:
-<p>
-elements of the blue class
-element with the ID first
-every <span> inside of a <div>
-Section 2.3: Rules, Selectors, and Declaration Blocks
-A css rule consists of a selector (e.g. h1) and declaration block ({}).
-h1 {}
-Chapter 3: Comments
-Section 3.1: Single Line
-/* This is a css comment */
-div {
- color: red; /* This is a css comment */
+```
+
+### 2-2節: 多重選擇器
+當您將 css 選擇器分組時,您可以將相同的樣式套用於多個不同的元素,而無需重複樣式,在你的樣式表中**可以使用逗號分隔多個分組選擇器**.
+
+例如:
+```css
+div,p{
+	color: blue
 }
-Section 3.2: Multiple Line
+```
+
+因此藍色適用於所有`<div>`元素和所有`<p>`元素.如果沒有逗號,則只有`<p>`元素是`<div>`的子元素時是紅色的.
+
+這也適用於所有類型的選擇器.
+```css
+p,.blue,#first,div span{
+	color: blue
+}
+```
+此規則適用於:
+- `<p>`
+- 藍色類別的元素
+- 元素id為first的元素
+- `<div>`內的每個`<span>`
+
+### 2-3節: 規則,選擇器,聲明區塊
+CSS規則由**選擇器**(例如 h1)和宣告區塊({})組成.
+```css
+h1{
+	/* property */
+}
+```
+
+## 第3章-註解
+單行註解
+```css
+/* 這是註解 */
+div{
+	color: red; /* 這是註解 */
+}
+```
+
+多行註解
+```css
 /*
- This
- is
- a
- css
- comment
+這
+是
+註
+解
 */
-div {
- color: red;
+div{
+	color: red;
 }
+```
+
+**!請注意! css 沒有 // # 等註解方式**
+
 Chapter 4: Selectors
 css selectors identify specific html elements as targets for css styles. This topic covers how css selectors target
 html elements. Selectors use a wide range of over 50 selection methods offered by the css language, including
