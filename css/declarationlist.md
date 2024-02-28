@@ -8,9 +8,9 @@
 | align-items | Specifies the alignment for items inside a flexible container | 指定彈性容器內項目的對齊方式 | | | |
 | align-self | Specifies the alignment for selected items inside a flexible container | 指定彈性容器內選定項目的對齊方式 | | | |
 | all | Resets all properties (except unicode-bidi and direction) | 重置所有屬性（除unicode-bidi和direction外） | all: *\[global values\]* | | [其他]() |
-| animation | A shorthand property for all the animation-* properties | 所有animation-*屬性的簡寫 | animation: **\[time\]** **\[name\]** **\[repet time\]** ***\[anthor function\]*** | 用於創建動畫，需配合@keyframes使用 | [動畫]() |
+| animation | A shorthand property for all the animation-* properties | 所有animation-*屬性的簡寫 | animation: **\[time\]** **\[name\]** **\[repet time\]** **\[delay\]** **\[timing-function\]** **\[iteration-count\]** **\[direction\]** **\[fill-mode\]** **\[play-state\]** | 用於創建動畫，需配合@keyframes使用 | [動畫]() |
 | animation-delay | Specifies a delay for the start of an animation | 指定動畫開始的延遲 | animation-delay: *\[time\]* | | [動畫]() |
-| animation-direction | Specifies whether an animation should be played forwards, backwards or in alternate cycles | 指定動畫是否應正向播放、反向播放或交替播放 | | | [動畫]() |
+| animation-direction | Specifies whether an animation should be played forwards, backwards or in alternate cycles | 指定動畫是否應正向播放、反向播放或交替播放 | animation-direction: ***(\*normal \| reverse \| alternate \| alternate-reverse)*** | 可以以逗號合併多個參數 | [動畫]() |
 | animation-duration | Specifies how long an animation should take to complete one cycle | 指定動畫完成一個週期所需的時間 | | | [動畫]() |
 | animation-fill-mode | Specifies a style for the element when the animation is not playing (before it starts, after it ends, or both) | 指定元素在動畫未播放時（開始前、結束後或兩者都）的樣式 | | | [動畫]() |
 | animation-iteration-count | Specifies the number of times an animation should be played | 指定動畫應播放的次數 | animation-iteration-count: *\[number\] \| infinite* | | [動畫]() |

@@ -673,24 +673,35 @@ div{
 
 **!請注意! css 沒有 // # 等註解方式**
 
-Chapter 4: Selectors
-css selectors identify specific html elements as targets for css styles. This topic covers how css selectors target
-html elements. Selectors use a wide range of over 50 selection methods offered by the css language, including
-elements, classes, IDs, pseudo-elements and pseudo-classes, and patterns.
-Section 4.1: Basic selectors
-Selector Description
-* Universal selector (all elements)
-div Tag selector (all <div> elements)
-.blue Class selector (all elements with class blue)
-.blue.red All elements with class blue and red (a type of Compound selector)
-#headline ID selector (the element with "id" attribute set to headline)
-:pseudo-class All elements with pseudo-class
-::pseudo-element Element that matches pseudo-element
-:lang(en) Element that matches :lang declaration, for example <span lang="en">
-div > p child selector
-Note: The value of an ID must be unique in a web page. It is a violation of the html standard to use the
-value of an ID more than once in the same document tree.
-A complete list of selectors can be found in the css Selectors Level 3 specification.
+## 第4章-選擇器
+css選擇器(selector)將特定的html元素識別為css樣式的目標.
+
+本主題介紹css選擇器如何定位html元素.
+
+選擇器使用css語言提供的50多種選擇方法.
+
+包括元素(element),類別(class),id,偽元素(pseudo-element)和偽類選擇器(pseudo-class)以及模式(pattern).
+
+### 4-1節: 基本選擇器
+選擇器說明
+| 表示法 | 使用場景 |
+| * | 通用選擇器(所有元素) |
+| div | 標籤選擇器(所有`<div>`元素) |
+| .blue | 類別選擇器(所有具有blue類別的元素) |
+| .blue.red | 所有具有blue和red類別的元素(一種複合選擇器) |
+| #headline | id選擇器(id屬性設定為headline的元素) |
+| :pseudo-class | 所有具有偽類選擇器的元素 |
+| ::pseudo-element | 與偽元素相符的元素 |
+| :lang(en)與:lang | 宣告相符的元素，例如`<span lang="en">` |
+| div>p | 子選擇器 |
+
+**!注意! id的值在網頁中必須是唯一的.**(但在不在乎標準的情形下仍可以使用,但極度不建議)
+
+使用以下內容違反了html標準
+- 在同一dom樹中多次使用同樣id的值.
+
+完整的選擇器清單可以在css選擇器Lev3規格中找到.
+
 Section 4.2: Attribute Selectors
 Overview
 Attribute selectors can be used with various types of operators that change the selection criteria accordingly. They
@@ -716,7 +727,7 @@ ignoring val's letter casing. 4(2)
 Notes:
 1. The attribute value can be surrounded by either single-quotes or double-quotes. No quotes at all may also
 work, but it's not valid according to the css standard, and is discouraged.
-2. There is no single, integrated css4 specification, because it is split into separate modules. However, there are
+1. There is no single, integrated css4 specification, because it is split into separate modules. However, there are
 "level 4" modules. See browser support.
 Details
 [attribute]
