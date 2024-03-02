@@ -3,11 +3,11 @@
 | declaration | w3c description | descriptionCH | how to use | ps | tag |
 | ----- | ----- | ----- | ----- | ----- | ----- |
 | A | A | A | A | A | A |
-| accent-color | Specifies an accent color for user-interface controls | 設定用戶界面控件的強調顏色 | | | |
-| align-content | Specifies the alignment between the lines inside a flexible container when the items do not use all available space | 當項目未使用所有可用空間時，指定彈性容器內部行之間的對齊方式 | align-content: * center \| flex-start \| flex-end \| space-between \| space-around \| space-evenly \| **\*stretch** \| initial \| inherit * | 要加 display:flex 才可以使用 | |
+| accent-color | Specifies an accent color for user-interface controls | 設定用戶界面控件的強調顏色 | accent-color: * \*auto | \[color\] * | | |
+| align-content | Specifies the alignment between the lines inside a flexible container when the items do not use all available space | 當項目未使用所有可用空間時，指定彈性容器內部行之間的對齊方式 | align-content: * center \| flex-start \| flex-end \| space-between \| space-around \| space-evenly \| **\*stretch** * | 要加 display:flex 才可以使用 | |
 | align-items | Specifies the alignment for items inside a flexible container | 指定彈性容器內項目的對齊方式 | | | |
 | align-self | Specifies the alignment for selected items inside a flexible container | 指定彈性容器內選定項目的對齊方式 | | | |
-| all | Resets all properties (except unicode-bidi and direction) | 重置所有屬性（除unicode-bidi和direction外） | all: *\[global values\]* | | [其他]() |
+| all | Resets all properties (except unicode-bidi and direction) | 重置所有屬性(除unicode-bidi和direction外) | all: *\[global values\]* | | [其他]() |
 | animation | A shorthand property for all the animation-* properties | 所有animation-*屬性的簡寫 | animation: **\[time\]** **\[name\]** **\[repet time\]** **\[delay\]** **\[timing-function\]** **\[iteration-count\]** **\[direction\]** **\[fill-mode\]** **\[play-state\]** | 用於創建動畫，需配合@keyframes使用 | [動畫]() |
 | animation-delay | Specifies a delay for the start of an animation | 指定動畫開始的延遲 | animation-delay: *\[time\]* | | [動畫]() |
 | animation-direction | Specifies whether an animation should be played forwards, backwards or in alternate cycles | 指定動畫是否應正向播放、反向播放或交替播放 | animation-direction: ***(\*normal \| reverse \| alternate \| alternate-reverse)*** | 可以以逗號合併多個參數 | [動畫]() |

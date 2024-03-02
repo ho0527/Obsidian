@@ -6,7 +6,7 @@
       {
         "id": "00d6db2a61c308c9",
         "type": "tabs",
-        "dimension": 57.4367088607595,
+        "dimension": 49.96041171813143,
         "children": [
           {
             "id": "41b5fbacc8954a0c",
@@ -37,7 +37,7 @@
       {
         "id": "0270fad5dccf6426",
         "type": "tabs",
-        "dimension": 42.5632911392405,
+        "dimension": 50.03958828186856,
         "children": [
           {
             "id": "58e110c3ee68be50",
@@ -58,12 +58,13 @@
               "type": "markdown",
               "state": {
                 "file": "css/index.md",
-                "mode": "source",
+                "mode": "preview",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -157,7 +158,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "python/plugin/django.md",
+                "file": "css/index.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -193,7 +194,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "python/plugin/django.md",
+                "file": "css/index.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -205,7 +206,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "python/plugin/django.md"
+                "file": "css/index.md"
               }
             }
           },
@@ -264,14 +265,16 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "58e110c3ee68be50",
+  "active": "c15f2ad7fc0a286a",
   "lastOpenFiles": [
+    "css/index_tmp.html",
+    "css/index.pdf",
+    "git/commit.md",
     "css/index.md",
     "python/plugin/django.md",
     "css/declarationlist.md",
     "css/cursordef.md",
     "css/cursorimage/alias.gif",
-    "git/commit.md",
     "js/eventlistener.md",
     "javascript.html",
     "abbreviationslist.md",
@@ -301,7 +304,6 @@
     "php/functionlista-l.md",
     "website/plugin/seltmake.md",
     "programming.md",
-    "css.md",
     "websafety/xss",
     "websafety",
     "mojo",
@@ -311,7 +313,6 @@
     "css/cursorimage/ns-resize.gif",
     "css/cursorimage/ew-resize.gif",
     "css/cursorimage/zoom-out.gif",
-    "css/cursorimage/zoom-in.gif.crdownload",
     "Untitled.canvas"
   ]
 }

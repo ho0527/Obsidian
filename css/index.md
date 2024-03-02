@@ -30,7 +30,7 @@
   - 2-2節: 多重選擇器
   - 2-3節: 規則,選擇器,聲明區塊
 - 第3章-註解
-Chapter 4: Selectors ................................................................................................................................................... 9
+- 第4章-選擇器 ................................................................................................................................................... 9
 Section 4.1: Basic selectors ........................................................................................................................................... 9
 Section 4.2: Attribute Selectors .................................................................................................................................... 9
 Section 4.3: Combinators ............................................................................................................................................ 12
@@ -455,7 +455,7 @@ p.green{
 
 現在,所有具有.green類別的段落都將以深綠色而不是淺綠色書寫.
 
-其他原則也適用,例如!important規則、特異性和繼承.
+其他原則也適用,例如!important規則,特異性和繼承.
 
 當某人第一次造訪您的網站時,他們的瀏覽器會下載目前頁面的html以及連結的css文件.
 
@@ -683,16 +683,19 @@ css選擇器(selector)將特定的html元素識別為css樣式的目標.
 包括元素(element),類別(class),id,偽元素(pseudo-element)和偽類選擇器(pseudo-class)以及模式(pattern).
 
 ### 4-1節: 基本選擇器
-選擇器說明
+
+選擇器說明:
+
 | 表示法 | 使用場景 |
-| * | 通用選擇器(所有元素) |
+| --- | --- |
+| \* | 通用選擇器(所有元素) |
 | div | 標籤選擇器(所有`<div>`元素) |
 | .blue | 類別選擇器(所有具有blue類別的元素) |
 | .blue.red | 所有具有blue和red類別的元素(一種複合選擇器) |
-| #headline | id選擇器(id屬性設定為headline的元素) |
+| \#headline | id選擇器(id屬性設定為headline的元素) |
 | :pseudo-class | 所有具有偽類選擇器的元素 |
 | ::pseudo-element | 與偽元素相符的元素 |
-| :lang(en)與:lang | 宣告相符的元素，例如`<span lang="en">` |
+| :lang(en)與:lang | 宣告相符的元素,例如`<span lang="en">` |
 | div>p | 子選擇器 |
 
 **!注意! id的值在網頁中必須是唯一的.**(但在不在乎標準的情形下仍可以使用,但極度不建議)
@@ -702,298 +705,344 @@ css選擇器(selector)將特定的html元素識別為css樣式的目標.
 
 完整的選擇器清單可以在css選擇器Lev3規格中找到.
 
-Section 4.2: Attribute Selectors
-Overview
-Attribute selectors can be used with various types of operators that change the selection criteria accordingly. They
-select an element using the presence of a given attribute or attribute value.
-Selector(1) Matched element Selects elements... css Version
-[attr] <div attr> With attribute attr 2
-[attr='val'] <div attr="val"> Where attribute attr has value val 2
-[attr~='val'] <div attr="val val2 val3">
-Where val appears in the
-whitespace-separated list of attr
-2
-[attr^='val'] <div attr="val1 val2"> Where attr's value begins with val 3
-[attr$='val'] <div attr="sth aval"> Where the attr's value ends with val 3
-[attr*='val'] <div attr="somevalhere"> Where attr contains val anywhere 3
-[attr|='val'] <div attr="val-sth etc">
-Where attr's value is exactly val,
-or starts with val and immediately
-followed by - (U+002D)
-2
-[attr='val' i] <div attr="val">
-Where attr has value val,
-ignoring val's letter casing. 4(2)
-Notes:
-1. The attribute value can be surrounded by either single-quotes or double-quotes. No quotes at all may also
-work, but it's not valid according to the css standard, and is discouraged.
-1. There is no single, integrated css4 specification, because it is split into separate modules. However, there are
-"level 4" modules. See browser support.
-Details
-[attribute]
-Selects elements with the given attribute.
-div[data-color] {
- color: red;
+### 4-2節: 屬性選擇器
+#### 概述
+
+屬性選擇器可以與各種類型的運算子一起使用,從而相應地更改選擇標準.
+
+他們使用給定屬性或屬性值的存在來選擇元素.
+
+| 選擇器<sup>\[#04021\]</sup> | 匹配元素 | 選擇元素... | css版本 |
+| --- | --- | --- | --- |
+| \[attr\] | `<div attr>` | 具有屬性attr | 2 |
+| \[attr="val"\] | `<div attr="val">` | 其中屬性attr的值為val | 2 |
+| \[attr~="val"\] | `<div attr="val val2 val3">` | 其中val出現在以空格分隔的 attr 列表 | 2 |
+| \[attr^="val"\] | `<div attr="val1 val2">` | 其中attr的值以val開頭 | 3 |
+| \[attr$="val"\] | `<div attr="sth aval">` | 其中attr的值以val結尾 | 3 |
+| \[attr*="val"\] | `<div attr="somevalhere">` | 其中attr在任何地方包含val | 3 |
+| \[attr\|="val"\] | `<div attr="val-sth val">` | 其中attr的值恰好是val,或以val開頭並立即隨後是"-" | 2 |
+| \[attr="val" i\] | `<div attr="val">` | 其中 attr 的值為val,忽略val的字母大小寫. | 4<sup>\[#04022\]</sup> |
+
+#### 註釋:
+- #04021: 屬性值可以用單引號或雙引號括起來. 完全沒有引號也可以可以工作, 但根據css標準它是違規的,因此不鼓勵這樣做.
+- #04022: 沒有單一的或整合的css4規範,因為它被分成單獨的模組. 但是有"level 4"模組. 請參閱[瀏覽器支援](https://caniuse.com/css-case-insensitive).
+
+#### 細節:
+\[屬性(attribute)\]
+選擇**具有給定屬性的元素**.
+```css
+div[data-color]{
+	color: red;
 }
-<div data-color="red">This will be red</div>
-<div data-color="green">This will be red</div>
-<div data-background="red">This will NOT be red</div>
-Live Demo on JSBin
-[attribute="value"]
-Selects elements with the given attribute and value.
-div[data-color="red"] {
- color: red;
+```
+```html
+<div data-color="red">這會變紅色</div>
+<div data-color="green">這會變紅色</div>
+<div data-background="red">這不會變紅色</div>
+```
+[JSBin上的線上演示](https://jsbin.com/cezale/1/edit?html,css,output)
+
+\[屬性="值(value)"(也可以是單引號)\]
+選擇**具有給定屬性和值的元素**.
+```css
+div[data-color="red"]{
+	color: red;
 }
-<div data-color="red">This will be red</div>
-<div data-color="green">This will NOT be red</div>
-<div data-color="blue">This will NOT be red</div>
-Live Demo on JSBin
-[attribute*="value"]
-Selects elements with the given attribute and value where the given attribute contains the given value anywhere (as
-a substring).
-[class*="foo"] {
- color: red;
+```
+```html
+<div data-color="red">這會變紅色的</div>
+<div data-color="green">這不會變紅色</div>
+<div data-color="blue">這不會變紅色</div>
+```
+[JSBin上的線上演示](https://jsbin.com/waxoked/1/edit?html,css,output)
+
+*ps: 此演示沒演示到`<div data-color="green">這不會變紅色</div>`應該是錯誤的*
+
+\[屬性*="值"\]
+選擇具有給定屬性和值的元素,其中**給定屬性在任何位置包含給定值**(如一個子串).
+```css
+div[class*="foo"]{
+	color: red;
 }
-<div class="foo-123">This will be red</div>
-<div class="foo123">This will be red</div>
-<div class="bar123foo">This will be red</div>
-<div class="barfooo123">This will be red</div>
-<div class="barfo0">This will NOT be red</div>
-Live Demo on JSBin
-[attribute~="value"]
-Selects elements with the given attribute and value where the given value appears in a whitespace-separated list.
-[class~="color-red"] {
- color: red;
+```
+```html
+<div class="foo-123">這會變紅色</div>
+<div class="foo123">這會變紅色</div>
+<div class="bar123foo">這會變紅色</div>
+<div class="barfooo123">這會變紅色</div>
+<div class="barfo0">這不會變紅色</div>
+```
+[JSBin上的線上演示](https://jsbin.com/dazige/1/edit?html,css,output)
+
+\[屬性~="值"\]
+選擇具有給定屬性和值的元素,其中**給定值出現在以空格分隔的清單中**.
+```css
+div[class~="color-red"]{
+	color: red;
 }
-<div class="color-red foo-bar the-div">This will be red</div>
-<div class="color-blue foo-bar the-div">This will NOT be red</div>
-Live Demo on JSBin
-[attribute^="value"]
-Selects elements with the given attribute and value where the given attribute begins with the value.
-[class^="foo-"] {
- color: red;
+```
+```html
+<div class="color-red foo-bar the-div">這會變紅色</div>
+<div class="color-blue foo-bar the-div">這不會變紅色</div>
+```
+[JSBin上的線上演示](https://jsbin.com/posuhim/1/edit?html,css,output)
+
+\[屬性^="值"\]
+選擇具有給定屬性和值的元素,其中**給定屬性以該值開頭**.
+```css
+div[class^="foo-"]{
+	color: red;
 }
-<div class="foo-123">This will be red</div>
-<div class="foo-234">This will be red</div>
-<div class="bar-123">This will NOT be red</div>
-Live Demo on JSBin
-[attribute$="value"]
-Selects elements with the given attribute and value where the given attribute ends with the given value.
-[class$="file"] {
- color: red;
+```
+```html
+<div class="foo-123">這會變紅色</div>
+<div class="foo-234">這會變紅色</div>
+<div class="bar-123">這不會變紅色</div>
+```
+[JSBin上的線上演示](https://jsbin.com/yowihi/1/edit?html,css,output)
+
+\[屬性$="值"\]
+選擇具有給定屬性和值的元素,其中**給定屬性以給定值結尾**.
+```css
+div[class$="file"]{
+	color: red;
 }
-<div class="foobar-file">This will be red</div>
-<div class="foobar-file">This will be red</div>
-<div class="foobar-input">This will NOT be red</div>
-Live Demo on JSBin
-[attribute|="value"]
-Selects elements with a given attribute and value where the attribute's value is exactly the given value or is exactly
-the given value followed by - (U+002D)
-[lang|="EN"] {
- color: red;
+```
+```html
+<div class="foobar-file">這會變紅色</div>
+<div class="foobar-file">這會變紅色</div>
+<div class="foobar-input">這不會變紅色</div>
+```
+[JSBin上的線上演示](https://jsbin.com/yowihi/2/edit?html,css,output)
+
+[屬性|=“值”]
+選擇具有給定屬性和值的元素,其中**屬性的值恰好是給定值或恰好是給定值後面接著"-"**
+```css
+div[lang|="EN"]{
+	color: red;
 }
-<div lang="EN-us">This will be red</div>
-<div lang="EN-gb">This will be red</div>
-<div lang="PT-pt">This will NOT be red</div>
-Live Demo on JSBin
-[attribute="value" i]
-Selects elements with a given attribute and value where the attribute's value can be represented as Value, VALUE,
-vAlUe or any other case-insensitive possibility.
-[lang="EN" i] {
- color: red;
+```
+```html
+<div lang="EN-us">這會變紅色</div>
+<div lang="EN-gb">這會變紅色</div>
+<div lang="PT-pt">這不會變紅色</div>
+```
+[JSBin上的線上演示](https://jsbin.com/yowihi/3/edit?html,css,output)
+
+\[屬性="值" i\]
+選擇具有給定屬性和值的元素,其中**屬性的值可以表示為任何不區分大小寫的值**.(例如: \[class="value"\] 那: Value,VALUE,vAlUe 等皆可被使用)
+
+```css
+div[lang|="EN" i]{
+	color: red;
 }
-<div lang="EN">This will be red</div>
-<div lang="en">This will be red</div>
-<div lang="PT">This will NOT be red</div>
-Live Demo on JSBin
-Specificity of attribute selectors
-0-1-0
-Same as class selector and pseudoclass.
-*[type=checkbox] // 0-1-0
-Note that this means an attribute selector can be used to select an element by its ID at a lower level of specificity
-than if it was selected with an ID selector: [id="my-ID"] targets the same element as #my-ID but with lower
-specificity.
-See the Syntax Section for more details.
-Section 4.3: Combinators
-Overview
-Selector Description
-div span Descendant selector (all <span>s that are descendants of a <div>)
-div > span Child selector (all <span>s that are a direct child of a <div>)
-a ~ span General Sibling selector (all <span>s that are siblings after an <a>)
-a + span Adjacent Sibling selector (all <span>s that are immediately after an <a>)
-Note: Sibling selectors target elements that come after them in the source document. css, by its nature
-(it cascades), cannot target previous or parent elements. However, using the flex order property, a
-previous sibling selector can be simulated on visual media.
-Descendant Combinator: selector selector
-A descendant combinator, represented by at least one space character (), selects elements that are a descendant of
-the defined element. This combinator selects all descendants of the element (from child elements on down).
-div p {
- color:red;
+```
+```html
+<div lang="EN">這會變紅色</div>
+<div lang="en">這會變紅色</div>
+<div lang="TW">這不會變紅色</div>
+```
+[JSBin上的線上演示](https://jsbin.com/yowihi/4/edit?html,css,output)
+
+#### 屬性選擇器的優先性為: 0-1-0
+
+**與偽元素及偽類選擇器相同.**
+
+請注意,這表示屬性選擇器可用於按較低優先性(specificity)等級的id選擇元素與使用id選擇器選擇相比: \[id="my-id"\] 目標與 \#my-id 相同的元素,但具有較低的優限性.
+
+有關詳細信息,請參閱[語法部分](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity).
+
+### 4-3節: 關係選擇器
+
+概述:
+
+| 範例 | 關係選擇器(combinator)名稱及說明 |
+| --- | --- |
+| div span | 後代選擇器(所有 <span> 都是 <div> 的後代) |
+| div>span | 子選擇器(所有 <div> 的直接子級 <span>) |
+| a~span | 通用同級選擇器(<a> 之後的所有同級 <span>) |
+| a+span | 相鄰同級選擇器(緊接在 <a> 之後的所有 <span>) |
+
+注意: 同級選擇器的目標元素是來源文件中緊接著的元素.
+
+css本質上不能定位前一個元素或父元素.
+
+但是使用flex order屬性,可以在視覺媒體上模擬先前的同級選擇器[參見](https://stackoverflow.com/questions/1817792/is-there-a-previous-sibling-selector/36118012#36118012).
+
+#### 後代組合器: 選擇器 選擇器
+
+後代組合器,由至少一個空格字元" "表示,選擇作為已定義元素的後代的元素. **此組合器選擇該元素的所有後代(從子元素向下)**.
+
+```css
+div p{
+  	color: red;
 }
+```
+```html
 <div>
- <p>My text is red</p>
- <section>
- <p>My text is red</p>
- </section>
+	<p>我的文字是紅色</p>
+	<span>
+		<p>我的文字是紅色</p>
+	</span>
 </div>
-<p>My text is not red</p>
-Live Demo on JSBin
-In the above example, the first two <p> elements are selected since they are both descendants of the <div>.
-Child Combinator: selector > selector
-The child (>) combinator is used to select elements that are children, or direct descendants, of the specified
-element.
-div > p {
- color:red;
+<p>我的文字不是紅色</p>
+```
+[JSBin上的線上演示](https://jsbin.com/xonafuz/2/edit?html,css,output)
+
+在上面的範例中,選擇了前兩個`<p>`元素,因為它們都是`<div>`的後代.
+
+#### 子組合器: 選擇器>選擇器
+
+子(>)組合符用於選擇作為**指定元素的子元素或直接後代的元素**
+```css
+div>p{
+  	color: red;
 }
+```
+```html
 <div>
- <p>My text is red</p>
- <section>
- <p>My text is not red</p>
- </section>
+	<p>我的文字是紅色</p>
+	<span>
+  		<p>我的文字不是紅色</p>
+	</span>
 </div>
-Live Demo on JSBin
-The above css selects only the first <p> element, as it is the only paragraph directly descended from a <div>.
-The second <p> element is not selected because it is not a direct child of the <div>.
-Adjacent Sibling Combinator: selector + selector
-The adjacent sibling (+) combinator selects a sibling element that immediate follows a specified element.
-p + p {
- color:red;
+```
+[JSBin上的現場演示](https://jsbin.com/xonafuz/3/edit?html,css,output)
+
+上面的css**只選擇第一個`<p>`元素,因為它是唯一直接從`<div>`繼承的段落**.
+
+未選擇第二個`<p>`元素,因為它不是`<div>`的直接子元素.
+
+#### 鄰近兄弟組合器: 選擇器+選擇器
+相鄰同級(+)組合符選擇緊接在指定元素之後的同級元素.
+```css
+div+p{
+  	color: red;
 }
-<p>My text is not red</p>
-<p>My text is red</p>
-<p>My text is red</p>
+```
+```html
+<p>我的文字不是紅色</p>
+<p>我的文字是紅色</p>
+<p>我的文字是紅色</p>
 <hr>
-<p>My text is not red</p>
-Live Demo on JSBin
-The above example selects only those <p> elements which are directly preceded by another <p> element.
-General Sibling Combinator: selector ~ selector
-The general sibling (~) combinator selects all siblings that follow the specified element.
-p ~ p {
- color:red;
+<p>我的文字不是紅色</p>
+```
+[JSBin上的現場演示](https://jsbin.com/xonafuz/4/edit?html,css,output)
+
+上面的範例**僅選擇直接位於另一個`<p>`元素前面的那些`<p>`元素**.
+
+#### 通用兄弟組合器: 選擇器 ~ 選擇器
+通用同級(~)組合器選擇指定元素後面的所有同級.
+
+```css
+div~p{
+  	color: red;
 }
-<p>My text is not red</p>
-<p>My text is red</p>
+```
+```html
+<p>我的文字不是紅色</p>
+<p>我的文字是紅色</p>
 <hr>
-<h1>And now a title</h1>
-<p>My text is red</p>
-Live Demo on JSBin
-The above example selects all <p> elements that are preceded by another <p> element, whether or not they are
-immediately adjacent.
-Section 4.4: Pseudo-classes
-Pseudo-classes are keywords which allow selection based on information that lies outside of the document tree or
-that cannot be expressed by other selectors or combinators. This information can be associated to a certain state
-(state and dynamic pseudo-classes), to locations (structural and target pseudo-classes), to negations of the former
-(negation pseudo-class) or to languages (lang pseudo-class). Examples include whether or not a link has been
-followed (:visited), the mouse is over an element (:hover), a checkbox is checked (:checked), etc.
-Syntax
-selector:pseudo-class {
- property: VALUE;
+<h1>標題</h1>
+<p>我的文字是紅色</p>
+```
+[JSBin上的現場演示](https://jsbin.com/xonafuz/5/edit?html,css,output)
+
+上面的範例**選擇前面有另一個`<p>`元素的所有`<p>`元素,無論它們是否是緊鄰**.
+
+### 4-4節: 偽類選擇器
+偽類選擇器(同:偽類)(pseudo-classes)是關鍵字,允許根據文檔樹以外的資訊進行選擇或不能由其他選擇器或組合器來表達.
+
+該資訊可以與某個狀態相關聯(狀態和動態偽類),到位置(結構和目標偽類),到前者的否定(否定偽類)或語言(lang偽類).
+
+例如連結是否已被跟隨(:visited),滑鼠懸停在元素上(:hover),選取核取方塊(:checked)等.
+
+**更多詳細功能及介紹可至[此連結](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes)查看**.
+
+語法
+```css
+選擇器:偽類{
+  	property: VALUE;
 }
-List of pseudo-classes:
-Name Description
-:active Applies to any element being activated (i.e. clicked) by the user.
-:any
-Allows you to build sets of related selectors by creating groups that the
-included items will match. This is an alternative to repeating an entire selector.
-:target Selects the current active #news element (clicked on a URL
-containing that anchor name)
-:checked Applies to radio, checkbox, or option elements that are checked
-or toggled into an "on" state.
-:default Represents any user interface element that is the default among a group of
-similar elements.
-:disabled Applies to any UI element which is in a disabled state.
-:empty Applies to any element which has no children.
-:enabled Applies to any UI element which is in an enabled state.
-:first Used in conjunction with the @page rule, this selects the first page in a
-printed document.
-:first-child Represents any element that is the first child element of its parent.
-:first-of-type Applies when an element is the first of the selected element type
-inside its parent. This may or may not be the first-child.
-:focus Applies to any element which has the user's focus. This can be given by the
-user's keyboard, mouse events, or other forms of input.
-:focus-within Can be used to highlight a whole section when one element inside it is focused. It matches
-any element that the :focus pseudo-class matches or that has a descendant focused.
-:full-screen Applies to any element displayed in full-screen mode. It selects the whole stack
-of elements and not just the top level element.
-:hover Applies to any element being hovered by the user's pointing device, but
-not activated.
-:indeterminate
-Applies radio or checkbox UI elements which are neither checked nor
-unchecked, but are in an indeterminate state. This can be due to an
-element's attribute or DOM manipulation.
-:in-range
-The :in-range css pseudo-class matches when an element has
-its value attribute inside the specified range limitations for this element.
-It allows the page to give a feedback that the value currently defined
-using the element is inside the range limits.
-:invalid Applies to <input> elements whose values are invalid according to
-the type specified in the type= attribute.
-:lang
-Applies to any element who's wrapping <body> element has a properly
-designated lang= attribute. For the pseudo-class to be valid, it must
-contain a valid two or three letter language code.
-:last-child Represents any element that is the last child element of its parent.
-:last-of-type Applies when an element is the last of the selected element type inside
-its parent. This may or may not be the last-child.
-:left Used in conjunction with the @page rule, this selects all the left
-pages in a printed document.
-:link Applies to any links which haven't been visited by the user.
-:not()
-Applies to all elements which do not match the value passed to
-(:not(p) or :not(.class-name) for example. It must have a value to be
-valid and it can only contain one selector. However, you can chain multiple :not selectors
-together.
-:nth-child
-Applies when an element is the n-th element of its parent, where n
-can be an integer, a mathematical expression (e.g n+3) or the keywords
-odd or even.
-:nth-of-type
-Applies when an element is the n-th element of its parent of the
-same element type, where n can be an integer, a mathematical
-expression (e.g n+3) or the keywords odd or even.
-:only-child
-The :only-child css pseudo-class represents any element
-which is the only child of its parent. This is the same as
-:first-child:last-child or :nth-child(1):nth-last-child(1),
-but with a lower specificity.
-:optional
-The :optional css pseudo-class represents any element
-that does not have the required attribute set on it. This allows
-forms to easily indicate optional fields and to style them accordingly.
-:out-of-range
-The :out-of-range css pseudo-class matches when an element has its
-value attribute outside the specified range limitations for this element.
-It allows the page to give a feedback that the value currently defined using the
-element is outside the range limits. A value can be outside of a range if it is
-either smaller or larger than maximum and minimum set values.
-:placeholder-shown Experimental. Applies to any form element currently displaying placeholder text.
-:read-only Applies to any element which is not editable by the user.
-:read-write Applies to any element that is editable by a user, such as <input> elements.
-:right Used in conjunction with the @page rule, this selects all the right pages in a
-printed document.
-:root matches the root element of a tree representing the document.
-:scope
-css pseudo-class matches the elements that are a reference
-point for selectors to match against.
-:target Selects the current active #news element (clicked on a URL
-containing that anchor name)
-:visited Applies to any links which have has been visited by the user.
-The :visited pseudoclass can't be used for most styling in a lot of modern browsers anymore because
-it's a security hole. See this link for reference.
-Section 4.5: Child Pseudo Class
-"The :nth-child(an+b) css pseudo-class matches an element that has an+b-1 siblings before it in the
-document tree, for a given positive or zero value for n" - MDN :nth-child
-pseudo-selector 1 2 3 4 5 6 7 8 9 10
-:first-child ✔
-:nth-child(3) ✔
-:nth-child(n+3) ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔
-:nth-child(3n) ✔ ✔ ✔
-:nth-child(3n+1) ✔ ✔ ✔ ✔
-:nth-child(-n+3) ✔ ✔ ✔
-:nth-child(odd) ✔ ✔ ✔ ✔ ✔
-:nth-child(even) ✔ ✔ ✔ ✔ ✔
-:last-child ✔
-:nth-last-child(3) ✔
+```
+偽類列表:
+
+| 名稱 | 描述 |
+| --- | --- |
+| :active | 適用於**使用者啟動(即點擊)的任何元素**. |
+| :any | 允許您透過**建立群組來建立相關選擇器集包含的項目將會匹配**.這是重複整個選擇器的替代方法. |
+| :checked | 適用於**已選取**的單選,核取方塊或選項元素或切換到“開啟”狀態. |
+| :default | 表示一組**預設的任何使用者介面元素**相似的元素. |
+| :disabled | 適用於**任何處於停用狀態的UI元素**. |
+| :empty | 適用於**任何沒有子元素的元素**. |
+| :enabled | 適用於**任何處於啟用狀態的UI元素**. |
+| :first | 與[@page]()規則結合使用,**選擇一個頁面中的第一頁列印文件**. |
+| :first-child | 表示作為其**父元素的第一個子元素**的任何元素. |
+| :first-of-type | 當**元素是所選元素類型的第一個時應用在其父級內部**.這可能是也可能不是第一個子元素. |
+| :focus | 適用於**任何具有使用者焦點的元素**.這可以由下式給出: 使用者的鍵盤,滑鼠事件或其他形式的輸入. |
+| :focus-within | 當其中的**一個元素獲得焦點時**,可用於突出顯示整個部分. |
+| :focus | 偽類匹配的**任何元素或具有後代焦點的元素**. |
+| :full-screen | 適用於**以全螢幕模式顯示的任何元素**.它選擇整個堆疊元素而不僅僅是頂級元素. |
+| :hover | 適用於使用者**指標裝置懸停的任何元素**,但是未激活. |
+| :indeterminate | 套用既**未選取也未選取**的單選或複選框UI元素處於不確定狀態.這可能是由於元素的屬性或DOM操作. |
+| :in-range | **其value屬性在此元素的指定範圍限制內**.它允許頁面給出當前定義的值的回饋使用該元素在範圍限制內. |
+| :invalid | 適用於**其值無效的`<input>`元素**.和type=attribute相同. |
+| :lang | 適用於包裝`<body>`元素的任何元素,**該元素具有正確的指定lang屬性**. 為了使偽類有效,它必須包含有效的兩個或三個字母的語言代碼. |
+| :last-child | 表示作為其**父元素的最後一個子元素的任何元素**. |
+| :last-of-type | 當元素是**內部所選元素類型的最後一個時適用它的父級**.這可能是也可能不是最後一個子元素. |
+| :left | 與[@page]()規則結合使用,**選擇所有左側列印文件中的頁面**. |
+| :link | 適用於使用者**尚未造訪過的任何連結**. |
+| :not() | 適用於**與傳遞給的值不符的所有元素**(例如: :not(p)或:not(.class-name)).它必須有一個值有效且只能包含一個選擇器.但是,您可以連結多個:not選擇器一起. |
+| :nth-child() | 當**元素是其父元素的第n個元素時適用**,其中n可以是整數,數學表達式(例如 n+3)或關鍵字奇數或偶數. |
+| :nth-of-type | 當**一個元素是其父元素的第n個元素時適用相同的元素類型**,其中 n 可以是整數,數學表達式表達式(例如 n+3)或關鍵字 odd 或 Even. |
+| :only-child | 代表**任何元素這是其父母的唯一孩子**. 這與:first-child :last-child 或 :nth-child(1):nth-last-child(1),但優先級較低. |
+| :optional | 代表任何元素**沒有設定所需的屬性**. 這允許表單可以輕鬆指示可選欄位並相應地設定它們的樣式. |
+| :out-of-range | 當一個元素有它的值時**會匹配value屬性超出了該元素的指定範圍限制**.它允許頁面給出當前使用定義的值的回饋元素超出範圍限制. 如果值是,則該值可能超出範圍小於或大於最大和最小設定值. |
+| ($) :placeholder-shown | 適用於目前**顯示佔位符文字(placeholder)的任何表單元素**. |
+| :read-only | 適用於**任何使用者不可編輯的元素**. |
+| :read-write | 適用於**使用者可編輯的任何元素**,例如`<input>`元素. |
+| :right | 與@page規則結合使用,**這會選擇a中的所有正確頁面列印文件**. |
+| :root | 符合表示**元素樹的根元素**. |
+| :range | 符合作為**引用的元素選擇器要匹配的點**. |
+| :target | 表示一個唯一的元素(目標元素),其id與目前URL片段相符 |
+| :visited<sup>\[ #04041 \]</sup> | 適用於使用者**已造訪過的任何連結**. |
+
+ps:
+- #04041: :visited偽類不能再用於許多現代瀏覽器中的大多數樣式,因為這是一個安全漏洞.請參閱[此連結](https://hacks.mozilla.org/2010/03/privacy-related-changes-coming-to-css-vistited/)以供參考.
+
+### 4-5節: nth偽類
+
+> Represents elements whose numeric position in a series of siblings matches the pattern An+B, for every positive integer or zero value of n, where:
+> A is an integer step size,
+> B is an integer offset,
+> n is all nonnegative integers, starting from 0.
+> It can be read as the An+B-th element of a list. The A and B must both have <integer> values.
+ [\- MDN :nth-child](https://developer.mozilla.org/en-US/docs/Web/CSS/:nth-child)
+
+---
+
+也就是說:
+
+表示元素在兄弟元素列表中的位置是An+B模式的元素,其中n為正整數或0,A和B為整數且A不為0。其中：
+- A是整數步長
+- B是增量偏移量
+- n是從0開始的所有非負整數
+它可以被理解為列表中的第An+B一個元素.A和B必須都是"integer"值。
+
+此表為假設子元素有10個的情形下會被選擇的元素
+| 偽類選擇器 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| :first-child | ✔ | | | | | | | | | |
+| :nth-child(3) | | | ✔ | | | | | | | |
+| :nth-child(n+3) | | | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ |
+| :nth-child(3n) | | | ✔ | | | ✔ | | | ✔ | |
+| :nth-child(3n+1) | ✔ | | | ✔ | | | ✔ | | | ✔ |
+| :nth-child(-n+3) | ✔ | ✔ | ✔ | | | | | | | |
+| :nth-child(odd) | ✔ | | ✔ | | ✔ | | ✔ | | ✔ | |
+| :nth-child(even) | | ✔ | | ✔ | | ✔ | | ✔ | | ✔ |
+| :last-child | | | | | | | | | | ✔ |
+| :nth-last-child(3) | | | | | | | ✔ | | | |
+
 Section 4.6: Class Name Selectors
 The class name selector select all elements with the targeted class name. For example, the class name .warning
 would select the following <div> element:
