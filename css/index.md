@@ -1023,11 +1023,11 @@ ps:
 
 也就是說:
 
-表示元素在兄弟元素列表中的位置是An+B模式的元素,其中n為正整數或0,A和B為整數且A不為0。其中：
+表示元素在兄弟元素列表中的位置是An+B模式的元素,其中n為正整數或0,A和B為整數且A不為0.其中：
 - A是整數步長
 - B是增量偏移量
 - n是從0開始的所有非負整數
-它可以被理解為列表中的第An+B一個元素.A和B必須都是"integer"值。
+它可以被理解為列表中的第An+B一個元素.A和B必須都是"integer"值.
 
 此表為假設子元素有10個的情形下會被選擇的元素
 | 偽類選擇器 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
@@ -1043,77 +1043,103 @@ ps:
 | :last-child | | | | | | | | | | ✔ |
 | :nth-last-child(3) | | | | | | | ✔ | | | |
 
-Section 4.6: Class Name Selectors
-The class name selector select all elements with the targeted class name. For example, the class name .warning
-would select the following <div> element:
-<div class="warning">
- <p>This would be some warning copy.</p>
+### 第 4.6 節：類別名稱選擇器
+
+**類別名稱選擇器選擇具有目標類別名稱的所有元素**.
+
+例如: .warning將選擇以下`<div>`元素：
+
+```html
+<div class=“警告”>
+  <p>這將是一些警告文案.</p>
 </div>
-You can also combine class names to target elements more specifically. Let's build on the example above to
-showcase a more complicated class selection.
-css
-.important {
- color: orange;
+```
+您也可以將類別名稱組合到更具體的目標元素.
+
+讓我們以上面的例子為基礎展示更複雜的類別選擇.
+```css
+.important{
+ 	color: orange;
 }
-.warning {
- color: blue;
+.warning{
+ 	color: blue;
 }
-.warning.important {
- color: red;
+.warning.important{
+ 	color: red;
 }
-html
+```
+```html
 <div class="warning">
- <p>This would be some warning copy.</p>
+  	<p>這將是一些警告文案.</p>
 </div>
 <div class="important warning">
- <p class="important">This is some really important warning copy.</p>
+  	<p class="important">這是一些非常重要的警告文案.</p>
 </div>
-In this example, all elements with the .warning class will have a blue text color, elements with the .important class
-with have an orange text color, and all elements that have both the .important and .warning class name will have a
-red text color.
-Notice that within the css, the .warning.important declaration did not have any spaces between the two class
-names. This means it will only find elements which contain both class names warning and important in their class
-attribute. Those class names could be in any order on the element.
-If a space was included between the two classes in the css declaration, it would only select elements that have
-parent elements with a .warning class names and child elements with .important class names.
-Section 4.7: Select element using its ID without the high
-specificity of the ID selector
-This trick helps you select an element using the ID as a value for an attribute selector to avoid the high specificity of
-the ID selector.
-html:
+```
+
+在此範例中所有具有.warning類別的元素都將具有藍色文字顏色,並具有.important類別的元素的文字顏色為橘色,同時具有.important和.warning類別名稱的所有元素都將具有紅色文字顏色.
+
+請注意,在css中: .warning.important 聲明的兩個類別名稱之間沒有任何空格.
+
+這意味著它只會尋找在其類別屬性中**同時包含**類別名稱 warning 和 important 的元素. 這些類別名稱在元素上**可以按任意順序排列**.
+
+如果css宣告中的兩個類別之間包含空格,則它只會選擇**具有**.warning**類別名稱的父元素和具有**.important**類別名稱的子元素的元素**.
+
+### 4-7節: id選擇元素,不含高位id選擇器的優先性
+這個技巧可以幫助您使用id作為屬性選擇器的值來選擇元素,以避免id選擇器的高優先性
+```html
 <div id="element">...</div>
-css
-#element { ... } /* High specificity will override many selectors */
-[id="element"] { ... } /* Low specificity, can be overridden easily */
-Section 4.8: The :last-of-type selector
-The :last-of-type selects the element that is the last child, of a particular type, of its parent. In the example below,
-the css selects the last paragraph and the last heading h1.
-p:last-of-type {
- background: #C5CAE9;
+```
+
+```css
+#element{ ... } /* 高優先性將覆蓋許多選擇器 */
+
+[id="element"]{ ... } /* 低優先性，可以輕鬆覆蓋 */
+```
+
+### 4-8節: :last-of-type選擇器
+:last-of-type 選擇作為其父元素的特定類型的最後一個子元素的元素. 在下面的例子中，css選取最後一段和最後一個標題 h1.
+```css
+p:last-of-type{
+  	background: #C5CAE9；
 }
-h1:last-of-type {
- background: #CDDC39;
+
+h1:last-of-type{
+  	background: #CDDC39；
 }
+```
+```html
 <div class="container">
- <p>First paragraph</p>
- <p>Second paragraph</p>
- <p>Last paragraph</p>
- <h1>Heading 1</h1>
- <h2>First heading 2</h2>
- <h2>Last heading 2</h2>
+	<p>第一段</p>
+	<p>第二段</p>
+	<p>最後一段</p>
+	<h1>標題1</h1>
+	<h2>第一個標題 2</h2>
+	<h2>最後一個標題 2</h2>
 </div>
-jsFiddle
-Section 4.9: css3 :in-range selector example
+```
+
+![image1](https://i.stack.imgur.com/8RYda.png)
+
+[jsFiddle](https://jsfiddle.net/MadalinaTn/YmMZZ/113/)
+
+### 4-9節: css3 :in-range 選擇器範例
+```html
 <style>
-input:in-range {
- border: 1px solid blue;
+input:in-range{
+	border: 1px blue solid;
 }
 </style>
+
 <input type="number" min="10" max="20" value="15">
-<p>The border for this value will be blue</p>
-The :in-range css pseudo-class matches when an element has its value attribute inside the specified range
-limitations for this element. It allows the page to give a feedback that the value currently defined using the element
-is inside the range limits.[1]
+<p>當在10~20時會變有藍色邊框</p>
+```
+當元素的value屬性在指定範圍內時(10~20),:in-range偽類選擇器匹配該元素.
+
+它允許頁面給出當前使用元素定義的值的回饋在範圍限制之內.
+
+[參見](https://developer.mozilla.org/en-US/docs/Web/CSS/:in-range)
+
 Section 4.10: A. The :not pseudo-class example & B. :focuswithin css pseudo-class
 A. The syntax is presented above.
 The following selector matches all <input> elements in an html document that are not disabled and don't have the
