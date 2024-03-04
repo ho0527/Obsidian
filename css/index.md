@@ -1,6 +1,8 @@
 # css
 # 專業人士須知
 
+<div style="page-break-after: always;"></div>
+
 ---
 
 免費程式設計書籍
@@ -14,37 +16,40 @@
 所有商標和註冊商標均為
 
 其各自所有者的財產
+
 ---
 
+<div style="page-break-after: always;"></div>
+
 ## 目錄
-- 第0章 - 介紹
-- 第1章 - 開始使用css
-  - 1-1節: 外部樣式表
-  - 1-2節: 內部樣式
-  - 1-3節: css @import規則(css at-rule 之一)
-  - 1-4節: 內嵌樣式
-  - 1-5節: 用js更改css
-  - 1-6節: 使用css設定清單樣式
-- 第2章-css規則的結構與格式
-  - 2-1節: 屬性清單
-  - 2-2節: 多重選擇器
-  - 2-3節: 規則,選擇器,聲明區塊
-- 第3章-註解
-- 第4章-選擇器 ................................................................................................................................................... 9
-Section 4.1: Basic selectors ........................................................................................................................................... 9
-Section 4.2: Attribute Selectors .................................................................................................................................... 9
-Section 4.3: Combinators ............................................................................................................................................ 12
-Section 4.4: Pseudo-classes ....................................................................................................................................... 13
-Section 4.5: Child Pseudo Class ................................................................................................................................. 15
-Section 4.6: Class Name Selectors ............................................................................................................................ 16
-Section 4.7: Select element using its ID without the high specificity of the ID selector ....................................... 17
-Section 4.8: The :last-of-type selector ...................................................................................................................... 17
-Section 4.9: css3 :in-range selector example .......................................................................................................... 17
-Section 4.10: A. The :not pseudo-class example & B. :focus-within css pseudo-class ......................................... 18
-Section 4.11: Global boolean with checkbox:checked and ~ (general sibling combinator) .................................. 19
-Section 4.12: ID selectors ............................................................................................................................................ 20
-Section 4.13: How to style a Range input .................................................................................................................. 21
-Section 4.14: The :only-child pseudo-class selector example ................................................................................. 21
+- [第0章 - 介紹](#char0)
+- [第1章 - 開始使用css](#char1)
+  - [1-1節: 外部樣式表](#char1-1)
+  - [1-2節: 內部樣式](#char1-2)
+  - [1-3節: css @import規則(css at-rule 之一)](#char1-3)
+  - [1-4節: 內嵌樣式](#char1-4)
+  - [1-5節: 用js更改css](#char1-5)
+  - [1-6節: 使用css設定清單樣式](#char1-6)
+- [第2章-css規則的結構與格式](#char2)
+  - [2-1節: 屬性清單](#char2-1)
+  - [2-2節: 多重選擇器](#char2-2)
+  - [2-3節: 規則,選擇器,聲明區塊](#char2-3)
+- [第3章-註解](#char3)
+- [第4章-選擇器](#char4)
+  - [4-1節: 基本選擇器](#char4-1)
+  - [4-2節: 屬性選擇器](#char4-2)
+  - [4-3節: 關係選擇器](#char4-3)
+  - [4-4節: 偽類選擇器](#char4-4)
+  - [4-5節: nth偽類](#char4-5)
+  - [4-6節: 類別選擇器](#char4-6)
+  - [4-7節: id選擇器](#char4-7)
+  - [4-8節: id選擇器,不含高位id選擇器的優先級](#char4-8)
+  - [4-9節: :last-of-type選擇器](#char4-9)
+  - [4-10節: css3 :in-range 選擇器範例](#char4-10)
+  - [4-11節: :not 偽類範例](#char4-11)
+  - [4-12節: :focus-within 偽類範例](#char4-12)
+  - [4-13節: 帶複選框的全域布林值 checkbox:checked 和 一般兄弟組合器(~)](#char4-13)
+  - [4-14節: :only-child 偽類選擇器範例](#char4-14)
 Chapter 5: Backgrounds ......................................................................................................................................... 22
 Section 5.1: Background Color ................................................................................................................................... 22
 Section 5.2: Background Gradients ........................................................................................................................... 24
@@ -313,6 +318,9 @@ Section 56.1: Use transform and opacity to avoid trigger layout ................
 Credits ............................................................................................................................................................................ 231
 You may also like ...................................................................................................................................................... 236
 
+<div style="page-break-after: always;"></div>
+
+<div id="char0"></div>
 
 ## 第0章 - 介紹
 
@@ -340,15 +348,19 @@ https://goalkicker.com/cssBook
 
 公司業主
 
-不保證本書提供的資訊正確無誤,也不保證
+不保證本書提供的資訊正確無誤,也不保證準確,使用風險自負
 
-準確,使用風險自負
-
-請將回饋和更正發送至 web@petercv.com
+請將回饋和更正發送至 chris960527ho@gmail.com 或 discord: chris0527
 
 GoalKicker.com
 
 TW翻譯: 賀皓群 (discord: chris0527,email: chris960527ho@gmail.com)
+
+
+<div style="page-break-after: always;"></div>
+
+
+<div id="char1"></div>
 
 ## 第1章 - 開始使用css
 版本釋出日:
@@ -356,13 +368,9 @@ TW翻譯: 賀皓群 (discord: chris0527,email: chris960527ho@gmail.com)
 - css2版1998/05/12
 - css3版2015/10/13 // 目前版本
 
+<div id="char1-1"></div>
+
 ### 1-1節: 外部樣式表
-  - 1-1節: 外部樣式表
-  - 1-2節: 內部樣式
-  - 1-3節: css @import 規則(css at 規則之一)
-  - 1-4節: 內嵌樣式
-  - 1-5節: 用js更改css
-  - 1-6節: 使用css設定清單樣式
 
 透過在每個html文件中放置<link>元素,可以將外部css樣式表套用到任意數量的html文件.
 
@@ -463,6 +471,8 @@ p.green{
 
 由於瀏覽器(快取)[]外部樣式表,您的頁面載入速度更快.
 
+<div id="char1-2"></div>
+
 ### 1-2節:內部樣式
 html文件中`<style></style>`標籤中包含的css功能類似於外部樣式表,
 
@@ -488,6 +498,8 @@ html文件中`<style></style>`標籤中包含的css功能類似於外部樣式�
 	<h1>Hello world!</h1>
 	<p>I ♥ css</p>
 </body>
+
+<div id="char1-3"></div>
 ```
 ### 1-3節: css @import規則(css at-rule 之一)
 @import是一個可以用來連結其他樣式表的規則
@@ -517,6 +529,8 @@ B. 使用外部樣式表
 @import url("landscape.css") screen and (orientation:landscape);
 ```
 
+<div id="char1-4"></div>
+
 ### 1-4節: 內嵌樣式
 使用內嵌樣式(inline style)將樣式套用至特定元素.
 
@@ -537,6 +551,8 @@ B. 使用外部樣式表
 
 但編寫起來可能很耗時,管理起來也有點困難.
 
+<div id="char1-5"></div>
+
 ### 1-5節: 用js更改css
 js可以透過元素的style屬性使用js新增或刪除或修改css屬性值.
 
@@ -551,6 +567,8 @@ document.getElementById("element").style.fontFamily="sans-serif"
 在範例中,您會看到css屬性font-family在js中變成了fontFamily.
 
 作為直接處理元素的替代方法,您可以在js中建立`<style>`或`<link>`元素然後將其附加到html文件的`<body>`或`<head>`中.
+
+<div id="char1-6"></div>
 
 ### 1-6節: 使用css設定清單樣式
 有三個不同屬性可以設定清單項目樣式: list-style-type list-style-image list-styleposition
@@ -600,7 +618,14 @@ li{
 }
 ```
 
+<div style="page-break-after: always;"></div>
+
+<div id="char2"></div>
+
 ## 第2章-css規則的結構與格式
+
+<div id="char2-1"></div>
+
 ### 2-1節: 屬性清單
 某些屬性(property)可以採用多個值,統稱為屬性清單(property list).
 ```css
@@ -616,6 +641,8 @@ span{
 		green 4px 4px 10px;
 }
 ```
+
+<div id="char2-2"></div>
 
 ### 2-2節: 多重選擇器
 當您將 css 選擇器分組時,您可以將相同的樣式套用於多個不同的元素,而無需重複樣式,在你的樣式表中**可以使用逗號分隔多個分組選擇器**.
@@ -641,6 +668,8 @@ p,.blue,#first,div span{
 - 元素id為first的元素
 - `<div>`內的每個`<span>`
 
+<div id="char2-3"></div>
+
 ### 2-3節: 規則,選擇器,聲明區塊
 CSS規則由**選擇器**(例如 h1)和宣告區塊({})組成.
 ```css
@@ -648,6 +677,11 @@ h1{
 	/* property */
 }
 ```
+
+<div style="page-break-after: always;"></div>
+
+
+<div id="char3"></div>
 
 ## 第3章-註解
 單行註解
@@ -673,6 +707,10 @@ div{
 
 **!請注意! css 沒有 // # 等註解方式**
 
+<div style="page-break-after: always;"></div>
+
+<div id="char4"></div>
+
 ## 第4章-選擇器
 css選擇器(selector)將特定的html元素識別為css樣式的目標.
 
@@ -681,6 +719,8 @@ css選擇器(selector)將特定的html元素識別為css樣式的目標.
 選擇器使用css語言提供的50多種選擇方法.
 
 包括元素(element),類別(class),id,偽元素(pseudo-element)和偽類選擇器(pseudo-class)以及模式(pattern).
+
+<div id="char4-1"></div>
 
 ### 4-1節: 基本選擇器
 
@@ -704,6 +744,8 @@ css選擇器(selector)將特定的html元素識別為css樣式的目標.
 - 在同一dom樹中多次使用同樣id的值.
 
 完整的選擇器清單可以在css選擇器Lev3規格中找到.
+
+<div id="char4-2"></div>
 
 ### 4-2節: 屬性選擇器
 #### 概述
@@ -844,13 +886,15 @@ div[lang|="EN" i]{
 ```
 [JSBin上的線上演示](https://jsbin.com/yowihi/4/edit?html,css,output)
 
-#### 屬性選擇器的優先性為: 0-1-0
+***屬性選擇器的優先級為: 0-1-0***
 
 **與偽元素及偽類選擇器相同.**
 
-請注意,這表示屬性選擇器可用於按較低優先性(specificity)等級的id選擇元素與使用id選擇器選擇相比: \[id="my-id"\] 目標與 \#my-id 相同的元素,但具有較低的優限性.
+請注意,這表示屬性選擇器可用於按較低優先級(specificity)等級的id選擇元素與使用id選擇器選擇相比: \[id="my-id"\] 目標與 \#my-id 相同的元素,但具有較低的優限性.
 
 有關詳細信息,請參閱[語法部分](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity).
+
+<div id="char4-3"></div>
 
 ### 4-3節: 關係選擇器
 
@@ -950,6 +994,8 @@ div~p{
 
 上面的範例**選擇前面有另一個`<p>`元素的所有`<p>`元素,無論它們是否是緊鄰**.
 
+<div id="char4-4"></div>
+
 ### 4-4節: 偽類選擇器
 偽類選擇器(同:偽類)(pseudo-classes)是關鍵字,允許根據文檔樹以外的資訊進行選擇或不能由其他選擇器或組合器來表達.
 
@@ -1010,6 +1056,8 @@ div~p{
 ps:
 - #04041: :visited偽類不能再用於許多現代瀏覽器中的大多數樣式,因為這是一個安全漏洞.請參閱[此連結](https://hacks.mozilla.org/2010/03/privacy-related-changes-coming-to-css-vistited/)以供參考.
 
+<div id="char4-5"></div>
+
 ### 4-5節: nth偽類
 
 > Represents elements whose numeric position in a series of siblings matches the pattern An+B, for every positive integer or zero value of n, where:
@@ -1023,7 +1071,7 @@ ps:
 
 也就是說:
 
-表示元素在兄弟元素列表中的位置是An+B模式的元素,其中n為正整數或0,A和B為整數且A不為0.其中：
+表示元素在兄弟元素列表中的位置是An+B模式的元素,其中n為正整數或0,A和B為整數且A不為0.其中: 
 - A是整數步長
 - B是增量偏移量
 - n是從0開始的所有非負整數
@@ -1043,11 +1091,13 @@ ps:
 | :last-child | | | | | | | | | | ✔ |
 | :nth-last-child(3) | | | | | | | ✔ | | | |
 
-### 第 4.6 節：類別名稱選擇器
+<div id="char4-6"></div>
 
-**類別名稱選擇器選擇具有目標類別名稱的所有元素**.
+### 4-6節: 類別選擇器
 
-例如: .warning將選擇以下`<div>`元素：
+**類別選擇器選擇具有目標類別名稱的所有元素**.
+
+例如: .warning將選擇以下`<div>`元素:
 
 ```html
 <div class=“警告”>
@@ -1085,20 +1135,48 @@ ps:
 
 如果css宣告中的兩個類別之間包含空格,則它只會選擇**具有**.warning**類別名稱的父元素和具有**.important**類別名稱的子元素的元素**.
 
-### 4-7節: id選擇元素,不含高位id選擇器的優先性
-這個技巧可以幫助您使用id作為屬性選擇器的值來選擇元素,以避免id選擇器的高優先性
+<div id="char4-7"></div>
+
+### 4-7節: id選擇器
+id選擇器選擇具有目標id的dom元素.
+
+要在CSS中透過特定ID選擇元素,前綴是#
+
+例如,以下 html div 元素:
+```html
+<div id="exampleid">
+  	<p>範例</p>
+</div>
+```
+可以透過css中的 #exampleid 來選擇,如下所示:
+```css
+#exampleid{
+	width: 20px;
+}
+```
+
+***id選擇器的優先級為: 1-0-0***
+
+**!!!請注意 html規範不允許多個元素具有相同的ID!!!**
+
+<div id="char4-8"></div>
+
+### 4-8節: id選擇器,不含高位id選擇器的優先級
+這個技巧可以幫助您使用id作為屬性選擇器的值來選擇元素,以避免id選擇器的高優先級
 ```html
 <div id="element">...</div>
 ```
 
 ```css
-#element{ ... } /* 高優先性將覆蓋許多選擇器 */
+#element{ ... } /* 高優先級將覆蓋許多選擇器 */
 
-[id="element"]{ ... } /* 低優先性，可以輕鬆覆蓋 */
+[id="element"]{ ... } /* 低優先級,可以輕鬆覆蓋 */
 ```
 
-### 4-8節: :last-of-type選擇器
-:last-of-type 選擇作為其父元素的特定類型的最後一個子元素的元素. 在下面的例子中，css選取最後一段和最後一個標題 h1.
+<div id="char4-9"></div>
+
+### 4-9節: :last-of-type選擇器
+:last-of-type 選擇作為其父元素的特定類型的最後一個子元素的元素. 在下面的例子中,css選取最後一段和最後一個標題 h1.
 ```css
 p:last-of-type{
   	background: #C5CAE9；
@@ -1123,7 +1201,9 @@ h1:last-of-type{
 
 [jsFiddle](https://jsfiddle.net/MadalinaTn/YmMZZ/113/)
 
-### 4-9節: css3 :in-range 選擇器範例
+<div id="char4-10"></div>
+
+### 4-10節: css3 :in-range 選擇器範例
 ```html
 <style>
 input:in-range{
@@ -1140,125 +1220,144 @@ input:in-range{
 
 [參見](https://developer.mozilla.org/en-US/docs/Web/CSS/:in-range)
 
-Section 4.10: A. The :not pseudo-class example & B. :focuswithin css pseudo-class
-A. The syntax is presented above.
-The following selector matches all <input> elements in an html document that are not disabled and don't have the
-class .example:
-html:
+<div id="char4-11"></div>
+
+### 4-11節: :not 偽類範例
+
+以下選擇器符合html文件中所有未停用且不具有類別.
+
+```html
 <form>
- Phone: <input type="tel" class="example">
- E-mail: <input type="email" disabled="disabled">
- Password: <input type="password">
+	Phone: <input type="tel" class="example">
+	E-mail: <input type="email" disabled>
+	Password: <input type="password">
 </form>
-css:
+```
+```css
 input:not([disabled]):not(.example){
- background-color: #ccc;
+ 	background-color: #ccc;
 }
-The :not() pseudo-class will also support comma-separated selectors in Selectors Level 4:
-css:
-input:not([disabled], .example){
- background-color: #ccc;
-}
-Live Demo on JSBin
-See background syntax here.
-B. The :focus-within css pseudo-class
+```
+:not() 偽類別也將支援選擇器lev4中的逗號分隔選擇器:
+
+[JSBin上的線上演示](https://jsbin.com/japere/edit?html,css,output)
+
+請參閱此處的背景語法.
+
+<div id="char4-12"></div>
+
+### 4-12節: :focus-within 偽類範例
+
 html:
- <h3>Background is blue if the input is focused .</p>
- <div>
- <input type="text">
- </div>
-css:
-div {
- height: 80px;
+```html
+<h3>如果輸入獲得焦點則背景變為藍色.</h3>
+<div>
+	<input type="text">
+</div>
+```
+```css
+div{
+ 	height: 80px;
 }
+
 input{
- margin:30px;
+ 	margin:30px;
 }
-div:focus-within {
- background-color: #1565C0;
+
+div:focus-within{
+ 	background-color: #1565C0;
 }
-Section 4.11: Global boolean with checkbox:checked and ~
-(general sibling combinator)
-With the ~ selector, you can easily implement a global accessible boolean without using JavaScript.
-Add boolean as a checkbox
-To the very beginning of your document, add as much booleans as you want with a unique id and the hidden
-attribute set:
-<input type="checkbox" id="sidebarShown" hidden />
-<input type="checkbox" id="darkThemeUsed" hidden />
-<!-- here begins actual content, for example: -->
+```
+
+<div id="char4-13"></div>
+
+### 4-13節: 帶複選框的全域布林值 checkbox:checked 和 一般兄弟組合器(~)
+使用~選擇器,您可以輕鬆實現全域可存取的布林值,而無需使用js.
+
+新增布林值作為複選框
+
+在文件的開頭,添加盡可能多的布林值以及唯一的id和隱藏的屬性集:
+```html
+<input type="checkbox" id="sidebarshown" hidden>
+<input type="checkbox" id="darkthemeused" hidden>
+<!-- 這裡開始實際內容,例如: -->
 <div id="container">
- <div id="sidebar">
- <!-- Menu, Search, ... -->
- </div>
- <!-- Some more content ... -->
+	<div id="sidebar">
+		<!-- 選單、搜尋、... -->
+	</div>
+  	<!-- 更多內容... -->
 </div>
 <div id="footer">
- <!-- ... -->
+  	<!-- ... -->
 </div>
-Change the boolean's value
-You can toggle the boolean by adding a label with the for attribute set:
-<label for="sidebarShown">Show/Hide the sidebar!</label>
-Accessing boolean value with css
-The normal selector (like .color-red) specifies the default properties. They can be overridden by following true /
-false selectors:
+```
+
+更改布林值
+
+您可以透過新增帶有for屬性集的標籤來切換布林值:
+```html
+<label for="sidebarshown">顯示/隱藏側邊欄！</label>
+```
+
+使用CSS存取布林值
+
+普通選擇器(如.colorred)指定預設屬性. 它們可以透過遵循布林值(true|false)來覆蓋選擇器
+
+```css
 /* true: */
-<checkbox>:checked ~ [sibling of checkbox & parent of target] <target>
+element:checked ~ \[複選框的同級和目標的父級\] target
+
 /* false: */
-<checkbox>:not(:checked) ~ [sibling of checkbox & parent of target] <target>
-Note that <checkbox>, [sibling ...] and <target> should be replaced by the proper selectors. [sibling ...]
-can be a specific selector, (often if you're lazy) simply * or nothing if the target is already a sibling of the checkbox.
-Examples for the above html structure would be:
-#sidebarShown:checked ~ #container #sidebar {
- margin-left: 300px;
+element:not(:checked) ~ \[複選框的同級和目標的父級\] target
+```
+
+element,\[複選框的同級和目標的父級\],target應替換為正確的選擇器.
+
+\[複選框的同級和目標的父級\]可以是一個特定的選擇器,(通常如果你很懶的話)簡單地 * 或什麼都沒有.
+
+上述 html 結構的範例如下:
+```css
+#sidebarShown:checked ~ #container #sidebar{
+	margin-left: 300px;
 }
-#darkThemeUsed:checked ~ #container,
-#darkThemeUsed:checked ~ #footer {
- background: #333;
+
+#darkThemeUsed:checked ~ #container, #darkThemeUsed:checked ~ #footer{
+ 	background: #333333;
 }
-In action
-See this fiddle for a implementation of these global booleans.
-Section 4.12: ID selectors
-ID selectors select DOM elements with the targeted ID. To select an element by a specific ID in css, the # prefix is
-used.
-For example, the following html div element…
-<div id="exampleID">
- <p>Example</p>
-</div>
-…can be selected by #exampleID in css as shown below:
-#exampleID {
- width: 20px;
-}
-Note: The html specs do not allow multiple elements with the same ID
-Section 4.13: How to style a Range input
-html
-<input type="range"></input>
-css
-Effect Pseudo Selector
-Thumb input[type=range]::-webkit-slider-thumb, input[type=range]::-moz-range-thumb,
-input[type=range]::-ms-thumb
-Track input[type=range]::-webkit-slider-runnable-track, input[type=range]::-moz-range-track,
-input[type=range]::-ms-track
-OnFocus input[type=range]:focus
-Lower part of
-the track
-input[type=range]::-moz-range-progress, input[type=range]::-ms-fill-lower (not possible
-in WebKit browsers currently - JS needed)
-Section 4.14: The :only-child pseudo-class selector example
-The :only-child css pseudo-class represents any element which is the only child of its parent.
+```
+
+請參閱[此連結](https://jsfiddle.net/yokosbm0/1/)以了解這些全域布林值的實作.
+
+<div id="char4-14"></div>
+
+### 4-14節: :only-child 偽類選擇器範例
+:only-child 偽類選擇器表示任何作為其父元素的唯一子元素的元素。
 html:
+```html
 <div>
- <p>This paragraph is the only child of the div, it will have the color blue</p>
+  	<p>此段落是div的唯一子級,它將具有藍色</p>
 </div>
 <div>
- <p>This paragraph is one of the two children of the div</p>
- <p>This paragraph is one of the two children of its parent</p>
+	<p>此段落是div的兩個子級之一</p>
+	<p>此段落是其父級的兩個子級之一</p>
 </div>
+```
+
 css:
-p:only-child {
- color: blue;
+```css
+p:only-child{
+ 	color: blue;
 }
-The above example selects the <p> element that is the unique child from its parent, in this case a <div>.
-Live Demo on JSBin
+```
+上面的範例選擇`<p>`元素,它是其父元素中唯一的子元素,在本例中是`<div>`.
+
+[JSBin上的線上演示](https://jsbin.com/dizosi/edit?html,css)
+
+<div style="page-break-after: always;"></div>
+
+
+
+
 Chapter 5: Backgrounds
 With css you can set colors, gradients, and images as the background of an element.
 It is possible to specify various combinations of images, colors, and gradients, and adjust the size, positioning, and
@@ -7676,3 +7775,6 @@ zer00ne Chapter 20
 Zeta Chapter 5
 Zze Chapter 5
 You may also like
+
+
+bata
