@@ -1283,7 +1283,7 @@ div:focus-within{
 <!-- 這裡開始實際內容,例如: -->
 <div id="container">
 	<div id="sidebar">
-		<!-- 選單、搜尋、... -->
+		<!-- 選單,搜尋,... -->
 	</div>
   	<!-- 更多內容... -->
 </div>
@@ -1331,7 +1331,7 @@ element,\[複選框的同級和目標的父級\],target應替換為正確的選�
 <div id="char4-14"></div>
 
 ### 4-14節: :only-child 偽類選擇器範例
-:only-child 偽類選擇器表示任何作為其父元素的唯一子元素的元素。
+:only-child 偽類選擇器表示任何作為其父元素的唯一子元素的元素.
 html:
 ```html
 <div>
@@ -1355,93 +1355,144 @@ p:only-child{
 
 <div style="page-break-after: always;"></div>
 
+<div id="char5"></div>
 
+## 第5章: 背景
+使用css您可以將顏色,漸層和圖像設定為元素的背景.
 
+可指定影像,顏色和漸層的各種組合,並調整大小,位置和重複次數等等.
 
-Chapter 5: Backgrounds
-With css you can set colors, gradients, and images as the background of an element.
-It is possible to specify various combinations of images, colors, and gradients, and adjust the size, positioning, and
-repetition (among others) of these.
-Section 5.1: Background Color
-The background-color property sets the background color of an element using a color value or through keywords,
-such as transparent, inherit or initial.
-transparent, specifies that the background color should be transparent. This is default.
-inherit, inherits this property from its parent element.
-initial, sets this property to its default value.
-This can be applied to all elements, and ::first-letter/::first-line pseudo-elements.
-Colors in css can be specified by different methods.
-Color names
-css
-div {
- background-color: red; /* red */
+<div id="char5-1"></div>
+
+### 5-1節: 背景顏色
+
+背景顏色屬性使用顏色值或透過關鍵字設定(none(無背景) transparent(透明)(預設值) inherit(繼承)  initial(初始))元素的背景顏色,
+
+繼承,從其父元素繼承此屬性.
+
+初始,將此屬性設為其預設值(也就是透明).
+
+這可以應用於所有元素和::first-letter ::first-line 偽元素.
+
+css中的顏色可以透過不同的方法指定.
+
+#### 顏色名稱
+cssL
+```css
+div{
+	background: red;
 }
-html
-<div>This will have a red background</div>
-The example used above is one of several ways that css has to represent a single color.
-Hex color codes
-Hex code is used to denote RGB components of a color in base-16 hexadecimal notation. #ff0000, for example, is
-bright red, where the red component of the color is 256 bits (ff) and the corresponding green and blue portions of
-the color is 0 (00).
-If both values in each of the three RGB pairings (R, G, and B) are the same, then the color code can be shortened
-into three characters (the first digit of each pairing). #ff0000 can be shortened to #f00, and #ffffff can be
-shortened to #fff.
-Hex notation is case-insensitive.
+```
+
+html:
+```html
+<div>這將有紅色背景</div>
+```
+
+上面使用的範例是 css 必須表示單一顏色的幾種方法之一.
+
+#### 十六進位顏色代碼(HEX)
+
+十六進位代碼用於以 16 進位十六進位表示法表示顏色的 RGB 分量.
+
+例如#ff0000是亮紅色,其中顏色的紅色分量為256位元(ff),相應的綠色和藍色部分顏色為0(00).
+
+如果三個RGB配對(R,G和B)中的每個值都相同,則可以縮短顏色代碼
+
+分成三個字元(每個配對的第一個數字). #ff0000 可以縮寫為#f00,#ffffff可以縮短為#fff.
+
+**十六進位表示法不區分大小寫.**
+
+範例:
+```css
+body{
+  	background: #de1205； /* 紅色的 */
+}
+
+.main{
+  	background: #00f； /* 藍色的 */
+}
+```
+
+#### RGB/RGBa
+
+聲明顏色的另一種方法是使用 RGB 或 RGBa.
+
+RGB 代表紅,綠,藍,需要 0 到 255 之間的三個獨立值,放在
+
+括號,分別對應紅色,綠色和藍色的十進位顏色值.
+
+RGBa 可讓您新增 0.0 到 1.0 之間的附加 alpha 參數來定義不透明度.
+
+```css
+header{
+  	background: rgb(0, 0, 0); /* 黑色的 */
+}
+
+footer{
+  	background: rgba(0, 0, 0, 0.5); /* 黑色,不透明度 50% */
+}
+```
+
+#### HSL/HSLa
+
+聲明顏色的另一種方法是使用 HSL 或 HSLa,類似於 RGB 和 RGBa.
+
+HSL 代表色調,飽和度和亮度,通常也稱為 HLS:
+
+色調是色輪上的一個度數(從 0 到 360).
+
+飽和度是 0% 到 100% 之間的百分比.
+
+亮度也是 0% 到 100% 之間的百分比.
+
+HSLa 可讓您新增 0.0 到 1.0 之間的附加 alpha 參數來定義不透明度.
+```css
+li a{
+  background: hsl(120, 100%, 50%); /* 綠色的 */
+}
+#p1{
+  background: hsla(120, 100%, 50%, 0.3); /* 綠色,不透明度 30% */
+}
+```
+
+與背景圖像的交互
+
+以下語句都是等效的:
+```css
+body{
+  background: 紅色；
+  background-image: url("partiallytransparentimage.png");
+}
+
+body{
+  background-color: 紅色；
+  background-image: url("partiallytransparentimage.png");
+}
+
+body{
+  background-image: url("partiallytransparentimage.png");
+  background-color: 紅色；
+}
+
+body{
+  background: red url("partiallytransparentimage.png")；
+}
+```
+
+它們都會導致圖像下方顯示紅色,其中圖像的部分是透明的,
+
+或圖像未顯示(可能是由於背景重複).
+
+請注意,以下內容並不等效:
+```css
 body {
- background-color: #de1205; /* red */
+  background-image: url("partiallytransparentimage.png");
+  background: 紅色；
 }
-.main {
- background-color: #00f; /* blue */
-}
-RGB / RGBa
-Another way to declare a color is to use RGB or RGBa.
-RGB stands for Red, Green and Blue, and requires of three separate values between 0 and 255, put between
-brackets, that correspond with the decimal color values for respectively red, green and blue.
-RGBa allows you to add an additional alpha parameter between 0.0 and 1.0 to define opacity.
-header {
- background-color: rgb(0, 0, 0); /* black */
-}
-footer {
- background-color: rgba(0, 0, 0, 0.5); /* black with 50% opacity */
-}
-HSL / HSLa
-Another way to declare a color is to use HSL or HSLa and is similar to RGB and RGBa.
-HSL stands for hue, saturation, and lightness, and is also often called HLS:
-Hue is a degree on the color wheel (from 0 to 360).
-Saturation is a percentage between 0% and 100%.
-Lightness is also a percentage between 0% and 100%.
-HSLa allows you to add an additional alpha parameter between 0.0 and 1.0 to define opacity.
-li a {
- background-color: hsl(120, 100%, 50%); /* green */
-}
-#p1 {
- background-color: hsla(120, 100%, 50%, .3); /* green with 30% opacity */
-}
-Interaction with background-image
-The following statements are all equivalent:
-body {
- background: red;
- background-image: url(partiallytransparentimage.png);
-}
-body {
- background-color: red;
- background-image: url(partiallytransparentimage.png);
-}
-body {
- background-image: url(partiallytransparentimage.png);
- background-color: red;
-}
-body {
- background: red url(partiallytransparentimage.png);
-}
-They will all lead to the red color being shown underneath the image, where the parts of the image are transparent,
-or the image is not showing (perhaps as a result of background-repeat).
-Note that the following is not equivalent:
-body {
- background-image: url(partiallytransparentimage.png);
- background: red;
-}
-Here, the value of background overrides your background-image.
-For more info on the background property, see Background Shorthand
+```
+在這裡,**背景的值會覆蓋您的背景圖像**.
+
 Section 5.2: Background Gradients
 Gradients are new image types, added in css3. As an image, gradients are set with the background-image property,
 or the background shorthand.
