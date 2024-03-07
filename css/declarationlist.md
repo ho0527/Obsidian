@@ -387,47 +387,52 @@
 | ::spelling-error | | | | 實驗性功能 | |
 | ::target-text | | | | 實驗性功能 | |
 | | | pseudo | classes | | |
-| :active | | | | | |
-| :any | | | | | |
-| :checked | | 已勾選事件 | *checkbox \| radio \| option @ \| label*:checked{ /\* declaration \*/ } | | |
-| :default | | | | | |
+| :active | | 適用於**使用者啟動(即點擊)的任何元素**. | | | |
+| :any | | 允許您透過**建立群組來建立相關選擇器集包含的項目將會匹配**.這是重複整個選擇器的替代方法. | | | |
+| :checked | | 適用於**已選取**的單選,核取方塊或選項元素或切換到“開啟”狀態. | *checkbox \| radio \| option @ \| label*:checked{ /\* declaration \*/ } | | |
+| :default | | 表示一組**預設的任何使用者介面元素**相似的元素. | | | |
 | :dir() | | | | | |
-| :disabled | | 禁用之區塊事件 | *input: \| select \| textarea \[type="disabled"\]*:disabled{ /\* declaration \*/ } | | |
-| :empty | | | | | |
-| :enabled | | 啟用之區塊事件 | | | |
-| :first | | | | | |
-| :first-child | | | | | |
-| :first-of-type | | | | | |
+| :disabled | | 適用於**任何處於停用狀態的UI元素**. | *input: \| select \| textarea \[type="disabled"\]*:disabled{ /\* declaration \*/ } | | |
+| :empty | | 適用於**任何沒有子元素的元素**. | | | |
+| :enabled | | 適用於**任何處於啟用狀態的UI元素**. | | | |
+| :first | | 與[@page]()規則結合使用,**選擇一個頁面中的第一頁列印文件**. | | | |
+| :first-child | | 表示作為其**父元素的第一個子元素**的任何元素. | | | |
+| :first-of-type | | 當**元素是所選元素類型的第一個時應用在其父級內部**.這可能是也可能不是第一個子元素. | | | |
 | :fullscreen | | | | | |
-| :focus | | | | | |
+| :focus | | 適用於**任何具有使用者焦點的元素**.這可以由下式給出: 使用者的鍵盤,滑鼠事件或其他形式的輸入. | | | |
+| :focus-within | | 當其中的**一個元素獲得焦點時**,可用於突出顯示整個:focus偽類匹配的任何元素或具有後代焦點的元素. | | | |
+| :focus | | 偽類匹配的**任何元素或具有後代焦點的元素**. | | | |
+| :full-screen | | 適用於**以全螢幕模式顯示的任何元素**.它選擇整個堆疊元素而不僅僅是頂級元素. | | | |
 | :has | | | | | |
-| :hover | | 滑鼠覆蓋事件 | *selector*:hover{ /* declaration */ } | | |
-| :indeterminate | | | | | |
-| :in-range | | | | | |
-| :invalid | | | | | |
-| :lang() | | | | | |
-| :last-child | | | | | |
-| :last-of-type | | | | | |
-| :left | | | | | |
-| :link | | | | | |
-| :not() | | | | | |
-| :nth-child() | | | | | |
+| :hover | | 適用於使用者**指標裝置懸停的任何元素**,但是未激活. | *selector*:hover{ /* declaration */ } | | |
+| :indeterminate | | 套用既**未選取也未選取**的單選或複選框UI元素處於不確定狀態.這可能是由於元素的屬性或DOM操作. | | | |
+| :in-range | | **其value屬性在此元素的指定範圍限制內**.它允許頁面給出當前定義的值的回饋使用該元素在範圍限制內. | | | |
+| :invalid | | 適用於**其值無效的`<input>`元素**.和type=attribute相同. | | | |
+| :lang | | 適用於包裝`<body>`元素的任何元素,**該元素具有正確的指定lang屬性**. 為了使偽類有效,它必須包含有效的兩個或三個字母的語言代碼. | | | |
+| :last-child | | 表示作為其**父元素的最後一個子元素的任何元素**. | | | |
+| :last-of-type | | 當元素是**內部所選元素類型的最後一個時適用它的父級**.這可能是也可能不是最後一個子元素. | | | |
+| :left | | 與[@page]()規則結合使用,**選擇所有左側列印文件中的頁面**. | | | |
+| :link | | 適用於使用者**尚未造訪過的任何連結**. | | | |
+| :not() | | 適用於**與傳遞給的值不符的所有元素**(例如: :not(p)或:not(.class-name)).它必須有一個值有效且只能包含一個選擇器.但是,您可以連結多個:not選擇器一起. | | | |
+| :nth-child() | | 當**元素是其父元素的第n個元素時適用**,其中n可以是整數,數學表達式(例如 n+3)或關鍵字奇數或偶數. | | | |
 | :nth-last-child() | | | | | |
 | :nth-last-of-type() | | | | | |
-| :nth-of-type() | | | | | |
-| :only-child | | | | | |
+| :nth-of-type | | 當**一個元素是其父元素的第n個元素時適用相同的元素類型**,其中 n 可以是整數,數學表達式表達式(例如 n+3)或關鍵字 odd 或 Even. | | | |
+| :only-child | | 代表**任何元素這是其父母的唯一孩子**. 這與:first-child :last-child 或 :nth-child(1):nth-last-child(1),但優先級較低. | | | |
 | :only-of-type | | | | | |
-| :optional | | | | | |
-| :out-of-range | | | | | |
-| :read-only | | 唯讀之區塊事件 | *input: \| textarea \[type="readonly"\]*:disabled{ /\* declaration \*/ } | | |
-| :read-write | | | | | |
-| :required | | 必填之區塊事件 | *input: \| select \| textarea \[type="required"\]*:required{ /\* declaration \*/ } | | |
-| :right | | | | | |
-| :root | | | | | |
+| :optional | | 代表任何元素**沒有設定所需的屬性**. 這允許表單可以輕鬆指示可選欄位並相應地設定它們的樣式. | | | |
+| :out-of-range | | 當一個元素有它的值時**會匹配value屬性超出了該元素的指定範圍限制**.它允許頁面給出當前使用定義的值的回饋元素超出範圍限制. 如果值是,則該值可能超出 | | |範圍小於或大於最大和最小設定值. |
+| ($) :placeholder-shown | | 適用於目前**顯示佔位符文字(placeholder)的任何表單元素**. | | | |
+| :read-only | | 適用於**任何使用者不可編輯的元素**. | *input: \| textarea \[type="readonly"\]*:disabled{ /\* declaration \*/ } | | |
+| :read-write | | 適用於**使用者可編輯的任何元素**,例如`<input>`元素. | | | |
+| :required | | 適用於**必填之元素** | *input: \| select \| textarea \[type="required"\]*:required{ /\* declaration \*/ } | | |
+| :right | | 與@page規則結合使用,**這會選擇a中的所有正確頁面列印文件**. | | | |
+| :root | | 符合表示**元素樹的根元素**. | | | |
+| :range | | 符合作為**引用的元素選擇器要匹配的點**. | | | |
 | :scope | | | | | |
-| :target | | | | | |
+| :target | | 表示一個唯一的元素(目標元素),其id與目前URL片段相符 | | | |
 | :valid | | | | | |
-| :visited | | | | | |
+| :visited | | 適用於使用者**已造訪過的任何連結**. | | | |
 
 ## 註解及參見
 因通用關鍵字*\[global values\]*(inherit \| initial \| revert \| revert-layer \| unset)幾乎每一個韓式皆可使用因以本表用法不將通用關鍵字寫入

@@ -1026,8 +1026,7 @@ div~p{
 | :first-child | 表示作為其**父元素的第一個子元素**的任何元素. |
 | :first-of-type | 當**元素是所選元素類型的第一個時應用在其父級內部**.這可能是也可能不是第一個子元素. |
 | :focus | 適用於**任何具有使用者焦點的元素**.這可以由下式給出: 使用者的鍵盤,滑鼠事件或其他形式的輸入. |
-| :focus-within | 當其中的**一個元素獲得焦點時**,可用於突出顯示整個部分. |
-| :focus | 偽類匹配的**任何元素或具有後代焦點的元素**. |
+| :focus-within | 當其中的**一個元素獲得焦點時**,可用於突出顯示整個:focus偽類匹配的任何元素或具有後代焦點的元素. |
 | :full-screen | 適用於**以全螢幕模式顯示的任何元素**.它選擇整個堆疊元素而不僅僅是頂級元素. |
 | :hover | 適用於使用者**指標裝置懸停的任何元素**,但是未激活. |
 | :indeterminate | 套用既**未選取也未選取**的單選或複選框UI元素處於不確定狀態.這可能是由於元素的屬性或DOM操作. |
@@ -1493,135 +1492,177 @@ body {
 ```
 在這裡,**背景的值會覆蓋您的背景圖像**.
 
-Section 5.2: Background Gradients
-Gradients are new image types, added in css3. As an image, gradients are set with the background-image property,
-or the background shorthand.
-There are two types of gradient functions, linear and radial. Each type has a non-repeating variant and a repeating
-variant:
-linear-gradient()
-repeating-linear-gradient()
-radial-gradient()
-repeating-radial-gradient()
-linear-gradient()
-A linear-gradient has the following syntax
-background: linear-gradient( <direction>?, <color-stop-1>, <color-stop-2>, ...);
-Value Meaning
-<direction>
-Could be an argument like to top, to bottom, to right or to left; or an angle as 0deg,
-90deg... . The angle starts from to top and rotates clockwise. Can be specified in deg, grad, rad,
-or turn. If omitted, the gradient flows from top to bottom
-<color-stop-list>
-List of colors, optionally followed each one by a percentage or length to display it at. For
-example, yellow 10%, rgba(0,0,0,.5) 40px, #fff 100%...
-For example, this creates a linear gradient that starts from the right and transitions from red to blue
-.linear-gradient {
- background: linear-gradient(to left, red, blue); /* you can also use 270deg */
+<div id="char5-2"></div>
+
+### 5-2節: 背景梯度
+
+梯度(又稱:漸變)(gradients)是css3新增的圖片類型.
+
+作為圖片,梯度可以使用background-image屬性或background縮寫來設定.
+
+**有兩種梯度函數: 線性和半徑,每種類型都有非重複和重複的變體**:
+- 線性梯度(linear-gradient())
+- 半徑梯度(radial-gradient())
+- 重複線性梯度(repeating-linear-gradient())
+- 重複半徑梯度(repeating-radial-gradient())
+
+#### 線性梯度
+
+線性梯度的語法如下:
+```css
+background: linear-gradient( <方向>?, <顏色停止-1>, <顏色停止-2>, ...);
+```
+
+| 值 | 含義 |
+| --- | --- |
+| <方向> | 可以是“向上”,“向下”,“向右”或“向左”這類參數;或角度值如0deg,90deg....角度從上起按鐘針方向旋轉.可以指定為deg,grad,rad或turn單位.如果省略,梯度將從上至下流動. |
+| <顏色停止> | 顏色列表,可選自每個後加百分比或長度值以顯示.如“黃色 10%,rgba(0,0,0,.5) 40px,#fff 100%...” |
+
+例如:
+```css
+.linear-gradient{
+	background: linear-gradient(to left, red, blue); /* 也可以用270deg */
 }
-You can create a diagonal gradient by declaring both a horizontal and vertical starting position.
-.diagonal-linear-gradient {
- background: linear-gradient(to left top, red, yellow 10%);
+```
+
+可以用聲明水平和垂直起始位置來建立斜角梯度:
+```css
+.diagonal-linear-gradient{
+ 	background: linear-gradient(to left top, red, yellow 10%); 
 }
-It is possible to specify any number of color stops in a gradient by separating them with commas. The following
-examples will create a gradient with 8 color stops
-.linear-gradient-rainbow {
- background: linear-gradient(to left, red, orange, yellow, green, blue, indigo, violet)
+```
+
+可指定任意個數的顏色停止建立梯度,用逗號分隔:
+```css
+.linear-gradient-rainbow{
+ 	background: linear-gradient(to left, red, orange, yellow, green, blue, indigo, violet)
 }
-radial-gradient()
-.radial-gradient-simple {
- background: radial-gradient(red, blue);
+```
+
+#### 半徑梯度
+```css
+.radial-gradient-simple{
+	background: radial-gradient(red, blue);
 }
-.radial-gradient {
- background: radial-gradient(circle farthest-corner at top left, red, blue);
+
+.radial-gradient{
+	background: radial-gradient(circle farthest-corner at top left, red, blue);
 }
-Value Meaning
-circle Shape of gradient. Values are circle or ellipse, default is ellipse.
-farthest-corner Keywords describing how big the ending shape must be. Values are closest-side, farthestside, closest-corner, farthest-corner
-top left Sets the position of the gradient center, in the same way as background-position.
-Repeating gradients
-Repeating gradient functions take the same arguments as the above examples, but tile the gradient across the
-background of the element.
-.bullseye {
- background: repeating-radial-gradient(red, red 10%, white 10%, white 20%);
+```
+
+| 值 | 含義 |
+| --- | --- |
+| circle | 形狀.circle或ellipse,預設為ellipse. |
+| farthest-corner | 描述結束形狀大小的關鍵字.closest-side,farthest-side,closest-corner,farthest-corner |
+| top left | 設置梯度中心的位置,同background-position. |
+
+#### 重複梯度
+
+重複梯度函數採用與上例相同的參數,但將梯度平鋪至元素背景.
+```css
+.bullseye{
+ 	background: repeating-radial-gradient(red, red 10%, white 10%, white 20%);
 }
-.warning {
- background: repeating-linear-gradient(-45deg, yellow, yellow 10%, black 10%, black 20% );
+
+.warning{
+ 	background: repeating-linear-gradient(-45deg, yellow, yellow 10%, black 10%, black 20% );
 }
-Value Meaning
--45deg Angle unit. The angle starts from to top and rotates clockwise. Can be specified in deg, grad, rad, or
-turn.
-to left Direction of gradient, default is to bottom. Syntax: to [y-axis(top OR bottom)] [x-axis(left OR
-right)] ie to top right
-yellow 10% Color, optionally followed by a percentage or length to display it at. Repeated two or more times.
-Note that HEX, RGB, RGBa, HSL, and HSLa color codes may be used instead of color names. Color names were used
-for the sake of illustration. Also note that the radial-gradient syntax is much more complex than linear-gradient,
-and a simplified version is shown here. For a full explanation and specs, see the MDN Docs
-Section 5.3: Background Image
-The background-image property is used to specify a background image to be applied to all matched elements. By
-default, this image is tiled to cover the entire element, excluding margin.
-.myClass {
- background-image: url('/path/to/image.jpg');
+```
+
+| 值 | 含義 |
+| --- | --- |
+| -45deg | 角度單位.從上起按鐘針方向旋轉.可以指定為deg,grad,rad或turn. |
+| to left | 方向,預設為to bottom.語法:to [垂直軸(top或bottom)\] [水平軸(left或right)\] 如to top right |
+| yellow | 10% 顏色,可選加上百分比或長度值.重複兩次或更多次. |
+
+注意HEX,RGB,RGBA,HSL和HSLA色碼也可以代替色彩名稱.使用色彩名稱僅為了說明目的.
+
+此外,半徑梯度語法比線性梯度更複雜,這裡顯示的是簡化版本.完整解釋和規格請參考[MDN文件](https://developer.mozilla.org/en-US/docs/Web/CSS/radial-gradient).
+
+<div id="char5-3"></div>
+
+### 5-3節: 背景圖片
+
+background-image屬性用於指定一個背景圖片應用於所有匹配元素.
+
+默認情況下,這個圖片將被鑲嵌填充整個元素,不包括邊距.
+```css
+.myclass{
+ 	background-image: url("path/to/image.jpg");
 }
-To use multiple images as background-image, define comma separated url()
-.myClass {
- background-image: url('/path/to/image.jpg'),
- url('/path/to/image2.jpg');
+```
+
+要用多個圖片作為background-image,可定義逗號分隔的url()
+```css
+.myclass{
+	background-image: url("path/to/image.jpg"),url("path/to/image2.jpg");
 }
-The images will stack according to their order with the first declared image on top of the others and so on.
-Value Result
-url('/path/to/image.jpg')
-Specify background image's path(s) or an image resource specified with data URI
-schema (apostrophes can be omitted), separate multiples by comma
-none No background image
-initial Default value
-inherit Inherit parent's value
-More css for Background Image
-This following attributes are very useful and almost essential too.
-background-size: xpx ypx | x% y%;
-background-repeat: no-repeat | repeat | repeat-x | repeat-y;
-background-position: left offset (px/%) right offset (px/%) | center center | left top | right
-bottom;
-Section 5.4: Background Shorthand
-The background property can be used to set one or more background related properties:
-Value Description css Ver.
-background-image Background image to use 1+
-background-color Background color to apply 1+
-background-position Background image's position 1+
-background-size Background image's size 3+
-background-repeat How to repeat background image 1+
-background-origin How the background is positioned (ignored when background-attachment is
-fixed)
-3+
-background-clip How the background is painted relative to the content-box, border-box, or the
-padding-box 3+
-background-attachment How the background image behaves, whether it scrolls along with its containing
-block or has a fixed position within the viewport 1+
-initial Sets the property to value to default 3+
-inherit Inherits property value from parent 2+
-The order of the values does not matter and every value is optional
-Syntax
-The syntax of the background shorthand declaration is:
+```
+
+圖片將根據它們的順序堆疊,第一個聲明的圖片位於其他圖片之上,依此類推。
+
+| 值 | 結果 |
+| --- | --- |
+| url("path/to/image.jpg") | 指定背景圖片的路徑或使用數據URI模式指定的圖片資源(可以省略單引號),用逗號分隔多個|
+| none | 沒有背景圖片 |
+| initial | 默認值 |
+| inherit | 繼承父級的值 |
+
+以下屬性對背景圖片非常必要:
+```css
+background-size: xpx ypx \| x% y%;
+background-repeat: no-repeat \| repeat \| repeat-x \| repeat-y;
+background-position: left offset (px/%) right offset (px/%) \| center center \| left top \| right bottom;
+```
+
+<div id="char5-4"></div>
+
+### 5-4節: 背景縮寫
+
+background屬性可以設定一個或多個背景相關屬性:
+
+| 值 | 描述 | CSS版本 |
+| --- | --- | --- |
+| background-image | 要使用的背景圖片 | 1+ |
+| background-color | 要套用的背景顏色 | 1+ |
+| background-position | 背景圖片的位置 | 1+ |
+| background-size | 背景圖片的大小 | 3+ |
+| background-repeat | 如何重複背景圖片 | 1+ |
+| background-origin | 背景如何定位(當background-attachment是fixed時忽略) | 3+ |
+| background-clip | 如何相對內容框、邊框框或邊距框繪製背景 | 3+ |
+| background-attachment | 背景圖片行為,是否跟隨包含塊滾動或具有固定位置於視口 | 1+ |
+| initial | 將屬性設置為默認值 | 3+ |
+| inherit | 繼承父層的屬性值 | 2+ |
+
+**值的順序不重要,每個值都是可選的.**
+
+語法
+
+background縮寫聲明的語法是:
+```css
 background: [<background-image>] [<background-color>] [<background-position>]/[<background-size>]
-[<background-repeat>] [<background-origin>] [<background-clip>] [<background-attachment>]
-[<initial|inherit>];
-Examples
+[<background-repeat>] [<background-origin>] [<background-clip>] [<background-attachment>];
+```
+
+例子
+```css
 background: red;
-Simply setting a background-color with the redvalue.
+/* 僅設置背景顏色為紅色. */
+
 background: border-box red;
-Setting a background-clip to border-box and a background-color to red.
+/* 設定background-clip為border-box,背景顏色為紅色. */
+
 background: no-repeat center url("somepng.jpg");
-Sets a background-repeat to no-repeat, background-origin to center and a background-image to an image.
+/* 設置背景不重複,位置居中,背景圖片. */
+
 background: url('pattern.png') green;
-In this example, the background-color of the element would be set to green with pattern.png, if it is available,
-overlayed on the colour, repeating as often as necessary to fill the element. If pattern.png includes any
-transparency then the green colour will be visible behind it.
-background: #000000 url("picture.png") top left / 600px auto no-repeat;
-In this example we have a black background with an image 'picture.png' on top, the image does not repeat in either
-axis and is positioned in the top left corner. The / after the position is to be able to include the size of the
-background image which in this case is set as 600px width and auto for the height. This example could work well
-with a feature image that can fade into a solid colour.
-NOTE: Use of the shorthand background property resets all previously set background property values,
-even if a value is not given. If you wish only to modify a background property value previously set, use a
-longhand property instead.
+/* 背景顏	色設置為綠色,pattern.png(如果可用)覆蓋其上重複層層疊加. */
+
+background: black url("picture.png") top left / 600px auto no-repeat;
+/* 黑色背景,圖片不重複水平和垂直軸,位置在左上角,圖片寬600px自動高度. */
+```
+注意:使用background縮寫將重置所有先前設定的背景屬性值,即使值未指定.如需修改先前設定的背景屬性值,請使用長型屬性.
+
 Section 5.5: Background Size
 General overview
 The background-size property enables one to control the scaling of the background-image. It takes up to two
