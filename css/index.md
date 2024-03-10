@@ -50,20 +50,19 @@
   - [4-12節: :focus-within 偽類範例](#char4-12)
   - [4-13節: 帶複選框的全域布林值 checkbox:checked 和 一般兄弟組合器(~)](#char4-13)
   - [4-14節: :only-child 偽類選擇器範例](#char4-14)
-Chapter 5: Backgrounds ......................................................................................................................................... 22
-Section 5.1: Background Color ................................................................................................................................... 22
-Section 5.2: Background Gradients ........................................................................................................................... 24
-Section 5.3: Background Image ................................................................................................................................. 25
-Section 5.4: Background Shorthand .......................................................................................................................... 26
-Section 5.5: Background Size ..................................................................................................................................... 27
-Section 5.6: Background Position .............................................................................................................................. 31
-Section 5.7: The background-origin property .......................................................................................................... 32
-Section 5.8: Multiple Background Image .................................................................................................................. 34
-Section 5.9: Background Attachment ....................................................................................................................... 35
-Section 5.10: Background Clip .................................................................................................................................... 36
-Section 5.11: Background Repeat ............................................................................................................................... 37
-Section 5.12: background-blend-mode Property ..................................................................................................... 37
-Section 5.13: Background Color with Opacity ........................................................................................................... 38
+- [第五章-背景](#char5)
+  - [5-1節: background-color](#char5-1)
+  - [5-2節: 背景梯度](#char5-2)
+  - [5-3節: background-image](#char5-3)
+  - [5-4節: background縮寫](#char5-4)
+  - [5-5節: background-size](#char5-5)
+  - [5-7節: background-origin](#char5-7)
+  - [5-8節: 多個背景圖片](#char5-8)
+  - [5-9節: background-attachment](#char5-9)
+  - [5-10節: background-clip](#char5-10)
+  - [5-11節: background-repeat](#char5-11)
+  - [5-12節: background-blend-mode](#char5-12)
+  - [5-13節: bachground-color 不透明度](#char5-13)
 Chapter 6: Centering ................................................................................................................................................. 39
 Section 6.1: Using Flexbox ........................................................................................................................................... 39
 Section 6.2: Using css transform .............................................................................................................................. 40
@@ -1363,7 +1362,7 @@ p:only-child{
 
 <div id="char5-1"></div>
 
-### 5-1節: 背景顏色
+### 5-1節: background-color
 
 背景顏色屬性使用顏色值或透過關鍵字設定(none(無背景) transparent(透明)(預設值) inherit(繼承)  initial(初始))元素的背景顏色,
 
@@ -1581,7 +1580,7 @@ background: linear-gradient( <方向>?, <顏色停止-1>, <顏色停止-2>, ...)
 
 <div id="char5-3"></div>
 
-### 5-3節: 背景圖片
+### 5-3節: background-image
 
 background-image屬性用於指定一個背景圖片應用於所有匹配元素.
 
@@ -1617,7 +1616,7 @@ background-position: left offset (px/%) right offset (px/%) \| center center \| 
 
 <div id="char5-4"></div>
 
-### 5-4節: 背景縮寫
+### 5-4節: background縮寫
 
 background屬性可以設定一個或多個背景相關屬性:
 
@@ -1664,7 +1663,7 @@ background: black url("picture.png") top left / 600px auto no-repeat;
 
 <div id="char5-5"></div>
 
-### 5-5節: 背景大小
+### 5-5節: background-size
 
 #### 總覽
 
@@ -2068,40 +2067,71 @@ html:
 
 <div id="char5-11"></div>
 
-Section 5.11: Background Repeat
-The background-repeat property sets if/how a background image will be repeated.
-By default, a background-image is repeated both vertically and horizontally.
+### 5-11節: background-repeat
+
+background-repeat屬性設定背景圖是否和如何重複.
+
+預設情況下,背景圖將在垂直和水平方向重複.
+```css
 div {
- background-image: url("img.jpg");
- background-repeat: repeat-y;
+	background-image: url("img.jpg");
+	background-repeat: repeat-y;
 }
-Here's how a background-repeat: repeat-y looks like:
-Section 5.12: background-blend-mode Property
+```
+
+以下展示background-repeat: repeat-y的效果:
+![image051101](https://i.stack.imgur.com/37rSv.png)
+
+<div id="char5-12"></div>
+
+### 5-12節: background-blend-mode
+
+css語法:
+
+background-blend-mode: * normal \| multiply \| screen \| overlay \| darken \| lighten \| color-dodge \| saturation \| color \| luminosity \| unset \| initial \| inherit *
+
+```css
 .my-div {
- width: 300px;
- height: 200px;
- background-size: 100%;
- background-repeat: no-repeat;
- background-image: linear-gradient(to right, black 0%,white 100%),
-url('https://static.pexels.com/photos/54624/strawberry-fruit-red-sweet-54624-medium.jpeg');
- background-blend-mode:saturation;
+	width: 300px;
+	height: 200px;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-image: linear-gradient(to right, black 0%,white 100%),url("path/to/image");
+	background-blend-mode: saturation;
 }
+```
+```html
 <div class="my-div">Lorem ipsum</div>
-See result here: https://jsfiddle.net/MadalinaTn/y69d28Lb/
-css Syntax: background-blend-mode: normal | multiply | screen | overlay | darken | lighten | color-dodge |
-saturation | color | luminosity;
-Section 5.13: Background Color with Opacity
-If you set opacity on an element it will affect all its child elements. To set an opacity just on the background of an
-element you will have to use RGBA colors. Following example will have a black background with 0.6 opacity.
-/* Fallback for web browsers that don't support RGBa */
+```
+
+效果可查看[此連結](https://jsfiddle.net/MadalinaTn/y69d28Lb/)
+
+<div id="char5-13"></div>
+
+### 5-13節: bachground-color 不透明度
+
+如果對元素設置不透明度,將影響其子元素.要僅對元素背景設定不透明度,需要使用RGBa色彩.
+
+以下示例設定背景為黑色不透明度0.6:
+
+```css
+/* 瀏覽器不支援RGBa的會長這樣 */
 background-color: rgb(0, 0, 0);
-/* RGBa with 0.6 opacity */
+
+/* RGBa with 0.6 透明度 */
 background-color: rgba(0, 0, 0, 0.6);
-/* For IE 5.5 - 7*/
+
+/* IE 5.5 - 7*/
 filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
-/* For IE 8*/
--ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000,
-endColorstr=#99000000)";
+
+/* IE 8*/
+-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+```
+
+<div style="page-break-after: always;"></div>
+
+<div id="char6"></div>
+
 Chapter 6: Centering
 Section 6.1: Using Flexbox
 html:
