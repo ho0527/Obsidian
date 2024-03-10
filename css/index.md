@@ -754,7 +754,7 @@ css選擇器(selector)將特定的html元素識別為css樣式的目標.
 
 他們使用給定屬性或屬性值的存在來選擇元素.
 
-| 選擇器<sup>\[#04021\]</sup> | 匹配元素 | 選擇元素... | css版本 |
+| 選擇器<sup>\[#040201\]</sup> | 匹配元素 | 選擇元素... | css版本 |
 | --- | --- | --- | --- |
 | \[attr\] | `<div attr>` | 具有屬性attr | 2 |
 | \[attr="val"\] | `<div attr="val">` | 其中屬性attr的值為val | 2 |
@@ -763,11 +763,11 @@ css選擇器(selector)將特定的html元素識別為css樣式的目標.
 | \[attr$="val"\] | `<div attr="sth aval">` | 其中attr的值以val結尾 | 3 |
 | \[attr*="val"\] | `<div attr="somevalhere">` | 其中attr在任何地方包含val | 3 |
 | \[attr\|="val"\] | `<div attr="val-sth val">` | 其中attr的值恰好是val,或以val開頭並立即隨後是"-" | 2 |
-| \[attr="val" i\] | `<div attr="val">` | 其中 attr 的值為val,忽略val的字母大小寫. | 4<sup>\[#04022\]</sup> |
+| \[attr="val" i\] | `<div attr="val">` | 其中 attr 的值為val,忽略val的字母大小寫. | 4<sup>\[#040202\]</sup> |
 
 #### 註釋:
-- #04021: 屬性值可以用單引號或雙引號括起來. 完全沒有引號也可以可以工作, 但根據css標準它是違規的,因此不鼓勵這樣做.
-- #04022: 沒有單一的或整合的css4規範,因為它被分成單獨的模組. 但是有"level 4"模組. 請參閱[瀏覽器支援](https://caniuse.com/css-case-insensitive).
+- #040201: 屬性值可以用單引號或雙引號括起來. 完全沒有引號也可以可以工作, 但根據css標準它是違規的,因此不鼓勵這樣做.
+- #040202: 沒有單一的或整合的css4規範,因為它被分成單獨的模組. 但是有"level 4"模組. 請參閱[瀏覽器支援](https://caniuse.com/css-case-insensitive).
 
 #### 細節:
 \[屬性(attribute)\]
@@ -1050,10 +1050,10 @@ div~p{
 | :root | 符合表示**元素樹的根元素**. |
 | :range | 符合作為**引用的元素選擇器要匹配的點**. |
 | :target | 表示一個唯一的元素(目標元素),其id與目前URL片段相符 |
-| :visited<sup>\[ #04041 \]</sup> | 適用於使用者**已造訪過的任何連結**. |
+| :visited<sup>\[ #040401 \]</sup> | 適用於使用者**已造訪過的任何連結**. |
 
 ps:
-- #04041: :visited偽類不能再用於許多現代瀏覽器中的大多數樣式,因為這是一個安全漏洞.請參閱[此連結](https://hacks.mozilla.org/2010/03/privacy-related-changes-coming-to-css-vistited/)以供參考.
+- #040401: :visited偽類不能再用於許多現代瀏覽器中的大多數樣式,因為這是一個安全漏洞.請參閱[此連結](https://hacks.mozilla.org/2010/03/privacy-related-changes-coming-to-css-vistited/)以供參考.
 
 <div id="char4-5"></div>
 
@@ -1070,7 +1070,7 @@ ps:
 
 也就是說:
 
-表示元素在兄弟元素列表中的位置是An+B模式的元素,其中n為正整數或0,A和B為整數且A不為0.其中: 
+表示元素在兄弟元素列表中的位置是An+B模式的元素,其中n為正整數或0,A和B為整數且A不為0.其中:
 - A是整數步長
 - B是增量偏移量
 - n是從0開始的所有非負整數
@@ -1528,7 +1528,7 @@ background: linear-gradient( <方向>?, <顏色停止-1>, <顏色停止-2>, ...)
 可以用聲明水平和垂直起始位置來建立斜角梯度:
 ```css
 .diagonal-linear-gradient{
- 	background: linear-gradient(to left top, red, yellow 10%); 
+ 	background: linear-gradient(to left top, red, yellow 10%);
 }
 ```
 
@@ -1599,7 +1599,7 @@ background-image屬性用於指定一個背景圖片應用於所有匹配元素.
 }
 ```
 
-圖片將根據它們的順序堆疊,第一個聲明的圖片位於其他圖片之上,依此類推。
+圖片將根據它們的順序堆疊,第一個聲明的圖片位於其他圖片之上,依此類推.
 
 | 值 | 結果 |
 | --- | --- |
@@ -1634,15 +1634,13 @@ background屬性可以設定一個或多個背景相關屬性:
 | initial | 將屬性設置為默認值 | 3+ |
 | inherit | 繼承父層的屬性值 | 2+ |
 
-**值的順序不重要,每個值都是可選的.**
+***值的順序不重要,每個值都是可選的.***
 
-語法
+#### 語法
 
 background縮寫聲明的語法是:
-```css
-background: [<background-image>] [<background-color>] [<background-position>]/[<background-size>]
-[<background-repeat>] [<background-origin>] [<background-clip>] [<background-attachment>];
-```
+
+background: *(**[color\]** **[image\]** **[attachment\]** **[repeat\]** ([positionX?Y?\] \/ [sizew\] [sizeh\])?) \| none \| initial \| inherit *;
 
 例子
 ```css
@@ -1663,286 +1661,413 @@ background: black url("picture.png") top left / 600px auto no-repeat;
 ```
 注意:使用background縮寫將重置所有先前設定的背景屬性值,即使值未指定.如需修改先前設定的背景屬性值,請使用長型屬性.
 
-Section 5.5: Background Size
-General overview
-The background-size property enables one to control the scaling of the background-image. It takes up to two
-values, which determine the scale/size of the resulting image in vertical and and horizontal direction. If the property
-is missing, its deemed auto in both width and height.
-auto will keep the image's aspect ratio, if it can be determined. The height is optional and can be considered auto.
-Therefore, on a 256 px × 256 px image, all the following background-size settings would yield an image with height
-and width of 50 px:
-background-size: 50px;
-background-size: 50px auto; /* same as above */
-background-size: auto 50px;
-background-size: 50px 50px;
-So if we started with the following picture (which has the mentioned size of 256 px × 256 px),
-we'll end up with a 50 px × 50 px on the user's screen, contained in the background of our element:
-One can also use percentage values to scale the image with respect of the element. The following example would
-yield a 200 px × 133 px drawn image:
-#withbackground {
- background-image: url(to/some/background.png);
- background-size: 100% 66%;
 
- width: 200px;
- height: 200px;
- padding: 0;
- margin: 0;
+<div id="char5-5"></div>
+
+### 5-5節: 背景大小
+
+#### 總覽
+
+背景-大小屬性可控制背景圖像的縮放.它接受最多兩個值,決定在垂直和水平方向上的圖像縮放/大小.如果沒有設定此屬性,預設值為auto(寬和高都為auto).
+
+auto將保留圖像的長寬比例(如果可以確定).高度是可選的,可以視為auto.所以,對於一張256像素×256像素的圖片,以下所有背景尺寸設定都會使圖像寬高為50像素:
+```css
+background-size: 50px;
+
+background-size: 50px auto; /* 同上 */
+
+background-size: auto 50px;
+
+background-size: 50px 50px;
+```
+
+所以假設我們從以下圖片開始(大小為256像素×256像素)
+
+![image050501](https://i.stack.imgur.com/Htt64.png)
+
+我們在使用者螢幕上將得到一個50像素×50像素的畫面,包含在元素的背景中:
+
+![image050502](https://i.stack.imgur.com/0Bay0.png)
+
+
+也可以使用百分比值對圖像進行縮放,相對於元素.以下例子會得到200像素×133像素的描繪圖片:
+```css
+#withbackground{
+	background-image: url("to/some/background.png");
+	background-size: 100% 66%;
+	width: 200px;
+	height: 200px;
+	padding: 0;
+	margin: 0;
 }
-The behaviour depends on the background-origin.
-Keeping the aspect ratio
-The last example in the previos section lost its original aspect ratio. The circle got into an ellipse, the square into a
-rectangle, the triangle into another triangle.
-The length or percentage approach isn't flexible enough to keep the aspect ratio at all times. auto doesn't help,
-since you might not know which dimension of your element will be larger. However, to cover certain areas with an
-image (and correct aspect ratio) completely or to contain an image with correct aspect ratio completely in a
-background area, the values, contain and cover provide the additional functionality.
-Eggsplanation for contain and cover
-Sorry for the bad pun, but we're going to use a picture of the day by Biswarup Ganguly for demonstration. Lets say
-that this is your screen, and the gray area is outside of your visible screen. For demonstration, We're going to
-assume a 16 × 9 ratio.
-We want to use the aforementioned picture of the day as a background. However, we cropped the image to 4x3 for
-some reason. We could set the background-size property to some fixed length, but we will focus on contain and
-cover. Note that I also assume that we didn't mangle the width and/or height of body.
-contain
-contain
-Scale the image, while preserving its intrinsic aspect ratio (if any), to the largest size such that both its
-width and its height can fit inside the background positioning area.
-This makes sure that the background image is always completely contained in the background positioning area,
-however, there could be some empty space filled with your background-color in this case:
-cover
-cover
-Scale the image, while preserving its intrinsic aspect ratio (if any), to the smallest size such that both its
-width and its height can completely cover the background positioning area.
-This makes sure that the background image is covering everything. There will be no visible background-color,
-however depending on the screen's ratio a great part of your image could be cut off:
-Demonstration with actual code
-div > div {
- background-image: url(http://i.stack.imgur.com/r5CAq.jpg);
- background-repeat: no-repeat;
- background-position: center center;
- background-color: #ccc;
- border: 1px solid;
- width: 20em;
- height: 10em;
+```
+
+![image050503](https://i.stack.imgur.com/VYOt6.png)
+
+效果依賴於[background-origin](https://www.w3.org/TR/css-backgrounds-3/#background-origin).
+
+
+#### 保持長寬比
+
+前一節的最後例子失去了原始的長寬比.圓形變成橢圓,正方形變成長方形,三角形變成另一個三角形.
+
+長度或百分比方式不夠靈活,無法保持所有時候的長寬比.auto也不管用,因為你可能不知道元素的哪一維度會更大.但是,為了完全用圖像填充背景定位區域(並保留正確的長寬比),或是完全包含圖像(保留正確的長寬比)在背景區域內,contain和cover提供了額外功能.
+
+contain和cover的解釋
+
+假設你的屏幕是灰色區域外框,16:9的比例.
+
+我們想用前述的當天圖片作為背景.
+
+但是我們以4:3的格式對圖片進行了剪裁.
+
+我們可以設定背景大小為固定長寬,但我們將重點放在contain和cover上.
+
+同時也假設我們沒有改變body的寬高.
+
+#### contain
+
+依據圖片的固有寬高比(如果有的話),縮放圖片到最大尺寸,使寬和高都能完全擺入背景定位區域內.
+
+這保證背景圖將永遠完全包含在背景定位區域內,但是可能會有一些空白區域使用背景顏色填充:
+
+
+#### cover
+
+依據圖片的固有寬高比(如果有的話),縮放圖片到最小尺寸,使寬和高都能完全覆蓋背景定位區域.
+
+這保證背景圖將完全覆蓋一切.不會看到背景顏色,但是依據屏幕比例,圖片很大部分可能會被切除:
+
+實際代碼演示:
+```css
+div>div{
+	background-image: url("path/to/your/image");
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-color: #ccc;
+	border: 1px solid;
+	width: 20em;
+	height: 10em;
 }
-div.contain {
- background-size: contain;
+
+div.contain{
+  	background-size: contain;
 }
-div.cover {
- background-size: cover;
+
+div.cover{
+  	background-size: cover;
 }
+
 /********************************************
  Additional styles for the explanation boxes
 *********************************************/
-div > div {
- margin: 0 1ex 1ex 0;
- float: left;
+div>div{
+	margin: 0 1ex 1ex 0;
+	float: left;
 }
-div + div {
- clear: both;
- border-top: 1px dashed silver;
- padding-top:1ex;
+
+div+div{
+	clear: both;
+	border-top: 1px dashed silver;
+	padding-top:1ex;
 }
-div > div::after {
- background-color: #000;
- color: #fefefe;
- margin: 1ex;
- padding: 1ex;
- opacity: 0.8;
- display: block;
- width: 10ex;
- font-size: 0.7em;
- content: attr(class);
+
+div>div::after{
+	background-color: #000;
+	color: #fefefe;
+	margin: 1ex;
+	padding: 1ex;
+	opacity: 0.8;
+	display: block;
+	width: 10ex;
+	font-size: 0.7em;
+	content: attr(class);
 }
+```
+```html
 <div>
- <div class="contain"></div>
- <p>Note the grey background. The image does not cover the whole region, but it's fully
-<em>contained</em>.
- </p>
+	<div class="contain"></div>
+	<p>注意灰色背景.圖片沒有完全覆蓋整個區域,但是被完全<em>包含</em>在內.</p>
 </div>
+
 <div>
- <div class="cover"></div>
- <p>Note the ducks/geese at the bottom of the image. Most of the water is cut, as well as a part
-of the sky. You don't see the complete image anymore, but neither do you see any background color;
-the image <em>covers</em> all of the <code>&lt;div&gt;</code>.</p>
+	<div class="cover"></div>
+	<p>
+		注意背景圖底部的鵝和天空部分被切割.你不再看到完整的圖片,但是也看不到任何背景顏色;圖片完全<em>覆蓋</em>了<code>&lt;div&gt;</code>.
+	</p>
 </div>
-Section 5.6: Background Position
-The background-position property is used to specify the starting position for a background image or gradient
-.myClass {
- background-image: url('path/to/image.jpg');
- background-position: 50% 50%;
+```
+
+![image050504](https://i.stack.imgur.com/Gxfig.png)
+
+<div id="char5-6"></div>
+
+### 第5.6節:背景位置
+
+background-position屬性用於指定背景圖片或漸變的起始位置.
+```css
+.myclass{
+	background-image: url("path/to/image.jpg");
+	background-position: 50% 50%;
 }
-The position is set using an X and Y co-ordinate and be set using any of the units used within css.
-Unit Description
-value% value%
-A percentage for the horizontal offset is relative to (width of background positioning area - width of
-background image).
-A percentage for the vertical offset is relative to (height of background positioning area - height of
-background image)
-The size of the image is the size given by background-size.
-valuepx valuepx
-Offsets background image by a length given in pixels relative to the top left of the background
-positioning area
-Units in css can be specified by different methods (see here).
-Longhand Background Position Properties
-In addition to the shorthand property above, one can also use the longhand background properties backgroundposition-x and background-position-y. These allow you to control the x or y positions separately.
-NOTE: This is supported in all browsers except Firefox (versions 31-48) 2. Firefox 49, to be released
-September 2016, will support these properties. Until then, there is a Firefox hack within this Stack
-Overflow answer.
-Section 5.7: The background-origin property
-The background-origin property specifies where the background image is positioned.
-Note: If the background-attachment property is set to fixed, this property has no effect.
-Default value: padding-box
-Possible values:
-padding-box - The position is relative to the padding box
-border-box - The position is relative to the border box
-content-box - The position is relative to the content box
-initial
-inherit
+```
+
+位置使用X和Y坐標設定,可以使用css內的任何單位設定.
+
+#### 單位說明
+
+##### value%
+
+水平位移百分比相對於(背景定位區域寬度 - 背景圖片寬度).
+
+垂直位移百分比相對於(背景定位區域高度 - 背景圖片高度).
+
+圖片大小為background-size設定的值.
+
+##### valuepx
+
+用像素長度偏移背景圖片,相對於背景定位區域左上角.
+
+css中可以使用不同方法指定單位(參考這裡).
+
+##### 長形背景位置屬性
+
+除了以上簡略屬性外,也可以單獨使用長形屬性background-position-x和background-position-y來分別控制x或y位置.
+
+*ps:除了Firefox31-48不支持外,其他瀏覽器都支持這些屬性.Firefox 49將在2016年9月發布,支持這些屬性.目前可以使用Firefox下Stack Overflow答案中的解決方案.*
+
+<div id="char5-7"></div>
+
+### 5-7節: background-origin
+
+background-origin屬性指定背景圖像的定位位置.
+
+注意:如果background-attachment屬性設置為fixed,此屬性將無效.
+
+預設值: padding-box
+
+可能的值:
+- padding-box - 相對於邊框框定位
+- border-box - 相對於邊框定位
+- content-box - 相對於內容框定位
+- initial
+- inherit
+
+也就是說他的語法是:
+
+background-origin: * \***padding-box** \| border-box \| content-box \| unset \| initial \| inherit *
+
 css
-.example {
- width: 300px;
- border: 20px solid black;
- padding: 50px;
- background: url(https://static.pexels.com/photos/6440/magazines-desk-work-workspace-medium.jpg);
- background-repeat: no-repeat;
+```css
+.example{
+	width: 300px;
+	border: 20px solid black;
+	padding: 50px;
+	background: url("path/to/image");
+	background-repeat: no-repeat;
 }
-.example1 {}
-.example2 { background-origin: border-box; }
-.example3 { background-origin: content-box; }
+
+.example1{ }
+
+.example2{ background-origin: border-box; }
+
+.example3{ background-origin: content-box; }
+```
+
 html
-<p>No background-origin (padding-box is default):</p>
+```html
+<p>無background-origin(padding-box為預設):</p>
+
 <div class="example example1">
- <h2>Lorem Ipsum Dolor</h2>
- <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
-tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
- <p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut
-aliquip ex ea commodo consequat.</p>
+	<h2>Lorem Ipsum Dolor</h2>
+	<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+	<p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
 </div>
+
 <p>background-origin: border-box:</p>
+
 <div class="example example2">
- <h2>Lorem Ipsum Dolor</h2>
- <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
-tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
- <p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut
-aliquip ex ea commodo consequat.</p>
+	<h2>Lorem Ipsum Dolor</h2>
+	<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+	<p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
 </div>
+
 <p>background-origin: content-box:</p>
+
 <div class="example example3">
- <h2>Lorem Ipsum Dolor</h2>
- <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
-tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
- <p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut
-aliquip ex ea commodo consequat.</p>
+	<h2>Lorem Ipsum Dolor</h2>
+	<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+	<p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
 </div>
+```
+
 Result:
-More:
-https://www.w3.org/TR/css3-background/#the-background-origin
-https://developer.mozilla.org/en-US/docs/Web/css/background-origin
-Section 5.8: Multiple Background Image
-In css3, we can stack multiple background in the same element.
-#mydiv {
- background-image: url(img_1.png), /* top image */
- url(img_2.png), /* middle image */
- url(img_3.png); /* bottom image */
- background-position: right bottom,
- left top,
-right top;
- background-repeat: no-repeat,
- repeat,
-no-repeat;
+
+![image050701](https://i.stack.imgur.com/ycz1z.png)
+
+更多資訊:
+
+[https://www.w3.org/TR/css3-background/#the-background-origin](https://www.w3.org/TR/css3-background/#the-background-origin)
+
+[https://developer.mozilla.org/en-US/docs/Web/css/background-origin](https://developer.mozilla.org/en-US/docs/Web/css/background-origin)
+
+<div id="char5-8"></div>
+
+### 5-8節: 多個背景圖片
+
+在CSS3中,我們可以將多個背景堆疊在同一元素上.
+```css
+#mydiv{
+	background-image:
+	url("img_1.png"), /* 頂層圖片 */
+	url("img_2.png"), /* 中間圖片 */
+	url("img_3.png"); /* 底層圖片 */
+	background-position: right bottom,left top,right top;
+	background-repeat: no-repeat,repeat,no-repeat;
 }
-Images will be stacked atop one another with the first background on top and the last background in the back.
-img_1 will be on top, the img_2 and img_3 is on bottom.
-We can also use background shorthand property for this:
-#mydiv {
- background: url(img_1.png) right bottom no-repeat,
- url(img_2.png) left top repeat,
- url(img_3.png) right top no-repeat;
+```
+
+圖片將以堆疊的方式顯示,第一個背景位於頂層,最後一個背景位於底層.
+
+img_1將位於頂層,img_2和img_3位於底層.
+
+我們也可以使用背景簡寫屬性:
+```css
+#mydiv{
+	background:
+	url("img_1.png") right bottom no-repeat,
+	url("img_2.png") left top repeat,
+	url("img_3.png") right top no-repeat;
 }
-We can also stack images and gradients:
-#mydiv {
- background: url(image.png) right bottom no-repeat,
- linear-gradient(to bottom, #fff 0%,#000 100%);
+```
+
+我們也可以將圖片和漸變效果疊加:
+```css
+#mydiv{
+ 	background: url("image.png") right bottom no-repeat,linear-gradient(to bottom, #fff 0%,#000 100%);
 }
-Demo
-Section 5.9: Background Attachment
-The background-attachment property sets whether a background image is fixed or scrolls with the rest of the page.
-body {
- background-image: url('img.jpg');
- background-attachment: fixed;
+```
+
+[示意圖](https://jsfiddle.net/z30up2un/)
+
+<div id="char5-9"></div>
+
+### 5-9節: background-attachment
+
+background-attachment屬性設定背景圖片是否固定或隨頁面滾動.
+```css
+body{
+	background-image: url("img.jpg");
+	background-attachment: fixed;
 }
-Value Description
-scroll The background scrolls along with the element. This is default.
-fixed The background is fixed with regard to the viewport.
-local The background scrolls along with the element's contents.
-initial Sets this property to its default value.
-inherit Inherits this property from its parent element.
-Examples
-background-attachment: scroll
-The default behaviour, when the body is scrolled the background scrolls with it:
-body {
- background-image: url('image.jpg');
- background-attachment: scroll;
+```
+
+值說明:
+- scroll 背景隨元素滾動,預設值
+- fixed 背景圖固定在視窗中
+- local 背景隨元素內容滾動
+- initial 將此屬性設定為默認值
+- inherit 繼承自父元素屬性
+
+也就是說他的語法是:
+
+background-attachment: * scroll \| fixed \| local \| unset \| initial \| inherit *
+
+
+範例
+
+#### background-attachment: scroll
+
+預設行為,當body滾動時背景也隨之滾動:
+```css
+body{
+	background-image: url("image.jpg");
+	background-attachment: scroll;
 }
-background-attachment: fixed
-The background image will be fixed and will not move when the body is scrolled:
-body {
- background-image: url('image.jpg');
- background-attachment: fixed;
+```
+
+
+#### background-attachment: fixed
+
+背景圖固定不動,body滾動不影響:
+```css
+body{
+	background-image: url("image.jpg");
+	background-attachment: fixed;
 }
-background-attachment: local
-The background image of the div will scroll when the contents of the div is scrolled.
-div {
- background-image: url('image.jpg');
- background-attachment: local;
+```
+
+
+#### background-attachment: local
+
+div內容滾動時背景圖也隨之滾動:
+```css
+div{
+	background-image: url("image.jpg");
+	background-attachment: local;
 }
-Section 5.10: Background Clip
-Definition and Usage: The background-clip property specifies the painting area of the background.
-Default value: border-box
-Values
-border-box is the default value. This allows the background to extend all the way to the outside edge of the
-element's border.
-padding-box clips the background at the outside edge of the element's padding and does not let it extend
-into the border;
-content-box clips the background at the edge of the content box.
-inherit applies the setting of the parent to the selected element.
+```
+
+<div id="char5-10"></div>
+
+### 5-10節: background-clip
+
+定義和使用: background-clip屬性指定背景的繪製區域.
+
+預設值:border-box
+
+值說明:
+- border-box 是預設值,允許背景延伸到元素邊框的外側
+- padding-box 在元素內填充外緣處裁剪背景,不允許延伸到邊框.
+- content-box 在內容框外緣處裁剪背景.
+- initial 將此屬性設定為默認值
+- inherit 繼承自父元素屬性
+
+也就是說他的語法是:
+
+background-attachment: * \***border-box** \| padding-box \| content-box \| unset \| initial \| inherit *
+
 css
-.example {
- width: 300px;
- border: 20px solid black;
- padding: 50px;
- background: url(https://static.pexels.com/photos/6440/magazines-desk-work-workspace-medium.jpg);
- background-repeat: no-repeat;
+```css
+.example{
+	width: 300px;
+	border: 20px solid black;
+	padding: 50px;
+	background: url("path/to/image");
+	background-repeat: no-repeat;
 }
-.example1 {}
-.example2 { background-origin: border-box; }
-.example3 { background-origin: content-box; }
-html
-<p>No background-origin (padding-box is default):</p>
+
+.example1{ }
+.example2{ background-clip: border-box; }
+.example3{ background-clip: content-box; }
+```
+
+html:
+```html
+<p>無background-clip(預設值border-box):</p>
 <div class="example example1">
- <h2>Lorem Ipsum Dolor</h2>
- <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
-tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
- <p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut
-aliquip ex ea commodo consequat.</p>
+	<h2>Lorem Ipsum Dolor</h2>
+	<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+	<p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
 </div>
-<p>background-origin: border-box:</p>
+
+<p>background-clip: padding-box:</p>
 <div class="example example2">
- <h2>Lorem Ipsum Dolor</h2>
- <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
-tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
- <p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut
-aliquip ex ea commodo consequat.</p>
+	<h2>Lorem Ipsum Dolor</h2>
+	<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+	<p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
 </div>
-<p>background-origin: content-box:</p>
+
+<p>background-clip: content-box:</p>
 <div class="example example3">
- <h2>Lorem Ipsum Dolor</h2>
- <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
-tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
- <p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut
-aliquip ex ea commodo consequat.</p>
+	<h2>Lorem Ipsum Dolor</h2>
+	<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+	<p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
 </div>
+```
+
+<div id="char5-11"></div>
+
 Section 5.11: Background Repeat
 The background-repeat property sets if/how a background image will be repeated.
 By default, a background-image is repeated both vertically and horizontally.
@@ -7868,5 +7993,47 @@ Zeta Chapter 5
 Zze Chapter 5
 You may also like
 
+#### 縮寫表
+
+| 簡寫 | 描述 | 附註 |
+| ----- | ----- | ----- |
+| *[time\]* | 時間 | |
+| *[number\]* | all number | |
+| *[number-nn\]* | all number no negative | |
+| *[string\]* | string | |
+| *[array\]* \| array[\] | array | |
+| *[object\]* \| object\{\} | object | |
+| *[function\]* | function | |
+| *[var\]* | 變數 | |
+| *[boolean\]* | boolean | |
+| *[regexp\]* | using regular expression | |
+| *[link\]* | link | |
+| *[url\]* | url | |
+| *[name\]* | name | |
+| *[context\]* | context | |
+| *[deg\]* | degree | |
+| *[name\]* | name | |
+| *[method\]* | method | |
+| *[value\]* | 鍵、值 | |
+| *inf.* | infinite | |
+| *arb.* | arbitrarily(隨意值) | |
+| (\* \| ?=)**bold** | 預設值 | |
+| **bold** | 隨機位置 | |
+| *itiaic* | 可選值 | |
+| ~~刪除線~~ | 已棄用 | |
+| # | 依瀏覽器不同決定 | |
+| $ | 實驗中 | |
+| ? | 不必要(可選) | |
+| *[width\]* | width(文字形)(要加單位) | |
+| *[height\]* | height(文字形)(要加單位) | |
+| *[event\]* | 事件 | |
+| *[element\]* | 元素 | |
+| *[canva\]* | canva doc | |
+| *[ctx2d\]* | *[canva\]*.getContext("2d") | |
+| *[ctx3d\]* | *[canva\]*.getContext("3d") | |
+| *[ctx\]* | *[canva\]*.getContext(*arb.*) | |
+| *[condition\]* | 運算式 | |
+| *[expression\]* | 表達式 | |
+| *[expression\]* | 表達式 | |
 
 bata
