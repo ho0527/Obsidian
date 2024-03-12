@@ -2132,44 +2132,73 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endC
 
 <div id="char6"></div>
 
-Chapter 6: Centering
-Section 6.1: Using Flexbox
+### 第6章:置中
+
+<div id="char6-1"></div>
+
+#### 6-1節: 使用flexbox
+
 html:
+```html
 <div class="container">
- <img src="http://lorempixel.com/400/200" />
+ 	<img src="http://lorempixel.com/400/200">
 </div>
+```
+
 css:
+```css
 html, body, .container {
- height: 100%;
+ 	height: 100%;
 }
+
 .container {
- display: flex;
- justify-content: center; /* horizontal center */
+	display: flex;
+	justify-content: center; /* 水平置中 */
 }
-img {
- align-self: center; /* vertical center */
+
+img{
+ 	align-self: center; /* 垂直置中 */
 }
-View Result
+```
+
+[觀看結果](https://jsfiddle.net/aLu05kjy/1/)
+
 html:
-<img src="http://lorempixel.com/400/200" />
+```html
+<img src="image">
+```
+
 css:
-html, body {
- height: 100%;
+```css
+html, body{
+ 	height: 100%;
 }
-body {
- display: flex;
- justify-content: center; /* horizontal center */
- align-items: center; /* vertical center */
+
+body{
+	display: flex;
+	justify-content: center; /* 水平置中 */
+	align-items: center; /* 垂直置中 */
 }
-View Result
-See Dynamic Vertical and Horizontal Centering under the Flexbox documentation for more details on flexbox and
-what the styles mean.
-Browser Support
-Flexbox is supported by all major browsers, except IE versions before 10.
-Some recent browser versions, such as Safari 8 and IE10, require vendor prefixes.
-For a quick way to generate prefixes there is Autoprefixer, a third-party tool.
-For older browsers (like IE 8 & 9) a Polyfill is available.
-For a more detailed look at flexbox browser support, see this answer.
+```
+
+[觀看結果](https://jsfiddle.net/ttp0bzfm/1/)
+
+參考Flexbox文件中的動態垂直及水平置中部分,了解更多flexbox的細節和每一個樣式的意思.
+
+瀏覽器支援
+
+Flexbox由所有主流瀏覽器支援,[除了IE10版本前](https://caniuse.com/?search=flex).
+
+一些新版本瀏覽器,如Safari 8和IE10需要[加裁剪](https://developer.mozilla.org/en-US/docs/Glossary/Vendor_Prefix).
+
+可使用第三方工具[Autoprefixer](https://autoprefixer.github.io/)自動生成裁剪.
+
+對於舊版瀏覽器(如IE 8 & 9),有[Polyfill](https://github.com/jonathantneal/flexibility)可以使用.
+
+詳細瀏覽器支援請參考[這個](https://stackoverflow.com/questions/35137085/flexbox-code-working-on-all-browsers-except-safari-why/35137869#35137869).
+
+<div id="char6-2"></div>
+
 Section 6.2: Using css transform
 css transforms are based on the size of the elements so if you don't know how tall or wide your element is, you can
 position it absolutely 50% from the top and left of a relative container and translate it by 50% left and upwards to
