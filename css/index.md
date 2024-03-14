@@ -2199,42 +2199,58 @@ Flexbox由所有主流瀏覽器支援,[除了IE10版本前](https://caniuse.com/
 
 <div id="char6-2"></div>
 
-Section 6.2: Using css transform
-css transforms are based on the size of the elements so if you don't know how tall or wide your element is, you can
-position it absolutely 50% from the top and left of a relative container and translate it by 50% left and upwards to
-center it vertically and horizontally.
-Keep in mind that with this technique, the element could end being rendered at a non-integer pixel boundary,
-making it look blurry. See this answer in SO for a workaround.
+### 6-2節: 使用css transform
+
+css轉換是根據元素大小的,所以如果不知道元素的高度或寬度,可以將元素的**position設為absolute**, **top和left設為父級relative元素的50%**,然後**使用transform: translate移動50%left和上方**, 從而實現水平和垂直置中.
+
+需要注意,使用這種技術置中的元素最終渲染時可能不是整數像素位置,導致模糊.[參考stackoverflow](http://stackoverflow.com/a/32329785/1385678)有一個解決方法.
+
 html
+```html
 <div class="container">
- <div class="element"></div>
+ 	<div class="element"></div>
 </div>
+```
+
 css
+```css
 .container {
- position: relative;
+ 	position: relative;
 }
+
 .element {
- position: absolute;
- top: 50%;
- left: 50%;
- transform: translate(-50%, -50%);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
-View example in JSFiddle
-CROSS BROWSER COMPATIBILITY
-The transform property needs prefixes to be supported by older browsers. Prefixes are needed for Chrome<=35,
-Safari<=8, Opera<=22, Android Browser<=4.4.4, and IE9. css transforms are not supported by IE8 and older
-versions.
-Here is a common transform declaration for the previous example:
+```
+
+[JSFiddle查看示例](https://jsfiddle.net/webtiki/rz3p3ufs/)
+
+跨瀏覽器兼容性
+
+舊版瀏覽器需要加轉換前綴,如Chrome<=35、Safari<=8、Opera<=22、Android Browser<=4.4.4和IE9.css轉換在IE8及更低版本不支持.
+
+常見轉換宣告:
+```css
 -webkit-transform: translate(-50%, -50%); /* Chrome, Safari, Opera, Android */
- -ms-transform: translate(-50%, -50%); /* IE 9 */
- transform: translate(-50%, -50%);
-For more information see canIuse.
-MORE INFORMATION
-The element is being positioned according to the first non-static parent (position: relative, absolute, or
-fixed). Explore more in this fiddle and this documentation topic.
-For horizontal-only centering, use left: 50% and transform: translateX(-50%). The same goes for verticalonly centering: center with top: 50% and transform: translateY(-50%).
-Using a non-static width/height elements with this method of centering can cause the centered element to
-appear squished. This mostly happens with elements containing text, and can be fixed by adding: marginright: -50%; and margin-bottom: -50%;. View this fiddle for more information.
+
+-ms-transform: translate(-50%, -50%); /* IE 9 */
+
+transform: translate(-50%, -50%);
+```
+
+更多信息查看[canIuse](https://caniuse.com/#feat=transforms2d).
+
+元素依靠第一個非靜態父級定位(position: relative、absolute或fixed).在[此Fiddle](https://jsfiddle.net/siavasfiroozbakht/ox8kyypa/)和文件主題中 further explore.
+
+僅水平置中使用left: 50%和transform: translateX(-50%).垂直置中使用top: 50%和transform: translateY(-50%).
+
+使用非靜態寬高元素時,此方法可能導致元素擠壓.發生在包含文字的元素,解決方法是添加margin-right: -50%;和margin-bottom: -50%;.在[此Fiddle](https://jsfiddle.net/4xxmxca0/)查看更多信息.
+
+<div id="char6-3"></div>
+
 Section 6.3: Using margin: 0 auto;
 Objects can be centered by using margin: 0 auto; if they are block elements and have a defined width.
 html
