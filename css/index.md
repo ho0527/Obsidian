@@ -2251,55 +2251,70 @@ transform: translate(-50%, -50%);
 
 <div id="char6-3"></div>
 
-Section 6.3: Using margin: 0 auto;
-Objects can be centered by using margin: 0 auto; if they are block elements and have a defined width.
+### 6-3節: 使用margin: 0 auto
+
+如果元素是block元素且有定義寬度,可以使用**margin: 0 auto;**實現水平置中.
+
 html
-<div class="containerDiv">
- <div id="centeredDiv"></div>
+```html
+<div class="containerdiv">
+ 	<div id="centereddiv"></div>
 </div>
-<div class="containerDiv">
- <p id="centeredParagraph">This is a centered paragraph.</p>
+<div class="containerdiv">
+ 	<p id="centeredparagraph">This is a centered paragraph.</p>
 </div>
-<div class="containerDiv">
- <img id="centeredImage"
-src="https://i.kinja-img.com/gawker-media/image/upload/s--c7Q9b4Eh--/c_scale,fl_progressive,q_80,w_
-800/qqyvc3bkpyl3mfhr8all.jpg" />
+<div class="containerdiv">
+ 	<img id="centeredimage" src="https://i.kinja-img.com/gawker-media/image/upload/s--c7Q9b4Eh--/c_scale,fl_progressive,q_80,w_800/qqyvc3bkpyl3mfhr8all.jpg" />
 </div>
+```
+
 css
-.containerDiv {
- width: 100%;
- height: 100px;
- padding-bottom: 40px;
+```css
+#centereddiv{
+	margin: 0 auto;
+	width: 200px;
+	height: 100px;
+	border: 1px solid #000;
 }
-#centeredDiv {
- margin: 0 auto;
- width: 200px;
- height: 100px;
- border: 1px solid #000;
+
+#centeredparagraph{
+	width: 200px;
+	margin: 0 auto;
 }
-#centeredParagraph {
- width: 200px;
- margin: 0 auto;
+
+#centeredimage{
+	display: block;
+	width: 200px;
+	margin: 0 auto;
 }
-#centeredImage {
- display: block;
- width: 200px;
- margin: 0 auto;
-}
-Result:
-JSFiddle example: Centering objects with margin: 0 auto;
-Section 6.4: Using text-align
-The most common and easiest type of centering is that of lines of text in an element. css has the rule text-align:
-center for this purpose:
+```
+
+結果:
+
+![image060301](https://i.stack.imgur.com/Zq0N0.png)
+
+在[JSFiddle查看示例](https://jsfiddle.net/xf1ze3v9/)
+
+### 6-4節: 使用text-align
+
+最常見最簡單的置中是元素內文字的置中.css有**text-align: center**規則可以來實現它.
+
 html
+```html
 <p>Lorem ipsum</p>
+```
+
 css
-p {
- text-align: center;
+```css
+p{
+ 	text-align: center;
 }
-This does not work for centering entire block elements. text-align controls only alignment of inline content like text in
-its parent block element.
-See more about text-align in Typography section.
+```
+
+但它不適用於將整個區塊元素置中. **text-align僅控制父區塊元素內行內內容(如文字)的對齊方式**.
+
+更多關於text-align的內容請參考[頁面排版](#char-15)章節.
+
 Section 6.5: Using position: absolute
 Working in old browsers (IE >= 8)
 Automatic margins, paired with values of zero for the left and right or top and bottom offsets, will center an
