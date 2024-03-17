@@ -1628,7 +1628,7 @@ background屬性可以設定一個或多個背景相關屬性:
 | background-size | 背景圖片的大小 | 3+ |
 | background-repeat | 如何重複背景圖片 | 1+ |
 | background-origin | 背景如何定位(當background-attachment是fixed時忽略) | 3+ |
-| background-clip | 如何相對內容框、邊框框或邊距框繪製背景 | 3+ |
+| background-clip | 如何相對內容框,邊框框或邊距框繪製背景 | 3+ |
 | background-attachment | 背景圖片行為,是否跟隨包含塊滾動或具有固定位置於視口 | 1+ |
 | initial | 將屬性設置為默認值 | 3+ |
 | inherit | 繼承父層的屬性值 | 2+ |
@@ -2132,11 +2132,11 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endC
 
 <div id="char6"></div>
 
-### 第6章:置中
+## 第6章:置中
 
 <div id="char6-1"></div>
 
-#### 6-1節: 使用flexbox
+### 6-1節: 使用flexbox
 
 html:
 ```html
@@ -2230,7 +2230,7 @@ css
 
 跨瀏覽器兼容性
 
-舊版瀏覽器需要加轉換前綴,如Chrome<=35、Safari<=8、Opera<=22、Android Browser<=4.4.4和IE9.css轉換在IE8及更低版本不支持.
+舊版瀏覽器需要加轉換前綴,如Chrome<=35,Safari<=8,Opera<=22,Android Browser<=4.4.4和IE9.css轉換在IE8及更低版本不支持.
 
 常見轉換宣告:
 ```css
@@ -2243,7 +2243,7 @@ transform: translate(-50%, -50%);
 
 更多信息查看[canIuse](https://caniuse.com/#feat=transforms2d).
 
-元素依靠第一個非靜態父級定位(position: relative、absolute或fixed).在[此Fiddle](https://jsfiddle.net/siavasfiroozbakht/ox8kyypa/)和文件主題中 further explore.
+元素依靠第一個非靜態父級定位(position: relative,absolute或fixed).在[此Fiddle](https://jsfiddle.net/siavasfiroozbakht/ox8kyypa/)和文件主題中 further explore.
 
 僅水平置中使用left: 50%和transform: translateX(-50%).垂直置中使用top: 50%和transform: translateY(-50%).
 
@@ -2295,6 +2295,8 @@ css
 
 在[JSFiddle查看示例](https://jsfiddle.net/xf1ze3v9/)
 
+<div id="char6-4"></div>
+
 ### 6-4節: 使用text-align
 
 最常見最簡單的置中是元素內文字的置中.css有**text-align: center**規則可以來實現它.
@@ -2315,45 +2317,68 @@ p{
 
 更多關於text-align的內容請參考[頁面排版](#char-15)章節.
 
-Section 6.5: Using position: absolute
-Working in old browsers (IE >= 8)
-Automatic margins, paired with values of zero for the left and right or top and bottom offsets, will center an
-absolutely positioned elements within its parent.
-View Result
+<div id="char6-5"></div>
+
+### 6-5節: 使用position: absolute
+
+適用於舊版瀏覽器(IE >= 8)
+
+使用自動邊距,**配合left和right或top和bottom偏移值設為零**,可以實現絕對定位元素在其父元素內的置中.
+
+觀看效果
 html
+```html
 <div class="parent">
- <img class="center" src="http://lorempixel.com/400/200/" />
+ 	<img class="center" src="http://lorempixel.com/400/200/">
 </div>
+```
+
 css
-.parent {
- position: relative;
- height: 500px;
+```css
+.parent{
+	position: relative;
+	height: 500px;
 }
-.center {
- position: absolute;
- margin: auto;
- top: 0;
- right: 0;
- bottom: 0;
- left: 0;
+
+.center{
+	position: absolute;
+	margin: auto;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
 }
-Elements that don't have their own implicit width and height like images do, will need those values defined.
-Other resources: Absolute Centering in css
-Section 6.6: Using calc()
-The calc() function is the part of a new syntax in css3 in which you can calculate (mathematically) what size/position
-your element occupies by using a variety of values like pixels, percentages, etc. Note: Whenever you use this
-function, always take care of the space between two values calc(100% - 80px).
-css
-.center {
- position: absolute;
- height: 50px;
- width: 50px;
- background: red;
- top: calc(50% - 50px / 2); /* height divided by 2*/
- left: calc(50% - 50px / 2); /* width divided by 2*/
-}
+```
+
+沒有自定寬高的元素需定義寬高.
+
+[其他資源](https://codepen.io/shshaw/details/kOxGQa)
+
+<div id="char6-6"></div>
+
+### 6-6節: 使用calc()
+
+calc()函數是css3新的語法,可以使用各種值如像素,百分比等計算元素的大小/位置.注意:使用此函數時間隔兩個值 calc(100% - 80px).
+
 html
+```html
 <div class="center"></div>
+```
+
+css
+```css
+.center {
+	position: absolute;
+	height: 50px;
+	width: 50px;
+	background: red;
+	top: calc(50% - 50px / 2); /* 高度除以2 */
+	left: calc(50% - 50px / 2); /* 寬度除以2 */
+}
+```
+
+<div id="char6-7"></div>
+
 Section 6.7: Using line-height
 You can also use line-height to center vertically a single line of text inside a container :
 css
@@ -2637,6 +2662,11 @@ css
  height: 100px;
  background-color: teal;
 }
+
+
+
+
+
 Chapter 7: The Box Model
 Parameter Detail
 content-box Width and height of the element only includes content area.
@@ -8104,7 +8134,7 @@ You may also like
 | *[deg\]* | degree | |
 | *[name\]* | name | |
 | *[method\]* | method | |
-| *[value\]* | 鍵、值 | |
+| *[value\]* | 鍵,值 | |
 | *inf.* | infinite | |
 | *arb.* | arbitrarily(隨意值) | |
 | (\* \| ?=)**bold** | 預設值 | |
