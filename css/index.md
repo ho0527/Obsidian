@@ -2379,28 +2379,48 @@ css
 
 <div id="char6-7"></div>
 
-Section 6.7: Using line-height
-You can also use line-height to center vertically a single line of text inside a container :
+### 6-7節: 使用line-height
+
+也可以使用line-height將單行文字垂直置中在容器內:
+
 css
-div {
- height: 200px;
- line-height: 200px;
+```css
+div{
+	height: 200px;
+	line-height: 200px;
 }
-That's quite ugly, but can be useful inside an <input /> element. The line-height property works only when the
-text to be centered spans a single line. If the text wraps into multiple lines, the resulting output won't be centered.
-Section 6.8: Vertical align anything with 3 lines of code
-Supported by IE11+
-View Result
-Use these 3 lines to vertical align practically everything. Just make sure the div/image you apply the code to has a
-parent with a height.
+```
+
+這個方法很粗暴,但在`<input>`元素內可能很實用.**line-height屬性僅適用於單行文字,如果文字換行成多行,效果將不會置中**.
+
+<div id="char6-8"></div>
+
+### 6-8節: 使用三行程式碼垂直對齊任何內容
+
+[支援IE11+](https://caniuse.com/#search=transform)
+
+[觀看效果](https://jsfiddle.net/bnqrLgk9/1/)
+
+使用以下3行代碼實現對齊:
+
 css
-div.vertical {
- position: relative;
- top: 50%;
- transform: translateY(-50%);
+```css
+div.vertical{
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
 }
+```
+
 html
-<div class="vertical">Vertical aligned text!</div>
+```html
+<div class="vertical">垂直對齊文字!</div>
+```
+
+確保應用此代碼的div/圖片有高度的父元素.
+
+<div id="char6-9"></div>
+
 Section 6.9: Centering in relation to another item
 We will see how to center content based on the height of a near element.
 Compatibility: IE8+, all other modern browsers.
