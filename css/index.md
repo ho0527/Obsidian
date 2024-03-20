@@ -2421,157 +2421,201 @@ html
 
 <div id="char6-9"></div>
 
-Section 6.9: Centering in relation to another item
-We will see how to center content based on the height of a near element.
-Compatibility: IE8+, all other modern browsers.
+### 6-9節: 依靠其他元素置中
+
+我們將看如何根據附近元素的高度對內容進行置中:
+
 html
+```html
 <div class="content">
- <div class="position-container">
- <div class="thumb">
- <img src="http://lorempixel.com/400/200/">
- </div>
- <div class="details">
- <p class="banner-title">text 1</p>
- <p class="banner-text">content content content content content content content content
-content content content content content content</p>
- <button class="btn">button</button>
- </div>
- </div>
+	<div class="position-container">
+		<div class="thumb">
+			<img src="http://lorempixel.com/400/200/">
+		</div>
+
+		<div class="details">
+			//內容
+		</div>
+	</div>
 </div>
+```
+
 css
-.content * {
- box-sizing: border-box;
+```css
+.content *{
+ 	box-sizing: border-box;
 }
-.content .position-container {
- display: table;
+
+.content .position-container{
+ 	display: table;
 }
-.content .details {
- display: table-cell;
- vertical-align: middle;
- width: 33.333333%;
- padding: 30px;
- font-size: 17px;
- text-align: center;
+
+.content .details{
+	display: table-cell;
+	vertical-align: middle;
+	width: 33.333333%;
+	padding: 30px;
+	font-size: 17px;
+	text-align: center;
 }
-.content .thumb {
- width: 100%;
+
+.content .thumb{
+ 	width: 100%;
 }
-.content .thumb img {
- width: 100%;
+
+.content .thumb img{
+  	width: 100%;
 }
-Link to JSFiddle
-The main points are the 3 .thumb, .details and .position-container containers:
-The .position-container must have display: table.
-The .details must have the real width set width: .... and display: table-cell, vertical-align:
-middle.
-The .thumb must have width: 100% if you want that it will take all the remaining space and it will be
-influenced by the .details width.
-The image (if you have an image) inside .thumb should have width: 100%, but it is not necessary if you have
-correct proportions.
-Section 6.10: Ghost element technique (Michał Czernow's hack)
-This technique works even when the container's dimensions are unknown.
-Set up a "ghost" element inside the container to be centered that is 100% height, then use vertical-align:
-middle on both that and the element to be centered.
-css
-/* This parent can be any width and height */
-.block {
- text-align: center;
- /* May want to do this if there is risk the container may be narrower than the element inside */
- white-space: nowrap;
-}
-/* The ghost element */
-.block:before {
- content: '';
- display: inline-block;
- height: 100%;
- vertical-align: middle;
- /* There is a gap between ghost element and .centered,
- caused by space character rendered. Could be eliminated by
- nudging .centered (nudge distance depends on font family),
- or by zeroing font-size in .parent and resetting it back
- (probably to 1rem) in .centered. */
- margin-right: -0.25em;
-}
-/* The element to be centered, can also be of any width and height */
-.centered {
- display: inline-block;
- vertical-align: middle;
- width: 300px;
- white-space: normal; /* Resetting inherited nowrap behavior */
-}
+```
+
+[參見JSFiddle](https://jsfiddle.net/gasp10/6bv92mko/4/)
+
+關鍵點在於三個容器結構(.thumb, .details, .position-container).
+- .position-container必須設置display: table,使其行為如表格.
+- .details必須設定實際寬度width: ...,並設定display: table-cell和vertical-align: middle,實現垂直置中.
+- .thumb如果要它占用剩餘空間,並受.details寬度影響,則需要設定width: 100%.
+- .thumb內如果有圖片,圖片建議設定width: 100%,但如果圖片本身尺寸正確,也可以不用設定.
+
+<div id="char6-10"></div>
+
+### 6-10節: 幽靈元素
+
+即使容器尺寸未知,此技術也能工作.
+
+通過給幽靈元素(ghost element)設置100%高度,並為其與需置中的元素設定垂直對齊,達到置中效果.
+
 html
+```html
 <div class="block">
- <div class="centered"></div>
+ 	<div class="centered"></div>
 </div>
-Section 6.11: Centering vertically and horizontally without
-worrying about height or width
-The following technique allows you to add your content to an html element and center it both horizontally and
-vertically without worrying about its height or width.
-The outer container
-should have display: table;
-The inner container
-should have display: table-cell;
-should have vertical-align: middle;
-should have text-align: center;
-The content box
-should have display: inline-block;
-should re-adjust the horizontal text-alignment to eg. text-align: left; or text-align: right;, unless you
-want text to be centered
-Demo
+```
+
+css
+```css
+/* 這個元素可以有任意寬高 */
+.block{
+	text-align: center;
+	/* 如果容器有可能比內部元素更窄,那可能需要這樣做 */
+	white-space: nowrap;
+}
+
+/* 幽靈元素 */
+.block:before{
+	content: '';
+	display: inline-block;
+	height: 100%;
+	vertical-align: middle;
+	/* 幽靈元素和.centered之間有一個間隔,是因為渲染了空白字元導致的.可以通過調整.centered的位置(調整值取決於字體種類)來消除它,或在.parent中把字體大小設為0,然後在.centered中重新設置(可能為1rem). */
+	margin-right: -0.25em;
+}
+
+/* 元素要置中的,也可以有任意寬高 */
+.centered{
+	display: inline-block;
+	vertical-align: middle;
+	width: 300px;
+	white-space: normal; /* 重置繼承的nowrap行為 */
+}
+```
+
+<div id="char6-11"></div>
+
+### 6-11節: 不考慮高寬即可實現垂直和水平置中
+
+以下技術允許您將內容添加到HTML元素中,在不考慮其高度或寬度的情況下實現垂直和水平置中:
+
+外部容器:
+- display: table;
+
+內部容器:
+- display: table-cell;
+- vertical-align: middle;
+- text-align: center;
+
+內容盒:
+- display: inline-block;
+- text-align: left;
+
+演示:
+
 html
+```
 <div class="outer-container">
- <div class="inner-container">
- <div class="centered-content">
- You can put anything here!
- </div>
- </div>
+	<div class="inner-container">
+		<div class="centered-content">
+			你可以放置任何東西
+		</div>
+	</div>
 </div>
+```
+
 css
-body {
- margin : 0;
+```css
+body{
+ 	margin : 0;
 }
-.outer-container {
- position : absolute;
- display: table;
- width: 100%; /* This could be ANY width */
- height: 100%; /* This could be ANY height */
- background: #ccc;
+
+.outer-container{
+	position : absolute;
+	display: table;
+	width: 100%; /* 可以為任意寬度 */
+	height: 100%; /* 可以為任意高度 */
+	background: #ccc;
 }
-.inner-container {
- display: table-cell;
- vertical-align: middle;
- text-align: center;
+
+.inner-container{
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
 }
-.centered-content {
- display: inline-block;
- text-align: left;
- background: #fff;
- padding: 20px;
- border: 1px solid #000;
+
+.centered-content{
+	display: inline-block;
+	text-align: left;
+	background: #fff;
+	padding: 20px;
+	border: 1px solid #000;
 }
-See also this Fiddle!
-Section 6.12: Vertically align an image inside div
-html
+```
+
+[觀看Fiddle示例](https://jsfiddle.net/WXLsY/621/)
+
+<div id="char6-12"></div>
+
+### 6-12節: 將圖片垂直置中在div中
+
+html:
+```html
 <div class="wrap">
- <img src="http://lorempixel.com/400/200/" />
+ 	<img src="http://lorempixel.com/400/200/">
 </div>
-css
-.wrap {
- height: 50px;/* max image height */
- width: 100px;
- border: 1px solid blue;
- text-align: center;
+```
+
+css:
+```css
+.wrap{
+	height: 50px;/* 最大圖片高度 */
+	width: 100px;
+	border: 1px solid blue;
+	text-align: center;
 }
-.wrap:before {
- content:"";
- display: inline-block;
- height: 100%;
- vertical-align: middle;
- width: 1px;
+
+.wrap:before{
+	content: "";
+	display: inline-block;
+	height: 100%;
+	vertical-align: middle;
+	width: 1px;
 }
-img {
- vertical-align: middle;
+
+img{
+ 	vertical-align: middle;
 }
+```
+
+<div id="char6-13"></div>
+
 Section 6.13: Centering with fixed size
 If the size of your content is fixed, you can use absolute positioning to 50% with margin that reduces half of your
 content's width and height:
