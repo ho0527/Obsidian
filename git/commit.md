@@ -11,10 +11,10 @@
 - #範例
 
 ## 一、 #為什麼要寫GitCommitMessage
-記錄下做了哪些異動，以及為什麼要做這些異動。讓後人能夠快速地了解異動的內容，方便回溯程式碼已修正錯誤或添加新功能。
+記錄下做了哪些異動,以及為什麼要做這些異動.讓後人能夠快速地了解異動的內容,方便回溯程式碼已修正錯誤或添加新功能.
 
 ## 二、 #為什麼要固定格式
-一個好的格式與規範，能夠讓人一目了然，迅速看出該Commit的重點。而且，在多人協作或專案交接時，不易造成各自為政的情形。
+一個好的格式與規範,能夠讓人一目了然,迅速看出該Commit的重點.而且,在多人協作或專案交接時,不易造成各自為政的情形.
 
 ## 三、 #Message的格式
 TYPE: SUBJECT
@@ -22,45 +22,46 @@ TYPE: SUBJECT
 BODY
 
 FOOTER
-一個完整的Commit訊息必須包含以上三大區塊，且都由空行區隔。
-第一行標題列，必須包含類型與主旨。
+一個完整的Commit訊息必須包含以上三大區塊,且都由空行區隔.
+第一行標題列,必須包含類型與主旨.
 
 ### 3-1 #TYPE類型
-類型必須包含在標題中，且符合下列類型。
+類型必須包含在標題中,且符合下列類型.
 
 | 類型       | 說明                                                   | 程式碼改動 |
 | -------- | ---------------------------------------------------- | ----- |
 | new      | 新功能                                                  | O     |
 | modify   | 既有功能需求調整的修改                                          | O     |
 | fix      | 錯誤修正                                                 | O     |
-| docs     | 更新文件，如 README.md                                     | X     |
+| docs     | 更新文件,如 README.md                                     | X     |
 | style    | 程式碼格式調整(formatting)、缺少分號(missing semi colons)等       | X     |
-| refactor | 重構針對已上線的功能程式碼調整與優化，且不改變記有邏輯                          | O     |
+| refactor | 重構針對已上線的功能程式碼調整與優化,且不改變記有邏輯                          | O     |
 | test     | 測試新增測試、重構測試等                                         | X     |
 | chore    | 更新專案建置設定、更新版本號等瑣事                                    | X     |
 | revert   | 撤銷之前的commit revert: type(scope): subject (回覆版本：xxxx) | O     |
 | copy     | 複製檔案                                                 | X     |
 | del      | 刪除檔案                                                 | X     |
 | testing  | 測試中檔案                                                | X     |
+| end  | 程式製作結束                                                | X     |
 
 ### 3-2 #SUBJECT主旨
-主旨不應超過50個字元，若用英文書寫則需大寫開頭，中英文都不用句號結尾。
-盡量以祈使句書寫，言簡意賅的簡述此Commit的改動。
+主旨不應超過50個字元,中英文都不用句號結尾.
+盡量以祈使句書寫,言簡意賅的簡述此Commit的改動.
 
 ### 3-3 #BODY本文
-不是每個Commit都一定需要本文。
-撰寫本文時，請務必將改了什麼與為什麼而改寫清楚。
-每行不超過72個字。
+不是每個Commit都一定需要本文.
+撰寫本文時,請務必將改了什麼與為什麼而改寫清楚.
+每行不超過72個字.
 
 ### 3-4 #FOOTER頁尾
-一般來說FOOTER不一定要寫。
-通常用來標註對應的issue編號 (issue tracker IDs)。
+一般來說FOOTER不一定要寫.
+通常用來標註對應的issue編號 (issue tracker IDs).
 
 ## 四、 #範例
 Fix: 修正首頁資料載入緩慢問題
 
-- 首頁載入後等待超過10秒資料才顯示。
-    - 將資料改為一次撈取，並暫存在記憶體中。
+- 首頁載入後等待超過10秒資料才顯示.
+    - 將資料改為一次撈取,並暫存在記憶體中.
 
 issue #456
 Summarize changes in around 50 characters or less
@@ -92,7 +93,7 @@ Resolves: #123
 See also: #456, #789
 
 ## 註解及參見
-[Git Commit Message 這樣寫會更好，替專案引入規範與範例](https://wadehuanglearning.blogspot.com/2019/05/commit-commit-commit-why-what-commit.html)
+[Git Commit Message 這樣寫會更好,替專案引入規範與範例](https://wadehuanglearning.blogspot.com/2019/05/commit-commit-commit-why-what-commit.html)
 [Git Commit Message Style Guide #300](https://github.com/android/architecture-samples/issues/300)
 [How to Write a Git Commit Message](https://cbea.ms/git-commit/)
 [Angular Commit Messages Guideline](https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#commit)

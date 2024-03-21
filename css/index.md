@@ -2616,86 +2616,126 @@ img{
 
 <div id="char6-13"></div>
 
-Section 6.13: Centering with fixed size
-If the size of your content is fixed, you can use absolute positioning to 50% with margin that reduces half of your
-content's width and height:
+### 6-13節: 使用固定尺寸置中
+
+如果您的內容尺寸是固定的,您可以使用絕對定位於50%加上減去一半寬高的邊距來居中:
+
 html
+```html
 <div class="center">
- Center vertically and horizontally
+	垂直和水平居中
 </div>
+```
+
+```css
 css
-.center {
- position: absolute;
- background: #ccc;
- left: 50%;
- width: 150px;
- margin-left: -75px; /* width * -0.5 */
- top: 50%;
- height: 200px;
- margin-top: -100px; /* height * -0.5 */
+.center{
+	position: absolute;
+	background: #ccc;
+	left: 50%;
+	width: 150px;
+	margin-left: -75px; /* width * -0.5 */
+	top: 50%;
+	height: 200px;
+	margin-top: -100px; /* height * -0.5 */
 }
-Horizontal centering with only fixed width
-You can center the element horizontally even if you don't know the height of the content:
+```
+
+只水平居中並且寬度固定
+您可以在不知道內容高度的情況下只居中元素水平:
+
 html
+```html
 <div class="center">
- Center only horizontally
+	只水平居中
 </div>
+```
+
 css
-.center {
- position: absolute;
- background: #ccc;
- left: 50%;
- width: 150px;
- margin-left: -75px; /* width * -0.5 */
+```css
+.center{
+	position: absolute;
+	background: #ccc;
+	left: 50%;
+	width: 150px;
+	margin-left: -75px; /* width * -0.5 */
 }
-Vertical centering with fixed height
-You can center the element vertically if you know the element's height:
+```
+
+只垂直居中並且高度固定
+如果您知道元素的高度,您可以只居中元素垂直:
+
 html
+```html
 <div class="center">
- Center only vertically
+	只垂直居中
 </div>
+```
+
 css
-.center {
- position: absolute;
- background: #ccc;
- top: 50%;
- height: 200px;
- margin-top: -100px; /* width * -0.5 */
+```css
+.center{
+	position: absolute;
+	background: #ccc;
+	top: 50%;
+	height: 200px;
+	margin-top: -100px; /* width * -0.5 */
 }
-Section 6.14: Vertically align dynamic height elements
-Applying css intuitively doesn't produce the desired results because
-vertical-align:middle isn't applicable to block-level elements
-margin-top:auto and margin-bottom:auto used values would compute as zero
-margin-top:-50% percentage-based margin values are calculated relative to the width of containing block
-For widest browser support, a workaround with helper elements:
+```
+
+<div id="char6-14"></div>
+
+### 6-14節: 垂直對齊動態高度元素
+
+根據直覺運用CSS不會產生預期結果,因為vertical-align: middle不適用於區塊級元素.
+
+margin-top: auto和margin-bottom: auto會計算為零.
+
+百分比邊距值margin-top:-50%是相對於包含塊寬度計算的.
+
+為了支持各瀏覽器,可以使用輔助元素作為解決方式:
+
 html
+```html
 <div class="vcenter--container">
- <div class="vcenter--helper">
- <div class="vcenter--content">
- <!--stuff-->
- </div>
- </div>
+	<div class="vcenter--helper">
+		<div class="vcenter--content">
+			<!-- 內容 -->
+		</div>
+	</div>
 </div>
+```
+
 css
-.vcenter--container {
- display: table;
- height: 100%;
- position: absolute;
- overflow: hidden;
- width: 100%;
+```css
+.vcenter--container{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	display: table;
+	overflow: hidden;
 }
-.vcenter--helper {
- display: table-cell;
- vertical-align: middle;
+
+.vcenter--helper{
+	display: table-cell;
+	vertical-align: middle;
 }
-.vcenter--content {
- margin: 0 auto;
- width: 200px;
+
+.vcenter--content{
+	width: 200px;
+	margin: 0px auto;
 }
-jsfiddle from original question. This approach
-works with dynamic height elements
-respects content flow
-is supported by legacy browsers
+```
+
+[原始問題](https://stackoverflow.com/questions/12415661/using-marginauto-to-vertically-align-a-div/12417336#12417336)的[jsfiddle](https://jsfiddle.net/ovfiddle/yVAW9/)範例.
+
+此方法可以:
+- 支援動態高度元素
+- 尊重內容流動
+- 支援舊版瀏覽器
+
+<div id="char6-15"></div>
+
 Section 6.15: Horizontal and Vertical centering using table
 layout
 One could easily center a child element using table display property.
