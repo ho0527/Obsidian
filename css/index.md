@@ -63,22 +63,22 @@
   - [5-11節: background-repeat](#char5-11)
   - [5-12節: background-blend-mode](#char5-12)
   - [5-13節: bachground-color 不透明度](#char5-13)
-Chapter 6: Centering ................................................................................................................................................. 39
-Section 6.1: Using Flexbox ........................................................................................................................................... 39
-Section 6.2: Using css transform .............................................................................................................................. 40
-Section 6.3: Using margin: 0 auto; ............................................................................................................................. 41
-Section 6.4: Using text-align ....................................................................................................................................... 42
-Section 6.5: Using position: absolute ......................................................................................................................... 42
-Section 6.6: Using calc() ............................................................................................................................................. 43
-Section 6.7: Using line-height ..................................................................................................................................... 43
-Section 6.8: Vertical align anything with 3 lines of code ......................................................................................... 44
-Section 6.9: Centering in relation to another item ................................................................................................... 44
-Section 6.10: Ghost element technique (Michał Czernow's hack) ........................................................................... 45
-Section 6.11: Centering vertically and horizontally without worrying about height or width ............................... 46
-Section 6.12: Vertically align an image inside div ..................................................................................................... 47
-Section 6.13: Centering with fixed size ....................................................................................................................... 47
-Section 6.14: Vertically align dynamic height elements .......................................................................................... 49
-Section 6.15: Horizontal and Vertical centering using table layout ........................................................................ 49
+- [第六章-置中](#char6)
+  - [6-1節: 使用flexbox](#char6-1)
+  - [6-2節: 使用css transform](#char6-2)
+  - [6-3節: 使用margin: 0 auto](#char6-3)
+  - [6-4節: 使用text-align](#char6-4)
+  - [6-5節: 使用position: absolute](#char6-5)
+  - [6-6節: 使用calc()](#char6-6)
+  - [6-7節: 使用line-height](#char6-7)
+  - [6-8節: 使用三行程式碼垂直對齊任何內容](#char6-8)
+  - [6-9節: 依靠其他元素置中](#char6-9)
+  - [6-10節: 幽靈元素](#char6-10)
+  - [6-11節: 不考慮高寬即可實現垂直和水平置中](#char6-11)
+  - [6-12節: 將圖片垂直置中在div中](#char6-12)
+  - [6-13節: 使用固定尺寸置中](#char6-13)
+  - [6-14節: 垂直對齊動態高度元素](#char6-14)
+  - [6-15節: 使用表格布局實現水平垂直居中](#char6-15)
 Chapter 7: The Box Model ...................................................................................................................................... 51
 Section 7.1: What is the Box Model? .......................................................................................................................... 51
 Section 7.2: box-sizing ................................................................................................................................................. 52
@@ -2736,40 +2736,46 @@ css
 
 <div id="char6-15"></div>
 
-Section 6.15: Horizontal and Vertical centering using table
-layout
-One could easily center a child element using table display property.
+### 6-15節: 使用表格布局實現水平垂直居中
+
+使用表格顯示屬性可以很容易將子元素居中:
+
 html
+```html
 <div class="wrapper">
- <div class="parent">
- <div class="child"></div>
- </div>
+	<div class="parent">
+		<div class="child"></div>
+	</div>
 </div>
+```
+
 css
-.wrapper {
- display: table;
- vertical-align: center;
- width: 200px;
- height: 200px;
- background-color: #9e9e9e;
-}
-.parent {
- display: table-cell;
- vertical-align: middle;
- text-align: center;
-}
-.child {
- display: inline-block;
- vertical-align: middle;
- text-align: center;
- width: 100px;
- height: 100px;
- background-color: teal;
+```css
+.wrapper{
+	background: #9e9e9e;
+	width: 200px;
+	height: 200px;
+	display: table;
+	vertical-align: middle;
 }
 
+.parent{
+	text-align: center;
+	display: table-cell;
+	vertical-align: middle;
+}
 
+.child{
+	background: teal;
+	width: 100px;
+	height: 100px;
+	text-align: center;
+	display: inline-block;
+	vertical-align: middle;
+}
+```
 
-
+<div id="char7"></div>
 
 Chapter 7: The Box Model
 Parameter Detail
