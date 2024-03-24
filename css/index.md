@@ -2775,51 +2775,64 @@ css
 }
 ```
 
+
+<div style="page-break-after: always;"></div>
+
 <div id="char7"></div>
 
-Chapter 7: The Box Model
-Parameter Detail
-content-box Width and height of the element only includes content area.
-padding-box Width and height of the element includes content and padding.
-border-box Width and height of the element includes content, padding and border.
-initial Sets the box model to its default state.
-inherit Inherits the box model of the parent element.
-Section 7.1: What is the Box Model?
-The Edges
-The browser creates a rectangle for each element in the html document. The Box Model describes how the
-padding, border, and margin are added to the content to create this rectangle.
-Diagram from css2.2 Working Draft
-The perimeter of each of the four areas is called an edge. Each edge defines a box.
-The innermost rectangle is the content box. The width and height of this depends on the element's
-rendered content (text, images and any child elements it may have).
-Next is the padding box, as defined by the padding property. If there is no padding width defined, the
-padding edge is equal to the content edge.
-Then we have the border box, as defined by the border property. If there is no border width defined, the
-border edge is equal to the padding edge.
-The outermost rectangle is the margin box, as defined by the margin property. If there is no margin width
-defined, the margin edge is equal to the border edge.
-Example
-div {
- border: 5px solid red;
- margin: 50px;
- padding: 20px;
+## 第7章: 箱子模型
+
+參數及詳細信息
+- content-box: 寬度和高度只包括內容區域
+- padding-box: 寬度和高度包括內容和填充區域
+- border-box: 寬度和高度包括內容、填充區域和邊框
+- initial: 將箱子模型設定為默認狀態
+- inherit: 繼承父元素的箱子模型
+
+<div id="char7-1"></div>
+
+### 7-1節: 什麼是箱子模型
+
+瀏覽器為每個HTML文件中的元素創建一個矩形.箱子模型描述了如何通過填充、邊框和邊距來添加到內容以建立此矩形
+
+![image070101](image/index/070101.png)
+
+每個四個區域的周邊稱為一個邊緣.每個邊緣定義了一個箱子.
+- 最內部的矩形是內容箱子.其寬高取決於元素渲染內容(文字、圖片和任何子元素).
+- 下一個是填充箱子,由填充屬性定義.如果未定義填充寬度,則填充邊緣等於內容邊緣.
+- 然後我們有邊框箱子,由邊框屬性定義.如果未定義邊框寬度,則邊框邊緣等於填充邊緣.
+- 最外圍的矩形是邊距箱子,由邊距屬性定義.如果未定義邊距寬度,則邊距邊緣等於邊框邊緣.
+
+例子:
+```css
+div{
+	border: 5px solid red;
+	margin: 50px;
+	padding: 20px;
 }
-This css styles all div elements to have a top, right, bottom and left border of 5px in width; a top, right, bottom and
-left margin of 50px; and a top, right, bottom, and left padding of 20px. Ignoring content, our generated box will look
-like this:
-Screenshot of Google Chrome's Element Styles panel
-As there is no content, the content region (the blue box in the middle) has no height or width (0px by 0px).
-The padding box by default is the same size as the content box, plus the 20px width on all four edges we're
-defining above with the padding property (40px by 40px).
-The border box is the same size as the padding box, plus the 5px width we're defining above with the border
-property (50px by 50px).
-Finally the margin box is the same size as the border box, plus the 50px width we're defining above with the
-margin property (giving our element a total size of 150px by 150px).
-Now lets give our element a sibling with the same style. The browser looks at the Box Model of both elements to
-work out where in relation to the previous element's content the new element should be positioned:
-The content of each of element is separated by a 150px gap, but the two elements' boxes touch each other.
-If we then modify our first element to have no right margin, the right margin edge would be in the same position as
-the right border edge, and our two elements would now look like this:
+```
+
+說明所有div元素具有5px寬的上、右、下、左邊框;上、右、下、左邊距為50px;上、右、下、左填充為20px.忽略內容,生成的箱子將如下:
+
+![image070102](image/index/070102.png)
+
+*截圖顯示Chrome的元素樣式面板*
+
+- 由於無內容,內容區域(中間藍框)沒有寬高(0px x 0px).
+- 預設情況下,填充箱子與內容箱子大小相同,加上填充屬性定義的20px四個邊(40px x 40px).
+- 邊框箱子與填充箱子大小相同,加上邊框屬性定義的5px四個邊(50px x 50px).
+- 最後,邊距箱子與邊框箱子大小相同,加上邊距屬性定義的50px四個邊(總大小150px x 150px).
+
+現在給元素添加兄弟元素,瀏覽器查看兩個元素的箱子模型而不是實際內容來判斷新元素相對上一元素的定位:
+![image070103](image/index/070103.png)
+
+兩個元素的內容間隔150px,而兩個箱子直接相鄰.
+
+如果修改第一個元素去除右邊距,右邊距邊緣將與右邊框邊緣重疊,兩個元素將如下:
+![image070104](image/index/070104.png)
+
+<div id="char7-2"></div>
+
 Section 7.2: box-sizing
 The default box model (content-box) can be counter-intuitive, since the width / height for an element will not
 represent its actual width or height on screen as soon as you start adding padding and border styles to the
@@ -2853,6 +2866,8 @@ html {
 }
 In this coding box-sizing:border-box; is not directly applied to *, so you can easily overwrite this property on
 individual elements.
+
+
 Chapter 8: Margins
 Parameter Details
 0 set margin to none
