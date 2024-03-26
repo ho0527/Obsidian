@@ -42,13 +42,13 @@
 		- [4-1節: 基本選擇器](#4-1節-基本選擇器)
 		- [4-2節: 屬性選擇器](#4-2節-屬性選擇器)
 			- [概述](#概述)
-			- [註釋:](#註釋)
-			- [細節:](#細節)
+			- [註釋](#註釋)
+			- [細節](#細節)
 		- [4-3節: 關係選擇器](#4-3節-關係選擇器)
-			- [後代組合器: 選擇器 選擇器](#後代組合器-選擇器-選擇器)
-			- [子組合器: 選擇器\>選擇器](#子組合器-選擇器選擇器)
-			- [鄰近兄弟組合器: 選擇器+選擇器](#鄰近兄弟組合器-選擇器選擇器)
-			- [通用兄弟組合器: 選擇器 ~ 選擇器](#通用兄弟組合器-選擇器--選擇器)
+			- [後代組合器](#後代組合器)
+			- [子組合器](#子組合器)
+			- [鄰近兄弟組合器](#鄰近兄弟組合器)
+			- [通用兄弟組合器](#通用兄弟組合器)
 		- [4-4節: 偽類選擇器](#4-4節-偽類選擇器)
 		- [4-5節: nth偽類](#4-5節-nth偽類)
 		- [4-6節: 類別選擇器](#4-6節-類別選擇器)
@@ -529,11 +529,11 @@ css選擇器(selector)將特定的html元素識別為css樣式的目標.
 | \[attr\|="val"\] | `<div attr="val-sth val">` | 其中attr的值恰好是val,或以val開頭並立即隨後是"-" | 2 |
 | \[attr="val" i\] | `<div attr="val">` | 其中 attr 的值為val,忽略val的字母大小寫. | 4<sup>\[#040202\]</sup> |
 
-#### 註釋:
+#### 註釋
 - #040201: 屬性值可以用單引號或雙引號括起來. 完全沒有引號也可以可以工作, 但根據css標準它是違規的,因此不鼓勵這樣做.
 - #040202: 沒有單一的或整合的css4規範,因為它被分成單獨的模組. 但是有"level 4"模組. 請參閱[瀏覽器支援](https://caniuse.com/css-case-insensitive).
 
-#### 細節:
+#### 細節
 \[屬性(attribute)\]
 選擇**具有給定屬性的元素**.
 ```css
@@ -664,10 +664,10 @@ div[lang|="EN" i]{
 
 | 範例 | 關係選擇器(combinator)名稱及說明 |
 | --- | --- |
-| div span | 後代選擇器(所有 <span> 都是 <div> 的後代) |
-| div>span | 子選擇器(所有 <div> 的直接子級 <span>) |
-| a~span | 通用同級選擇器(<a> 之後的所有同級 <span>) |
-| a+span | 相鄰同級選擇器(緊接在 <a> 之後的所有 <span>) |
+| div span | 後代選擇器(所有 `<span>` 都是 `<div>` 的後代) |
+| div>span | 子選擇器(所有 `<div>` 的直接子級 `<span>`) |
+| a~span | 通用同級選擇器(`<a>` 之後的所有同級 `<span>`) |
+| a+span | 相鄰同級選擇器(緊接在 `<a>` 之後的所有 `<span>`) |
 
 注意: 同級選擇器的目標元素是來源文件中緊接著的元素.
 
@@ -675,7 +675,9 @@ css本質上不能定位前一個元素或父元素.
 
 但是使用flex order屬性,可以在視覺媒體上模擬先前的同級選擇器[參見](https://stackoverflow.com/questions/1817792/is-there-a-previous-sibling-selector/36118012#36118012).
 
-#### 後代組合器: 選擇器 選擇器
+#### 後代組合器
+
+***語法: 選擇器 選擇器***
 
 後代組合器,由至少一個空格字元" "表示,選擇作為已定義元素的後代的元素. **此組合器選擇該元素的所有後代(從子元素向下)**.
 
@@ -697,7 +699,9 @@ div p{
 
 在上面的範例中,選擇了前兩個`<p>`元素,因為它們都是`<div>`的後代.
 
-#### 子組合器: 選擇器>選擇器
+#### 子組合器
+
+***語法: 選擇器>選擇器***
 
 子(>)組合符用於選擇作為**指定元素的子元素或直接後代的元素**
 ```css
@@ -719,7 +723,10 @@ div>p{
 
 未選擇第二個`<p>`元素,因為它不是`<div>`的直接子元素.
 
-#### 鄰近兄弟組合器: 選擇器+選擇器
+#### 鄰近兄弟組合器
+
+***語法: 選擇器+選擇器***
+
 相鄰同級(+)組合符選擇緊接在指定元素之後的同級元素.
 ```css
 div+p{
@@ -737,7 +744,10 @@ div+p{
 
 上面的範例**僅選擇直接位於另一個`<p>`元素前面的那些`<p>`元素**.
 
-#### 通用兄弟組合器: 選擇器 ~ 選擇器
+#### 通用兄弟組合器
+
+***語法: 選擇器~選擇器***
+
 通用同級(~)組合器選擇指定元素後面的所有同級.
 
 ```css
@@ -2558,12 +2568,13 @@ html{
 
 ## 第8章-外距
 
-Parameter Details
-0 set margin to none
-auto used for centering, by evenly setting values on each side
-units (e.g. px) see parameter section in Units for a list of valid units
-inherit inherit margin value from parent element
-initial restore to initial value
+| 參數 | 詳細信息 |
+| --- | --- |
+| 0 | 設置邊距為無 |
+| auto | 使用於中心對齊,通過平均設定各側值 |
+| 單位(如px) | 參數單元部分列出有效單位列表 |
+| inherit | 繼承父元素的邊距值 |
+| initial | 恢復為初始值 |
 
 Section 8.1: Margin Collapsing
 When two margins are touching each other vertically, they are collapsed. When two margins touch horizontally,
@@ -7679,254 +7690,6 @@ Animate with transform with the same animation.
  transform: translate3d(100px, 100px, 0);
 }
 Demo same animation, took 1.3ms for rendering, 2.0ms for painting.
-Credits
-Thank you greatly to all the people from Stack Overflow Documentation who helped provide this content,
-more changes can be sent to web@petercv.com for new content to be published or updated
-A B Chapter 20
-A.J Chapter 4
-Aaron Chapter 4
-abaracedo Chapter 4
-Abhishek Singh Chapter 22
-adamboro Chapter 1
-Aeolingamenfel Chapters 27 and 55
-Ahmad Alfy Chapters 4, 5 and 16
-Alohci Chapter 15
-amflare Chapters 13 and 17
-Andre Lopes Chapter 44
-andre mcgruder Chapter 54
-andreas Chapters 15 and 38
-Andrew Chapters 12, 19 and 53
-Andrew Myers Chapter 47
-Anil Chapter 4
-animuson Chapters 4, 50 and 53
-apaul Chapters 6 and 27
-Araknid Chapter 4
-Arif Chapter 11
-Arjan Einbu Chapters 4, 7, 8, 15 and 17
-Ashwin Ramaswami Chapters 1 and 4
-Asim K T Chapters 5 and 16
-AVAVT Chapter 50
-awe Chapter 1
-bdkopen Chapter 3
-Ben Rhys Chapter 5
-Bipon Chapter 40
-BiscuitBaker Chapter 7
-Boris Chapter 5
-Boysenb3rry Chapter 1
-brandaemon Chapter 17
-Brett DeWoody Chapters 18, 38 and 39
-CalvT Chapters 5 and 9
-Casey Chapter 11
-Cassidy Williams Chapters 10 and 22
-cdm Chapters 5 and 8
-Charlie H Chapters 4 and 28
-Chathuranga Jayanath Chapters 11, 13 and 23
-Chiller Chapter 38
-Chris Chapters 1, 4, 23, 25, 42 and 50
-Chris Spittles Chapters 8 and 24
-Christiaan Maks Chapter 28
-CocoaBean Chapter 5
-coderfin Chapter 3
-cone56 Chapters 31 and 36
-CPHPython Chapter 4
-csx.cc Chapter 1
-cuervoo Chapter 18
-Daniel G. Blázquez Chapter 5
-Daniel Käfer Chapter 6
-Daniel Stradowski Chapter 5
-DarkAjax Chapter 17
-darrylyeo Chapters 2, 13 and 18
-Darthstroke Chapter 5
-Dave Everitt Chapter 4
-David Fullerton Chapter 4
-Demeter Dimitri Chapter 4
-demonofthemist Chapter 14
-designcise Chapters 4, 5 and 18
-Devid Farinelli Chapters 4 and 6
-Devon Bernard Chapter 4
-Dex Star Chapter 27
-Diego V Chapter 6
-Dinidu Hewage Chapter 4
-dippas Chapters 4, 17 and 21
-doctorsherlock Chapter 10
-dodopok Chapters 13, 36 and 45
-Elegant.Scripting Chapter 43
-Eliran Malka Chapter 6
-Emanuele Parisio Chapter 6
-Evgeny Chapter 15
-Farzad YZ Chapter 6
-fcalderan Chapter 5
-feeela Chapters 46 and 55
-FelipeAls Chapters 1, 5, 10, 11, 14, 16, 24 and 25
-Felix A J Chapter 15
-Felix Edelmann Chapter 4
-Felix Schütz Chapter 4
-Forty Chapter 4
-fracz Chapter 4
-fzzylogic Chapter 16 G Chapters 1 and 17
-Gabriel R. Chapter 1
-gandreadis Chapter 4
-geek1011 Chapter 21
-geeksal Chapter 17
-Gerardas Chapter 1
-Gnietschow Chapter 10
-GoatsWearHats Chapter 1
-Gofilord Chapter 21
-Grant Palin Chapter 54
-H. Pauwelyn Chapters 4, 18 and 36
-HansCz Chapter 4
-Harish Gyanani Chapter 1
-Harry Chapters 10, 26, 28, 29, 33, 35 and 44
-henry Chapter 4
-Horst Jahns Chapter 5
-Hristo Chapter 32
-Hugo Buff Chapter 4
-Hynes Chapters 4, 5 and 15
-insertusernamehere Chapter 15
-J Atkin Chapters 1 and 4
-J F Chapters 4 and 20
-Jacob Gray Chapters 4, 5 and 22
-James Donnelly Chapters 7 and 17
-James Taylor Chapter 5
-jaredsk Chapters 10, 36 and 50
-JedaiCoder Chapter 6
-Jef Chapter 16
-Jeffery Tang Chapter 30
-jehna1 Chapter 6
-jgh Chapter 12
-JHS Chapter 25
-Jmh2013 Chapters 13, 23 and 43
-joejoe31b Chapters 4 and 13
-JoelBonetR Chapter 4
-joe_young Chapters 1 and 15
-John Slegers Chapters 4, 5, 6, 13, 17, 18, 28, 52 and 55
-Jon Chan Chapters 5 and 15
-Jonathan Argentiero Chapter 6
-Jonathan Lam Chapters 1, 6, 7, 16 and 22
-Jonathan Zúñiga Chapter 5
-Jose Gomez Chapter 1
-Just a student Chapter 1
-Kevin Katzke Chapter 23
-kingcobra1986 Chapter 17
-Kuhan Chapter 18
-Kyle Ratliff Chapter 6
-leo_ap Chapter 50
-LiLacTac Chapter 55
-Luka Kerr Chapter 29
-Luke Taylor Chapter 28
-Madalina Taina Chapters 4, 5, 6, 8, 9, 10, 11, 12, 14, 15, 19, 25, 29, 31, 32, 34, 39, 45 and 49
-Marc Chapter 20
-Marcatectura Chapter 21
-Marjorie Pickard Chapter 2
-Mark Perera Chapter 4
-Marten Koetsier Chapters 34 and 41
-Matas Vaitkevicius Chapters 4 and 13
-Mattia Astorino Chapter 22
-Maximillian Laumeister Chapters 5 and 13
-Maxouhell Chapter 6
-Michael Moriarty Chapters 5, 15 and 18
-Michael_B Chapters 4 and 6
-Mifeet Chapter 6
-Mike McCaughan Chapter 24
-Miles Chapters 12 and 51
-Miro Chapter 18
-MMachinegun Chapter 54
-mmativ Chapter 50
-Mod Proxy Chapter 6
-Mr. Alien Chapter 5
-Mr. Meeseeks Chapter 29
-Mr_Green Chapter 8
-Muthu Kumaran Chapter 37
-Naeem Shaikh Chapter 4
-Nate Chapter 5
-Nathan Arthur Chapters 1, 4, 6, 8, 13, 14, 15 and 16
-Nemanja Trifunovic Chapter 48
-Niek Brouwer Chapter 23
-niyasc Chapter 18
-Nobal Mohan Chapter 10
-o.v. Chapter 6
-Obsidian Chapters 37 and 53
-Ortomala Lokni Chapters 6, 7 and 17
-Pat Chapter 21
-patelarpan Chapters 1 and 50
-Paul Kozlovitch Chapter 6
-Paul Sweatte Chapter 46
-Persijn Chapters 4 and 5
-Phil Chapter 50
-pixelbandito Chapter 9
-Praveen Kumar Chapters 4, 6, 13, 15, 26, 28, 50 and 55
-Qaz Chapter 12
-Rahul Nanwani Chapter 22
-RamenChef Chapter 43
-rdans Chapter 4
-RedRiderX Chapter 37
-rejnev Chapter 8
-Richard Hamilton Chapters 4, 5, 15, 18, 20 and 27
-Rion Williams Chapter 4
-rishabh dev Chapter 46
-rmondesilva Chapters 15 and 20
-Robotnicka Chapter 20
-Rocket Risa Chapter 1
-Sandeep Tuniki Chapter 6
-Saroj Sasmal Chapter 1
-ScientiaEtVeritas Chapters 1, 4, 6, 7, 10, 11, 18, 20, 21, 23, 26, 31, 33, 44 and 53
-Sebastian Zartner Chapter 40
-SeinopSys Chapters 18, 23, 36 and 54
-Sergey Denisov Chapters 5 and 26
-Shaggy Chapters 5, 21 and 53
-Siavas Chapter 6
-Someone Chapter 6
-Sourav Ghosh Chapters 5 and 22
-Squazz Chapters 16 and 31
-srikarg Chapter 13
-StefanBob Chapter 9
-Stewartside Chapters 4, 5, 6, 18, 20 and 21
-Stratboy Chapter 5
-sudo bangbang Chapter 4
-Sumner Evans Chapter 4
-Sun Qingyao Chapter 8
-Sunnyok Chapters 4, 6 and 8
-Sverri M. Olsen Chapter 1
-takeradi Chapter 16
-Taylor Chapter 6
-Ted Goas Chapters 12, 15, 34 and 43
-Teo Dragovic Chapters 1 and 13
-ThatWeirdo Chapter 4
-TheGenie OfTruth Chapter 36
-Theodore K. Chapter 22
-think123 Chapter 5
-Timothy Miller Chapter 55
-Toby Chapters 15 and 20
-Todd Chapter 1
-ToniB Chapter 15
-Tot Zam Chapter 8
-Trevor Clarke Chapters 5, 8, 10 and 15
-TrungDQ Chapter 56
-TylerH Chapters 1, 4, 5, 36 and 53
-Ulrich Schwarz Chapter 43
-user007 Chapter 18
-user2622348 Chapter 20
-vishak Chapter 14
-vkopio Chapter 7
-Vlusion Chapter 15
-Volker E. Chapter 15
-web Chapters 6, 26, 28, 29 and 44
-Will DiFruscio Chapter 9
-Wolfgang Chapter 18
-X Chapter 18
-Xinyang Li Chapter 1
-xpy Chapter 4
-Yury Fedorov Chapter 4
-Zac Chapters 5 and 12
-Zaffy Chapter 4
-Zakaria Acharki Chapter 20
-Zaz Chapter 4
-Ze Rubeus Chapter 4
-zeel Chapter 6
-zer00ne Chapter 20
-Zeta Chapter 5
-Zze Chapter 5
-You may also like
 
 #### 縮寫表
 

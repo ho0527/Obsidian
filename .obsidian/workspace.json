@@ -266,6 +266,7 @@
   },
   "active": "570f12661a777b08",
   "lastOpenFiles": [
+    "css/index_tmp.html",
     "css/image/index/Screenshot 2024-03-24 111948.png",
     "css/image/index/070104.png",
     "css/image/index/070103.png",
@@ -276,7 +277,6 @@
     "css/image/index/Screenshot 2024-03-24 111611.png",
     "css/image/index",
     "css/image",
-    "css/index_tmp.html",
     "git/commit.md",
     "python/plugin/django.md",
     "js/getcontext.md",
@@ -290,7 +290,6 @@
     "abbreviationslist.md",
     "js/canvas.md",
     "css/declarationlist.jpeg",
-    "css/declarationlist.png",
     "css/declarationlist.pdf",
     "css/declarationlist_tmp.html",
     "css/declarationlist.html",
