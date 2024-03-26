@@ -2559,11 +2559,12 @@ html{
 ## 第8章-外距
 
 Parameter Details
-0 set margin to n	one
+0 set margin to none
 auto used for centering, by evenly setting values on each side
 units (e.g. px) see parameter section in Units for a list of valid units
 inherit inherit margin value from parent element
 initial restore to initial value
+
 Section 8.1: Margin Collapsing
 When two margins are touching each other vertically, they are collapsed. When two margins touch horizontally,
 they do not collapse.
