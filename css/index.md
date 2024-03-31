@@ -113,6 +113,12 @@
 		- [7-1節: 什麼是箱子模型](#7-1節-什麼是箱子模型)
 		- [7-2節: box-sizing](#7-2節-box-sizing)
 	- [第8章-外距](#第8章-外距)
+		- [8-1節: 邊距合併](#8-1節-邊距合併)
+			- [相鄰垂直邊距示例](#相鄰垂直邊距示例)
+			- [相鄰水平邊距示例](#相鄰水平邊距示例)
+			- [不同大小的重疊邊距](#不同大小的重疊邊距)
+			- [邊距合併陷阱](#邊距合併陷阱)
+			- [父子元素邊距合併](#父子元素邊距合併)
 			- [縮寫表](#縮寫表)
 
 <div style="page-break-after: always;"></div>
@@ -2560,7 +2566,7 @@ html{
 }
 ```
 
-在此程式碼中box-sizing: border-box;不直接應用於\*，因此您可以輕鬆地在各個元素上覆蓋此屬性。
+在此程式碼中box-sizing: border-box;不直接應用於\*,因此您可以輕鬆地在各個元素上覆蓋此屬性.
 
 這樣*,不直接應用box-sizing:border-box,可以單獨重寫單個元素的屬性.
 
@@ -2576,101 +2582,138 @@ html{
 | inherit | 繼承父元素的邊距值 |
 | initial | 恢復為初始值 |
 
-Section 8.1: Margin Collapsing
-When two margins are touching each other vertically, they are collapsed. When two margins touch horizontally,
-they do not collapse.
-Example of adjacent vertical margins:
-Consider the following styles and markup:
+### 8-1節: 邊距合併
+
+當兩個垂直方向的邊距相鄰時,它們會合併.當兩個邊距水平相鄰時,不會合併.
+
+#### 相鄰垂直邊距示例
+
+程式碼:
+
+```html
+<div>一些內容</div>
+<div>更多內容</div>
+```
+
+```css
 div{
- margin: 10px;
+	margin: 10px;
 }
-<div>
- some content
-</div>
-<div>
- some more content
-</div>
-They will be 10px apart since vertical margins collapse over one and other. (The spacing will not be the sum of two
-margins.)
-Example of adjacent horizontal margins:
-Consider the following styles and markup:
+```
+
+它們之間間隔為10px,因為垂直邊距會合併.(間隔不會是兩個邊距的總和)
+
+#### 相鄰水平邊距示例
+
+程式碼:
+
+```html
+<span>內容一</span>
+<span>內容二</span>
+```
+
+```css
 span{
- margin: 10px;
+ 	margin: 10px;
 }
-<span>some</span><span>content</span>
-They will be 20px apart since horizontal margins don't collapse over one and other. (The spacing will be the sum of
-two margins.)
-Overlapping with different sizes
+```
+
+它們間隔為20px,因為水平邊距不會合併.(間隔是兩個邊距的總和)
+
+#### 不同大小的重疊邊距
+
+```html
+<div class="top">一些內容</div>
+<div class="bottom">更多內容</div>
+```
+
+```css
 .top{
- margin: 10px;
+ 	margin: 10px;
 }
+
 .bottom{
- margin: 15px;
+ 	margin: 15px;
 }
-<div class="top">
- some content
+```
+
+***元素間隔為15px.邊距會儘量重疊,但以較大邊距為間隔.***
+
+#### 邊距合併陷阱
+
+```html
+<div class="outertop">
+    <div class="innertop">
+        some content
+    </div>
 </div>
-<div class="bottom">
- some more content
+<div class="outerbottom">
+    <div class="innerbottom">
+        some more content
+    </div>
 </div>
-These elements will be spaced 15px apart vertically. The margins overlap as much as they can, but the larger
-margin will determine the spacing between the elements.
-Overlapping margin gotcha
-.outer-top{
- margin: 10px;
+```
+
+```css
+.outertop{
+    margin: 10px;
 }
-.inner-top{
- margin: 15px;
+
+.innertop{
+    margin: 15px;
 }
-.outer-bottom{
- margin: 20px;
+
+.outerbottom{
+    margin: 20px;
 }
-.inner-bottom{
- margin: 25px;
+
+.innerbottom{
+    margin: 25px;
 }
-<div class="outer-top">
- <div class="inner-top">
- some content
- </div>
-</div>
-<div class="outer-bottom">
- <div class="inner-bottom">
- some more content
- </div>
-</div>
-What will be the spacing between the two texts? (hover to see answer)
-The spacing will be 25px. Since all four margins are touching each other, they will collapse, thus using the
-largest margin of the four.
-Now, what about if we add some borders to the markup above.
+```
+
+***間隔為25px.由於四個邊距相鄰,會合併,使用最大邊距25px.***
+
+但如果添加元素邊框
+
+```css
 div{
- border: 1px solid red;
+	border: 1px solid red;
 }
-What will be the spacing between the two texts? (hover to see answer)
-The spacing will be 59px! Now only the margins of .outer-top and .outer-bottom touch each other, and
-are the only collapsed margins. The remaining margins are separated by the borders. So we have 1px +
-10px + 1px + 15px + 20px + 1px + 25px + 1px. (The 1px's are the borders...)
-Collapsing Margins Between Parent and Child Elements:
-html:
+```
+
+***間隔為59px!只有.outertop和.outerbottom的邊距相鄰並合併.其他邊距被邊框分隔. (1px+10px+1px+15px+20px+1px+25px+1px)***
+
+#### 父子元素邊距合併
+
+```html
 <h1>Title</h1>
 <div>
- <p>Paragraph</p>
+  <p>Paragraph</p>
 </div>
-css
-h1 {
- margin: 0;
- background: #cff;
+```
+
+```css
+h1{
+	margin: 0px;
+	background: #cff;
 }
-div {
- margin: 50px 0 0 0;
- background: #cfc;
+
+div{
+	margin: 50px 0px 0px 0px;
+	background: #cfc;
 }
-p {
- margin: 25px 0 0 0;
- background: #cf9;
+
+p{
+	margin: 25px 0px 0px 0px;
+	background: #cf9;
 }
-In the example above, only the largest margin applies. You may have expected that the paragraph would be located
-60px from the h1 (since the div element has a margin-top of 40px and the p has a 20px margin-top). This does not
-happen because the margins collapse together to form one margin.
+```
+
+在上面的範例中,僅適用最大邊距.
+
+您可能會預期該段落將位於距離`<h1>` 60px 的位置(因為 div 元素的 margin-top 為 40px,p 的 margin-top 為 20px).但這種情況不會發生,因為邊距折疊在一起形成一個邊距
+
 Section 8.2: Apply Margin on a Given Side
 Direction-Specific Properties
 css allows you to specify a given side to apply margin to. The four properties provided for this purpose are:
