@@ -119,6 +119,9 @@
 			- [不同大小的重疊邊距](#不同大小的重疊邊距)
 			- [邊距合併陷阱](#邊距合併陷阱)
 			- [父子元素邊距合併](#父子元素邊距合併)
+		- [8-2節: 為特定方向設置邊距](#8-2節-為特定方向設置邊距)
+			- [使用方向特定屬性](#使用方向特定屬性)
+			- [使用簡寫屬性指定方向](#使用簡寫屬性指定方向)
 			- [縮寫表](#縮寫表)
 
 <div style="page-break-after: always;"></div>
@@ -2714,41 +2717,63 @@ p{
 
 您可能會預期該段落將位於距離`<h1>` 60px 的位置(因為 div 元素的 margin-top 為 40px,p 的 margin-top 為 20px).但這種情況不會發生,因為邊距折疊在一起形成一個邊距
 
-Section 8.2: Apply Margin on a Given Side
-Direction-Specific Properties
-css allows you to specify a given side to apply margin to. The four properties provided for this purpose are:
-margin-left
-margin-right
-margin-top
-margin-bottom
-The following code would apply a margin of 30 pixels to the left side of the selected div. View Result
+### 8-2節: 為特定方向設置邊距
+
+#### 使用方向特定屬性
+
+CSS允許為邊距指定特定方向.提供了以下4個屬性:
+- margin-left
+- margin-right
+- margin-top
+- margin-bottom
+
+以下範例程式碼會對選中的div的左邊添加30像素的邊距.[查看範例](https://jsfiddle.net/wm0100x9/1/)
+
 html
-<div id="myDiv"></div>
+```html
+<div class="mydiv"></div>
+```
+
 css
-#myDiv {
- margin-left: 30px;
- height: 40px;
- width: 40px;
- background-color: red;
+```css
+.mydiv{
+	margin-left: 30px;
+	height: 40px;
+	width: 40px;
+	background-color: red;
 }
-Parameter Details
-margin-left The direction in which the margin should be applied.
-30px The width of the margin.
-Specifying Direction Using Shorthand Property
-The standard margin property can be expanded to specify differing widths to each side of the selected elements.
-The syntax for doing this is as follows:
-margin: <top> <right> <bottom> <left>;
-The following example applies a zero-width margin to the top of the div, a 10px margin to the right side, a 50px
-margin to the left side, and a 100px margin to the left side. View Result
+```
+
+| 參數 | 詳細信息 |
+| --- | --- |
+| margin-left | 指定邊距應用的方向 |
+| 30px | 邊距寬度 |
+
+#### 使用簡寫屬性指定方向
+
+margin屬性可以擴展指定各個方向的值:
+
+語法為:
+
+**margin: \<top\> \<right\> \<bottom\> \<left\>;**
+
+以下範例應用了div的上邊框為0寬度的邊距,右邊框為10px的邊距,左邊框為50px的邊距,底邊框為100px的邊距.[查看範例](https://jsfiddle.net/1979c947/)
+
 html
-<div id="myDiv"></div>
+```html
+<div class="mydiv"></div>
+```
+
 css
-#myDiv {
- margin: 0 10px 50px 100px;
- height: 40px;
- width: 40px;
- background-color: red;
+```css
+.mydiv{
+	margin: 0 10px 50px 100px;
+	height: 40px;
+	width: 40px;
+	background-color: red;
 }
+```
+
 Section 8.3: Margin property simplification
 p {
  margin:1px; /* 1px margin in all directions */
