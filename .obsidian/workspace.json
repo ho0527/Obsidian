@@ -62,9 +62,19 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "3220de05698cd2ea",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.5.12"
+              }
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -265,10 +275,10 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "c15f2ad7fc0a286a",
+  "active": "3220de05698cd2ea",
   "lastOpenFiles": [
-    "git/commit.md",
     "css/index_tmp.html",
+    "git/commit.md",
     "css/image/index/Screenshot 2024-03-24 111948.png",
     "css/image/index/070104.png",
     "css/image/index/070103.png",

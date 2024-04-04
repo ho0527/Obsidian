@@ -113,15 +113,20 @@
 		- [7-1節: 什麼是箱子模型](#7-1節-什麼是箱子模型)
 		- [7-2節: box-sizing](#7-2節-box-sizing)
 	- [第8章-外距](#第8章-外距)
-		- [8-1節: 邊距合併](#8-1節-邊距合併)
-			- [相鄰垂直邊距示例](#相鄰垂直邊距示例)
-			- [相鄰水平邊距示例](#相鄰水平邊距示例)
-			- [不同大小的重疊邊距](#不同大小的重疊邊距)
-			- [邊距合併陷阱](#邊距合併陷阱)
-			- [父子元素邊距合併](#父子元素邊距合併)
-		- [8-2節: 為特定方向設置邊距](#8-2節-為特定方向設置邊距)
+		- [8-1節: 外距合併](#8-1節-外距合併)
+			- [相鄰垂直外距示例](#相鄰垂直外距示例)
+			- [相鄰水平外距示例](#相鄰水平外距示例)
+			- [不同大小的重疊外距](#不同大小的重疊外距)
+			- [外距合併陷阱](#外距合併陷阱)
+			- [父子元素外距合併](#父子元素外距合併)
+		- [8-2節: 為特定方向設置外距](#8-2節-為特定方向設置外距)
 			- [使用方向特定屬性](#使用方向特定屬性)
 			- [使用簡寫屬性指定方向](#使用簡寫屬性指定方向)
+		- [8-3節: 簡化外距屬性](#8-3節-簡化外距屬性)
+		- [8-4節: 使用外距將元素在頁面上水平居中](#8-4節-使用外距將元素在頁面上水平居中)
+		- [8-5節: 範例](#8-5節-範例)
+		- [8-6節: 負外距](#8-6節-負外距)
+	- [第9章: 內距](#第9章-內距)
 			- [縮寫表](#縮寫表)
 
 <div style="page-break-after: always;"></div>
@@ -2579,17 +2584,17 @@ html{
 
 | 參數 | 詳細信息 |
 | --- | --- |
-| 0 | 設置邊距為無 |
+| 0(/0px) | 設置外距為無 |
 | auto | 使用於中心對齊,通過平均設定各側值 |
 | 單位(如px) | 參數單元部分列出有效單位列表 |
-| inherit | 繼承父元素的邊距值 |
+| inherit | 繼承父元素的外距值 |
 | initial | 恢復為初始值 |
 
-### 8-1節: 邊距合併
+### 8-1節: 外距合併
 
-當兩個垂直方向的邊距相鄰時,它們會合併.當兩個邊距水平相鄰時,不會合併.
+當兩個垂直方向的外距相鄰時,它們會合併.當兩個外距水平相鄰時,不會合併.
 
-#### 相鄰垂直邊距示例
+#### 相鄰垂直外距示例
 
 程式碼:
 
@@ -2604,9 +2609,9 @@ div{
 }
 ```
 
-它們之間間隔為10px,因為垂直邊距會合併.(間隔不會是兩個邊距的總和)
+它們之間間隔為10px,因為垂直外距會合併.(間隔不會是兩個外距的總和)
 
-#### 相鄰水平邊距示例
+#### 相鄰水平外距示例
 
 程式碼:
 
@@ -2621,9 +2626,9 @@ span{
 }
 ```
 
-它們間隔為20px,因為水平邊距不會合併.(間隔是兩個邊距的總和)
+它們間隔為20px,因為水平外距不會合併.(間隔是兩個外距的總和)
 
-#### 不同大小的重疊邊距
+#### 不同大小的重疊外距
 
 ```html
 <div class="top">一些內容</div>
@@ -2640,9 +2645,9 @@ span{
 }
 ```
 
-***元素間隔為15px.邊距會儘量重疊,但以較大邊距為間隔.***
+***元素間隔為15px.外距會儘量重疊,但以較大外距為間隔.***
 
-#### 邊距合併陷阱
+#### 外距合併陷阱
 
 ```html
 <div class="outertop">
@@ -2675,7 +2680,7 @@ span{
 }
 ```
 
-***間隔為25px.由於四個邊距相鄰,會合併,使用最大邊距25px.***
+***間隔為25px.由於四個外距相鄰,會合併,使用最大外距25px.***
 
 但如果添加元素邊框
 
@@ -2685,9 +2690,9 @@ div{
 }
 ```
 
-***間隔為59px!只有.outertop和.outerbottom的邊距相鄰並合併.其他邊距被邊框分隔. (1px+10px+1px+15px+20px+1px+25px+1px)***
+***間隔為59px!只有.outertop和.outerbottom的外距相鄰並合併.其他外距被邊框分隔. (1px+10px+1px+15px+20px+1px+25px+1px)***
 
-#### 父子元素邊距合併
+#### 父子元素外距合併
 
 ```html
 <h1>Title</h1>
@@ -2713,21 +2718,21 @@ p{
 }
 ```
 
-在上面的範例中,僅適用最大邊距.
+在上面的範例中,僅適用最大外距.
 
-您可能會預期該段落將位於距離`<h1>` 60px 的位置(因為 div 元素的 margin-top 為 40px,p 的 margin-top 為 20px).但這種情況不會發生,因為邊距折疊在一起形成一個邊距
+您可能會預期該段落將位於距離`<h1>` 60px 的位置(因為 div 元素的 margin-top 為 40px,p 的 margin-top 為 20px).但這種情況不會發生,因為外距折疊在一起形成一個外距
 
-### 8-2節: 為特定方向設置邊距
+### 8-2節: 為特定方向設置外距
 
 #### 使用方向特定屬性
 
-CSS允許為邊距指定特定方向.提供了以下4個屬性:
+CSS允許為外距指定特定方向.提供了以下4個屬性:
 - margin-left
 - margin-right
 - margin-top
 - margin-bottom
 
-以下範例程式碼會對選中的div的左邊添加30像素的邊距.[查看範例](https://jsfiddle.net/wm0100x9/1/)
+以下範例程式碼會對選中的div的左邊添加30像素的外距.[查看範例](https://jsfiddle.net/wm0100x9/1/)
 
 html
 ```html
@@ -2746,8 +2751,8 @@ css
 
 | 參數 | 詳細信息 |
 | --- | --- |
-| margin-left | 指定邊距應用的方向 |
-| 30px | 邊距寬度 |
+| margin-left | 指定外距應用的方向 |
+| 30px | 外距寬度 |
 
 #### 使用簡寫屬性指定方向
 
@@ -2757,7 +2762,7 @@ margin屬性可以擴展指定各個方向的值:
 
 **margin: \<top\> \<right\> \<bottom\> \<left\>;**
 
-以下範例應用了div的上邊框為0寬度的邊距,右邊框為10px的邊距,左邊框為50px的邊距,底邊框為100px的邊距.[查看範例](https://jsfiddle.net/1979c947/)
+以下範例應用了div的上邊框為0寬度的外距,右邊框為10px的外距,左邊框為50px的外距,底邊框為100px的外距.[查看範例](https://jsfiddle.net/1979c947/)
 
 html
 ```html
@@ -2774,88 +2779,104 @@ css
 }
 ```
 
-Section 8.3: Margin property simplification
-p {
- margin:1px; /* 1px margin in all directions */
+### 8-3節: 簡化外距屬性
 
- /*equals to:*/
-
- margin:1px 1px;
-
- /*equals to:*/
-
- margin:1px 1px 1px;
-
- /*equals to:*/
-
- margin:1px 1px 1px 1px;
-}
-Another exapmle:
+```css
 p{
- margin:10px 15px; /* 10px margin-top & bottom And 15px margin-right & left*/
+	margin: 1px; /* 所有方向1px外距*/
 
- /*equals to:*/
+	/* 等同於 */
+	margin: 1px 1px;
+	margin: 1px 1px 1px;
+	margin: 1px 1px 1px 1px;
+}
+```
 
- margin:10px 15px 10px 15px;
+另一個例子:
 
- /*equals to:*/
+```css
+p{
+	margin: 10px 15px; /* 上下邊框10px 右左邊框15px*/
 
- margin:10px 15px 10px;
- /* margin left will be calculated from the margin right value (=15px) */
+	/* 等同於 */
+	margin: 10px 15px 10px 15px;
+	margin: 10px 15px 10px; /* 左外距將根據右外距值計算(=15px)*/
 }
-Section 8.4: Horizontally center elements on a page using
-margin
-As long as the element is a block, and it has an explicitly set width value, margins can be used to center block
-elements on a page horizontally.
-We add a width value that is lower than the width of the window and the auto property of margin then distributes
-the remaining space to the left and the right:
-#myDiv {
-width:80%;
-margin:0 auto;
+```
+
+### 8-4節: 使用外距將元素在頁面上水平居中
+
+只要元素類型是區塊元素,並設定了寬度值,外距就可以用於在頁面上水平居中的區塊元素.
+
+我們設定一個低於瀏覽器窗口寬度的值作為元素的寬度,外距的auto屬性就會將剩餘的空間均分到左邊和右邊:
+
+```css
+#mydiv{
+	width: 80%;
+	margin: 0px auto; /* 也可以寫成 margin: 0 auto; */
 }
-In the example above we use the shorthand margin declaration to first set 0 to the top and bottom margin values
-(although this could be any value) and then we use auto to let the browser allocate the space automatically to the
-left and right margin values.
-In the example above, the #myDiv element is set to 80% width which leaves use 20% leftover. The browser
-distributes this value to the remaining sides so:
-(100% - 80%) / 2 = 10%
-Section 8.5: Example 1:
-It is obvious to assume that the percentage value of margin to margin-left and margin-right would be relative to
-its parent element.
-.parent {
- width : 500px;
- height: 300px;
+```
+
+在上面的例子中,我們使用外距屬性的簡寫形式先將上下外距值設為0(雖然這個值可以是任何數值),然後使用auto讓瀏覽器自動分配到左右邊距值.
+
+在上例中,#mydiv元素寬度設定為80%,剩下20%未用.瀏覽器會將此值均分到兩側,即: (100% - 80%) / 2 = 10%
+
+所以元素就會在頁面中水平居中.
+
+### 8-5節: 範例
+
+顯然 margin-left 和 margin-right 的百分比值是相對於它的父元素.
+
+```css
+.parent{
+	width : 500px;
+	height: 300px;
 }
-.child {
- width : 100px;
- height: 100px;
- margin-left: 10%; /* (parentWidth * 10/100) => 50px */
+.child{
+	width : 100px;
+	height: 100px;
+	margin-left: 10%; /* (parentWidth * 10/100) => 50px */
 }
-But that is not the case, when comes to margin-top and margin-bottom. Both these properties, in percentages,
-aren't relative to the height of the parent container but to the width of the parent container.
-So,
-.parent {
- width : 500px;
- height: 300px;
+```
+
+但當涉及到 margin-top 和 margin-bottom 時,情況並非如此.這兩個屬性(以百分比表示)與父容器的高度無關,而是與父容器的寬度相關.
+
+```css
+.parent{
+	width : 500px;
+	height: 300px;
 }
-.child {
- width : 100px;
- height: 100px;
- margin-left: 10%; /* (parentWidth * 10/100) => 50px */
- margin-top: 20%; /* (parentWidth * 20/100) => 100px */
+
+.child{
+	width : 100px;
+	height: 100px;
+	margin-left: 10%; /* (parentWidth * 10/100) => 50px */
+	margin-top: 20%; /* (parentWidth * 20/100) => 100px */
 }
-Section 8.6: Negative margins
-Margin is one of a few css properties that can be set to negative values. This property can be used to overlap
-elements without absolute positioning.
-div{
- display: inline;
-}
-#over{
- margin-left: -20px;
-}
+```
+
+### 8-6節: 負外距
+
+margin是少數可以設定為負值的 CSS 屬性之一.此屬性可用於重疊元素從而不用絕對定位.
+
+```html
 <div>Base div</div>
 <div id="over">Overlapping div</div>
-Chapter 9: Padding
+```
+
+```css
+div{
+ 	display: inline;
+}
+#over{
+ 	margin-left: -20px;
+}
+```
+
+<div style="page-break-after: always;"></div>
+
+## 第9章: 內距
+
 Section 9.1: Padding Shorthand
 The padding property sets the padding space on all sides of an element. The padding area is the space between the
 content of the element and its border. Negative values are not allowed.
