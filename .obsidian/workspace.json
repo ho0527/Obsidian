@@ -62,19 +62,9 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "3220de05698cd2ea",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.5.12"
-              }
-            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -275,7 +265,7 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "3220de05698cd2ea",
+  "active": "c15f2ad7fc0a286a",
   "lastOpenFiles": [
     "css/index_tmp.html",
     "git/commit.md",

@@ -127,6 +127,9 @@
 		- [8-5節: 範例](#8-5節-範例)
 		- [8-6節: 負外距](#8-6節-負外距)
 	- [第9章: 內距](#第9章-內距)
+		- [9-1節: 內距簡寫方式](#9-1節-內距簡寫方式)
+		- [9-2節: 設定特定一邊的內距](#9-2節-設定特定一邊的內距)
+	- [第10章: 邊框](#第10章-邊框)
 			- [縮寫表](#縮寫表)
 
 <div style="page-break-after: always;"></div>
@@ -2877,55 +2880,78 @@ div{
 
 ## 第9章: 內距
 
-Section 9.1: Padding Shorthand
-The padding property sets the padding space on all sides of an element. The padding area is the space between the
-content of the element and its border. Negative values are not allowed.
-To save adding padding to each side individually (using padding-top, padding-left etc) can you write it as a
-shorthand, as below:
-Four values:
-<style>
- .myDiv {
- padding: 25px 50px 75px 100px; /* top right bottom left; */
- }
-</style>
+### 9-1節: 內距簡寫方式
+
+padding屬性可以設定元素中內容和邊框之間的內距間距.不允許使用負值.
+
+為了節省每個邊設定內距(使用padding-top、padding-left等),可以使用簡寫方式寫作:
+
+四個值:
+```html
 <div class="myDiv"></div>
-Three values:
-<style>
- .myDiv {
- padding: 25px 50px 75px; /* top left/right bottom */
- }
-</style>
-<div class="myDiv"></div>
-Two values:
-<style>
- .myDiv {
- padding: 25px 50px; /* top/bottom left/right */
- }
-</style>
-<div class="myDiv"></div>
-One value:
-<style>
- .myDiv {
- padding: 25px; /* top/right/bottom/left */
- }
-</style>
-<div class="myDiv"></div>
-Section 9.2: Padding on a given side
-The padding property sets the padding space on all sides of an element. The padding area is the space between the
-content of the element and its border. Negative values are not allowed.
-You can specify a side individually:
-padding-top
-padding-right
-padding-bottom
-padding-left
-The following code would add a padding of 5px to the top of the div:
-<style>
-.myClass {
- padding-top: 5px;
+```
+
+```css
+.myDiv {
+	padding: 25px 50px 75px 100px; /* 上右下左 */
 }
-</style>
-<div class="myClass"></div>
-Chapter 10: Border
+```
+
+三個值:
+
+```html
+<div class="mydiv"></div>
+```
+
+```css
+.mydiv{
+	padding: 25px 50px 75px; /* 上 左/右 下 */
+}
+```
+
+兩個值:
+```html
+<div class="mydiv"></div>
+```
+```css
+.mydiv{
+	padding: 25px 50px; /* 上/下 左/右*/
+}
+```
+
+一個值:
+```html
+<div class="mydiv"></div>
+```
+```css
+.mydiv{
+	padding: 25px; /* 上/右/下/左 */
+}
+```
+
+### 9-2節: 設定特定一邊的內距
+padding屬性可以設定元素中內容和邊框之間的內距間距.不允許使用負值.
+
+可以個別指定某一邊:
+- padding-top
+- padding-right
+- padding-bottom
+- padding-left
+
+以下代碼會為div的上邊增加5px的內距:
+
+```html
+<div class="myclass"></div>
+```
+```css
+.myclass{
+	padding-top: 5px;
+}
+```
+
+<div style="page-break-after: always;"></div>
+
+## 第10章: 邊框
 Section 10.1: border-radius
 The border-radius property allows you to change the shape of the basic box model.
 Every corner of an element can have up to two values, for the vertical and horizontal radius of that corner (for a
