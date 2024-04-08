@@ -3000,6 +3000,7 @@ Browser specific border-radius example:
  border-bottom-right-radius: 4px;
  border-bottom-left-radius: 0;
  border-top-left-radius: 0;
+
 Section 10.2: border-style
 The border-style property sets the style of an element's border. This property can have from one to four values
 (for every side of the element one value.)
