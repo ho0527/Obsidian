@@ -130,6 +130,7 @@
 		- [9-1節: 內距簡寫方式](#9-1節-內距簡寫方式)
 		- [9-2節: 設定特定一邊的內距](#9-2節-設定特定一邊的內距)
 	- [第10章: 邊框](#第10章-邊框)
+		- [10-1節: border-radius](#10-1節-border-radius)
 			- [縮寫表](#縮寫表)
 
 <div style="page-break-after: always;"></div>
@@ -2952,54 +2953,72 @@ padding屬性可以設定元素中內容和邊框之間的內距間距.不允許
 <div style="page-break-after: always;"></div>
 
 ## 第10章: 邊框
-Section 10.1: border-radius
-The border-radius property allows you to change the shape of the basic box model.
-Every corner of an element can have up to two values, for the vertical and horizontal radius of that corner (for a
-maximum of 8 values).
-The first set of values defines the horizontal radius. The optional second set of values, preceded by a ‘/’ , defines the
-vertical radius. If only one set of values is supplied, it is used for both the vertical and horizontal radius.
+
+### 10-1節: border-radius
+
+border-radius屬性允許你改變基本盒模型的形狀.
+
+每個元素的每個角都可以有最多兩個值,分別定義該角的垂直和水平半徑(最多8個值).
+
+第一組值定義水平半徑.第二組值(通過”/”分隔)定義垂直半徑.如果只提供一組值,它將用於垂直和水平半徑.
+
 border-radius: 10px 5% / 20px 25em 30px 35em;
-The 10px is the horizontal radius of the top-left-and-bottom-right. And the 5% is the horizontal radius of the topright-and-bottom-left. The other four values after '/' are the vertical radii for top-left, top-right, bottom-right and
-bottom-left.
-As with many css properties, shorthands can be used for any or all possible values. You can therefore specify
-anything from one to eight values. The following shorthand allows you to set the horizontal and vertical radius of
-every corner to the same value:
-html:
-<div class='box'></div>
-css:
-.box {
- width: 250px;
- height: 250px;
- background-color: black;
- border-radius: 10px;
+
+其中,10px是左上和右下的水平半徑.5%是右上和左下的水平半徑.後面跟於"/"的四個值分別是左上、右上、右下和左下的垂直半徑.
+
+與許多CSS屬性一樣,邊框半徑也可以使用簡寫形式指定所有可能的值.所以你可以指定從1到8個值.以下簡寫可以將每個角的水平和垂直半徑設定為相同的值:
+
+html
+```html
+<div class="box"></div>
+```
+
+css
+```css
+.box{
+	width: 250px;
+	height: 250px;
+	background-color: black;
+	border-radius: 10px;
 }
-Border-radius is most commonly used to convert box elements into circles. By setting the border-radius to half of
-the length of a square element, a circular element is created:
-.circle {
- width: 200px;
- height: 200px;
- border-radius: 100px;
+```
+
+border-radius最常用於將方塊元素變成圓形.將邊框半徑設為正方形元素長度的一半,可以創建圓形元素:
+
+```css
+.circle{
+	width: 200px;
+	height: 200px;
+	border-radius: 100px;
 }
-Because border-radius accepts percentages, it is common to use 50% to avoid manually calculating the borderradius value:
-.circle {
- width: 150px;
- height: 150px;
- border-radius: 50%;
+```
+
+因為border-radius接受百分比,所以常用50%為半徑值,避免手動計算:
+
+```css
+.circle{
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
 }
-If the width and height properties are not equal, the resulting shape will be an oval rather than a circle.
-Browser specific border-radius example:
- -webkit-border-top-right-radius: 4px;
- -webkit-border-bottom-right-radius: 4px;
- -webkit-border-bottom-left-radius: 0;
- -webkit-border-top-left-radius: 0;
- -moz-border-radius-topright: 4px;
- -moz-border-radius-bottomright: 4px;
- -moz-border-radius-bottomleft: 0;
- -moz-border-radius-topleft: 0;
- border-top-right-radius: 4px;
- border-bottom-right-radius: 4px;
- border-bottom-left-radius: 0;
- border-top-left-radius: 0;
+```
+
+如果寬高不等,形狀將是橢圓形而不是圓形.
+
+不同瀏覽器的邊框半徑示例:
+
+- -webkit-border-top-right-radius: 4px;
+- -webkit-border-bottom-right-radius: 4px;
+- -webkit-border-bottom-left-radius: 0px;
+- -webkit-border-top-left-radius: 0px;
+- -moz-border-radius-topright: 4px;
+- -moz-border-radius-bottomright: 4px;
+- -moz-border-radius-bottomleft: 0px;
+- -moz-border-radius-topleft: 0px;
+- border-top-right-radius: 4px;
+- border-bottom-right-radius: 4px;
+- border-bottom-left-radius: 0px;
+- border-top-left-radius: 0px;
 
 Section 10.2: border-style
 The border-style property sets the style of an element's border. This property can have from one to four values
