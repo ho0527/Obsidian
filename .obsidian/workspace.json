@@ -266,6 +266,9 @@
   },
   "active": "41b5fbacc8954a0c",
   "lastOpenFiles": [
+    "server/ssl.md",
+    "server/openansever.md",
+    "server",
     "python/plugin/django.md",
     "git/commit.md",
     "css/index.md",
@@ -303,14 +306,12 @@
     "temp/ca/app.md",
     "temp/ca/prd.md",
     "temp/ca",
-    "temp",
     "todo.md",
     "TOU.md",
     "python/plugin/pymysql.md",
     "html/body.md",
     "js/ajax.md",
     "php/functionlista-l.md",
-    "website/plugin/seltmake.md",
     "Untitled.canvas"
   ]
 }
