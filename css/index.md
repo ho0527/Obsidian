@@ -131,6 +131,7 @@
 		- [9-2節: 設定特定一邊的內距](#9-2節-設定特定一邊的內距)
 	- [第10章: 邊框](#第10章-邊框)
 		- [10-1節: border-radius](#10-1節-border-radius)
+		- [10-2: border-style](#10-2-border-style)
 			- [縮寫表](#縮寫表)
 
 <div style="page-break-after: always;"></div>
@@ -3020,16 +3021,16 @@ border-radius最常用於將方塊元素變成圓形.將邊框半徑設為正方
 - border-bottom-left-radius: 0px;
 - border-top-left-radius: 0px;
 
-Section 10.2: border-style
-The border-style property sets the style of an element's border. This property can have from one to four values
-(for every side of the element one value.)
-Examples:
-border-style: dotted;
-border-style: dotted solid double dashed;
-border-style can also have the values none and hidden. They have the same effect, except hidden works for
-border conflict resolution for <table> elements. In a <table> with multiple borders, none has the lowest priority
-(meaning in a conflict, the border would show), and hidden has the highest priority (meaning in a conflict, the
-border would not show).
+### 10-2: border-style
+
+border-style屬性設定元素邊框的樣式.這個屬性可以有1到4個值(每個元素一個邊一個值).
+
+例子:
+- border-style: dotted;
+- border-style: dotted solid double dashed;
+
+border-style也可以是none和hidden.它們效果相同,但hidden用於`<table>`元素的邊框衝突解析.在有多個邊框的`<table>`中,none優先級最低(即衝突時邊框會顯示),hidden優先級最高(即衝突時邊框不會顯示).
+
 Section 10.3: Multiple Borders
 Using outline:
 .div1{
