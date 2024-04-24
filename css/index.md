@@ -132,6 +132,15 @@
 	- [第10章: 邊框](#第10章-邊框)
 		- [10-1節: border-radius](#10-1節-border-radius)
 		- [10-2: border-style](#10-2-border-style)
+		- [10-3: 多重邊框](#10-3-多重邊框)
+			- [outline](#outline)
+			- [box-shadow](#box-shadow)
+			- [偽元素](#偽元素)
+		- [10-4: 邊框簡寫](#10-4-邊框簡寫)
+		- [10-5: border-collapse](#10-5-border-collapse)
+		- [10-6: border-image](#10-6-border-image)
+		- [10-7: 使用border-image創建多彩邊框](#10-7-使用border-image創建多彩邊框)
+		- [10-8: border-上下左右](#10-8-border-上下左右)
 			- [縮寫表](#縮寫表)
 
 <div style="page-break-after: always;"></div>
@@ -3031,109 +3040,150 @@ border-style屬性設定元素邊框的樣式.這個屬性可以有1到4個值(�
 
 border-style也可以是none和hidden.它們效果相同,但hidden用於`<table>`元素的邊框衝突解析.在有多個邊框的`<table>`中,none優先級最低(即衝突時邊框會顯示),hidden優先級最高(即衝突時邊框不會顯示).
 
-Section 10.3: Multiple Borders
-Using outline:
+### 10-3: 多重邊框
+
+#### outline
+
+```css
 .div1{
- border: 3px solid black;
- outline: 6px solid blue;
- width: 100px;
- height: 100px;
- margin: 20px;
+	border: 3px solid black;
+	outline: 6px solid blue;
+	width: 100px;
+	height: 100px;
+	margin: 20px;
 }
-Using box-shadow:
+```
+
+#### box-shadow
+
+```css
 .div2{
- border: 5px solid green;
- box-shadow: 0px 0px 0px 4px #000;
- width: 100px;
- height: 100px;
- margin: 20px;
+	border: 5px solid green;
+	box-shadow: 0px 0px 0px 4px #000;
+	width: 100px;
+	height: 100px;
+	margin: 20px;
 }
-Using a pseudo element:
-.div3 {
- position: relative;
- border: 5px solid #000;
- width: 100px;
- height: 100px;
- margin: 20px;
+```
+
+#### 偽元素
+
+```css
+.div3{
+	position: relative;
+	border: 5px solid #000;
+	width: 100px;
+	height: 100px;
+	margin: 20px;
 }
-.div3:before {
- content: " ";
- position: absolute;
- border: 5px solid blue;
- z-index: -1;
- top: 5px;
- left: 5px;
- right: 5px;
- bottom: 5px;
+
+.div3:before{
+	content: " ";
+	position: absolute;
+	border: 5px solid blue;
+	z-index: -1;
+	top: 5px;
+	left: 5px;
+	right: 5px;
+	bottom: 5px;
 }
-http://jsfiddle.net/MadalinaTn/bvqpcohm/2/
-Section 10.4: border (shorthands)
-In most cases you want to define several border properties (border-width, border-style and border-color) for all
-sides of an element.
-Instead of writing:
-border-width: 1px;
-border-style: solid;
-border-color: #000;
-You can simply write:
-border: 1px solid #000;
-These shorthands are also available for every side of an element: border-top, border-left, border-right and
-border-bottom. So you can do:
-border-top: 2px double #aaaaaa;
-Section 10.5: border-collapse
-The border-collapse property applies only to tables (and elements displayed as display: table or inlinetable) and sets whether the table borders are collapsed into a single border or detached as in standard html.
-table {
- border-collapse: separate; /* default */
- border-spacing: 2px; /* Only works if border-collapse is separate */
+```
+
+[http://jsfiddle.net/MadalinaTn/bvqpcohm/2/](http://jsfiddle.net/MadalinaTn/bvqpcohm/2/)
+
+### 10-4: 邊框簡寫
+
+在大多數情況下,您希望為元素的所有邊定義多個邊框屬性(border-width、border-style和border-color).
+
+除了這樣寫
+`border-width: 1px;`
+`border-color: black;`
+`border-style: solid;`
+
+您可以直接寫
+`border: 1px black solid;`
+
+同時也可以為元素每個邊提供簡寫:
+- border-top、
+- border-left、
+- border-right
+- border-bottom
+所以可以:
+`border-top: 2px white double;`
+
+### 10-5: border-collapse
+
+border-collapse屬性只適用於表格(或使用display: table或inline-table顯示的元素),用於設定表格邊框是否合體成單一邊框,或分離如標準HTML.
+
+```css
+table{
+	border-collapse: separate; /* 預設 */
+	border-spacing: 2px; /* 僅在border-collapse為separate時有效*/
 }
-Also see Tables - border-collapse documentation entry
-Section 10.6: border-image
-With the border-image property you have the possibility to set an image to be used instead of normal border
-styles.
-A border-image essentially consist of a
-border-image-source: The path to the image to be used
-border-image-slice: Specifies the offset that is used to divide the image into nine regions (four corners,
-four edges and a middle)
-border-image-repeat: Specifies how the images for the sides and the middle of the border image are scaled
-Consider the following example wheras border.png is a image of 90x90 pixels:
+```
+
+也可以參考文件中的[表格-border-collapse]()章節.
+
+### 10-6: border-image
+
+通過border-image屬性,可以使用圖片代替正常的邊框樣式.
+
+border-image本質上由以下部分組成:
+- border-image-source: 圖片路徑
+- border-image-slice: 指定分割圖片成九個區域(四個角,四個邊,一個中間)的偏移量
+- border-image-repeat: 指定邊框圖片兩邊和中間部分如何縮放
+
+考慮以下示例,其中border.png是一張90x90像素的圖片:
+
 border-image: url("border.png") 30 stretch;
-The image will be split into nine regions with 30x30 pixels. The edges will be used as the corners of the border while
-the side will be used in between. If the element is higher / wider than 30px this part of the image will be stretched.
-The middle part of the image defaults to be transparent.
-Section 10.7: Creating a multi-colored border using borderimage
-css
-.bordered {
- border-image: linear-gradient(to right, red 20%, green 20%, green 40%, blue 40%, blue 60%, maroon
-60%, maroon 80%, chocolate 80%); /* gradient with required colors */
- border-image-slice: 1;
-}
+
+圖片將被分割成30x30像素的九個區域.邊用作邊框角落,邊之間使用兩邊部分.如果元素高/寬大於30px,此部分將拉伸.
+中間部分默認為透明.
+
+### 10-7: 使用border-image創建多彩邊框
+
 html
+```html
 <div class='bordered'>Border on all sides</div>
-The above example would produce a border that comprises of 5 different colors. The colors are defined through a
-linear-gradient (you can find more information about gradients in the docs). You can find more information
-about border-image-slice property in the border-image example in same page.
-(Note: Additional properties were added to the element for presentational purpose.)
-You'd have noticed that the left border has only a single color (the start color of the gradient) while the right border
-also has only a single color (the gradient's end color). This is because of the way that border image property works.
-It is as though the gradient is applied to the entire box and then the colors are masked from the padding and
-content areas, thus making it look as though only the border has the gradient.
-Which border(s) have a single color is dependant on the gradient definition. If the gradient is a to right gradient,
-the left border would be the start color of the gradient and right border would be the end color. If it was a to
-bottom gradient the top border would be the gradient's start color and bottom border would be end color. Below is
-the output of a to bottom 5 colored gradient.
-If the border is required only on specific sides of the element then the border-width property can be used just like
-with any other normal border. For example, adding the below code would produce a border only on the top of the
-element.
-border-width: 5px 0px 0px 0px;
-Note that, any element that has border-image property won't respect the border-radius (that is the border won't
-curve). This is based on the below statement in the spec:
-A box's backgrounds, but not its border-image, are clipped to the appropriate curve (as determined by
-‘background-clip’).
-Section 10.8: border-[left|right|top|bottom]
-The border-[left|right|top|bottom] property is used to add a border to a specific side of an element.
-For example if you wanted to add a border to the left side of an element, you could do:
-#element {
- border-left: 1px solid black;
+```
+
+css
+```css
+.bordered{
+	border-image: linear-gradient(to right, red 20%, green 20%, green 40%, blue 40%, blue 60%, maroon 60%, maroon 80%, chocolate 80%); /* 使用所需顏色的梯度 */
+	border-image-slice: 1;
 }
+```
+
+上例會產生一個包含5種顏色的邊框.顏色通過線性梯度定義(梯度詳情請查閱文檔).有關border-image-slice屬性的更多資訊,請查閱同一頁面的border-image示例.
+
+(注意:為了表現添加了其他屬性.)
+
+您會發現,左邊框只有單一顏色(梯度起始顏色),右邊框也只有單一顏色(梯度結束顏色).這是因為border image屬性的工作方式.它猶如梯度應用於整個框,然後從填充和內容區域中屏蔽顏色,使邊框看起來應用了梯度. 
+
+哪個邊框使用單一顏色取決於梯度定義.如果梯度為右向,左邊框為梯度起始顏色,右邊框為結束顏色.如果為下向,頂邊框為起始顏色,底邊框為結束顏色.下面是5色下向梯度的輸出.
+
+如果只需要元素的特定側添加邊框,可以使用border-width屬性,就像使用常規邊框一樣.例如,添加以下代碼可以為元素生成頂部邊框:
+
+`border-width: 5px 0px 0px 0px;`
+
+需要注意的是,含有border-image屬性的任何元素都不會尊重border-radius(即邊框不會曲線).這是根據規範下面的聲明:
+
+> 一個盒子的背景(backgrounds),但不是它的邊框圖像(border-image),會被剪裁(clipped)成適當的曲線
+> determined by "background-clip".
+
+### 10-8: border-上下左右
+
+border-\[left|right|top|bottom]屬性用於為元素的指定邊添加邊框.
+
+例如,如果要為元素添加左邊框,可以使用:
+
+```css
+.element{
+	border-left: 1px solid black;
+}
+```
+
 Chapter 11: Outlines
 Parameter Details
 dotted dotted outline
