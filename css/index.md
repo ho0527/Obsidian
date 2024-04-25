@@ -141,6 +141,10 @@
 		- [10-6: border-image](#10-6-border-image)
 		- [10-7: 使用border-image創建多彩邊框](#10-7-使用border-image創建多彩邊框)
 		- [10-8: border-上下左右](#10-8-border-上下左右)
+	- [第11章: 外框線](#第11章-外框線)
+		- [11-1: 總覽](#11-1-總覽)
+	- [11-2: outline-style](#11-2-outline-style)
+	- [第12章: 溢位](#第12章-溢位)
 			- [縮寫表](#縮寫表)
 
 <div style="page-break-after: always;"></div>
@@ -3184,62 +3188,39 @@ border-\[left|right|top|bottom]屬性用於為元素的指定邊添加邊框.
 }
 ```
 
-Chapter 11: Outlines
-Parameter Details
-dotted dotted outline
-dashed dashed outline
-solid solid outline
-double double outline
-groove 3D grooved outline, depends on the outline-color value
-ridge 3D ridged outline, depends on the outline-color value
-inset 3D inset outline, depends on the outline-color value
-outset 3D outset outline, depends on the outline-color value
-none no outline
-hidden hidden outline
-Section 11.1: Overview
-Outline is a line that goes around the element, outside of the border. In contrast to border, outlines do not take any
-space in the box model. So adding an outline to an element does not affect the position of the element or other
-elements.
-In addition, outlines can be non-rectangular in some browsers. This can happen if outline is applied on a span
-element that has text with different font-size properties inside it. Unlike borders, outlines cannot have rounded
-corners.
-The essential parts of outline are outline-color, outline-style and outline-width.
-The definition of an outline is equivalent to the definition of a border:
-An outline is a line around an element. It is displayed around the margin of the element. However, it is
-different from the border property.
-outline: 1px solid black;
-Section 11.2: outline-style
-The outline-style property is used to set the style of the outline of an element.
-p {
- border: 1px solid black;
- outline-color:blue;
- line-height:30px;
-}
-.p1{
- outline-style: dotted;
-}
-.p2{
- outline-style: dashed;
-}
-.p3{
- outline-style: solid;
-}
-.p4{
- outline-style: double;
-}
-.p5{
- outline-style: groove;
-}
-.p6{
- outline-style: ridge;
-}
-.p7{
- outline-style: inset;
-}
-.p8{
- outline-style: outset;
-}
-html
+## 第11章: 外框線
+
+| 參數 | 描述 |
+| --- | --- |
+| dotted | 虛線外框線 |
+| dashed | 虛線外框線 |
+| solid | 實線外框線 |
+| double | 雙線外框線 |
+| groove | 取決於外框線顏色值的3D凹槽外框線 |
+| ridge | 取決於外框線顏色值的3D隆起外框線 |
+| inset | 取決於外框線顏色值的3D內縮外框線 |
+| outset | 取決於外框線顏色值的3D外突外框線 |
+| none | 無外框線 |
+| hidden | 隱藏外框線 |
+
+### 11-1: 總覽
+外框線(outline)是元素周圍的一條線,位於邊框外部.與邊框不同,外框線不佔用任何箱子模型空間.因此對元素添加外框線不會影響元素或其他元素的位置.
+
+此外,在某些瀏覽器中,外框線可能是非矩形的.這可能發生在外框線應用於包含不同字號文字的span元素上.與邊框不同,外框線不能有圓角.
+
+外框線的基本部分是外框線顏色、外框線樣式和外框線寬度.
+
+外框線的定義等同於邊框的定義:
+
+> 外框線是元素周圍的一條線.它呈現在元素的邊緣外觀.但與邊框屬性不同.
+
+`outline: 1px solid black;`
+
+## 11-2: outline-style
+
+outline-style屬性用於設定元素輪廓的樣式。
+
+```html
 <p class="p1">A dotted outline</p>
 <p class="p2">A dashed outline</p>
 <p class="p3">A solid outline</p>
@@ -3248,13 +3229,50 @@ html
 <p class="p6">A ridge outline</p>
 <p class="p7">An inset outline</p>
 <p class="p8">An outset outline</p>
-Chapter 12: Overflow
+```
+
+```css
+p{
+	border: 1px solid black;
+	outline-color: blue;
+	line-height: 30px;
+}
+.p1{
+ 	outline-style: dotted;
+}
+.p2{
+ 	outline-style: dashed;
+}
+.p3{
+ 	outline-style: solid;
+}
+.p4{
+ 	outline-style: double;
+}
+.p5{
+ 	outline-style: groove;
+}
+.p6{
+ 	outline-style: ridge;
+}
+.p7{
+ 	outline-style: inset;
+}
+.p8{
+ 	outline-style: outset;
+}
+```
+
+## 第12章: 溢位
+
+
 Overflow Value Details
 visible Shows all overflowing content outside the element
 scroll Hides the overflowing content and adds a scroll bar
 hidden Hides the overflowing content, both scroll bars disappear and the page becomes fixed
 auto Same as scroll if content overflows, but doesn't add scroll bar if content fits
 inherit Inherit's the parent element's value for this property
+
 Section 12.1: overflow-wrap
 overflow-wrap tells a browser that it can break a line of text inside a targeted element onto multiple lines in an
 otherwise unbreakable place. Helpful in preventing an long string of text causing layout problems due to
@@ -3357,6 +3375,7 @@ html
 </div>
 Result
 This example shows how paragraphs within a div with the overflow property set will interact with a floated image.
+
 Chapter 13: Media Queries
 Parameter Details
 mediatype (Optional) This is the type of media. Could be anything in the range of all to screen.
