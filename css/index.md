@@ -144,7 +144,7 @@
 	- [第11章: 外框線](#第11章-外框線)
 		- [11-1: 總覽](#11-1-總覽)
 	- [11-2: outline-style](#11-2-outline-style)
-	- [第12章: 溢位](#第12章-溢位)
+	- [第12章: 容器溢位](#第12章-容器溢位)
 			- [縮寫表](#縮寫表)
 
 <div style="page-break-after: always;"></div>
@@ -3263,8 +3263,7 @@ p{
 }
 ```
 
-## 第12章: 溢位
-
+## 第12章: 容器溢位
 
 Overflow Value Details
 visible Shows all overflowing content outside the element
