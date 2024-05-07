@@ -3188,6 +3188,8 @@ border-\[left|right|top|bottom]屬性用於為元素的指定邊添加邊框.
 }
 ```
 
+<div style="page-break-after: always;"></div>
+
 ## 第11章: 外框線
 
 | 參數 | 描述 |
@@ -3262,6 +3264,8 @@ p{
  	outline-style: outset;
 }
 ```
+
+<div style="page-break-after: always;"></div>
 
 ## 第12章: 容器溢位
 
