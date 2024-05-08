@@ -267,6 +267,8 @@
   },
   "active": "c15f2ad7fc0a286a",
   "lastOpenFiles": [
+    "test_tmp.html",
+    "test.pdf",
     "test.md",
     "css/index.md",
     "python/plugin/django.md",
@@ -308,11 +310,9 @@
     "temp/ca/t1.md",
     "temp/ca/app.md",
     "temp/ca/prd.md",
-    "temp/ca",
     "todo.md",
     "TOU.md",
     "python/plugin/pymysql.md",
-    "html/body.md",
     "Untitled.canvas"
   ]
 }
