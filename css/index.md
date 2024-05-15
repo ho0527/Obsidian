@@ -145,6 +145,8 @@
 		- [11-1: 總覽](#11-1-總覽)
 	- [11-2: outline-style](#11-2-outline-style)
 	- [第12章: 容器溢位](#第12章-容器溢位)
+		- [12-1節: overflow-warp](#12-1節-overflow-warp)
+		- [12-2節: overflow-x及overflow-y](#12-2節-overflow-x及overflow-y)
 			- [縮寫表](#縮寫表)
 
 <div style="page-break-after: always;"></div>
@@ -3220,7 +3222,7 @@ border-\[left|right|top|bottom]屬性用於為元素的指定邊添加邊框.
 
 ## 11-2: outline-style
 
-outline-style屬性用於設定元素輪廓的樣式。
+outline-style屬性用於設定元素輪廓的樣式.
 
 ```html
 <p class="p1">A dotted outline</p>
@@ -3269,67 +3271,83 @@ p{
 
 ## 第12章: 容器溢位
 
-Overflow Value Details
-visible Shows all overflowing content outside the element
-scroll Hides the overflowing content and adds a scroll bar
-hidden Hides the overflowing content, both scroll bars disappear and the page becomes fixed
-auto Same as scroll if content overflows, but doesn't add scroll bar if content fits
-inherit Inherit's the parent element's value for this property
+溢位(overflow)
 
-Section 12.1: overflow-wrap
-overflow-wrap tells a browser that it can break a line of text inside a targeted element onto multiple lines in an
-otherwise unbreakable place. Helpful in preventing an long string of text causing layout problems due to
-overflowing it's container.
-css
+| 值 | 細節 |
+| --- | --- |
+| visible | 顯示元素外所有溢出的內容 |
+| scroll | 隱藏溢出的內容並添加滾動條 |
+| hidden | 隱藏溢出的內容,滾動條消失且頁面固定 |
+| auto | 如果內容溢出,行為與 scroll 相同,但如果內容適合,則不添加滾動條 |
+| inherit | 繼承父元素的該屬性值 |
+
+### 12-1節: overflow-warp
+
+溢位換行(overflow-warp)告訴瀏覽器,它可以在目標元素內部的一個通常不可分割的地方,把一行文本換行到多行.這有助於防止因容器溢出而造成的版面問題.
+
+css:
+```css
 div {
- width:100px;
- outline: 1px dashed #bbb;
+	width:100px;
+	outline: 1px dashed #bbb;
 }
+
 #div1 {
- overflow-wrap:normal;
+	overflow-wrap:normal;
 }
+
 #div2 {
- overflow-wrap:break-word;
+	overflow-wrap:break-word;
 }
-html
+```
+
+html:
+```html
 <div id="div1">
- <strong>#div1</strong>: Small words are displayed normally, but a long word like <span
-style="red;">supercalifragilisticexpialidocious</span> is too long so it will overflow past the
-edge of the line-break
+	<strong>#div1</strong>: 小詞顯示正常,但像<span style="red;">supercalifragilisticexpialidocious</span>這樣的長詞太長,會溢出行的邊緣.
 </div>
 <div id="div2">
- <strong>#div2</strong>: Small words are displayed normally, but a long word like <span
-style="red;">supercalifragilisticexpialidocious</span> will be split at the line break and continue
-on the next line.
+	<strong>#div2</strong>: 小詞顯示正常,但像<span style="red;">supercalifragilisticexpialidocious</span>這樣的長詞會在換行處分隔,並在下一行繼續.
 </div>
-overflow-wrap – Value Details
-normal Lets a word overflow if it is longer than the line
-break-word Will split a word into multiple lines, if necessary
-inherit Inherits the parent element's value for this property
-Section 12.2: overflow-x and overflow-y
-These two properties work in a similar fashion as the overflow property and accept the same values. The
-overflow-x parameter works only on the x or left-to-right axis. The overflow-y works on the y or top-to-bottom
-axis.
-html
+```
+
+![image120101](https://i.stack.imgur.com/VRNhr.png)
+
+overflow-warp:
+| 值 | 詳情 |
+| --- | --- |
+| normal | 如果詞太長,則讓它溢出 |
+| break-word | 必要時會把詞分成多行 |
+| inherit | 繼承父元素的該屬性值 |
+
+### 12-2節: overflow-x及overflow-y
+
+這兩個屬性和overflow非常相似並且有相同的屬性值.overflow-x只作用于x軸或左右軸,而overflow-y作用于y軸或上下軸.
+
+```css
+div{
+	width: 200px;
+	height: 200px;
+}
+#div-x{
+ 	overflow-x: hidden;
+}
+#div-y{
+ 	overflow-y: hidden;
+}
+```
+
+```html
 <div id="div-x">
- If this div is too small to display its contents,
- the content to the left and right will be clipped.
+	If this div is too small to display its contents,
+	the content to the left and right will be clipped.
 </div>
 <div id="div-y">
- If this div is too small to display its contents,
- the content to the top and bottom will be clipped.
+	If this div is too small to display its contents,
+	the content to the top and bottom will be clipped.
 </div>
-css
-div {
- width: 200px;
- height: 200px;
-}
-#div-x {
- overflow-x: hidden;
-}
-#div-y {
- overflow-y: hidden;
-}
+```
+
 Section 12.3: overflow: scroll
 html
 <div>
