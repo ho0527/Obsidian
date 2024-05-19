@@ -39,73 +39,50 @@
 ```
 
 ### 可使用元素表
-| 元素 | 元素 |
-| --- | --- |
-| `<a>` | `<audio>` |
-| `<b>` | `<body>` |
-| `<br>` | `<canvas>`(X) |
-| `<del>` | `<div>` |
-| `<form>` | `<h1>`(X) |
-| `<h2>`(X) | `<h3>`(X) |
-| `<h4>`(X) | `<h5>`(X) |
-| `<h6>`(X) | `<hr>` |
-| `<html>` | `<i>` |
-| `<iframe>`(X) | `<img>` |
-| X | `<input type="button">` |
-| `<input type="checkbox">` | `<input type="color">` |
-| `<input type="date">` | `<input type="datetime-local">` |
-| `<input type="email">` | `<input type="file">` |
-| `<input type="hidden">` | `<input type="image">`(X) |
-| `<input type="month">` | `<input type="number">` |
-| `<input type="password">` | `<input type="radio">` |
-| `<input type="range">` | `<input type="reset">` |
-| `<input type="search">` | `<input type="submit">` |
-| `<input type="tel">` | `<input type="text">` |
-| `<input type="time">` | `<input type="url">` |
-| `<input type="week">` | `<li>` |
-| `<link>` | `<meta>` |
-| `<ol>` | `<option>` |
-| `<p>`(X) | `<script>` |
-| `<select>` | `<span>` |
-| `<strong>` | `<sub>` |
-| `<sup>` | `<table>` |
-| `<tbody>` | `<td>` |
-| `<textarea>` | `<tfoot>` |
-| `<th>` | `<thead>` |
-| `<title>` | `<tr>` |
-| `<u>` | `<ul>` |
-| `<video>` | X |
+| 元素 | 元素 | 元素 |
+| --- | --- | --- |
+| `<a>` | `<audio>` | `<b>` |
+| `<body>` | `<br>` | `<canvas>`(X) |
+| `<del>` | `<div>` | `<form>` |
+| `<h1>`(X) | `<h2>`(X) | `<h3>`(X) |
+| `<h4>`(X) | `<h5>`(X) | `<h6>`(X) |
+| `<hr>` | `<html>` | `<i>` |
+| `<iframe>`(X) | `<img>` | `<input type="button">` |
+| `<input type="checkbox">` | `<input type="color">` | `<input type="date">` |
+| `<input type="datetime-local">` | `<input type="email">` | `<input type="file">` |
+| `<input type="hidden">` | `<input type="image">`(X) | `<input type="month">` |
+| `<input type="number">` | `<input type="password">` | `<input type="radio">` |
+| `<input type="range">` | `<input type="reset">` | `<input type="search">` |
+| `<input type="submit">` | `<input type="tel">` | `<input type="text">` |
+| `<input type="time">` | `<input type="url">` | `<input type="week">` |
+| `<li>` | `<link>` | `<meta>` |
+| `<ol>` | `<option>` | `<p>`(X) |
+| `<script>` | `<select>` | `<span>` |
+| `<strong>` | `<sub>` | `<sup>` |
+| `<table>` | `<tbody>` | `<td>` |
+| `<textarea>` | `<tfoot>` | `<th>` |
+| `<thead>` | `<title>` | `<tr>` |
+| `<u>` | `<ul>` | `<video>` |
 
 #### 但如果有需要SEO開放下列標籤
-| 元素 | 元素 |
-| --- | --- |
-| `<article>` |
-| `<aside>` |
-| `<footer>` |
-| `<header>` |
-| `<label>` |
-| `<legend>` |
-| `<main>` |
-| `<nav>` |
-| `<summary>` |
+| 元素 | 元素 | 元素 |
+| --- | --- | --- |
+| `<article>` | `<aside>` | `<footer>` |
+| `<header>` | `<label>` | `<legend>` |
+| `<main>` | `<nav>` | `<summary>` |
 
 ### 可用屬性表
-| 屬性 | 屬性 |
-| --- | --- |
-| accesskey(X) | autocapitalize |
-| autofocus | class |
-| data-* | draggable |
-| hidden | id |
-| lang(SEO開放) | slot |
-| spellcheck | tabindex(X) |
-| title | accept |
-| autocomplete | capture |
-| disabled | max |
-| maxlength(X) | min |
-| minlength(X) | multiple |
-| pattern(X) | readonly |
-| required | size |
-| step | |
+| 屬性 | 屬性 | 屬性 |
+| --- | --- | --- |
+| accesskey(X) | autocapitalize | autofocus |
+| class | data-* | draggable |
+| hidden | id | lang(SEO開放) |
+| slot | spellcheck | tabindex(X) |
+| title | accept | autocomplete |
+| capture | disabled | max |
+| maxlength(X) | min | minlength(X) |
+| multiple | pattern(X) | readonly |
+| required | size | step |
 
 ### 書寫規範
 在屬性內將分為"有值"及"無值"兩種
@@ -208,4 +185,4 @@ function xxx(){
 ![tabimage02](image/codingstyle/tabsize-2.png)
 
 
-*v1.0.0 2024/05/19*
+*v1.1.0 2024/05/19*
