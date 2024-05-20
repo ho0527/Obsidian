@@ -130,8 +130,9 @@ import XXX from "XXX"
 
 // 全域變數定義區塊
 // 先const再let
-const XXX = "XXX"
-let xxxaa = "XXX"
+const XXX="XXX"
+// 換一行
+let xxxaa="XXX"
 /*
 先字串
 再數字
