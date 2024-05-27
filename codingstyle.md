@@ -1,7 +1,7 @@
-# codeingstyle標準
+# codingstyle標準
 
 ## 目錄
-- [codeingstyle標準](#codeingstyle標準)
+- [codingstyle標準](#codingstyle標準)
 	- [目錄](#目錄)
 	- [html標準](#html標準)
 		- [骨架](#骨架)
@@ -11,11 +11,14 @@
 		- [書寫規範](#書寫規範)
 	- [css標準](#css標準)
 		- [命名規則](#命名規則)
+		- [基本架構](#基本架構)
 	- [js/php標準](#jsphp標準)
 		- [命名規則](#命名規則-1)
-		- [基本架構](#基本架構)
+		- [基本架構](#基本架構-1)
 		- [其他規範](#其他規範)
 	- [其他](#其他)
+
+<div style="page-break-after: always;"></div>
 
 ## html標準
 
@@ -31,6 +34,7 @@
 		<title>Document</title>
 		<!-- style sheet -->
 		<!-- js script -->
+		<!-- plugin -->
 	</head>
 	<body>
 		<!-- 網頁內容 -->
@@ -75,19 +79,21 @@
 | 屬性 | 屬性 | 屬性 |
 | --- | --- | --- |
 | accesskey(X) | autocapitalize | autofocus |
-| class | data-* | draggable |
-| hidden | id | lang(SEO開放) |
-| slot | spellcheck | tabindex(X) |
-| title | accept | autocomplete |
-| capture | disabled | max |
-| maxlength(X) | min | minlength(X) |
-| multiple | pattern(X) | readonly |
-| required | size | step |
+| alt(SEO開放) | class | data-* |
+| draggable | hidden | id |
+| lang(SEO開放) | slot | spellcheck
+| src | tabindex(X) | title(SEO開放) |
+| accept | autocomplete | capture |
+| disabled | max | maxlength(X) |
+| min | minlength(X) | multiple |
+| pattern(X) | readonly | required |
+| size | step |
 
 ### 書寫規範
 在屬性內將分為"有值"及"無值"兩種
 - 有值屬性: 如`class="example"`
 - 無值屬性: 如`disabled`
+- 最後不可以有多餘的空白或` />`
 
 架構如下:
 
@@ -97,6 +103,7 @@
 
 `<input type="text" class="input" id="name" name="name" placeholder="請輸入您的姓名" value="abc" required>`
 
+<div style="page-break-after: always;"></div>
 
 ## css標準
 
@@ -105,6 +112,8 @@
     - 但如果樣式只有一行可以使用`元素名(小駝峰或全小寫)-值(空白使用_分隔)` 例如: `display-none`
 - 不得使用#選擇器
 - 盡量不用偽類選擇器及偽元素
+
+### 基本架構
 - 首先是content
 - 接者是border
 - 接者是定位
@@ -115,6 +124,7 @@
 - 接者是display
 - 最後是其他(以字母順序排列)
 
+<div style="page-break-after: always;"></div>
 
 ## js/php標準
 
@@ -161,7 +171,6 @@ function xxx(){
 // 換一行
 
 // 全域函數呼叫或需初始化的函數呼叫區塊
-// 換一行
 ```
 
 ### 其他規範
@@ -175,7 +184,7 @@ function xxx(){
 - 不用class
 - 盡量不用while loop
 - 能不用function就不用function
-- 預到`,{,[[]]務必換行並加tab
+- 遇到`,{,[[]]務必換行並加tab
   - 但如果只有一行可以放在同一行但前後加空格
 - 不用簡化表示法(如:i++等)
 

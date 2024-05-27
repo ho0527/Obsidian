@@ -147,6 +147,9 @@
 	- [第12章: 容器溢位](#第12章-容器溢位)
 		- [12-1節: overflow-warp](#12-1節-overflow-warp)
 		- [12-2節: overflow-x及overflow-y](#12-2節-overflow-x及overflow-y)
+		- [12-3節: overflow: scroll](#12-3節-overflow-scroll)
+		- [12-4節: overflow: visible](#12-4節-overflow-visible)
+		- [12-5節: 使用overflow創建塊級格式上下文](#12-5節-使用overflow創建塊級格式上下文)
 			- [縮寫表](#縮寫表)
 
 <div style="page-break-after: always;"></div>
@@ -3348,54 +3351,77 @@ div{
 </div>
 ```
 
-Section 12.3: overflow: scroll
-html
+### 12-3節: overflow: scroll
+
+HTML:
+```html
+<div>這個 div 太小,無法完全顯示其內容,以展現 overflow 屬性的效果</div>
+```
+
+CSS:
+```css
+div{
+	width:100px;
+	height:100px;
+	overflow:scroll;
+}
+```
+
+![image120301](https://i.sstatic.net/krWW2.png)
+
+內容被裁剪在一個 100px 乘 100px 的框內,可以使用滾動條查看溢出的內容.
+
+大多數桌面瀏覽器將同時顯示水平和垂直滾動條,無論是否存在被裁剪的內容.這可以避免滾動條在動態環境中出現和消失的問題.打印機可能會打印溢出的內容.
+
+### 12-4節: overflow: visible
+
+HTML:
+```html
 <div>
- This div is too small to display its contents to display the effects of the overflow property.
+  即使這個 div 太小,無法完全顯示其內容,內容也不會被裁剪。
 </div>
-css
-div {
- width:100px;
- height:100px;
- overflow:scroll;
+```
+
+CSS:
+```css
+div{
+	width:50px;
+	height:50px;
+	overflow:visible;
 }
-Result
-The content above is clipped in a 100px by 100px box, with scrolling available to view overflowing content.
-Most desktop browsers will display both horizontal and vertical scrollbars, whether or not any content is clipped.
-This can avoid problems with scrollbars appearing and disappearing in a dynamic environment. Printers may print
-overflowing content.
-Section 12.4: overflow: visible
-html
-<div>
- Even if this div is too small to display its contents, the content is not clipped.
-</div>
-css
-div {
- width:50px;
- height:50px;
- overflow:visible;
-}
-Result
-Content is not clipped and will be rendered outside the content box if it exceeds its container size.
-Section 12.5: Block Formatting Context Created with Overflow
-Using the overflow property with a value different to visible will create a new block formatting context. This is
-useful for aligning a block element next to a floated element.
-css
-img {
- float:left;
- margin-right: 10px;
-}
- div {
- overflow:hidden; /* creates block formatting context */
-}
-html
+```
+
+![image120401](https://i.sstatic.net/HLZHC.png)
+內容不會被裁剪,如果超出容器大小,將在內容框之外渲染。
+
+### 12-5節: 使用overflow創建塊級格式上下文
+使用 overflow 屬性並將其值設為不同於 visible 的值,將創建一個新的塊級格式上下文。這對於將一個塊級元素與一個浮動元素並排很有用。
+
+HTML:
+```html
 <img src="http://placehold.it/100x100">
 <div>
- <p>Lorem ipsum dolor sit amet, cum no paulo mollis pertinacia.</p>
- <p>Ad case omnis nam, mutat deseruisse persequeris eos ad, in tollit debitis sea.</p>
+	<p>Lorem ipsum dolor sit amet, cum no paulo mollis pertinacia.</p>
+	<p>Ad case omnis nam, mutat deseruisse persequeris eos ad, in tollit debitis sea.</p>
 </div>
-Result
-This example shows how paragraphs within a div with the overflow property set will interact with a floated image.
+```
+
+CSS:
+```css
+img{
+	float:left;
+	margin-right: 10px;
+}
+
+div{
+  	overflow:hidden; /* 創建塊級格式上下文 */
+}
+```
+
+![image120501](https://i.sstatic.net/s0Pch.png)
+這個示例展示了一個帶有 overflow 屬性的 div 中的段落如何與一個浮動的圖像進行交互。
+
+<div style="page-break-after: always;"></div>
 
 Chapter 13: Media Queries
 Parameter Details
@@ -3431,6 +3457,7 @@ max-device-height Deprecated Same as max-height but measures the physical screen
 display width of the browser.
 min-device-height Deprecated Same as min-height but measures the physical screen width, rather than the
 display width of the browser.
+
 Section 13.1: Terminology and Structure
 Media queries allow one to apply css rules based on the type of device / media (e.g. screen, print or handheld)
 called media type, additional aspects of the device are described with media features such as the availability of
@@ -4537,7 +4564,7 @@ Styles are read from the following sources, in this order:
 3. Author stylesheet (Author here means the creator of the webpage/website)
 Maybe one or more .css files
 In the <style> element of the html document
-4. Inline styles (In the style attribute on an html element)
+1. Inline styles (In the style attribute on an html element)
 The browser will lookup the corresponding style(s) when rendering an element.
 How are conflicts resolved?
 When only one css rule set is trying to set a style for an element, then there is no conflict, and that rule set is used.
