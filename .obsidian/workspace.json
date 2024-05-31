@@ -266,6 +266,8 @@
   },
   "active": "58e110c3ee68be50",
   "lastOpenFiles": [
+    "ap.md",
+    "ap",
     "js/promiss.md",
     "python/plugin/django.md",
     "codingstyle_tmp.html",
@@ -297,7 +299,6 @@
     "css/image/index/070104.png",
     "css/image/index/070103.png",
     "css/image/index/Screenshot 2024-03-24 111858.png",
-    "css/image/index",
     "js/getcontext.md",
     "css/declarationlist.md",
     "css/cursordef.md",
@@ -311,7 +312,6 @@
     "temp/ca/index.md",
     "temp/ca/ms.md",
     "temp/ca/t1.md",
-    "temp/ca/app.md",
     "Untitled.canvas"
   ]
 }
