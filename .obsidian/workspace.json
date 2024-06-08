@@ -266,6 +266,10 @@
   },
   "active": "58e110c3ee68be50",
   "lastOpenFiles": [
+    "ap.pdf",
+    "ap_tmp.html",
+    "test.pdf",
+    "test_tmp.html",
     "ap.md",
     "ap",
     "js/promiss.md",
@@ -286,15 +290,12 @@
     "codeingstyle.md",
     "css/image/index/cursordef.md",
     "css/index.md",
-    "test_tmp.html",
-    "test.pdf",
     "test.md",
     "function/objectswapplace.md",
     "git/commit.md",
     "server/ssl.md",
     "server/openansever.md",
     "server",
-    "css/index_tmp.html",
     "css/image/index/Screenshot 2024-03-24 111948.png",
     "css/image/index/070104.png",
     "css/image/index/070103.png",
@@ -311,7 +312,6 @@
     "temp/ca/apparchitecture.md",
     "temp/ca/index.md",
     "temp/ca/ms.md",
-    "temp/ca/t1.md",
     "Untitled.canvas"
   ]
 }
