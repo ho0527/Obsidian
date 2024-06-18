@@ -9,6 +9,7 @@
 	- [註解及參見](#註解及參見)
 		- [註解](#註解)
 
+<div style="page-break-after: always;"></div>
 
 ## how to use
 
@@ -22,13 +23,11 @@
 
 ## 帳號密碼表
 
-| 帳號 | 密碼 |
-| --- | ---|
-| web03 | web03pass |
-| web06 | web06pass |
-| web07 | web07pass |
-| backup | backuppass |
-| admin | 123456 |
+| 帳號 | 密碼 | 帳號 | 密碼 | 帳號 | 密碼 | 帳號 | 密碼 |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| web01 | web01pass | web02 | web02pass | web03 | web03pass | web04 | web04pass |
+| web05 | web05pass | web06 | web06pass | web07 | web07pass | web08 | web08pass |
+| web09 | web09pass | web10 | web10pass | backup | backuppass | admin | 123456789 |
 
 ## 回傳表
 
