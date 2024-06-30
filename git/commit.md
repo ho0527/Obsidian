@@ -31,7 +31,7 @@ FOOTER
 | 類型 | 說明 | 程式碼改動 |
 | --- | --- | --- |
 | new | 新功能 | O |
-| modify | 既有功能需求調整的修改 | O |
+| edit | 既有功能需求調整的修改 | O |
 | fix | 錯誤修正 | O |
 | docs | 更新文件,如 README.md | X |
 | style | 程式碼格式調整(formatting)、缺少分號(missing semi colons)等 | X |
