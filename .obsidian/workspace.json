@@ -6,7 +6,7 @@
       {
         "id": "00d6db2a61c308c9",
         "type": "tabs",
-        "dimension": 49.96041171813144,
+        "dimension": 51.38558986539984,
         "children": [
           {
             "id": "41b5fbacc8954a0c",
@@ -37,7 +37,7 @@
       {
         "id": "0270fad5dccf6426",
         "type": "tabs",
-        "dimension": 50.03958828186856,
+        "dimension": 48.614410134600156,
         "children": [
           {
             "id": "58e110c3ee68be50",
@@ -125,7 +125,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 288.5
+    "width": 230.5
   },
   "right": {
     "id": "344edc35be0aae1d",
@@ -157,7 +157,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "git/commit.md",
+                "file": "python/plugin/django.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -193,7 +193,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "git/commit.md",
+                "file": "python/plugin/django.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -205,7 +205,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "git/commit.md"
+                "file": "python/plugin/django.md"
               }
             }
           },
@@ -246,7 +246,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 324.5
+    "width": 286.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -264,10 +264,10 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "41b5fbacc8954a0c",
+  "active": "58e110c3ee68be50",
   "lastOpenFiles": [
-    "python/plugin/django.md",
     "git/commit.md",
+    "python/plugin/django.md",
     "ap_tmp.html",
     "ap.pdf",
     "test.pdf",
