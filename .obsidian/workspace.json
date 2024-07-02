@@ -266,6 +266,9 @@
   },
   "active": "58e110c3ee68be50",
   "lastOpenFiles": [
+    "mongodb/commend.md",
+    "mongodb/download.md",
+    "mongodb",
     "git/commit.md",
     "python/plugin/django.md",
     "ap_tmp.html",
@@ -287,7 +290,6 @@
     "image/Screenshot 2024-05-19 112857.png",
     "image/tabsize.png",
     "image/Screenshot 2024-05-19 112728.png",
-    "image",
     "codeingstyle.md",
     "css/image/index/cursordef.md",
     "css/index.md",
@@ -310,7 +312,6 @@
     "javascript.md",
     "temp/ca/apparchitecture.md",
     "temp/ca/index.md",
-    "temp/ca/ms.md",
     "Untitled.canvas"
   ]
 }
