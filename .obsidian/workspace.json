@@ -266,6 +266,7 @@
   },
   "active": "58e110c3ee68be50",
   "lastOpenFiles": [
+    "codingstyle_tmp.html",
     "mongodb/commend.md",
     "mongodb/download.md",
     "mongodb",
@@ -278,7 +279,6 @@
     "ap.md",
     "ap",
     "js/promiss.md",
-    "codingstyle_tmp.html",
     "codingstyle.pdf",
     "codingstyle.md",
     "image/codingstyle/tabsize-2.png",
@@ -311,7 +311,6 @@
     "temp.md",
     "javascript.md",
     "temp/ca/apparchitecture.md",
-    "temp/ca/index.md",
     "Untitled.canvas"
   ]
 }
