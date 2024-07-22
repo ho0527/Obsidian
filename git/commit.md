@@ -33,6 +33,8 @@ FOOTER
 | new | 新功能 | O |
 | edit | 既有功能需求調整的修改 | O |
 | fix | 錯誤修正 | O |
+| init | 初始版本 | X |
+| create | 建立新檔案/架構 | X |
 | docs | 更新文件,如 README.md | X |
 | style | 程式碼格式調整(formatting)、缺少分號(missing semi colons)等 | X |
 | code | 重構針對已上線的功能程式碼調整與優化且不改變記有邏輯 | O |
