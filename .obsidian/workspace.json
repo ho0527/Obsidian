@@ -157,7 +157,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "git/commit.md",
+                "file": "python/plugin/django.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -193,7 +193,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "git/commit.md",
+                "file": "python/plugin/django.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -205,7 +205,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "git/commit.md"
+                "file": "python/plugin/django.md"
               }
             }
           },
@@ -264,15 +264,15 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "41b5fbacc8954a0c",
+  "active": "58e110c3ee68be50",
   "lastOpenFiles": [
+    "git/commit.md",
     "python/plugin/django.md",
     "casual.md",
     "codingstyle_tmp.html",
     "mongodb/commend.md",
     "mongodb/download.md",
     "mongodb",
-    "git/commit.md",
     "ap_tmp.html",
     "ap.pdf",
     "test.pdf",
