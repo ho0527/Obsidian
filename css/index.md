@@ -150,6 +150,15 @@
 		- [12-3節: overflow: scroll](#12-3節-overflow-scroll)
 		- [12-4節: overflow: visible](#12-4節-overflow-visible)
 		- [12-5節: 使用overflow創建塊級格式上下文](#12-5節-使用overflow創建塊級格式上下文)
+	- [第13章: 媒體查詢](#第13章-媒體查詢)
+		- [13-1節: 術語和結構](#13-1節-術語和結構)
+		- [13-2節: 基本示例](#13-2節-基本示例)
+		- [13-2節: mediatype](#13-2節-mediatype)
+		- [13-4節: 適用於視網膜與非視網膜螢幕的媒體查詢](#13-4節-適用於視網膜與非視網膜螢幕的媒體查詢)
+		- [13-5節: 寬度vs視口](#13-5節-寬度vs視口)
+		- [13-6節: 使用媒體查詢針對不同屏幕尺寸](#13-6節-使用媒體查詢針對不同屏幕尺寸)
+		- [13-7節: 在link標籤中使用](#13-7節-在link標籤中使用)
+		- [13-8節: 媒體查詢與IE8](#13-8節-媒體查詢與ie8)
 			- [縮寫表](#縮寫表)
 
 <div style="page-break-after: always;"></div>
@@ -3378,7 +3387,7 @@ div{
 HTML:
 ```html
 <div>
-  即使這個 div 太小,無法完全顯示其內容,內容也不會被裁剪。
+  即使這個 div 太小,無法完全顯示其內容,內容也不會被裁剪.
 </div>
 ```
 
@@ -3392,10 +3401,10 @@ div{
 ```
 
 ![image120401](https://i.sstatic.net/HLZHC.png)
-內容不會被裁剪,如果超出容器大小,將在內容框之外渲染。
+內容不會被裁剪,如果超出容器大小,將在內容框之外渲染.
 
 ### 12-5節: 使用overflow創建塊級格式上下文
-使用 overflow 屬性並將其值設為不同於 visible 的值,將創建一個新的塊級格式上下文。這對於將一個塊級元素與一個浮動元素並排很有用。
+使用 overflow 屬性並將其值設為不同於 visible 的值,將創建一個新的塊級格式上下文.這對於將一個塊級元素與一個浮動元素並排很有用.
 
 HTML:
 ```html
@@ -3419,214 +3428,247 @@ div{
 ```
 
 ![image120501](https://i.sstatic.net/s0Pch.png)
-這個示例展示了一個帶有 overflow 屬性的 div 中的段落如何與一個浮動的圖像進行交互。
+這個示例展示了一個帶有 overflow 屬性的 div 中的段落如何與一個浮動的圖像進行交互.
 
 <div style="page-break-after: always;"></div>
 
-Chapter 13: Media Queries
-Parameter Details
-mediatype (Optional) This is the type of media. Could be anything in the range of all to screen.
-not (Optional) Doesn't apply the css for this particular media type and applies for everything
-else.
-media feature Logic to identify use case for css. Options outlined below.
-Media Feature Details
-aspect-ratio Describes the aspect ratio of the targeted display area of the output device.
-color Indicates the number of bits per color component of the output device. If the device is not a
-color device, this value is zero.
-color-index Indicates the number of entries in the color look-up table for the output device.
-grid Determines whether the output device is a grid device or a bitmap device.
-height The height media feature describes the height of the output device's rendering surface.
-max-width css will not apply on a screen width wider than specified.
-min-width css will not apply on a screen width narrower than specified.
-max-height css will not apply on a screen height taller than specified.
-min-height css will not apply on a screen height shorter than specified.
-monochrome Indicates the number of bits per pixel on a monochrome (greyscale) device.
-orientation css will only display if device is using specified orientation. See remarks for more details.
-resolution Indicates the resolution (pixel density) of the output device.
-scan Describes the scanning process of television output devices.
-width The width media feature describes the width of the rendering surface of the output device
-(such as the width of the document window, or the width of the page box on a printer).
-Deprecated Features Details
-device-aspect-ratio Deprecated css will only display on devices whose height/width ratio matches the specified
-ratio. This is adeprecatedfeature and is not guaranteed to work.
-max-device-width Deprecated Same as max-width but measures the physical screen width, rather than the
-display width of the browser.
-min-device-width Deprecated Same as min-width but measures the physical screen width, rather than the
-display width of the browser.
-max-device-height Deprecated Same as max-height but measures the physical screen width, rather than the
-display width of the browser.
-min-device-height Deprecated Same as min-height but measures the physical screen width, rather than the
-display width of the browser.
+## 第13章: 媒體查詢
 
-Section 13.1: Terminology and Structure
-Media queries allow one to apply css rules based on the type of device / media (e.g. screen, print or handheld)
-called media type, additional aspects of the device are described with media features such as the availability of
-color or viewport dimensions.
-General Structure of a Media Query
-@media [...] {
- /* One or more css rules to apply when the query is satisfied */
+| 參數 | 詳情 |
+| --- | --- |
+| mediatype(可選) | 這是媒體類型.可以是所有到螢幕的任何範圍 |
+| not(可選) | 不為此特定媒體類型應用CSS,而為其他一切應用 |
+| media feature | 識別CSS使用案例的邏輯.下面概述了選項 |
+
+| 媒體特徵 | 詳情 |
+| --- | --- |
+| aspect-ratio | 描述目標輸出設備顯示區域的方面比 |
+| color | 描述輸出設備每個顏色成分的位元數.如果設備不是彩色設備,此值為零 |
+| color-index | 描述輸出設備色彩查閱表中的條目數 |
+| grid | 判斷輸出設備是否為網格設備或點陣設備 |
+| height | 描述輸出設備渲染表面的高度 |
+| max-width | CSS將不適用於寬度超過指定值的螢幕 |
+| min-width | CSS將不適用於寬度小於指定值的螢幕 |
+| max-height | CSS將不適用於高度超過指定值的螢幕 |
+| min-height | CSS將不適用於高度低於指定值的螢幕 |
+| monochrome | 描述單色(灰階)設備每像素的位元數 |
+| orientation | CSS將只在指定方向使用的設備上顯示.有關更多詳情,請參閱備註 |
+| resolution | 描述輸出設備的解析度(像素密度) |
+| scan | 描述電視輸出設備的掃描過程 |
+| width | 描述輸出設備(如文檔窗口或打印機頁面框)渲染表面的寬度 |
+
+| 棄用特徵 | 詳情 |
+| --- | --- |
+| ~~device-aspect-ratio~~ | 的CSS將只在高╱寬比匹配指定比例的設備上顯示.這是一個| 的功能,不能保證工作 |
+| ~~max-device-width~~ | 與max-width類似,但衡量實際屏幕寬度,而不是瀏覽器的顯示寬度 |
+| ~~min-device-width~~ | 與min-width類似,但衡量實際屏幕寬度,而不是瀏覽器的顯示寬度 |
+| ~~max-device-height~~ | 與max-height類似,但衡量實際屏幕高度,而不是瀏覽器的顯示高度 |
+| ~~min-device-height~~ | 與min-height類似,但衡量實際屏幕高度,而不是瀏覽器的顯示高度 |
+
+### 13-1節: 術語和結構
+
+媒體查詢允許根據設備類型/媒體(如螢幕、打印或手持設備)即媒體類型,以及額外設備屬性如顏色或視圖尺寸等媒體特徵來應用CSS規則.
+
+媒體查詢的一般結構
+```css
+@media [...]{
+	/* 滿足查詢時應用的一條或多條CSS規則 */
 }
-A Media Query containing a Media Type
-@media print {
- /* One or more css rules to apply when the query is satisfied */
+```
+
+包含媒體類型的媒體查詢
+```css
+@media print{
+	/* 滿足查詢時應用的一條或多條CSS規則 */
 }
-A Media Query containing a Media Type and a Media Feature
-@media screen and (max-width: 600px) {
- /* One or more css rules to apply when the query is satisfied */
+```
+
+包含媒體類型和媒體特徵的媒體查詢
+```css
+@media screen and (max-width: 600px){
+	/* 滿足查詢時應用的一條或多條CSS規則 */
 }
-A Media Query containing a Media Feature (and an implicit Media Type of "all")
+```
+
+包含媒體特徵(默認媒體類型為"all")的媒體查詢
+```css
 @media (orientation: portrait) {
- /* One or more css rules to apply when the query is satisfied */
+	/* 滿足查詢時應用的一條或多條CSS規則 */
 }
-Section 13.2: Basic Example
+```
+
+### 13-2節: 基本示例
+
+```css
 @media screen and (min-width: 720px) {
- body {
- background-color: skyblue;
- }
+	body {
+		background-color: skyblue;
+	}
 }
-The above media query specifies two conditions:
-1. The page must be viewed on a normal screen (not a printed page, projector, etc).
-2. The width of the user's view port must be at least 720 pixels.
-If these conditions are met, the styles inside the media query will be active, and the background color of the page
-will be sky blue.
-Media queries are applied dynamically. If on page load the conditions specified in the media query are met, the css
-will be applied, but will be immediately disabled should the conditions cease to be met. Conversely, if the
-conditions are initially not met, the css will not be applied until the specified conditions are met.
-In our example, if the user's view port width is initially greater than 720 pixels, but the user shrinks the browser's
-width, the background color will cease to be sky blue as soon as the user has resized the view port to less than 720
-pixels in width.
-Section 13.3: mediatype
-Media queries have an optional mediatype parameter. This parameter is placed directly after the @media
-declaration (@media mediatype), for example:
-@media print {
- html {
- background-color: white;
- }
+```
+
+上述媒體查詢指定了兩個條件:
+1. 頁面必須在普通螢幕(而非打印頁面、投影等)下查看.
+2. 用戶視圖區域的寬度必須為至少720像素.
+
+如果滿足這些條件,媒體查詢中的樣式會生效,頁面的背景顏色將設為天藍色.
+
+媒體查詢是動態應用的.如果在頁面加載時條件滿足,CSS將應用,但一旦條件不再滿足即會立即停用.相反,如果條件最初不滿足,CSS將在條件滿足後應用.
+
+在我們的示例中,如果用戶視圖區域初始寬度大於720像素,但用戶縮小瀏覽器寬度,一旦用戶將視圖區域寬度調整為小於720像素,背景顏色將立即停用天藍色.
+
+### 13-2節: mediatype
+
+媒體查詢具有可選的mediatype參數.此參數直接置於@media宣告之後(@media mediatype),例如:
+```css
+@media print{
+	html{
+		background-color: white;
+ 	}
 }
-The above css code will give the DOM html element a white background color when being printed.
-The mediatype parameter has an optional not or only prefix that will apply the styles to everything except the
-specified mediatype or only the specified media type, respectively. For example, the following code example will
-apply the style to every media type except print.
+```
+
+上述CSS代碼將在打印時給予DOM html元素一個白色背景顏色.
+
+mediatype參數有可選的not或only前綴詞,分別將樣式應用到除指定mediatype外的所有類型,或只應用到指定媒體類型.例如:
+```css
 @media not print {
- html {
- background-color: green;
- }
+	html{
+		background-color: green;
+	}
 }
-And the same way, for just showing it only on the screen, this can be used:
+```
+
+只在螢幕上顯示,可以使用:
+```css
 @media only screen {
- .fadeInEffects {
- display: block;
- }
+	.fadeInEffects {
+		display: block;
+	}
 }
-The list of mediatype can be understood better with the following table:
-Media Type Description
-all Apply to all devices
-screen Default computers
-print Printers in general. Used to style print-versions of websites
-handheld PDA's, cellphones and hand-held devices with a small screen
-projection For projected presentation, for example projectors
-aural Speech Systems
-braille Braille tactile devices
-embossed Paged braille printers
-tv Television-type devices
-tty Devices with a fixed-pitch character grid. Terminals, portables.
-Section 13.4: Media Queries for Retina and Non Retina
-Screens
-Although this works only for WebKit based browsers, this is helpful:
-/* ----------- Non-Retina Screens ----------- */
+```
+mediatype清單可通過以下表了解:
+
+| 媒體類型 | 描述 |
+| --- | --- |
+| all | 適用於所有設備 |
+| screen | 默認電腦 |
+| print | 一般打印機.用於網站的打印版本樣式 |
+| handheld | PDA、手機和小屏手持設備 |
+| projection | 項目演示,如項目機 |
+| aural | 語音系統 |
+| braille | 點字圖形設備 |
+| embossed | 點字打印機 |
+| tv | 電視設備 |
+| tty | 固定點陣字元格設備.終端機、便攜設備. |
+
+### 13-4節: 適用於視網膜與非視網膜螢幕的媒體查詢
+
+儘管這只適用於基於WebKit的瀏覽器但仍非常有用:
+```css
+/* ----------- 非視網膜螢幕 ----------- */
 @media screen
- and (min-width: 1200px)
- and (max-width: 1600px)
- and (-webkit-min-device-pixel-ratio: 1) {
-}
-/* ----------- Retina Screens ----------- */
+	and (min-width: 1200px)
+	and (max-width: 1600px)
+	and (-webkit-min-device-pixel-ratio: 1) { }
+
+/* ----------- 視網膜螢幕 ----------- */
 @media screen
- and (min-width: 1200px)
- and (max-width: 1600px)
- and (-webkit-min-device-pixel-ratio: 2)
- and (min-resolution: 192dpi) {
-}
-Background Information
-There are two types of pixels in the display. One is the logical pixels and the other is the physical pixels. Mostly, the
-physical pixels always stay the same, because it is the same for all the display devices. The logical pixels change
-based on the resolution of the devices to display higher quality pixels. The device pixel ratio is the ratio between
-physical pixels and logical pixels. For instance, the MacBook Pro Retina, iPhone 4 and above report a device pixel
-ratio of 2, because the physical linear resolution is double the logical resolution.
-The reason why this works only with WebKit based browsers is because of:
-The vendor prefix -webkit- before the rule.
-This hasn't been implemented in engines other than WebKit and Blink.
-Section 13.5: Width vs Viewport
-When we are using "width" with media queries it is important to set the meta tag correctly. Basic meta tag looks like
-this and it needs to be put inside the <head> tag.
-<meta name="viewport" content="width=device-width,initial-scale=1">
-Why this is important?
-Based on MDN's definition "width" is
-The width media feature describes the width of the rendering surface of the output device (such as the
-width of the document window, or the width of the page box on a printer).
-What does that mean?
-View-port is the width of the device itself. If your screen resolution says the resolution is 1280 x 720, your view-port
-width is "1280px".
-More often many devices allocate different pixel amount to display one pixel. For an example iPhone 6 Plus has
-1242 x 2208 resolution. But the actual viewport-width and viewport-height is 414 x 736. That means 3 pixels are
-used to create 1 pixel.
-But if you did not set the meta tag correctly it will try to show your webpage with its native resolution which results
-in a zoomed out view (smaller texts and images).
-Section 13.6: Using Media Queries to Target Dierent Screen
-Sizes
-Often times, responsive web design involves media queries, which are css blocks that are only executed if a
-condition is satisfied. This is useful for responsive web design because you can use media queries to specify
-different css styles for the mobile version of your website versus the desktop version.
+	and (min-width: 1200px)
+	and (max-width: 1600px)
+	and (-webkit-min-device-pixel-ratio: 2)
+	and (min-resolution: 192dpi) { }
+```
+
+背景資訊
+
+顯示器有兩種類型的像素.一種是邏輯像素,另一種是實體像素.通常,實體像素是固定的,因為它對所有顯示裝置都是相同的.邏輯像素會根據裝置的解析度而改變,以顯示更高品質的像素.裝置像素比率是實體像素與邏輯像素的比率.例如,MacBook Pro 視網膜、iPhone 4 及以上的裝置像素比率為 2,因為實體線性解析度是邏輯解析度的兩倍.
+
+之所以只有 WebKit 系列瀏覽器才能生效,是因為:
+- 在規則前使用了廠商前綴 -webkit-
+- 這還沒有被其他引擎(如 Blink)實現.
+
+### 13-5節: 寬度vs視口
+
+當我們在媒體查詢中使用 "width" 時,重要的是要正確設置 meta 標籤.基本的 meta 標籤如下,需要放在`<head>`標籤內:
+`<meta name="viewport" content="width=device-width,initial-scale=1">`
+
+為什麼這很重要?
+
+> The width media feature describes the width of the rendering surface of the output device (such as the width of the document window, or the width of the page box on a printer).
+> 寬度媒體特性描述了輸出設備渲染表面的寬度(例如文檔窗口的寬度或打印機上頁面盒子的寬度)
+ [\- MDN width](https://developer.mozilla.org/en-US/docs/Web/CSS/width)
+
+
+這是什麼意思?
+
+視口是設備本身的寬度.如果您的螢幕解析度顯示為1280x720,那麼您的視口寬度就是"1280px".
+
+但許多設備會將不同數量的像素分配給顯示一個像素.例如,iPhone 6 Plus 的解析度為1242x2208,但實際的視口寬度和高度是414x736.這意味著3個像素用於創建1個像素.
+
+但如果您沒有正確設置meta標籤,它將嘗試以原生解析度顯示您的網頁,這會導致縮小視圖(文字和圖像變小).
+
+### 13-6節: 使用媒體查詢針對不同屏幕尺寸
+響應式網頁設計通常涉及媒體查詢,這是僅當條件得到滿足時才會執行的css代碼塊.這對於響應式網頁設計很有用,因為您可以使用媒體查詢為移動版和桌面版的網站指定不同的css樣式.
+```css
 @media only screen and (min-width: 300px) and (max-width: 767px) {
- .site-title {
- font-size: 80%;
- }
- /* Styles in this block are only applied if the screen size is atleast 300px wide, but no more
-than 767px */
+	/* 如果屏幕大小至少為 300px 寬,但不超過 767px,則應用此代碼塊中的樣式 */
+	.site-title {
+		font-size: 80%;
+	}
 }
+
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
- .site-title {
- font-size: 90%;
- }
- /* Styles in this block are only applied if the screen size is atleast 768px wide, but no more
-than 1023px */
+	/* 如果屏幕大小至少為 768px 寬,但不超過 1023px,則應用此代碼塊中的樣式 */
+	.site-title {
+		font-size: 90%;
+	}
 }
+
 @media only screen and (min-width: 1024px) {
- .site-title {
- font-size: 120%;
- }
- /* Styles in this block are only applied if the screen size is over 1024px wide. */
+	/* 如果屏幕大小超過 1024px 寬,則應用此代碼塊中的樣式 */
+	.site-title {
+		font-size: 120%;
+	}
 }
-Section 13.7: Use on link tag
-<link rel="stylesheet" media="min-width: 600px" href="example.css" />
-This stylesheet is still downloaded but is applied only on devices with screen width larger than 600px.
-Section 13.8: Media queries and IE8
-Media queries are not supported at all in IE8 and below.
-A Javascript based workaround
-To add support for IE8, you could use one of several JS solutions. For example, Respond can be added to add
-media query support for IE8 only with the following code :
-<!--[if lt IE 9]>
-<script
- src="respond.min.js">
-</script>
-<![endif]-->
-css Mediaqueries is another library that does the same thing. The code for adding that library to your html would
-be identical :
-<!--[if lt IE 9]>
-<script
- src="css3-mediaqueries.js">
-</script>
-<![endif]-->
-The alternative
-If you don't like a JS based solution, you should also consider adding an IE<9 only stylesheet where you adjust your
-styling specific to IE<9. For that, you should add the following html to your code:
-<!--[if lt IE 9]>
-<link rel="stylesheet" media="all" href="style-ielt9.css"/>
-<![endif]-->
-Note :
-Technically it's one more alternative: using css hacks to target IE<9. It has the same impact as an IE<9 only
-stylesheet, but you don't need a separate stylesheet for that. I do not recommend this option, though, as they
-produce invalid css code (which is but one of several reasons why the use of css hacks is generally frowned upon
-today).
+```
+
+### 13-7節: 在link標籤中使用
+`<link rel="stylesheet" media="min-width: 600px" href="index.css">`
+該樣式表仍然會被下載,但只會在屏幕寬度大於600px的設備上應用.
+
+### 13-8節: 媒體查詢與IE8
+
+**請注意IE8(含)更低版本完全不支持媒體查詢.**
+
+1. js解決方案
+
+- 要為IE8添加支持,您可以使用一些js的解決方案.例如,可以添加Respond來為IE8提供媒體查詢支持,代碼如下:
+```html
+<!--[if lt IE 9] -->
+<script src="respond.min.js"></script>
+<!-- [endif]-->
+```
+
+- css mediaquery也是一個提供相同功能的庫,添加該庫的html代碼與上面相同:
+```html
+<!--[if lt IE 9] -->
+<script src="css3-mediaqueries.js"></script>
+<!-- [endif]-->
+```
+
+2. 替代方案
+
+- 如果您不喜歡js解決方案,您也可以考慮添加一個專門針對IE9以下版本的樣式表.您可以添加以下html代碼:
+```html
+<!--[if lt IE 9] -->
+<link rel="stylesheet" media="all" href="style-ielt9.css">
+<!-- [endif]-->
+```
+
+NOTE
+1. 技術上還有另一個替代方案:使用css黑客(css hacks)針對IE9以下版本.這與使用單獨的樣式表具有相同的效果,但您不需要為此準備一個單獨的樣式表.**不過不建議使用這種方法**,因為它會產生無效的css代碼(這只是使用css黑客的多個原因之一,眾所周知使用css黑客是不受歡迎的).
+
 Chapter 14: Floats
 Section 14.1: Float an Image Within Text
 The most basic use of a float is having text wrap around an image. The below code will produce two paragraphs
