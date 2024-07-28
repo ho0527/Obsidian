@@ -159,6 +159,9 @@
 		- [13-6節: 使用媒體查詢針對不同屏幕尺寸](#13-6節-使用媒體查詢針對不同屏幕尺寸)
 		- [13-7節: 在link標籤中使用](#13-7節-在link標籤中使用)
 		- [13-8節: 媒體查詢與IE8](#13-8節-媒體查詢與ie8)
+	- [第14章: 浮動](#第14章-浮動)
+		- [14-1節: 在文本內浮動圖像](#14-1節-在文本內浮動圖像)
+		- [14-2節: clear屬性](#14-2節-clear屬性)
 			- [縮寫表](#縮寫表)
 
 <div style="page-break-after: always;"></div>
@@ -3669,56 +3672,71 @@ mediatype清單可通過以下表了解:
 NOTE
 1. 技術上還有另一個替代方案:使用css黑客(css hacks)針對IE9以下版本.這與使用單獨的樣式表具有相同的效果,但您不需要為此準備一個單獨的樣式表.**不過不建議使用這種方法**,因為它會產生無效的css代碼(這只是使用css黑客的多個原因之一,眾所周知使用css黑客是不受歡迎的).
 
-Chapter 14: Floats
-Section 14.1: Float an Image Within Text
-The most basic use of a float is having text wrap around an image. The below code will produce two paragraphs
-and an image, with the second paragraph flowing around the image. Notice that it is always content after the
-floated element that flows around the floated element.
-html:
+## 第14章: 浮動
+
+### 14-1節: 在文本內浮動圖像
+
+浮動(float)的最基本用途是讓文本環繞圖像排列。下面的代碼將產生兩段段落和一個圖像,第二段段落將環繞在圖像周圍。請注意,總是在浮動元素之後的內容會環繞在浮動元素周圍。
+
+html
+```html
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed
 cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis
 ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia
 arcu eget nulla. </p>
-<img src="http://lorempixel.com/200/100/" />
+<img src="http://lorempixel.com/200/100/">
 <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
 Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque
 nibh. Aenean quam. In scelerisque sem at dolor. Maecenas mattis. Sed convallis tristique sem. Proin
 ut ligula vel nunc egestas porttitor. Morbi lectus risus, iaculis vel, suscipit quis, luctus non,
 massa. Fusce ac turpis quis ligula lacinia aliquet. </p>
+```
+
 css:
-img {
- float:left;
- margin-right:1rem;
+```css
+img{
+	float: left;
+	margin-right: 1rem;
 }
-This will be the output
-Codepen Link
-Section 14.2: clear property
-The clear property is directly related to floats. Property Values:
-none - Default. Allows floating elements on both sides
-left - No floating elements allowed on the left side
-right - No floating elements allowed on the right side
-both - No floating elements allowed on either the left or the right side
-initial - Sets this property to its default value. Read about initial
-inherit - Inherits this property from its parent element. Read about inherit
+```
+
+輸出結果
+
+![image140101](https://i.sstatic.net/srUS7.png)
+
+[Codepen鏈接](http://codepen.io/vishak-kavalur/pen/pbxvLx)
+
+### 14-2節: clear屬性
+
+clear 屬性與浮動直接相關
+| 屬性 | 值 |
+| --- | --- |
+| none | 默認。允許在左右側都有浮動元素 |
+| left | 左側不允許有浮動元素 |
+| right | 右側不允許有浮動元素 |
+| both | 左右兩側都不允許有浮動元素 |
+| initial | 將此屬性設置為默認值 |
+| inherit | 從父元素繼承此屬性 |
+```html
 <html>
-<head>
-<style>
-img {
- float: left;
-}
-p.clear {
- clear: both;
-}
-</style>
-</head>
-<body>
-<img src="https://static.pexels.com/photos/69372/pexels-photo-69372-medium.jpeg" width="100">
-<p>Lorem ipsoum Lorem ipsoum Lorem ipsoum Lorem ipsoum Lorem ipsoum Lorem ipsoum Lorem ipsoum Lorem
-ipsoum Lorem ipsoum Lorem ipsoum Lorem ipsoum Lorem ipsoum </p>
-<p class="clear">Lorem ipsoum Lorem ipsoum Lorem ipsoum Lorem ipsoum Lorem ipsoum Lorem ipsoum
-Lorem ipsoum Lorem ipsoum Lorem ipsoum Lorem ipsoum Lorem ipsoum Lorem ipsoum </p>
-</body>
+	<head>
+		<style>
+			img{
+				float: left;
+			}
+			p.clear{
+				clear: both;
+			}
+		</style>
+	</head>
+	<body>
+		<img src="https://static.pexels.com/photos/69372/pexels-photo-69372-medium.jpeg" width="100">
+		<p>Lorem ipsoum Lorem ipsoum Lorem ipsoum Lorem ipsoum Lorem ipsoum Lorem ipsoum Lorem ipsoum Lorem ipsoum Lorem ipsoum Lorem ipsoum Lorem ipsoum Lorem ipsoum</p>
+		<p class="clear">Lorem ipsoum Lorem ipsoum Lorem ipsoum Lorem ipsoum Lorem ipsoum Lorem ipsoum Lorem ipsoum Lorem ipsoum Lorem ipsoum Lorem ipsoum Lorem ipsoum Lorem ipsoum</p>
+	</body>
 </html>
+```
+
 Section 14.3: Clearfix
 The clearfix hack is a popular way to contain floats (N. Gallagher aka @necolas)
 Not to be confused with the clear property, clearfix is a concept (that is also related to floats, thus the possible
