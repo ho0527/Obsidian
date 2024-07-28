@@ -162,6 +162,7 @@
 	- [第14章: 浮動](#第14章-浮動)
 		- [14-1節: 在文本內浮動圖像](#14-1節-在文本內浮動圖像)
 		- [14-2節: clear屬性](#14-2節-clear屬性)
+		- [14-3節: 清除浮動](#14-3節-清除浮動)
 			- [縮寫表](#縮寫表)
 
 <div style="page-break-after: always;"></div>
@@ -3676,7 +3677,7 @@ NOTE
 
 ### 14-1節: 在文本內浮動圖像
 
-浮動(float)的最基本用途是讓文本環繞圖像排列。下面的代碼將產生兩段段落和一個圖像,第二段段落將環繞在圖像周圍。請注意,總是在浮動元素之後的內容會環繞在浮動元素周圍。
+浮動(float)的最基本用途是讓文本環繞圖像排列.下面的代碼將產生兩段段落和一個圖像,第二段段落將環繞在圖像周圍.請注意,總是在浮動元素之後的內容會環繞在浮動元素周圍.
 
 html
 ```html
@@ -3711,7 +3712,7 @@ img{
 clear 屬性與浮動直接相關
 | 屬性 | 值 |
 | --- | --- |
-| none | 默認。允許在左右側都有浮動元素 |
+| none | 默認.允許在左右側都有浮動元素 |
 | left | 左側不允許有浮動元素 |
 | right | 右側不允許有浮動元素 |
 | both | 左右兩側都不允許有浮動元素 |
@@ -3737,22 +3738,30 @@ clear 屬性與浮動直接相關
 </html>
 ```
 
-Section 14.3: Clearfix
-The clearfix hack is a popular way to contain floats (N. Gallagher aka @necolas)
-Not to be confused with the clear property, clearfix is a concept (that is also related to floats, thus the possible
-confusion). To contain floats, you've to add .cf or .clearfix class on the container (the parent) and style this class
-with a few rules described below.
-3 versions with slightly different effects (sources :A new micro clearfix hack by N. Gallagher and clearfix reloaded by
-T. J. Koblentz):
-Clearfix (with top margin collapsing of contained floats still occurring)
-.cf:after {
- content: "";
- display: table;
+### 14-3節: 清除浮動
+
+> The clearfix hack is a popular way to contain floats
+> 清除浮動(clearfix)是一種流行的包含浮動元素的方法
+> -N.Gallagher/@necolas
+
+不要將clearfix與clear屬性混淆.**clearfix只是一種概念**(也與浮動有關,因此可能會產生混淆).要包含浮動元素,您需要在容器(父元素)上添加`.cf`或`.clearfix`類,並按照以下方式設置這個類的樣式.
+
+有三種略有不同效果的版本(來源：A new micro clearfix hack by N. Gallagher 和 clearfix reloaded by T. J. Koblentz)：
+
+Clearfix(仍保留包含浮動元素的上邊距塌陷)
+```css
+.cf:after{
+	content: "";
+	display: table;
 }
-.cf:after {
- clear: both;
+
+.cf:after{
+ 	clear: both;
 }
-Clearfix also preventing top margin collapsing of contained floats
+```
+
+防止包含浮動元素的上邊距塌陷的 Clearfix
+```css
 /**
  * For modern browsers
  * 1. The space content is one way to avoid an Opera bug when the
@@ -3762,33 +3771,39 @@ Clearfix also preventing top margin collapsing of contained floats
  * 2. The use of `table` rather than `block` is only necessary if using
  * `:before` to contain the top-margins of child elements.
  */
-.cf:before,
-.cf:after {
- content: " "; /* 1 */
- display: table; /* 2 */
+.cf:before,.cf:after{
+	content: " "; /* 1 */
+	display: table; /* 2 */
 }
-.cf:after {
- clear: both;
+
+.cf:after{
+ 	clear: both;
 }
-Clearfix with support of outdated browsers IE6 and IE7
-.cf:before,
-.cf:after {
- content: " ";
- display: table;
+```
+支持 IE6 和 IE7 等老舊瀏覽器的 Clearfix
+```css
+.cf:before,.cf:after{
+	content: " ";
+	display: table;
 }
-.cf:after {
- clear: both;
+.cf:after{
+ 	clear: both;
 }
+
 /**
  * For IE 6/7 only
  * Include this rule to trigger hasLayout and contain floats.
  */
 .cf {
- *zoom: 1;
+ 	*zoom: 1;
 }
-Codepen showing clearfix effect
-Other resource: Everything you know about clearfix is wrong (clearfix and BFC - Block Formatting Context while
-hasLayout relates to outdated browsers IE6 maybe 7)
+```
+
+[顯示clearfix效果的Codepen](http://codepen.io/PhilippeVay/pen/OXEqgW?editors=0100)
+
+RESOURCE:
+[Everything you know about clearfix is wrong](http://www.cssmojo.com/clearfix_block-formatting-context_and_hasLayout/)
+
 Section 14.4: In-line DIV using float
 The div is a block-level element, i.e it occupies the whole of the page width and the siblings are place one below the
 other irrespective of their width.
