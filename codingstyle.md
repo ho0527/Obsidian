@@ -79,15 +79,15 @@
 | 屬性 | 屬性 | 屬性 |
 | --- | --- | --- |
 | accesskey(X) | autocapitalize | autofocus |
-| alt(SEO開放) | class | data-* |
-| draggable | hidden | id |
-| lang(SEO開放) | slot | spellcheck
-| src | tabindex(X) | title(SEO開放) |
-| accept | autocomplete | capture |
-| disabled | max | maxlength(X) |
-| min | minlength(X) | multiple |
-| pattern(X) | readonly | required |
-| size | step |
+| alt(SEO開放) | base | class|
+| data-* | draggable | hidden |
+| id | lang(SEO開放) | slot |
+| spellcheck | src | tabindex(X) |
+| title(SEO開放) | accept | autocomplete |
+| capture | disabled | max |
+| maxlength(X) | min | minlength(X) |
+| multiple | pattern(X) | readonly |
+| required | size | step |
 
 ### 書寫規範
 在屬性內將分為"有值"及"無值"兩種
