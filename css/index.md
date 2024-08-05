@@ -163,6 +163,7 @@
 		- [14-1節: 在文本內浮動圖像](#14-1節-在文本內浮動圖像)
 		- [14-2節: clear屬性](#14-2節-clear屬性)
 		- [14-3節: 清除浮動](#14-3節-清除浮動)
+		- [14-4節: 使用浮動的內聯 DIV](#14-4節-使用浮動的內聯-div)
 			- [縮寫表](#縮寫表)
 
 <div style="page-break-after: always;"></div>
@@ -2893,7 +2894,7 @@ p{
 
 ### 8-6節: 負外距
 
-margin是少數可以設定為負值的 CSS 屬性之一.此屬性可用於重疊元素從而不用絕對定位.
+margin是少數可以設定為負值的 css 屬性之一.此屬性可用於重疊元素從而不用絕對定位.
 
 ```html
 <div>Base div</div>
@@ -3718,6 +3719,7 @@ clear 屬性與浮動直接相關
 | both | 左右兩側都不允許有浮動元素 |
 | initial | 將此屬性設置為默認值 |
 | inherit | 從父元素繼承此屬性 |
+
 ```html
 <html>
 	<head>
@@ -3804,45 +3806,64 @@ Clearfix(仍保留包含浮動元素的上邊距塌陷)
 RESOURCE:
 [Everything you know about clearfix is wrong](http://www.cssmojo.com/clearfix_block-formatting-context_and_hasLayout/)
 
-Section 14.4: In-line DIV using float
-The div is a block-level element, i.e it occupies the whole of the page width and the siblings are place one below the
-other irrespective of their width.
+### 14-4節: 使用浮動的內聯 DIV
+
+div 是一個塊級元素,也就是說它會佔用整個頁面寬度,兄弟元素會逐個垂直排列,不管它們的寬度如何.
+
+```html
 <div>
- <p>This is DIV 1</p>
+ 	<p>This is DIV 1</p>
 </div>
 <div>
- <p>This is DIV 2</p>
+ 	<p>This is DIV 2</p>
 </div>
-The output of the following code will be
-We can make them in-line by adding a float css property to the div.
+```
+
+上述代碼的輸出如下:
+
+![image140401](https://i.sstatic.net/qgqNg.png)
+
+我們可以通過為div添加float css屬性來使它們內聯.
+
 html:
+```html
 <div class="outer-div">
- <div class="inner-div1">
- <p>This is DIV 1</p>
- </div>
- <div class="inner-div2">
- <p>This is DIV 2</p>
- </div>
+	<div class="inner-div1">
+		<p>This is DIV 1</p>
+	</div>
+	<div class="inner-div2">
+		<p>This is DIV 2</p>
+	</div>
 </div>
-css
+```
+
+css:
+```css
 .inner-div1 {
- width: 50%;
- margin-right:0px;
- float:left;
- background : #337ab7;
- padding:50px 0px;
+	width: 50%;
+	margin-right:0px;
+	float:left;
+	background : #337ab7;
+	padding:50px 0px;
 }
+
 .inner-div2 {
- width: 50%;
- margin-right:0px;
- float:left;
- background : #dd2c00;
- padding:50px 0px;
+	width: 50%;
+	margin-right:0px;
+	float:left;
+	background : #dd2c00;
+	padding:50px 0px;
 }
+
 p {
- text-align:center;
+ 	text-align:center;
 }
-Codepen Link
+```
+
+![image140402](https://i.sstatic.net/gy6fO.png)
+
+[Codepen鏈接](https://codepen.io/vishak-kavalur/pen/bexbBy)
+
 Section 14.5: Use of overflow property to clear floats
 Setting overflow value to hidden,auto or scroll to an element, will clear all the floats within that element.
 Note: using overflow:scroll will always show the scrollbox
