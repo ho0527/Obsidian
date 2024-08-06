@@ -164,6 +164,17 @@
 		- [14-2節: clear屬性](#14-2節-clear屬性)
 		- [14-3節: 清除浮動](#14-3節-清除浮動)
 		- [14-4節: 使用浮動的內聯 DIV](#14-4節-使用浮動的內聯-div)
+		- [14-5節: 使用overflow屬性清除浮動](#14-5節-使用overflow屬性清除浮動)
+		- [14-6節: 簡單的雙列定寬佈局](#14-6節-簡單的雙列定寬佈局)
+		- [14-7節: 簡單的三列定寬佈局](#14-7節-簡單的三列定寬佈局)
+		- [14-8節: 懶惰/貪婪的雙列佈局](#14-8節-懶惰貪婪的雙列佈局)
+	- [第15章: 文字及排版](#第15章-文字及排版)
+		- [15-1節: font簡寫](#15-1節-font簡寫)
+		- [15-2節: 引號](#15-2節-引號)
+		- [15-3節: 字體大小](#15-3節-字體大小)
+		- [15-4節: 文字方向](#15-4節-文字方向)
+		- [15-5節: 字體列表](#15-5節-字體列表)
+		- [15-6節: 文字溢出](#15-6節-文字溢出)
 			- [縮寫表](#縮寫表)
 
 <div style="page-break-after: always;"></div>
@@ -3748,7 +3759,7 @@ clear 屬性與浮動直接相關
 
 不要將clearfix與clear屬性混淆.**clearfix只是一種概念**(也與浮動有關,因此可能會產生混淆).要包含浮動元素,您需要在容器(父元素)上添加`.cf`或`.clearfix`類,並按照以下方式設置這個類的樣式.
 
-有三種略有不同效果的版本(來源：A new micro clearfix hack by N. Gallagher 和 clearfix reloaded by T. J. Koblentz)：
+有三種略有不同效果的版本(來源: A new micro clearfix hack by N. Gallagher 和 clearfix reloaded by T. J. Koblentz): 
 
 Clearfix(仍保留包含浮動元素的上邊距塌陷)
 ```css
@@ -3864,238 +3875,286 @@ p {
 
 [Codepen鏈接](https://codepen.io/vishak-kavalur/pen/bexbBy)
 
-Section 14.5: Use of overflow property to clear floats
-Setting overflow value to hidden,auto or scroll to an element, will clear all the floats within that element.
-Note: using overflow:scroll will always show the scrollbox
-Section 14.6: Simple Two Fixed-Width Column Layout
-A simple two-column layout consists of two fixed-width, floated elements. Note that the sidebar and content area
-are not the same height in this example. This is one of the tricky parts with multi-column layouts using floats, and
-requires workarounds to make multiple columns appear to be the same height.
+### 14-5節: 使用overflow屬性清除浮動
+
+將 overflow 屬性的值設置為 hidden、auto 或 scroll 會清除元素內部所有的浮動.
+
+**注意: 使用 overflow:scroll 將始終顯示滾動條.**
+
+### 14-6節: 簡單的雙列定寬佈局
+
+簡單的雙列佈局由兩個定寬、浮動的元素組成.請注意,在這個例子中邊欄和內容區域的高度並不相同.這是使用浮動進行多欄佈局的一個棘手問題,需要一些變通方法才能使多列高度看起來相同.
+
 html:
+```html
 <div class="wrapper">
+	<div class="sidebar">
+		<h2>Sidebar</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.</p>
+	</div>
+	<div class="content">
+		<h1>Content</h1>
+		<p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor. Maecenas mattis. Sed convallis tristique sem. Proin ut ligula vel nunc egestas porttitor. Morbi lectus risus, iaculis vel, suscipit quis, luctus non, massa. Fusce ac turpis quis ligula lacinia aliquet.</p>
+	</div>
+</div>
+```
+
+css:
+```css
+.wrapper{
+	width:600px;
+	padding:20px;
+	background-color:pink;
+	/* 浮動元素不會佔用任何高度.添加 "overflow:hidden;" 可以強制父元素擴展以包含其浮動子元素. */
+	overflow:hidden;
+}
+.sidebar{
+	width:150px;
+	float:left;
+	background-color:blue;
+}
+.content{
+	width:450px;
+	float:right;
+	background-color:yellow;
+}
+```
+
+### 14-7節: 簡單的三列定寬佈局
+
+html:
+```html
+<div class="wrapper">
+	<div class="left-sidebar">
+		<h1>Left Sidebar</h1>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+		</div>
+	<div class="content">
+		<h1>Content</h1>
+		<p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor. Maecenas mattis. Sed convallis tristique sem. Proin ut ligula vel nunc egestas porttitor. Morbi lectus risus, iaculis vel, suscipit quis, luctus non, massa.</p>
+	</div>
+	<div class="right-sidebar">
+		<h1>Right Sidebar</h1>
+		<p>Fusce ac turpis quis ligula lacinia aliquet.</p>
+	</div>
+</div>
+```
+
+css:
+```css
+.wrapper{
+	width:600px;
+	background-color:pink;
+	padding:20px;
+	/* 浮動元素不會佔用任何高度.添加 "overflow:hidden;" 可以強制父元素擴展以包含其浮動子元素. */
+	overflow:hidden;
+}
+
+.left-sidebar{
+	width:150px;
+	background-color:blue;
+	float:left;
+}
+
+.content{
+	width:300px;
+	background-color:yellow;
+	float:left;
+}
+
+.right-sidebar{
+	width:150px;
+	background-color:green;
+	float:right;
+}
+```
+
+### 14-8節: 懶惰/貪婪的雙列佈局
+
+這個佈局使用一個浮動列來創建一個沒有定義寬度的雙列佈局.在這個例子中,左側邊欄是"懶惰"的,即它只佔用它需要的空間.另一種說法是左側邊欄是"收縮包裝"的.右側內容列是"貪婪"的,它佔用所有剩餘的空間.
+
+html:
+```html
 <div class="sidebar">
- <h2>Sidebar</h2>
- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.</p>
+	<h1>Sidebar</h1>
+	<img src="http://lorempixel.com/150/200/" />
 </div>
 <div class="content">
- <h1>Content</h1>
- <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque
-nibh. Aenean quam. In scelerisque sem at dolor. Maecenas mattis. Sed convallis tristique sem. Proin
-ut ligula vel nunc egestas porttitor. Morbi lectus risus, iaculis vel, suscipit quis, luctus non,
-massa. Fusce ac turpis quis ligula lacinia aliquet. </p>
+	<h1>Content</h1>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla.</p>
+	<p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor. Maecenas mattis. Sed convallis tristique sem. Proin ut ligula vel nunc egestas porttitor. Morbi lectus risus, iaculis vel, suscipit quis, luctus non, massa. Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh.</p>
 </div>
-</div>
+```
+
 css:
-.wrapper {
- width:600px;
- padding:20px;
- background-color:pink;
- /* Floated elements don't use any height. Adding "overflow:hidden;" forces the
- parent element to expand to contain its floated children. */
- overflow:hidden;
+```css
+.sidebar{
+	/* `display:table;` 收縮包裝列 */
+	display:table;
+	float:left;
+	background-color:blue;
 }
-.sidebar {
- width:150px;
- float:left;
- background-color:blue;
+
+.content{
+	/* `overflow:hidden;` 防止 `.content` 流到 `.sidebar` 下面 */
+	overflow:hidden;
+	background-color:yellow;
 }
-.content {
- width:450px;
- float:right;
- background-color:yellow;
+```
+
+[Fiddle](https://jsfiddle.net/ooprqsL0/)
+## 第15章: 文字及排版
+
+| 參數 | 細節 |
+| --- | --- |
+| font-style | italics或oblique |
+| font-variant | 正常或小型大寫字母 |
+| font-weight | 正常、粗體或 100 到 900 之間的數值 |
+| font-size | 以 %、px、em 或任何有效的 CSS 測量單位表示的字體大小 |
+| line-height | 以 %、px、em 或任何有效的 CSS 測量單位表示的行高 |
+| font-family | 定義字體族的名稱 |
+| color | 任何有效的css顏色表示法,如 red、#00FF00、hsl(240, 100%, 50%) 等 |
+| font-stretch | 是否使用從字型壓縮到拓展的樣式.有效值為 normal、ultra-condensed、extra-condensed、condensed、semi-condensed、semi-expanded、expanded、extra-expanded 或 ultra-expanded |
+| text-align | start、end、left、right、center、justify、match-parent |
+| text-decoration | none、underline、overline、line-through、initial、inherit |
+
+### 15-1節: font簡寫
+
+語法: `font: [?font-style] [?font-variant] [?font-weight] [font-size]/[?line-height] [font-family]`
+
+您可以用 font 簡寫將所有與字體相關的樣式放在一個聲明中.只需使用 font 屬性,按正確順序輸入您的值.
+
+例如,要將所有 p 元素設置為粗體,字體大小為 20px,字體家族為 Arial,通常會這樣編碼:
+```css
+p{
+	font-weight: bold;
+	font-size: 20px;
+	font-family: Arial, sans-serif;
 }
-Section 14.7: Simple Three Fixed-Width Column Layout
-html:
-<div class="wrapper">
- <div class="left-sidebar">
- <h1>Left Sidebar</h1>
- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
- </div>
- <div class="content">
- <h1>Content</h1>
- <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque
-nibh. Aenean quam. In scelerisque sem at dolor. Maecenas mattis. Sed convallis tristique sem. Proin
-ut ligula vel nunc egestas porttitor. Morbi lectus risus, iaculis vel, suscipit quis, luctus non,
-massa. </p>
- </div>
- <div class="right-sidebar">
- <h1>Right Sidebar</h1>
- <p>Fusce ac turpis quis ligula lacinia aliquet.</p>
- </div>
-</div>
-css:
-.wrapper {
- width:600px;
- background-color:pink;
- padding:20px;
- /* Floated elements don't use any height. Adding "overflow:hidden;" forces the
- parent element to expand to contain its floated children. */
- overflow:hidden;
-}
-.left-sidebar {
- width:150px;
- background-color:blue;
- float:left;
-}
-.content {
- width:300px;
- background-color:yellow;
- float:left;
-}
-.right-sidebar {
- width:150px;
- background-color:green;
- float:right;
-}
-Section 14.8: Two-Column Lazy/Greedy Layout
-This layout uses one floated column to create a two-column layout with no defined widths. In this example the left
-sidebar is "lazy," in that it only takes up as much space as it needs. Another way to say this is that the left sidebar is
-"shrink-wrapped." The right content column is "greedy," in that it takes up all the remaining space.
-html:
-<div class="sidebar">
-<h1>Sidebar</h1>
-<img src="http://lorempixel.com/150/200/" />
-</div>
-<div class="content">
-<h1>Content</h1>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed
-cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis
-ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia
-arcu eget nulla. </p>
-<p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque
-nibh. Aenean quam. In scelerisque sem at dolor. Maecenas mattis. Sed convallis tristique sem. Proin
-ut ligula vel nunc egestas porttitor. Morbi lectus risus, iaculis vel, suscipit quis, luctus non,
-massa. Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper
-vel, tincidunt sed, euismod in, nibh. </p>
-</div>
-css:
-.sidebar {
- /* `display:table;` shrink-wraps the column */
- display:table;
- float:left;
- background-color:blue;
-}
-.content {
- /* `overflow:hidden;` prevents `.content` from flowing under `.sidebar` */
- overflow:hidden;
- background-color:yellow;
-}
-Fiddle
-Chapter 15: Typography
-Parameter Details
-font-style italics or oblique
-font-variant normal or small-caps
-font-weight normal, bold or numeric from 100 to 900.
-font-size The font size given in %, px, em, or any other valid css measurement
-line-height The line height given in %, px, em, or any other valid css measurement
-font-family This is for defining the family's name.
-color Any valid css color representation, like red, #00FF00, hsl(240, 100%, 50%) etc.
-font-stretch
-Whether or not to use a confenced or expanded face from font. Valid values are normal, ultracondensed, extra-condensed, condensed, semi-condensed, semi-expanded, expanded, extraexpanded or ultra-expanded
-text-align start, end, left, right, center, justify, match-parent
-text-decoration none, underline, overline, line-through, initial, inherit;
-Section 15.1: The Font Shorthand
-With the syntax:
-element {
- font: [font-style] [font-variant] [font-weight] [font-size/line-height] [font-family];
-}
-You can have all your font-related styles in one declaration with the font shorthand. Simply use the font property,
-and put your values in the correct order.
-For example, to make all p elements bold with a font size of 20px and using Arial as the font family typically you
-would code it as follows:
+```
+
+但使用font簡寫可以縮短為:
+```css
 p {
- font-weight: bold;
- font-size: 20px;
- font-family: Arial, sans-serif;
+	font: bold 20px Arial, sans-serif;
 }
-However with the font shorthand it can be condensed as follows:
-p {
- font: bold 20px Arial, sans-serif;
+```
+
+注意: 由於font-style、font-variant、font-weight、line-height是可選的在這個例子中它們被略過了.重要的是使用快捷方式**會重置未給出的其他屬性**.
+
+另一個重要的點是,font簡寫**必須包含font-size和font-family這兩個必需屬性**.如果沒有同時包含它們則簡寫將無法使用.
+
+| 屬性 | 初始值 |
+| --- | --- |
+| font-style | normal |
+| font-variant | normal |
+| font-weight | normal |
+| font-stretch | normal |
+| font-size | medium |
+| line-height | normal |
+| font-family | 取決於設定 |
+
+### 15-2節: 引號
+
+引號(quotes)屬性用於自定義<q>標籤的開始和結束引號.
+```css
+q{
+ 	quotes: "«" "»";
 }
-Note: that since font-style, font-variant, font-weight and line-height are optional, the three of them are
-skipped in this example. It is important to note that using the shortcut resets the other attributes not given.
-Another important point is that the two necessary attributes for the font shortcut to work are font-size and fontfamily. If they are not both included the shortcut is ignored.
-Initial value for each of the properties:
-font-style: normal;
-font-variant: normal;
-font-weight: normal;
-font-stretch: normal;
-font-size: medium;
-line-height: normal;
-font-family – depends on user agent
-Section 15.2: Quotes
-The quotes property is used to customize the opening and closing quotation marks of the <q> tag.
-q {
- quotes: "«" "»";
-}
-Section 15.3: Font Size
+```
+
+### 15-3節: 字體大小
+
 html:
+```html
 <div id="element-one">Hello I am some text.</div>
 <div id="element-two">Hello I am some smaller text.</div>
+```
+
 css:
-#element-one {
- font-size: 30px;
+```css
+#element-one{
+ 	font-size: 30px;
 }
-#element-two {
- font-size: 10px;
+#element-two{
+ 	font-size: 10px;
 }
-The text inside #element-one will be 30px in size, while the text in #element-two will be 10px in size.
-Section 15.4: Text Direction
-div {
- direction: ltr; /* Default, text read read from left-to-right */
+```
+
+#element-one內的文字將為30px大小,而#element-two內的文字將為10px大小.
+
+### 15-4節: 文字方向
+```css
+div{
+	direction: ltr; /* 默認, 從左到右讀取 */
 }
-.ex {
- direction: rtl; /* text read from right-to-left */
+
+.ex{
+	direction: rtl; /* 從右到左讀取 */
 }
+
 .horizontal-tb {
- writing-mode: horizontal-tb; /* Default, text read from left-to-right and top-to-bottom. */
+	writing-mode: horizontal-tb; /* 默認, 從左到右, 從上到下讀取 */
 }
+
 .vertical-rtl {
- writing-mode: vertical-rl; /* text read from right-to-left and top-to-bottom */
+	writing-mode: vertical-rl; /* 從右到左, 從上到下讀取 */
 }
+
 .vertical-ltr {
- writing-mode: vertical-rl; /* text read from left-to-right and top to bottom */
+	writing-mode: vertical-rl; /* 從左到右, 從上到下讀取 */
 }
-The direction property is used to change the horizontal text direction of an element.
-Syntax: direction: ltr | rtl | initial | inherit;
-The writing-mode property changes the alignment of text so it can be read from top-to-bottom or from left-to-right,
-depending on the language.
-Syntax: direction: horizontal-tb | vertical-rl | vertical-lr;
-Section 15.5: Font Stacks
-font-family: 'Segoe UI', Tahoma, sans-serif;
-The browser will attempt to apply the font face "Segoe UI" to the characters within the elements targeted by the
-above property. If this font is not available, or the font does not contain a glyph for the required character, the
-browser will fall back to Tahoma, and, if necessary, any sans-serif font on the user's computer. Note that any font
-names with more than one word such as "Segoe UI" need to have single or double quotes around them.
-font-family: Consolas, 'Courier New', monospace;
-The browser will attempt to apply the font face "Consolas" to the characters within the elements targeted by the
-above property. If this font is not available, or the font does not contain a glyph for the required character, the
-browser will fall back to "Courier New," and, if necessary, any monospace font on the user's computer.
-Section 15.6: Text Overflow
-The text-overflow property deals with how overflowed content should be signaled to users. In this example, the
-ellipsis represents clipped text.
-.text {
- overflow: hidden;
- text-overflow: ellipsis;
+```
+
+direction 屬性用於更改元素的水平文字方向.
+
+語法: `direction: ltr | rtl | initial | inherit;`
+
+writing-mode 屬性更改文字的對齊方式,使其可以從上到下或從左到右讀取,這取決於語言.
+
+語法: `writing-mode: horizontal-tb | vertical-rl | vertical-lr;`
+
+### 15-5節: 字體列表
+```css
+font-family: "Segoe UI", Tahoma, sans-serif;
+```
+
+瀏覽器會嘗試將 "Segoe UI" 字體應用到目標元素中的字符.如果該字體不可用,或該字體沒有包含所需的字形,瀏覽器將退回到 Tahoma,如果仍然無法滿足,則使用用戶電腦上的任何 sans-serif 字體.請注意,任何包含多個單詞的字體名稱,如 "Segoe UI"，都需要用單引號或雙引號括起來.
+
+```css
+font-family: Consolas, "Courier New", monospace;
+```
+
+瀏覽器將嘗試將 "Consolas" 字體應用到目標元素中的字符.如果該字體不可用,或該字體沒有包含所需的字形,瀏覽器將退回到 "Courier New"，如果仍然無法滿足,則使用用戶電腦上的任何等寬字體.
+
+### 15-6節: 文字溢出
+
+text-overflow屬性處理被溢出內容應該如何向用戶顯示.在此示例中,省略號代表被截斷的文本.
+```css
+.text{
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
-Unfortunately, text-overflow: ellipsis only works on a single line of text. There is no way to support ellipsis on
-the last line in standard css, but it can be achieved with non-standard webkit-only implementation of flexboxes.
-.giveMeEllipsis {
- overflow: hidden;
- text-overflow: ellipsis;
- display: -webkit-box;
- -webkit-box-orient: vertical;
- -webkit-line-clamp: N; /* number of lines to show */
- line-height: X; /* fallback */
- max-height: X*N; /* fallback */
+```
+
+可惜的是text-overflow: ellipsis只適用於單行文本.在標準 CSS 中沒有辦法支持最後一行的省略號,但可以使用 Webkit 專有的 Flexbox 實現.
+
+```css
+.givemeellipsis{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: N; /* 顯示的行數 */
+	line-height: X; /* 後備 */
+	max-height: X*N; /* 後備 */
 }
-Example (open in Chrome or Safari):
-http://jsfiddle.net/csYjC/1131/
-Resources:
-https://www.w3.org/TR/2012/WD-css3-ui-20120117/#text-overflow0
+```
+
+[範例(使用Chrome或Safari開啟)](http://jsfiddle.net/csYjC/1131/)
+
+[其他資源](https://www.w3.org/TR/2012/WD-css3-ui-20120117/#text-overflow0)
+
 Section 15.7: Text Shadow
 To add shadows to text, use the text-shadow property. The syntax is as follows:
 text-shadow: horizontal-offset vertical-offset blur color;
