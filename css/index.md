@@ -175,6 +175,13 @@
 		- [15-4節: 文字方向](#15-4節-文字方向)
 		- [15-5節: 字體列表](#15-5節-字體列表)
 		- [15-6節: 文字溢出](#15-6節-文字溢出)
+		- [15-7節: 文字陰影](#15-7節-文字陰影)
+		- [15-8節: 文字變換](#15-8節-文字變換)
+		- [15-9節: 字距](#15-9節-字距)
+		- [15-10節: 文本縮進](#15-10節-文本縮進)
+		- [15-11節: 文本裝飾](#15-11節-文本裝飾)
+		- [15-12節: 文字間距](#15-12節-文字間距)
+		- [15-13節: 字體變體](#15-13節-字體變體)
 			- [縮寫表](#縮寫表)
 
 <div style="page-break-after: always;"></div>
@@ -3685,6 +3692,8 @@ mediatype清單可通過以下表了解:
 NOTE
 1. 技術上還有另一個替代方案:使用css黑客(css hacks)針對IE9以下版本.這與使用單獨的樣式表具有相同的效果,但您不需要為此準備一個單獨的樣式表.**不過不建議使用這種方法**,因為它會產生無效的css代碼(這只是使用css黑客的多個原因之一,眾所周知使用css黑客是不受歡迎的).
 
+<div style="page-break-after: always;"></div>
+
 ## 第14章: 浮動
 
 ### 14-1節: 在文本內浮動圖像
@@ -4003,6 +4012,9 @@ css:
 ```
 
 [Fiddle](https://jsfiddle.net/ooprqsL0/)
+
+<div style="page-break-after: always;"></div>
+
 ## 第15章: 文字及排版
 
 | 參數 | 細節 |
@@ -4155,129 +4167,213 @@ text-overflow屬性處理被溢出內容應該如何向用戶顯示.在此示例
 
 [其他資源](https://www.w3.org/TR/2012/WD-css3-ui-20120117/#text-overflow0)
 
-Section 15.7: Text Shadow
-To add shadows to text, use the text-shadow property. The syntax is as follows:
-text-shadow: horizontal-offset vertical-offset blur color;
-Shadow without blur radius
-h1 {
- text-shadow: 2px 2px #0000FF;
+### 15-7節: 文字陰影
+
+要為文字添加陰影,請使用 text-shadow 屬性.
+
+語法:`text-shadow: 水平偏移 垂直偏移 模糊半徑 顏色`
+
+無模糊半徑的陰影
+```css
+h1{
+	text-shadow: 2px 2px #0000FF;
 }
-This creates a blue shadow effect around a heading
-Shadow with blur radius
-To add a blur effect, add an option blur radius argument
-h1 {
- text-shadow: 2px 2px 10px #0000FF;
+```
+這會在標題周圍產生一個藍色的陰影效果.
+
+帶有模糊半徑的陰影
+要添加模糊效果,請添加一個可選的模糊半徑參數
+```css
+h1{
+	text-shadow: 2px 2px 10px #0000FF;
 }
-Multiple Shadows
-To give an element multiple shadows, separate them with commas
-h1 {
- text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
+```
+
+多重陰影
+要為元素添加多個陰影,請用逗號分隔它們
+```css
+h1{
+	text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
 }
-Section 15.8: Text Transform
-The text-transform property allows you to change the capitalization of text. Valid values are: uppercase,
-capitalize, lowercase, initial, inherit, and none
-css
-.example1 {
- text-transform: uppercase;
+```
+
+### 15-8節: 文字變換
+
+text-transform 屬性允許您更改文本的大小寫.有效值包括: uppercase、capitalize、lowercase、initial、inherit 和 none.
+
+css:
+```css
+.example1{
+	text-transform: uppercase;
 }
-.example2 {
- text-transform: capitalize;
+
+.example2{
+	text-transform: capitalize;
 }
-.example3 {
- text-transform: lowercase;
+
+.example3{
+	text-transform: lowercase;
 }
-html
+```
+
+html:
+```html
 <p class="example1">
- all letters in uppercase <!-- "ALL LETTERS IN UPPERCASE" -->
+	all letters in uppercase <!-- "ALL LETTERS IN UPPERCASE" -->
 </p>
 <p class="example2">
- all letters in capitalize <!-- "All Letters In Capitalize (Sentence Case)" -->
+	all letters in capitalize <!-- "All Letters In Capitalize (Sentence Case)" -->
 </p>
 <p class="example3">
- all letters in lowercase <!-- "all letters in lowercase" -->
+	all letters in lowercase <!-- "all letters in lowercase" -->
 </p>
-Section 15.9: Letter Spacing
-h2 {
- /* adds a 1px space horizontally between each letter;
- also known as tracking */
+```
+
+### 15-9節: 字距
+```css
+h2{
+ /* 在每個字母之間添加 1px 的空間; 也稱為字距 */
  letter-spacing: 1px;
 }
-The letter-spacing property is used to specify the space between the characters in a text.
-! letter-spacing also supports negative values:
-p {
- letter-spacing: -1px;
+```
+
+letter-spacing 屬性用於指定文本中字符之間的空間.
+
+注意: letter-spacing 也支持負值:
+```css
+p{
+	letter-spacing: -1px;
 }
-Resources: https://developer.mozilla.org/en-US/docs/Web/css/letter-spacing
-Section 15.10: Text Indent
-p {
- text-indent: 50px;
+```
+
+[資源](https://developer.mozilla.org/en-US/docs/Web/css/letter-spacing)
+
+### 15-10節: 文本縮進
+```css
+p{
+	text-indent: 50px;
 }
-The text-indent property specifies how much horizontal space text should be moved before the beginning of the
-first line of the text content of an element.
-Resources:
-Indenting only the first line of text in a paragraph?
-https://www.w3.org/TR/css21/text.html#propdef-text-indent
-https://developer.mozilla.org/en-US/docs/Web/css/text-indent
-Section 15.11: Text Decoration
-The text-decoration property is used to set or remove decorations from text.
-h1 { text-decoration: none; }
-h2 { text-decoration: overline; }
-h3 { text-decoration: line-through; }
-h4 { text-decoration: underline; }
-text-decoration can be used in combination with text-decoration-style and text-decoration-color as a shorthand
-property:
-.title { text-decoration: underline dotted blue; }
-This is a shorthand version of
-.title {
- text-decoration-style: dotted;
- text-decoration-line: underline;
- text-decoration-color: blue;
+```
+
+text-indent屬性指定文本內容的第一行應該水平移動多少距離.
+
+資源:
+
+[https://www.w3.org/TR/css21/text.html#propdef-text-indent](https://www.w3.org/TR/css21/text.html#propdef-text-indent)
+
+[https://developer.mozilla.org/en-US/docs/Web/css/text-indent](https://developer.mozilla.org/en-US/docs/Web/css/text-indent)
+
+### 15-11節: 文本裝飾
+
+text-decoration 屬性用於設置或刪除文本的裝飾.
+```css
+h1{
+	text-decoration: none;
 }
-It should be noted that the following properties are only supported in Firefox
-text-decoration-color
-text-decoration-line
-text-decoration-style
-text-decoration-skip
-Section 15.12: Word Spacing
-The word-spacing property specifies the spacing behavior between tags and words.
-Possible values
-a positive or negative length (using em px vh cm etc.) or percentage (using %)
-the keyword normal uses the font's default word spacing
-the keyword inherit takes the value from the parent element
-css
-.normal { word-spacing: normal; }
-.narrow { word-spacing: -3px; }
-.extensive { word-spacing: 10px; }
-html
-<p>
- <span class="normal">This is an example, showing the effect of "word-spacing".</span><br>
- <span class="narrow">This is an example, showing the effect of "word-spacing".</span><br>
- <span class="extensive">This is an example, showing the effect of "word-spacing".</span><br>
-</p>
-Online-Demo
-Try it yourself
-Further reading:
-word-spacing – MDN
-word-spacing – w3.org
-Section 15.13: Font Variant
-Attributes:
-normal
-Default attribute of fonts.
-small-caps
-Sets every letter to uppercase, but makes the lowercase letters(from original text) smaller in size than the letters
-that originally uppercase.
-css:
-.smallcaps{
- font-variant: small-caps;
+h2{
+	text-decoration: overline;
 }
+h3{
+	text-decoration: line-through;
+}
+h4{
+	text-decoration: underline;
+}
+```
+
+text-decoration 可以與 text-decoration-style 和 text-decoration-color 一起使用作為簡寫屬性:
+```css
+.title{
+	text-decoration: underline dotted blue;
+}
+
+這是以下代碼的簡寫版本:
+```css
+.title{
+	text-decoration-style: dotted;
+	text-decoration-line: underline;
+	text-decoration-color: blue;
+}
+```
+
+請注意的是以下屬性只在Firefox中受支持
+- text-decoration-color
+- text-decoration-line
+- text-decoration-style
+- text-decoration-skip
+
+### 15-12節: 文字間距
+
+word-spacing 屬性指定標籤和單詞之間的間距.
+
+可能的值:
+- 正數或負數長度(使用 em、px、vh、cm 等)或百分比(使用 %)
+- 關鍵字 normal 使用字型的默認字間距
+- 關鍵字 inherit 從父元素繼承值
+
 html:
-<p class="smallcaps">
- Documentation about css Fonts
- <br>
- aNd ExAmpLe
+```html
+<p>
+	<span class="normal">This is an example, showing the effect of "word-spacing".</span><br>
+	<span class="narrow">This is an example, showing the effect of "word-spacing".</span><br>
+	<span class="extensive">This is an example, showing the effect of "word-spacing".</span><br>
 </p>
-Output:
-Note: The font-variant property is a shorthand for the properties: font-variant-caps, font-variant-numeric, fontvariant-alternates, font-variant-ligatures, and font-variant-east-asian.
+```
+
+css:
+```css
+.normal{
+	word-spacing: normal;
+}
+
+.narrow{
+	word-spacing: -3px;
+}
+
+.extensive{
+	word-spacing: 10px;
+}
+```
+
+[在線演示](https://jsfiddle.net/91742Lxt/)
+
+參考資料:
+- [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/word-spacing)
+
+### 15-13節: 字體變體
+
+屬性:
+- normal 字體的默認屬性.
+- small-caps 將所有字母設置為大寫但將原文中的小寫字母縮小到小於原大寫字母的大小.
+
+
+html:
+```html
+<p class="smallcaps">
+	Documentation about css Fonts<br>
+	aNd ExAmpLe
+</p>
+```
+
+css:
+```css
+.smallcaps{
+ 	font-variant: small-caps;
+}
+```
+
+輸出:
+[image151201](https://i.sstatic.net/HVJq6.png)
+
+font-variant屬性是以下屬性的簡寫形式:
+- font-variant-caps
+- font-variant-numeric
+- font-variant-alternates
+- font-variant-ligatures
+- font-variant-east-asian
+
+<div style="page-break-after: always;"></div>
+
 Chapter 16: Flexible Box Layout (Flexbox)
 The Flexible Box module, or just 'flexbox' for short, is a box model designed for user interfaces, and it allows users
 to align and distribute space among items in a container such that elements behave predictably when the page
