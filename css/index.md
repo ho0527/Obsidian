@@ -114,8 +114,8 @@
 		- [7-2節: box-sizing](#7-2節-box-sizing)
 	- [第8章-外距](#第8章-外距)
 		- [8-1節: 外距合併](#8-1節-外距合併)
-			- [相鄰垂直外距示例](#相鄰垂直外距示例)
-			- [相鄰水平外距示例](#相鄰水平外距示例)
+			- [相鄰垂直外距示範](#相鄰垂直外距示範)
+			- [相鄰水平外距示範](#相鄰水平外距示範)
 			- [不同大小的重疊外距](#不同大小的重疊外距)
 			- [外距合併陷阱](#外距合併陷阱)
 			- [父子元素外距合併](#父子元素外距合併)
@@ -152,7 +152,7 @@
 		- [12-5節: 使用overflow創建塊級格式上下文](#12-5節-使用overflow創建塊級格式上下文)
 	- [第13章: 媒體查詢](#第13章-媒體查詢)
 		- [13-1節: 術語和結構](#13-1節-術語和結構)
-		- [13-2節: 基本示例](#13-2節-基本示例)
+		- [13-2節: 基本示範](#13-2節-基本示範)
 		- [13-2節: mediatype](#13-2節-mediatype)
 		- [13-4節: 適用於視網膜與非視網膜螢幕的媒體查詢](#13-4節-適用於視網膜與非視網膜螢幕的媒體查詢)
 		- [13-5節: 寬度vs視口](#13-5節-寬度vs視口)
@@ -182,6 +182,21 @@
 		- [15-11節: 文本裝飾](#15-11節-文本裝飾)
 		- [15-12節: 文字間距](#15-12節-文字間距)
 		- [15-13節: 字體變體](#15-13節-字體變體)
+	- [第16章: Flexbox](#第16章-flexbox)
+		- [16-1節: 動態垂直水平居中](#16-1節-動態垂直水平居中)
+			- [原理](#原理)
+			- [單個屬性示範](#單個屬性示範)
+				- [示範1: 水平flexbox上的justify-content: center](#示範1-水平flexbox上的justify-content-center)
+				- [示範2: 垂直flexbox上的justify-content: center](#示範2-垂直flexbox上的justify-content-center)
+				- [示範3: 水平flexbox上的align-items: center](#示範3-水平flexbox上的align-items-center)
+				- [示範4: 垂直flexbox上的align-items: center](#示範4-垂直flexbox上的align-items-center)
+				- [示範5: 在水平flexbox上同時居中](#示範5-在水平flexbox上同時居中)
+				- [示範6: 在垂直 flexbox 上同時居中](#示範6-在垂直-flexbox-上同時居中)
+		- [16-2節: 黏性可變高度頁腳](#16-2節-黏性可變高度頁腳)
+		- [16-3節: 最佳化填充元素至其容器](#16-3節-最佳化填充元素至其容器)
+		- [16-4節: 使用flexbox實現Holy Grail佈局](#16-4節-使用flexbox實現holy-grail佈局)
+		- [16-5節: 使用flexbox完美對齊卡片內的按鈕](#16-5節-使用flexbox完美對齊卡片內的按鈕)
+		- [16-6節: 嵌套容器等高](#16-6節-嵌套容器等高)
 			- [縮寫表](#縮寫表)
 
 <div style="page-break-after: always;"></div>
@@ -615,7 +630,7 @@ div[data-color]{
 <div data-color="green">這會變紅色</div>
 <div data-background="red">這不會變紅色</div>
 ```
-[JSBin上的線上演示](https://jsbin.com/cezale/1/edit?html,css,output)
+[JSBin上的線上範例](https://jsbin.com/cezale/1/edit?html,css,output)
 
 \[屬性="值(value)"(也可以是單引號)\]
 選擇**具有給定屬性和值的元素**.
@@ -629,9 +644,9 @@ div[data-color="red"]{
 <div data-color="green">這不會變紅色</div>
 <div data-color="blue">這不會變紅色</div>
 ```
-[JSBin上的線上演示](https://jsbin.com/waxoked/1/edit?html,css,output)
+[JSBin上的線上範例](https://jsbin.com/waxoked/1/edit?html,css,output)
 
-*ps: 此演示沒演示到`<div data-color="green">這不會變紅色</div>`應該是錯誤的*
+*ps: 此範例沒範例到`<div data-color="green">這不會變紅色</div>`應該是錯誤的*
 
 \[屬性*="值"\]
 選擇具有給定屬性和值的元素,其中**給定屬性在任何位置包含給定值**(如一個子串).
@@ -647,7 +662,7 @@ div[class*="foo"]{
 <div class="barfooo123">這會變紅色</div>
 <div class="barfo0">這不會變紅色</div>
 ```
-[JSBin上的線上演示](https://jsbin.com/dazige/1/edit?html,css,output)
+[JSBin上的線上範例](https://jsbin.com/dazige/1/edit?html,css,output)
 
 \[屬性~="值"\]
 選擇具有給定屬性和值的元素,其中**給定值出現在以空格分隔的清單中**.
@@ -660,7 +675,7 @@ div[class~="color-red"]{
 <div class="color-red foo-bar the-div">這會變紅色</div>
 <div class="color-blue foo-bar the-div">這不會變紅色</div>
 ```
-[JSBin上的線上演示](https://jsbin.com/posuhim/1/edit?html,css,output)
+[JSBin上的線上範例](https://jsbin.com/posuhim/1/edit?html,css,output)
 
 \[屬性^="值"\]
 選擇具有給定屬性和值的元素,其中**給定屬性以該值開頭**.
@@ -674,7 +689,7 @@ div[class^="foo-"]{
 <div class="foo-234">這會變紅色</div>
 <div class="bar-123">這不會變紅色</div>
 ```
-[JSBin上的線上演示](https://jsbin.com/yowihi/1/edit?html,css,output)
+[JSBin上的線上範例](https://jsbin.com/yowihi/1/edit?html,css,output)
 
 \[屬性$="值"\]
 選擇具有給定屬性和值的元素,其中**給定屬性以給定值結尾**.
@@ -688,7 +703,7 @@ div[class$="file"]{
 <div class="foobar-file">這會變紅色</div>
 <div class="foobar-input">這不會變紅色</div>
 ```
-[JSBin上的線上演示](https://jsbin.com/yowihi/2/edit?html,css,output)
+[JSBin上的線上範例](https://jsbin.com/yowihi/2/edit?html,css,output)
 
 [屬性|=“值”]
 選擇具有給定屬性和值的元素,其中**屬性的值恰好是給定值或恰好是給定值後面接著"-"**
@@ -702,7 +717,7 @@ div[lang|="EN"]{
 <div lang="EN-gb">這會變紅色</div>
 <div lang="PT-pt">這不會變紅色</div>
 ```
-[JSBin上的線上演示](https://jsbin.com/yowihi/3/edit?html,css,output)
+[JSBin上的線上範例](https://jsbin.com/yowihi/3/edit?html,css,output)
 
 \[屬性="值" i\]
 選擇具有給定屬性和值的元素,其中**屬性的值可以表示為任何不區分大小寫的值**.(例如: \[class="value"\] 那: Value,VALUE,vAlUe 等皆可被使用)
@@ -717,7 +732,7 @@ div[lang|="EN" i]{
 <div lang="en">這會變紅色</div>
 <div lang="TW">這不會變紅色</div>
 ```
-[JSBin上的線上演示](https://jsbin.com/yowihi/4/edit?html,css,output)
+[JSBin上的線上範例](https://jsbin.com/yowihi/4/edit?html,css,output)
 
 ***屬性選擇器的優先級為: 0-1-0***
 
@@ -764,7 +779,7 @@ div p{
 </div>
 <p>我的文字不是紅色</p>
 ```
-[JSBin上的線上演示](https://jsbin.com/xonafuz/2/edit?html,css,output)
+[JSBin上的線上範例](https://jsbin.com/xonafuz/2/edit?html,css,output)
 
 在上面的範例中,選擇了前兩個`<p>`元素,因為它們都是`<div>`的後代.
 
@@ -786,7 +801,7 @@ div>p{
 	</span>
 </div>
 ```
-[JSBin上的現場演示](https://jsbin.com/xonafuz/3/edit?html,css,output)
+[JSBin上的現場範例](https://jsbin.com/xonafuz/3/edit?html,css,output)
 
 上面的css**只選擇第一個`<p>`元素,因為它是唯一直接從`<div>`繼承的段落**.
 
@@ -809,7 +824,7 @@ div+p{
 <hr>
 <p>我的文字不是紅色</p>
 ```
-[JSBin上的現場演示](https://jsbin.com/xonafuz/4/edit?html,css,output)
+[JSBin上的現場範例](https://jsbin.com/xonafuz/4/edit?html,css,output)
 
 上面的範例**僅選擇直接位於另一個`<p>`元素前面的那些`<p>`元素**.
 
@@ -831,7 +846,7 @@ div~p{
 <h1>標題</h1>
 <p>我的文字是紅色</p>
 ```
-[JSBin上的現場演示](https://jsbin.com/xonafuz/5/edit?html,css,output)
+[JSBin上的現場範例](https://jsbin.com/xonafuz/5/edit?html,css,output)
 
 上面的範例**選擇前面有另一個`<p>`元素的所有`<p>`元素,無論它們是否是緊鄰**.
 
@@ -1064,7 +1079,7 @@ input:not([disabled]):not(.example){
 ```
 :not() 偽類別也將支援選擇器lev4中的逗號分隔選擇器:
 
-[JSBin上的線上演示](https://jsbin.com/japere/edit?html,css,output)
+[JSBin上的線上範例](https://jsbin.com/japere/edit?html,css,output)
 
 請參閱此處的背景語法.
 
@@ -1169,7 +1184,7 @@ p:only-child{
 ```
 上面的範例選擇`<p>`元素,它是其父元素中唯一的子元素,在本例中是`<div>`.
 
-[JSBin上的線上演示](https://jsbin.com/dizosi/edit?html,css)
+[JSBin上的線上範例](https://jsbin.com/dizosi/edit?html,css)
 
 <div style="page-break-after: always;"></div>
 
@@ -1545,7 +1560,7 @@ contain和cover的解釋
 
 這保證背景圖將完全覆蓋一切.不會看到背景顏色,但是依據屏幕比例,圖片很大部分可能會被切除:
 
-實際代碼演示:
+實際代碼範例:
 ```css
 div>div{
 	background-image: url("path/to/your/image");
@@ -1904,7 +1919,7 @@ background-blend-mode: * normal \| multiply \| screen \| overlay \| darken \| li
 
 如果對元素設置不透明度,將影響其子元素.要僅對元素背景設定不透明度,需要使用RGBa色彩.
 
-以下示例設定背景為黑色不透明度0.6:
+以下示範設定背景為黑色不透明度0.6:
 
 ```css
 /* 瀏覽器不支援RGBa的會長這樣 */
@@ -2012,7 +2027,7 @@ css
 }
 ```
 
-[JSFiddle查看示例](https://jsfiddle.net/webtiki/rz3p3ufs/)
+[JSFiddle查看示範](https://jsfiddle.net/webtiki/rz3p3ufs/)
 
 跨瀏覽器兼容性
 
@@ -2077,7 +2092,7 @@ css
 
 ![image060301](https://i.stack.imgur.com/Zq0N0.png)
 
-在[JSFiddle查看示例](https://jsfiddle.net/xf1ze3v9/)
+在[JSFiddle查看示範](https://jsfiddle.net/xf1ze3v9/)
 
 ### 6-4節: 使用text-align
 
@@ -2305,7 +2320,7 @@ css
 - display: inline-block;
 - text-align: left;
 
-演示:
+範例:
 
 html
 ```
@@ -2347,7 +2362,7 @@ body{
 }
 ```
 
-[觀看Fiddle示例](https://jsfiddle.net/WXLsY/621/)
+[觀看Fiddle示範](https://jsfiddle.net/WXLsY/621/)
 
 ### 6-12節: 將圖片垂直置中在div中
 
@@ -2649,7 +2664,7 @@ html{
 
 當兩個垂直方向的外距相鄰時,它們會合併.當兩個外距水平相鄰時,不會合併.
 
-#### 相鄰垂直外距示例
+#### 相鄰垂直外距示範
 
 程式碼:
 
@@ -2666,7 +2681,7 @@ div{
 
 它們之間間隔為10px,因為垂直外距會合併.(間隔不會是兩個外距的總和)
 
-#### 相鄰水平外距示例
+#### 相鄰水平外距示範
 
 程式碼:
 
@@ -3056,7 +3071,7 @@ border-radius最常用於將方塊元素變成圓形.將邊框半徑設為正方
 
 如果寬高不等,形狀將是橢圓形而不是圓形.
 
-不同瀏覽器的邊框半徑示例:
+不同瀏覽器的邊框半徑示範:
 
 - -webkit-border-top-right-radius: 4px;
 - -webkit-border-bottom-right-radius: 4px;
@@ -3174,7 +3189,7 @@ border-image本質上由以下部分組成:
 - border-image-slice: 指定分割圖片成九個區域(四個角,四個邊,一個中間)的偏移量
 - border-image-repeat: 指定邊框圖片兩邊和中間部分如何縮放
 
-考慮以下示例,其中border.png是一張90x90像素的圖片:
+考慮以下示範,其中border.png是一張90x90像素的圖片:
 
 border-image: url("border.png") 30 stretch;
 
@@ -3196,7 +3211,7 @@ css
 }
 ```
 
-上例會產生一個包含5種顏色的邊框.顏色通過線性梯度定義(梯度詳情請查閱文檔).有關border-image-slice屬性的更多資訊,請查閱同一頁面的border-image示例.
+上例會產生一個包含5種顏色的邊框.顏色通過線性梯度定義(梯度詳情請查閱文檔).有關border-image-slice屬性的更多資訊,請查閱同一頁面的border-image示範.
 
 (注意:為了表現添加了其他屬性.)
 
@@ -3451,7 +3466,7 @@ div{
 ```
 
 ![image120501](https://i.sstatic.net/s0Pch.png)
-這個示例展示了一個帶有 overflow 屬性的 div 中的段落如何與一個浮動的圖像進行交互.
+這個示範展示了一個帶有 overflow 屬性的 div 中的段落如何與一個浮動的圖像進行交互.
 
 <div style="page-break-after: always;"></div>
 
@@ -3520,7 +3535,7 @@ div{
 }
 ```
 
-### 13-2節: 基本示例
+### 13-2節: 基本示範
 
 ```css
 @media screen and (min-width: 720px) {
@@ -3538,7 +3553,7 @@ div{
 
 媒體查詢是動態應用的.如果在頁面加載時條件滿足,CSS將應用,但一旦條件不再滿足即會立即停用.相反,如果條件最初不滿足,CSS將在條件滿足後應用.
 
-在我們的示例中,如果用戶視圖區域初始寬度大於720像素,但用戶縮小瀏覽器寬度,一旦用戶將視圖區域寬度調整為小於720像素,背景顏色將立即停用天藍色.
+在我們的示範中,如果用戶視圖區域初始寬度大於720像素,但用戶縮小瀏覽器寬度,一旦用戶將視圖區域寬度調整為小於720像素,背景顏色將立即停用天藍色.
 
 ### 13-2節: mediatype
 
@@ -3578,7 +3593,7 @@ mediatype清單可通過以下表了解:
 | screen | 默認電腦 |
 | print | 一般打印機.用於網站的打印版本樣式 |
 | handheld | PDA、手機和小屏手持設備 |
-| projection | 項目演示,如項目機 |
+| projection | 項目範例,如項目機 |
 | aural | 語音系統 |
 | braille | 點字圖形設備 |
 | embossed | 點字打印機 |
@@ -4141,7 +4156,7 @@ font-family: Consolas, "Courier New", monospace;
 
 ### 15-6節: 文字溢出
 
-text-overflow屬性處理被溢出內容應該如何向用戶顯示.在此示例中,省略號代表被截斷的文本.
+text-overflow屬性處理被溢出內容應該如何向用戶顯示.在此示範中,省略號代表被截斷的文本.
 ```css
 .text{
 	overflow: hidden;
@@ -4335,7 +4350,7 @@ css:
 }
 ```
 
-[在線演示](https://jsfiddle.net/91742Lxt/)
+[在線範例](https://jsfiddle.net/91742Lxt/)
 
 參考資料:
 - [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/word-spacing)
@@ -4374,139 +4389,179 @@ font-variant屬性是以下屬性的簡寫形式:
 
 <div style="page-break-after: always;"></div>
 
-Chapter 16: Flexible Box Layout (Flexbox)
-The Flexible Box module, or just 'flexbox' for short, is a box model designed for user interfaces, and it allows users
-to align and distribute space among items in a container such that elements behave predictably when the page
-layout must accommodate different, unknown screen sizes. A flex container expands items to fill available space
-and shrinks them to prevent overflow.
-Section 16.1: Dynamic Vertical and Horizontal Centering (alignitems, justify-content)
-Simple Example (centering a single element)
-html
-<div class="aligner">
- <div class="aligner-item">…</div>
-</div>
-css
-.aligner {
- display: flex;
- align-items: center;
- justify-content: center;
-}
-.aligner-item {
- max-width: 50%; /*for demo. Use actual width instead.*/
-}
-Here is a demo.
-Reasoning
-Property Value Description
-align-items center
-This centers the elements along the axis other than the one specified by flex-direction,
-i.e., vertical centering for a horizontal flexbox and horizontal centering for a vertical
-flexbox.
-justify-content center
-This centers the elements along the axis specified by flex-direction. I.e., for a
-horizontal (flex-direction: row) flexbox, this centers horizontally, and for a vertical
-flexbox (flex-direction: column) flexbox, this centers vertically)
-Individual Property Examples
-All of the below styles are applied onto this simple layout:
-<div id="container">
- <div></div>
- <div></div>
- <div></div>
-</div>
-where #container is the flex-box.
-Example: justify-content: center on a horizontal flexbox
-css:
-div#container {
- display: flex;
- flex-direction: row;
- justify-content: center;
-}
-Outcome:
-Here is a demo.
-Example: justify-content: center on a vertical flexbox
-css:
-div#container {
- display: flex;
- flex-direction: column;
- justify-content: center;
-}
-Outcome:
-Here is a demo.
-Example: align-content: center on a horizontal flexbox
-css:
-div#container {
- display: flex;
- flex-direction: row;
- align-items: center;
-}
-Outcome:
-Here is a demo.
-Example: align-content: center on a vertical flexbox
-css:
-div#container {
- display: flex;
- flex-direction: column;
- align-items: center;
-}
-Outcome:
-Here is a demo.
-Example: Combination for centering both on horizontal flexbox
-div#container {
- display: flex;
- flex-direction: row;
- justify-content: center;
- align-items: center;
-}
-Outcome:
-Here is a demo.
-Example: Combination for centering both on vertical flexbox
-div#container {
- display: flex;
- flex-direction: column;
- justify-content: center;
- align-items: center;
-}
-Outcome:
-Here is a demo.
-Section 16.2: Sticky Variable-Height Footer
-This code creates a sticky footer. When the content doesn't reach the end of the viewport, the footer sticks to the
-bottom of the viewport. When the content extends past the bottom of the viewport, the footer is also pushed out of
-the viewport. View Result
+## 第16章: Flexbox
+
+flexible box佈局(簡稱flexbox),是一種針對用戶界面的盒模型設計,它允許用戶對容器中的項目進行對齊和空間分配,使元素在頁面佈局必須適應不同且未知的屏幕尺寸時也能表現可預測.Flex 容器會擴展項目以填充可用空間,並收縮它們以防止溢出.
+
+### 16-1節: 動態垂直水平居中
+
+動態的垂直(align-items)和水平(justify-content)居中
+
+簡單示範 (居中單個元素)
+
 html:
+```html
+<div class="aligner">
+ <div class="aligner-item">...</div>
+</div>
+```
+
+css:
+```css
+.aligner{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.aligner-item{
+ 	max-width: 50%; /*for demo. Use actual width instead.*/
+}
+```
+
+[範例](http://codepen.io/asim-coder/pen/ZOobqz)
+
+#### 原理
+
+| 屬性 | 值 | 描述 |
+| --- | --- | --- |
+| align-items | center | 這將沿著 flex-direction 指定的軸以外的軸居中元素,即對於水平 flexbox 為垂直居中,對於垂直 flexbox 為水平居中. |
+| justify-content | center | 這將沿著 flex-direction 指定的軸居中元素.對於水平 (flex-direction: row) flexbox 為水平居中,對於垂直 (flex-direction: column) flexbox 為垂直居中. |
+
+#### 單個屬性示範
+
+以下所有樣式應用於這個簡單的佈局:
+```html
+<div class="container">
+	<div></div>
+	<div></div>
+	<div></div>
+</div>
+```
+
+其中 .container 是 flex 容器.
+
+##### 示範1: 水平flexbox上的justify-content: center
+
+css:
+```css
+div.container{
+ display: flex;
+ flex-direction: row;
+ justify-content: center;
+}
+```
+
+[結果](https://jsfiddle.net/d6pc5bmd/)
+
+##### 示範2: 垂直flexbox上的justify-content: center
+
+css:
+```css
+div.container{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+```
+
+[結果](https://jsfiddle.net/d6pc5bmd/1/)
+
+##### 示範3: 水平flexbox上的align-items: center
+css:
+```css
+div.container{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+```
+
+[結果](https://jsfiddle.net/d6pc5bmd/2/)
+
+##### 示範4: 垂直flexbox上的align-items: center
+css:
+```css
+div.container{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+```
+
+[結果](https://jsfiddle.net/d6pc5bmd/3/)
+
+##### 示範5: 在水平flexbox上同時居中
+css:
+```css
+div#container{
+ display: flex;
+ flex-direction: row;
+ justify-content: center;
+ align-items: center;
+}
+```
+[結果](https://jsfiddle.net/d6pc5bmd/4/)
+
+##### 示範6: 在垂直 flexbox 上同時居中
+css:
+```css
+div#container {
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+}
+```
+[結果](https://jsfiddle.net/d6pc5bmd/5/)
+
+### 16-2節: 黏性可變高度頁腳
+
+這個代碼創建了一個黏性頁腳.當內容沒有達到視口末端時,頁腳會黏附在視口底部.當內容超出視口底部時,頁腳也會被推出視口.查看結果
+
+html:
+```html
 <div class="header">
- <h2>Header</h2>
+ 	<h2>Header</h2>
 </div>
 <div class="content">
- <h1>Content</h1>
- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.
-Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis
-ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia
-arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
-himenaeos. Curabitur sodales ligula in libero. </p>
+	<h1>Content</h1>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero.</p>
 </div>
 <div class="footer">
- <h4>Footer</h4>
+ 	<h4>Footer</h4>
 </div>
+```
+
 css:
-html, body {
- height: 100%;
+```css
+html,body{
+ 	height: 100%;
 }
-body {
- display: flex;
- flex-direction: column;
+
+body{
+	display: flex;
+	flex-direction: column;
 }
-.content {
- /* Include `0 auto` for best browser compatibility. */
- flex: 1 0 auto;
+
+.content{
+	/* 包含 `0 auto` 可獲得最佳的瀏覽器兼容性. */
+	flex: 1 0 auto;
 }
-.header, .footer {
- background-color: grey;
- color: white;
- flex: none;
+
+.header, .footer{
+	background-color: grey;
+	color: white;
+	flex: none;
 }
-Section 16.3: Optimally fit elements to their container
-One of the nicest features of flexbox is to allow optimally fitting containers to their parent element.
-Live demo.
+```
+
+### 16-3節: 最佳化填充元素至其容器
+
+flexbox的一個最好的特性就是允許容器最佳地填充其父元素.
+
 html:
+```html
 <div class="flex-container">
  <div class="flex-item">1</div>
  <div class="flex-item">2</div>
@@ -4514,166 +4569,218 @@ html:
  <div class="flex-item">4</div>
  <div class="flex-item">5</div>
 </div>
+```
+
 css:
-.flex-container {
- background-color: #000;
- height: 100%;
- display:flex;
- flex-direction: row;
- flex-wrap: wrap;
- justify-content: flex-start;
- align-content: stretch;
- align-items: stretch;
+```css
+.flex-container{
+	height: 100%;
+	background: #000;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-content: stretch;
+	align-items: stretch;
 }
-.flex-item {
- background-color: #ccf;
- margin: 0.1em;
- flex-grow: 1;
- flex-shrink: 0;
- flex-basis: 200px; /* or % could be used to ensure a specific layout */
+
+.flex-item{
+	background: #ccf;
+	margin: 0.1em;
+	flex-grow: 1;
+	flex-shrink: 0;
+	flex-basis: 200px; /* 或使用 % 以確保特定佈局 */
 }
-Outcome:
-Columns adapt as screen is resized.
-Section 16.4: Holy Grail Layout using Flexbox
-Holy Grail layout is a layout with a fixed height header and footer, and a center with 3 columns. The 3 columns
-include a fixed width sidenav, a fluid center, and a column for other content like ads (the fluid center appears first in
-the markup). css Flexbox can be used to achieve this with a very simple markup:
-html Markup:
+```
+
+[在線範例](https://notebooklm.google.com/notebook/42cc610c-1801-4a74-9e01-b01d2b2a04e2?_gl=1*1ywvmxk*_ga*MTE5MDU4MDc4NS4xNzE4NzA4Mzcz*_ga_W0LDH41ZCB*MTcxODcwODM3Mi4xLjAuMTcxODcwODM3Mi42MC4wLjA.&original_referer=https:%2F%2Fnotebooklm.google%23&pli=1)
+
+結果:
+![image160301](http://i.stack.imgur.com/eGtf5.png)
+
+隨著屏幕大小調整,列數會自適應變化.
+
+### 16-4節: 使用flexbox實現Holy Grail佈局
+
+Holy Grail佈局是一種具有固定高度頭部和頁腳,並在中間有3列的佈局.這3列包括一個固定寬度的側導航欄、一個流動的中心和一個用於其他內容(如廣告)的欄.Flexbox可以通過非常簡單的標記來實現這種佈局:
+
+html:
+```html
 <div class="container">
- <header class="header">Header</header>
- <div class="content-body">
- <main class="content">Content</main>
- <nav class="sidenav">Nav</nav>
- <aside class="ads">Ads</aside>
- </div>
- <footer class="footer">Footer</footer>
+	<header class="header">Header</header>
+	<div class="content-body">
+		<main class="content">Content</main>
+		<nav class="sidenav">Nav</nav>
+		<aside class="ads">Ads</aside>
+	</div>
+	<footer class="footer">Footer</footer>
 </div>
+```
 css:
-body {
- margin: 0;
- padding: 0;
+```css
+body{
+	margin: 0;
+	padding: 0;
 }
-.container {
- display: flex;
- flex-direction: column;
- height: 100vh;
+
+.container{
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
 }
-.header {
- flex: 0 0 50px;
+
+.header{
+ 	flex: 0 0 50px;
 }
-.content-body {
- flex: 1 1 auto;
- display: flex;
- flex-direction: row;
+
+.content-body{
+	flex: 1 1 auto;
+	display: flex;
+	flex-direction: row;
 }
-.content-body .content {
- flex: 1 1 auto;
- overflow: auto;
+
+.content-body .content{
+	flex: 1 1 auto;
+	overflow: auto;
 }
-.content-body .sidenav {
- order: -1;
- flex: 0 0 100px;
- overflow: auto;
+
+.content-body .sidenav{
+	order: -1;
+	flex: 0 0 100px;
+	overflow: auto;
 }
-.content-body .ads {
- flex: 0 0 100px;
- overflow: auto;
+
+.content-body .ads{
+	flex: 0 0 100px;
+	overflow: auto;
 }
-.footer {
- flex: 0 0 50px;
+
+.footer{
+ 	flex: 0 0 50px;
 }
-Demo
-Section 16.5: Perfectly aligned buttons inside cards with
-flexbox
-It's a regular pattern in design these days to vertically align call to actions inside its containing cards like this:
-This can be achieved using a special trick with flexbox
-html
-<div class="cards">
- <div class="card">
- <p>Lorem ipsum Magna proident ex anim dolor ullamco pariatur reprehenderit culpa esse enim
-mollit labore dolore voluptate ullamco et ut sed qui minim.</p>
- <p><button>Action</button></p>
- </div>
- <div class="card">
- <p>Lorem ipsum Magna proident ex anim dolor ullamco pariatur reprehenderit culpa esse enim
-mollit labore dolore voluptate ullamco et ut sed qui minim.</p>
- <p>Lorem ipsum Magna proident ex anim dolor ullamco pariatur reprehenderit culpa esse enim
-mollit labore dolore voluptate ullamco et ut sed qui minim.</p>
- <p>Lorem ipsum Magna proident ex anim dolor ullamco pariatur reprehenderit culpa esse enim
-mollit labore dolore voluptate ullamco et ut sed qui minim.</p>
- <p>Lorem ipsum Magna proident ex anim dolor ullamco pariatur reprehenderit culpa esse enim
-mollit labore dolore voluptate ullamco et ut sed qui minim.</p>
- <p><button>Action</button></p>
- </div>
+```
+
+[範例](https://jsfiddle.net/adityarb88/hek6ms0x/)
+
+### 16-5節: 使用flexbox完美對齊卡片內的按鈕
+
+在當今的設計中將按鈕垂直對齊在卡片中是一種常見的模式
+
+![image160501](https://i.sstatic.net/M2aZf.png)
+
+可以使用flexbox的特殊技巧來實現這一目標
+
+html:
+```html
+<div class="carddiv">
+	<div class="card">
+		<p>Lorem ipsum Magna proident ex anim dolor ullamco pariatur reprehenderit culpa esse enim mollit labore dolore voluptate ullamco et ut sed qui minim.</p>
+		<p><button>Action</button></p>
+	</div>
+	<div class="card">
+		<p>Lorem ipsum Magna proident ex anim dolor ullamco pariatur reprehenderit culpa esse enim mollit labore dolore voluptate ullamco et ut sed qui minim.</p>
+		<p>Lorem ipsum Magna proident ex anim dolor ullamco pariatur reprehenderit culpa esse enim mollit labore dolore voluptate ullamco et ut sed qui minim.</p>
+		<p>Lorem ipsum Magna proident ex anim dolor ullamco pariatur reprehenderit culpa esse enim mollit labore dolore voluptate ullamco et ut sed qui minim.</p>
+		<p>Lorem ipsum Magna proident ex anim dolor ullamco pariatur reprehenderit culpa esse enim mollit labore dolore voluptate ullamco et ut sed qui minim.</p>
+		<p><button>Action</button></p>
+	</div>
 </div>
-First of all, we use css to apply display: flex; to the container. This will create 2 columns equal in height with the
-content flowing naturally inside it
-css
-.cards {
- display: flex;
+```
+
+首先我們使用css將`display: flex;`應用於容器這將創建2列等高的內容,自然地流動在其中.
+
+css:
+```css
+.carddiv{
+ 	display: flex;
 }
-.card {
- border: 1px solid #ccc;
- margin: 10px 10px;
- padding: 0 20px;
+
+.card{
+	border: 1px solid #ccc;
+	margin: 10px 10px;
+	padding: 0 20px;
 }
-button {
- height: 40px;
- background: #fff;
- padding: 0 40px;
- border: 1px solid #000;
+
+button{
+	height: 40px;
+	background: #fff;
+	padding: 0 40px;
+	border: 1px solid #000;
 }
-p:last-child {
- text-align: center;
+
+p:last-child{
+ 	text-align: center;
 }
-The layout will change and become like this:
-In order to move the buttons to the bottom of the block, we need to apply display: flex; to the card itself with
-the direction set to column. After that, we should select the last element inside the card and set the margin-top to
-auto. This will push the last paragraph to the bottom of the card and achieve the required result.
-Final css:
-.cards {
- display: flex;
+```
+
+佈局將改變會看起來像這樣:
+
+![image160502](https://i.sstatic.net/yTA8E.png)
+
+為了將按鈕移動到卡片底部,我們需要將`display: flex;`應用於卡片本身並將方向設為列之後我們應該選擇卡片中的最後一個元素並將 margin-top 設為 auto.這將把最後一個段落推到卡片底部從而達到所需的效果.
+
+最終css:
+```css
+.cards{
+ 	display: flex;
 }
-.card {
- border: 1px solid #ccc;
- margin: 10px 10px;
- padding: 0 20px;
- display: flex;
- flex-direction: column;
+
+.card{
+	border: 1px solid #ccc;
+	margin: 10px 10px;
+	padding: 0 20px;
+	display: flex;
+	flex-direction: column;
 }
-button {
- height: 40px;
- background: #fff;
- padding: 0 40px;
- border: 1px solid #000;
+
+button{
+	height: 40px;
+	background: #fff;
+	padding: 0 40px;
+	border: 1px solid #000;
 }
-p:last-child {
- text-align: center;
- margin-top: auto;
+
+p:last-child{
+	text-align: center;
+	margin-top: auto;
 }
-Section 16.6: Same height on nested containers
-This code makes sure that all nested containers are always the same height. This is done by assuring that all nested
-elements are the same height as the containing parent div. See working example: https://jsfiddle.net/3wwh7ewp/
-This effect is achieved due to the property align-items being set to stretch by default.
-html
+```
+
+### 16-6節: 嵌套容器等高
+
+這段代碼確保所有嵌套的容器都保持相同的高度.這是通過確保所有嵌套元素的高度與包含父 div 相同來實現的.
+
+這一效果是通過將 align-items 屬性的默認值設為 stretch 而實現的.
+
+html:
+```html
 <div class="container">
- <div style="background-color: red">
- Some <br />
- data <br />
- to make<br />
- a height <br />
+	<div style="background-color: red">
+		Some<br>
+		data<br>
+		to make<br>
+		a height<br>
+	</div>
+	<div style="background-color: blue">
+		Fewer<br>
+		lines<br>
+	</div>
 </div>
- <div style="background-color: blue">
- Fewer <br />
- lines <br />
-</div>
-</div>
-css
-.container {
- display: flex;
- align-items: stretch; // Default value
+
+css:
+```css
+.container{
+	display: flex;
+	align-items: stretch; /* 默認值 */
 }
-Note: Does not work on IE versions under 10
+```
+
+**注意此屬性在IE10以下版本上不起作用**
+
+[範例](https://jsfiddle.net/3wwh7ewp/)
+
+<div style="page-break-after: always;"></div>
+
 Chapter 17: Cascading and Specificity
 Section 17.1: Calculating Selector Specificity
 Each individual css Selector has its own specificity value. Every selector in a sequence increases the sequence's
