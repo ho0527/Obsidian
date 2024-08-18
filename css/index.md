@@ -197,6 +197,12 @@
 		- [16-4節: 使用flexbox實現Holy Grail佈局](#16-4節-使用flexbox實現holy-grail佈局)
 		- [16-5節: 使用flexbox完美對齊卡片內的按鈕](#16-5節-使用flexbox完美對齊卡片內的按鈕)
 		- [16-6節: 嵌套容器等高](#16-6節-嵌套容器等高)
+	- [第17章: 級聯和優先級](#第17章-級聯和優先級)
+		- [17-1節: 計算選擇器優先級](#17-1節-計算選擇器優先級)
+			- [範例1: 各種選擇器序列的優先級](#範例1-各種選擇器序列的優先級)
+			- [範例2: 瀏覽器如何使用優先級](#範例2-瀏覽器如何使用優先級)
+			- [範例3: 如何操縱優先級](#範例3-如何操縱優先級)
+			- [!important和內聯樣式聲明](#important和內聯樣式聲明)
 			- [縮寫表](#縮寫表)
 
 <div style="page-break-after: always;"></div>
@@ -527,7 +533,7 @@ p,.blue,#first,div span{
 - `<div>`內的每個`<span>`
 
 ### 2-3節: 規則,選擇器,聲明區塊
-CSS規則由**選擇器**(例如 h1)和宣告區塊({})組成.
+css規則由**選擇器**(例如 h1)和宣告區塊({})組成.
 ```css
 h1{
 	/* property */
@@ -740,7 +746,7 @@ div[lang|="EN" i]{
 
 請注意,這表示屬性選擇器可用於按較低優先級(specificity)等級的id選擇元素與使用id選擇器選擇相比: \[id="my-id"\] 目標與 \#my-id 相同的元素,但具有較低的優限性.
 
-有關詳細信息,請參閱[語法部分](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity).
+有關詳細信息,請參閱[語法部分](https://developer.mozilla.org/en-US/docs/Web/css/Specificity).
 
 ### 4-3節: 關係選擇器
 
@@ -857,7 +863,7 @@ div~p{
 
 例如連結是否已被跟隨(:visited),滑鼠懸停在元素上(:hover),選取核取方塊(:checked)等.
 
-**更多詳細功能及介紹可至[此連結](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes)查看**.
+**更多詳細功能及介紹可至[此連結](https://developer.mozilla.org/en-US/docs/Web/css/Pseudo-classes)查看**.
 
 語法
 ```css
@@ -916,7 +922,7 @@ ps:
 > B is an integer offset,
 > n is all nonnegative integers, starting from 0.
 > It can be read as the An+B-th element of a list. The A and B must both have <integer> values.
- [\- MDN :nth-child](https://developer.mozilla.org/en-US/docs/Web/CSS/:nth-child)
+ [\- MDN :nth-child](https://developer.mozilla.org/en-US/docs/Web/css/:nth-child)
 
 ---
 
@@ -987,7 +993,7 @@ ps:
 ### 4-7節: id選擇器
 id選擇器選擇具有目標id的dom元素.
 
-要在CSS中透過特定ID選擇元素,前綴是#
+要在css中透過特定ID選擇元素,前綴是#
 
 例如,以下 html div 元素:
 ```html
@@ -1059,7 +1065,7 @@ input:in-range{
 
 它允許頁面給出當前使用元素定義的值的回饋在範圍限制之內.
 
-[參見](https://developer.mozilla.org/en-US/docs/Web/CSS/:in-range)
+[參見](https://developer.mozilla.org/en-US/docs/Web/css/:in-range)
 
 ### 4-11節: :not 偽類範例
 
@@ -1134,7 +1140,7 @@ div:focus-within{
 <label for="sidebarshown">顯示/隱藏側邊欄！</label>
 ```
 
-使用CSS存取布林值
+使用css存取布林值
 
 普通選擇器(如.colorred)指定預設屬性. 它們可以透過遵循布林值(true|false)來覆蓋選擇器
 
@@ -1405,7 +1411,7 @@ background: linear-gradient( <方向>?, <顏色停止-1>, <顏色停止-2>, ...)
 
 注意HEX,RGB,RGBA,HSL和HSLA色碼也可以代替色彩名稱.使用色彩名稱僅為了說明目的.
 
-此外,半徑梯度語法比線性梯度更複雜,這裡顯示的是簡化版本.完整解釋和規格請參考[MDN文件](https://developer.mozilla.org/en-US/docs/Web/CSS/radial-gradient).
+此外,半徑梯度語法比線性梯度更複雜,這裡顯示的是簡化版本.完整解釋和規格請參考[MDN文件](https://developer.mozilla.org/en-US/docs/Web/css/radial-gradient).
 
 ### 5-3節: background-image
 
@@ -1445,7 +1451,7 @@ background-position: left offset (px/%) right offset (px/%) \| center center \| 
 
 background屬性可以設定一個或多個背景相關屬性:
 
-| 值 | 描述 | CSS版本 |
+| 值 | 描述 | css版本 |
 | --- | --- | --- |
 | background-image | 要使用的背景圖片 | 1+ |
 | background-color | 要套用的背景顏色 | 1+ |
@@ -1731,7 +1737,7 @@ Result:
 
 ### 5-8節: 多個背景圖片
 
-在CSS3中,我們可以將多個背景堆疊在同一元素上.
+在css3中,我們可以將多個背景堆疊在同一元素上.
 ```css
 #mydiv{
 	background-image:
@@ -2306,7 +2312,7 @@ css
 
 ### 6-11節: 不考慮高寬即可實現垂直和水平置中
 
-以下技術允許您將內容添加到HTML元素中,在不考慮其高度或寬度的情況下實現垂直和水平置中:
+以下技術允許您將內容添加到html元素中,在不考慮其高度或寬度的情況下實現垂直和水平置中:
 
 外部容器:
 - display: table;
@@ -2464,7 +2470,7 @@ css
 
 ### 6-14節: 垂直對齊動態高度元素
 
-根據直覺運用CSS不會產生預期結果,因為vertical-align: middle不適用於區塊級元素.
+根據直覺運用css不會產生預期結果,因為vertical-align: middle不適用於區塊級元素.
 
 margin-top: auto和margin-bottom: auto會計算為零.
 
@@ -2563,7 +2569,7 @@ css
 
 ### 7-1節: 什麼是箱子模型
 
-瀏覽器為每個HTML文件中的元素創建一個矩形.箱子模型描述了如何通過填充、邊框和邊距來添加到內容以建立此矩形
+瀏覽器為每個html文件中的元素創建一個矩形.箱子模型描述了如何通過填充、邊框和邊距來添加到內容以建立此矩形
 
 ![image070101](image/index/070101.png)
 
@@ -2617,7 +2623,7 @@ textarea{
 
 **由於填充會加寬文本區域的寬度,導致結果元素寬度超過100%.**
 
-幸運的是,CSS允許通過box-sizing屬性改變箱子模型.該屬性有三種值:
+幸運的是,css允許通過box-sizing屬性改變箱子模型.該屬性有三種值:
 - content-box: 常規箱子模型,寬高只包括內容,不包括填充或邊框
 - padding-box: 寬高包括內容和填充,但不包括邊框
 - border-box: 寬高包括內容、填充和邊框
@@ -2796,7 +2802,7 @@ p{
 
 #### 使用方向特定屬性
 
-CSS允許為外距指定特定方向.提供了以下4個屬性:
+css允許為外距指定特定方向.提供了以下4個屬性:
 - margin-left
 - margin-right
 - margin-top
@@ -3032,7 +3038,7 @@ border-radius: 10px 5% / 20px 25em 30px 35em;
 
 其中,10px是左上和右下的水平半徑.5%是右上和左下的水平半徑.後面跟於"/"的四個值分別是左上、右上、右下和左下的垂直半徑.
 
-與許多CSS屬性一樣,邊框半徑也可以使用簡寫形式指定所有可能的值.所以你可以指定從1到8個值.以下簡寫可以將每個角的水平和垂直半徑設定為相同的值:
+與許多css屬性一樣,邊框半徑也可以使用簡寫形式指定所有可能的值.所以你可以指定從1到8個值.以下簡寫可以將每個角的水平和垂直半徑設定為相同的值:
 
 html
 ```html
@@ -3169,7 +3175,7 @@ border-style也可以是none和hidden.它們效果相同,但hidden用於`<table>
 
 ### 10-5: border-collapse
 
-border-collapse屬性只適用於表格(或使用display: table或inline-table顯示的元素),用於設定表格邊框是否合體成單一邊框,或分離如標準HTML.
+border-collapse屬性只適用於表格(或使用display: table或inline-table顯示的元素),用於設定表格邊框是否合體成單一邊框,或分離如標準html.
 
 ```css
 table{
@@ -3400,12 +3406,12 @@ div{
 
 ### 12-3節: overflow: scroll
 
-HTML:
+html:
 ```html
 <div>這個 div 太小,無法完全顯示其內容,以展現 overflow 屬性的效果</div>
 ```
 
-CSS:
+css:
 ```css
 div{
 	width:100px;
@@ -3422,14 +3428,14 @@ div{
 
 ### 12-4節: overflow: visible
 
-HTML:
+html:
 ```html
 <div>
   即使這個 div 太小,無法完全顯示其內容,內容也不會被裁剪.
 </div>
 ```
 
-CSS:
+css:
 ```css
 div{
 	width:50px;
@@ -3444,7 +3450,7 @@ div{
 ### 12-5節: 使用overflow創建塊級格式上下文
 使用 overflow 屬性並將其值設為不同於 visible 的值,將創建一個新的塊級格式上下文.這對於將一個塊級元素與一個浮動元素並排很有用.
 
-HTML:
+html:
 ```html
 <img src="http://placehold.it/100x100">
 <div>
@@ -3453,7 +3459,7 @@ HTML:
 </div>
 ```
 
-CSS:
+css:
 ```css
 img{
 	float:left;
@@ -3475,8 +3481,8 @@ div{
 | 參數 | 詳情 |
 | --- | --- |
 | mediatype(可選) | 這是媒體類型.可以是所有到螢幕的任何範圍 |
-| not(可選) | 不為此特定媒體類型應用CSS,而為其他一切應用 |
-| media feature | 識別CSS使用案例的邏輯.下面概述了選項 |
+| not(可選) | 不為此特定媒體類型應用css,而為其他一切應用 |
+| media feature | 識別css使用案例的邏輯.下面概述了選項 |
 
 | 媒體特徵 | 詳情 |
 | --- | --- |
@@ -3485,19 +3491,19 @@ div{
 | color-index | 描述輸出設備色彩查閱表中的條目數 |
 | grid | 判斷輸出設備是否為網格設備或點陣設備 |
 | height | 描述輸出設備渲染表面的高度 |
-| max-width | CSS將不適用於寬度超過指定值的螢幕 |
-| min-width | CSS將不適用於寬度小於指定值的螢幕 |
-| max-height | CSS將不適用於高度超過指定值的螢幕 |
-| min-height | CSS將不適用於高度低於指定值的螢幕 |
+| max-width | css將不適用於寬度超過指定值的螢幕 |
+| min-width | css將不適用於寬度小於指定值的螢幕 |
+| max-height | css將不適用於高度超過指定值的螢幕 |
+| min-height | css將不適用於高度低於指定值的螢幕 |
 | monochrome | 描述單色(灰階)設備每像素的位元數 |
-| orientation | CSS將只在指定方向使用的設備上顯示.有關更多詳情,請參閱備註 |
+| orientation | css將只在指定方向使用的設備上顯示.有關更多詳情,請參閱備註 |
 | resolution | 描述輸出設備的解析度(像素密度) |
 | scan | 描述電視輸出設備的掃描過程 |
 | width | 描述輸出設備(如文檔窗口或打印機頁面框)渲染表面的寬度 |
 
 | 棄用特徵 | 詳情 |
 | --- | --- |
-| ~~device-aspect-ratio~~ | 的CSS將只在高╱寬比匹配指定比例的設備上顯示.這是一個| 的功能,不能保證工作 |
+| ~~device-aspect-ratio~~ | 的css將只在高╱寬比匹配指定比例的設備上顯示.這是一個| 的功能,不能保證工作 |
 | ~~max-device-width~~ | 與max-width類似,但衡量實際屏幕寬度,而不是瀏覽器的顯示寬度 |
 | ~~min-device-width~~ | 與min-width類似,但衡量實際屏幕寬度,而不是瀏覽器的顯示寬度 |
 | ~~max-device-height~~ | 與max-height類似,但衡量實際屏幕高度,而不是瀏覽器的顯示高度 |
@@ -3505,33 +3511,33 @@ div{
 
 ### 13-1節: 術語和結構
 
-媒體查詢允許根據設備類型/媒體(如螢幕、打印或手持設備)即媒體類型,以及額外設備屬性如顏色或視圖尺寸等媒體特徵來應用CSS規則.
+媒體查詢允許根據設備類型/媒體(如螢幕、打印或手持設備)即媒體類型,以及額外設備屬性如顏色或視圖尺寸等媒體特徵來應用css規則.
 
 媒體查詢的一般結構
 ```css
 @media [...]{
-	/* 滿足查詢時應用的一條或多條CSS規則 */
+	/* 滿足查詢時應用的一條或多條css規則 */
 }
 ```
 
 包含媒體類型的媒體查詢
 ```css
 @media print{
-	/* 滿足查詢時應用的一條或多條CSS規則 */
+	/* 滿足查詢時應用的一條或多條css規則 */
 }
 ```
 
 包含媒體類型和媒體特徵的媒體查詢
 ```css
 @media screen and (max-width: 600px){
-	/* 滿足查詢時應用的一條或多條CSS規則 */
+	/* 滿足查詢時應用的一條或多條css規則 */
 }
 ```
 
 包含媒體特徵(默認媒體類型為"all")的媒體查詢
 ```css
 @media (orientation: portrait) {
-	/* 滿足查詢時應用的一條或多條CSS規則 */
+	/* 滿足查詢時應用的一條或多條css規則 */
 }
 ```
 
@@ -3551,7 +3557,7 @@ div{
 
 如果滿足這些條件,媒體查詢中的樣式會生效,頁面的背景顏色將設為天藍色.
 
-媒體查詢是動態應用的.如果在頁面加載時條件滿足,CSS將應用,但一旦條件不再滿足即會立即停用.相反,如果條件最初不滿足,CSS將在條件滿足後應用.
+媒體查詢是動態應用的.如果在頁面加載時條件滿足,css將應用,但一旦條件不再滿足即會立即停用.相反,如果條件最初不滿足,css將在條件滿足後應用.
 
 在我們的示範中,如果用戶視圖區域初始寬度大於720像素,但用戶縮小瀏覽器寬度,一旦用戶將視圖區域寬度調整為小於720像素,背景顏色將立即停用天藍色.
 
@@ -3566,7 +3572,7 @@ div{
 }
 ```
 
-上述CSS代碼將在打印時給予DOM html元素一個白色背景顏色.
+上述css代碼將在打印時給予DOM html元素一個白色背景顏色.
 
 mediatype參數有可選的not或only前綴詞,分別將樣式應用到除指定mediatype外的所有類型,或只應用到指定媒體類型.例如:
 ```css
@@ -3635,7 +3641,7 @@ mediatype清單可通過以下表了解:
 
 > The width media feature describes the width of the rendering surface of the output device (such as the width of the document window, or the width of the page box on a printer).
 > 寬度媒體特性描述了輸出設備渲染表面的寬度(例如文檔窗口的寬度或打印機上頁面盒子的寬度)
- [\- MDN width](https://developer.mozilla.org/en-US/docs/Web/CSS/width)
+ [\- MDN width](https://developer.mozilla.org/en-US/docs/Web/css/width)
 
 
 這是什麼意思?
@@ -4037,8 +4043,8 @@ css:
 | font-style | italics或oblique |
 | font-variant | 正常或小型大寫字母 |
 | font-weight | 正常、粗體或 100 到 900 之間的數值 |
-| font-size | 以 %、px、em 或任何有效的 CSS 測量單位表示的字體大小 |
-| line-height | 以 %、px、em 或任何有效的 CSS 測量單位表示的行高 |
+| font-size | 以 %、px、em 或任何有效的 css 測量單位表示的字體大小 |
+| line-height | 以 %、px、em 或任何有效的 css 測量單位表示的行高 |
 | font-family | 定義字體族的名稱 |
 | color | 任何有效的css顏色表示法,如 red、#00FF00、hsl(240, 100%, 50%) 等 |
 | font-stretch | 是否使用從字型壓縮到拓展的樣式.有效值為 normal、ultra-condensed、extra-condensed、condensed、semi-condensed、semi-expanded、expanded、extra-expanded 或 ultra-expanded |
@@ -4164,7 +4170,7 @@ text-overflow屬性處理被溢出內容應該如何向用戶顯示.在此示範
 }
 ```
 
-可惜的是text-overflow: ellipsis只適用於單行文本.在標準 CSS 中沒有辦法支持最後一行的省略號,但可以使用 Webkit 專有的 Flexbox 實現.
+可惜的是text-overflow: ellipsis只適用於單行文本.在標準 css 中沒有辦法支持最後一行的省略號,但可以使用 Webkit 專有的 Flexbox 實現.
 
 ```css
 .givemeellipsis{
@@ -4353,7 +4359,7 @@ css:
 [在線範例](https://jsfiddle.net/91742Lxt/)
 
 參考資料:
-- [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/word-spacing)
+- [MDN](https://developer.mozilla.org/en-US/docs/Web/css/word-spacing)
 
 ### 15-13節: 字體變體
 
@@ -4781,113 +4787,110 @@ css:
 
 <div style="page-break-after: always;"></div>
 
-Chapter 17: Cascading and Specificity
-Section 17.1: Calculating Selector Specificity
-Each individual css Selector has its own specificity value. Every selector in a sequence increases the sequence's
-overall specificity. Selectors fall into one of three different specificity groups: A, B and c. When multiple selector
-sequences select a given element, the browser uses the styles applied by the sequence with the highest overall
-specificity.
-Group Comprised of Examples
-A id selectors #foo
-B
-class selectors
-attribute selectors
-pseudo-classes
-.bar
-[title], [colspan="2"]
-:hover, :nth-child(2)
-c
-type selectors
-pseudo-elements
-div, li
-::before, ::first-letter
-Group A is the most specific, followed by Group B, then finally Group c.
-The universal selector (*) and combinators (like > and ~) have no specificity.
-Example 1: Specificity of various selector sequences
-#foo #baz {} /* a=2, b=0, c=0 */
-#foo.bar {} /* a=1, b=1, c=0 */
-#foo {} /* a=1, b=0, c=0 */
-.bar:hover {} /* a=0, b=2, c=0 */
-div.bar {} /* a=0, b=1, c=1 */
-:hover {} /* a=0, b=1, c=0 */
-[title] {} /* a=0, b=1, c=0 */
-.bar {} /* a=0, b=1, c=0 */
-div ul + li {} /* a=0, b=0, c=3 */
-p::after {} /* a=0, b=0, c=2 */
-*::before {} /* a=0, b=0, c=1 */
-::before {} /* a=0, b=0, c=1 */
-div {} /* a=0, b=0, c=1 */
-* {} /* a=0, b=0, c=0 */
-Example 2: How specificity is used by the browser
-Imagine the following css implementation:
-#foo {
- color: blue;
+## 第17章: 級聯和優先級
+
+### 17-1節: 計算選擇器優先級
+
+每個單獨的css選擇器都有自己的優先級(同特異性(聽起來還真高級XD),specificity)值.序列中的每個選擇器都會增加其整體的優先級.選擇器可分為三個不同的優先級組(A、B、C).當多個選擇器序列選擇同一個元素時瀏覽器使用應用於具有最高整體優先級的序列的樣式.
+
+| 組別 | 包含 | 範例 |
+| --- | --- | --- |
+| A | id選擇器 |  #id |
+| B | 類選擇器、屬性選擇器、偽類選擇器 |  .bar[title]、[colspan="2"]:hover、:nth-child(2) |
+| C | 元素選擇器、偽元素 | div、li、::before、 ::first-letter |
+
+組別A最具優先級其次是組別B最後是組別C.
+
+通用選擇器(*)和組合器(>、~、+等)沒有優先級.
+
+#### 範例1: 各種選擇器序列的優先級
+```css
+#foo #baz{ } /* a=2, b=0, c=0 */
+#foo.bar{ } /* a=1, b=1, c=0 */
+#foo{ } /* a=1, b=0, c=0 */
+.bar:hover{ } /* a=0, b=2, c=0 */
+div.bar{ } /* a=0, b=1, c=1 */
+:hover{ } /* a=0, b=1, c=0 */
+[title]{ } /* a=0, b=1, c=0 */
+.bar{ } /* a=0, b=1, c=0 */
+div ul + li{ } /* a=0, b=0, c=3 */
+p::after{ } /* a=0, b=0, c=2 */
+*::before{ } /* a=0, b=0, c=1 */
+::before{ } /* a=0, b=0, c=1 */
+div{ } /* a=0, b=0, c=1 */
+*{ } /* a=0, b=0, c=0 */
+```
+
+#### 範例2: 瀏覽器如何使用優先級
+
+假設有以下 css 實現:
+```css
+#foo{
+	color: blue;
 }
-.bar {
- color: red;
- background: black;
+
+.bar{
+	color: red;
+	background: black;
 }
-Here we have an ID selector which declares color as blue, and a class selector which declares color as red and
-background as black.
-An element with an ID of #foo and a class of .bar will be selected by both declarations. ID selectors have a Group A
-specificity and class selectors have a Group B specificity. An ID selector outweighs any number of class selectors.
-Because of this, color:blue; from the #foo selector and the background:black; from the .bar selector will be
-applied to the element. The higher specificity of the ID selector will cause the browser to ignore the .bar selector's
-color declaration.
-Now imagine a different css implementation:
+```
+
+這裡我們有一個**id選擇器**聲明color為藍色還有一個**類選擇器**聲明color為紅色background為黑色.一個元素同時擁有#foo和.bar 將被這兩個聲明選中.id選擇器屬於A組類選擇器屬於B組.id選擇器的優先級優於任意數量的類選擇器.**因此#foo選擇器的color:blue和.bar選擇器的background:black將被應用於該元素**.id選擇器的更高優先級將導致瀏覽器忽略.bar選擇器的color聲明.
+
+現在假設有另一個 css 實現:
+```css
 .bar {
- color: red;
- background: black;
+	color: red;
+	background: black;
 }
 .baz {
- background: white;
+ 	background: white;
 }
-Here we have two class selectors; one of which declares color as red and background as black, and the other
-declares background as white.
-An element with both the .bar and .baz classes will be affected by both of these declarations, however the
-problem we have now is that both .bar and .baz have an identical Group B specificity. The cascading nature of css
-resolves this for us: as .baz is defined after .bar, our element ends up with the red color from .bar but the white
-background from .baz.
-Example 3: How to manipulate specificity
-The last snippet from Example 2 above can be manipulated to ensure our .bar class selector's color declaration is
-used instead of that of the .baz class selector.
-.bar {} /* a=0, b=1, c=0 */
-.baz {} /* a=0, b=1, c=0 */
-The most common way to achieve this would be to find out what other selectors can be applied to the .bar selector
-sequence. For example, if the .bar class was only ever applied to span elements, we could modify the .bar selector
-to span.bar. This would give it a new Group C specificity, which would override the .baz selector's lack thereof:
-span.bar {} /* a=0, b=1, c=1 */
-.baz {} /* a=0, b=1, c=0 */
-However it may not always possible to find another common selector which is shared between any element which
-uses the .bar class. Because of this, css allows us to duplicate selectors to increase specificity. Instead of just .bar,
-we can use .bar.bar instead (See The grammar of Selectors, W3C Recommendation). This still selects any element
-with a class of .bar, but now has double the Group B specificity:
-.bar.bar {} /* a=0, b=2, c=0 */
-.baz {} /* a=0, b=1, c=0 */
-!important and inline style declarations
-The !important flag on a style declaration and styles declared by the html style attribute are considered to have
-a greater specificity than any selector. If these exist, the style declaration they affect will overrule other declarations
-regardless of their specificity. That is, unless you have more than one declaration that contains an !important flag
-for the same property that apply to the same element. Then, normal specificity rules will apply to those properties
-in reference to each other.
-Because they completely override specificity, the use of !important is frowned upon in most use cases. One should
-use it as little as possible. To keep css code efficient and maintainable in the long run, it's almost always better to
-increase the specificity of the surrounding selector than to use !important.
-One of those rare exceptions where !important is not frowned upon, is when implementing generic helper classes
-like a .hidden or .background-yellow class that are supposed to always override one or more properties wherever
-they are encountered. And even then, you need to know what you're doing. The last thing you want, when writing
-maintainable css, is to have !important flags throughout your css.
-A final note
-A common misconception about css specificity is that the Group A, B and c values should be combined with each
-other (a=1, b=5, c=1 => 151). This is not the case. If this were the case, having 20 of a Group B or c selector would
-be enough to override a single Group A or B selector respectively. The three groups should be regarded as
-individual levels of specificity. Specificity cannot be represented by a single value.
-When creating your css style sheet, you should maintain the lowest specificity as possible. If you need to make the
-specificity a little higher to overwrite another method, make it higher but as low as possible to make it higher. You
-shouldn't need to have a selector like this:
-body.page header.container nav div#main-nav li a {}
-This makes future changes harder and pollutes that css page.
-You can calculate the specificity of your selector here
+```
+
+這裡我們有兩個類選擇器一個聲明color為紅色background為黑色另一個聲明background為白色.
+
+一個同時擁有.bar和.baz類的元素將受到這兩個聲明的影響但現在的問題是 .bar 和 .baz 都有相同的 B 組優先級.css 的級聯特性解決了這個問題: **由於.baz是在.bar之後定義的,所以我們的元素最終將具有.bar的紅色和.baz的白色背景.**
+
+#### 範例3: 如何操縱優先級
+
+上述範例2中的最後一個片段可以進行操縱以確保使用.bar類選擇器的color聲明而不是.baz類選擇器的聲明.
+```css
+.bar{ } /* a=0, b=1, c=0 */
+.baz{ } /* a=0, b=1, c=0 */
+```
+
+實現這一目標的最常見方法是找出可以應用於.bar選擇器序列的其他選擇器.例如如果.bar類只用於span元素我們可以將.bar選擇器修改為span.bar.**這將賦予它一個新的C組優先級從而覆蓋.baz選擇器的缺乏**:
+```css
+span.bar{ } /* a=0, b=1, c=1 */
+.baz{ } /* a=0, b=1, c=0 */
+```
+
+但是可能並不總是能找到其他共同的選擇器與使用.bar類的任何元素共享.因此css允許我們複製選擇器來增加優先級.我們可以使用.bar.bar替代.bar[參見](https://www.w3.org/TR/selectors-3/#grammar).這仍然選擇任何擁有.bar類的元素,但現在具有雙倍的 B組優先級:
+```css
+.bar.bar{ } /* a=0, b=2, c=0 */
+.baz{ } /* a=0, b=1, c=0 */
+```
+
+#### !important和內聯樣式聲明
+
+樣式聲明上的**!important標誌(在下一章會有更詳細的介紹)和通過html的style屬性聲明的樣式被認為具有比任何選擇器更大的優先級.如果存在這些它們影響的樣式聲明將無論其優先級如何均可覆蓋其他聲明.**但是如果有多個包含!important標誌的聲明適用於同一個元素的同一個屬性則這些屬性之間將再次適用正常的優先級規則.
+
+**由於!important完全覆蓋優先級在大多數情況下都不建議使用它**.應該盡可能少地使用它.為了保持css代碼在長期運行中的效率和可維護性**與使用!important相比提高元素選擇器的優先級通常更好.**
+
+**在實現像.hidden或.background-yellow這樣的通用輔助類時!important不被視為不被推崇的例外情況**.但即使在這種情況下您也需要知道自己在做什麼.**在編寫可維護的css時您想要避免的最後一件事就是在整個css中到處使用!important標誌**.
+
+關於css優先級的一個常見誤解是A、B、C組值應該相互組合(a=1, b=5, c=1 => 151).事實並非如此.如果是這種情況擁有20個B組或C組選擇器就足以覆蓋單個A組或B組選擇器了.**這三個組應被視為優先級的單獨級別優先級不能用單一值表示.**
+
+**在創建您的css樣式表時您應該保持最低的優先級**.如果需要稍微提高優先級以覆蓋另一種方法,請儘可能將其提高但保持最低.您絕對不會想看到這樣的選擇器:
+```css
+body.page header.container nav div#main-nav li a{}
+```
+
+這會使將來的更改更加困難並污染了該css頁面.
+
+[這裡可以計算選擇器的優先級](https://specificity.keegan.st/)
+
 Section 17.2: The !important declaration
 The !important declaration is used to override the usual specificity in a style sheet by giving a higher priority to a
 rule. Its usage is: property : value !important;
