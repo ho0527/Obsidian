@@ -203,7 +203,17 @@
 			- [範例2: 瀏覽器如何使用優先級](#範例2-瀏覽器如何使用優先級)
 			- [範例3: 如何操縱優先級](#範例3-如何操縱優先級)
 			- [!important和內聯樣式聲明](#important和內聯樣式聲明)
+		- [17-2節: !important聲明](#17-2節-important聲明)
+		- [17-3節: 級聯](#17-3節-級聯)
+			- [範例1: 優先級規則](#範例1-優先級規則)
+			- [範例2: 具有相同選擇器的級聯規則](#範例2-具有相同選擇器的級聯規則)
+			- [範例3: 優先級規則後的級聯規則](#範例3-優先級規則後的級聯規則)
+		- [17-4節: 更複雜的優先級示例](#17-4節-更複雜的優先級示例)
 			- [縮寫表](#縮寫表)
+	- [註解及參見](#註解及參見)
+	- [註解](#註解)
+	- [參見](#參見)
+		- [C17-2](#c17-2)
 
 <div style="page-break-after: always;"></div>
 
@@ -343,7 +353,7 @@ p.green{
 
 現在,所有具有.green類別的段落都將以深綠色而不是淺綠色書寫.
 
-其他原則也適用,例如!important規則,特異性和繼承.
+其他原則也適用,例如!important規則,優先級和繼承.
 
 當某人第一次造訪您的網站時,他們的瀏覽器會下載目前頁面的html以及連結的css文件.
 
@@ -4791,7 +4801,7 @@ css:
 
 ### 17-1節: 計算選擇器優先級
 
-每個單獨的css選擇器都有自己的優先級(同特異性(聽起來還真高級XD),specificity)值.序列中的每個選擇器都會增加其整體的優先級.選擇器可分為三個不同的優先級組(A、B、C).當多個選擇器序列選擇同一個元素時瀏覽器使用應用於具有最高整體優先級的序列的樣式.
+每個單獨的css選擇器都有自己的優先級(同優先級(聽起來還真高級XD),specificity)值.序列中的每個選擇器都會增加其整體的優先級.選擇器可分為三個不同的優先級組(A、B、C).當多個選擇器序列選擇同一個元素時瀏覽器使用應用於具有最高整體優先級的序列的樣式.
 
 | 組別 | 包含 | 範例 |
 | --- | --- | --- |
@@ -4891,122 +4901,139 @@ body.page header.container nav div#main-nav li a{}
 
 [這裡可以計算選擇器的優先級](https://specificity.keegan.st/)
 
-Section 17.2: The !important declaration
-The !important declaration is used to override the usual specificity in a style sheet by giving a higher priority to a
-rule. Its usage is: property : value !important;
-#mydiv {
- font-weight: bold !important; /* This property won't be overridden
- by the rule below */
+### 17-2節: !important聲明
+
+!important聲明用於通過給予更高優先級來覆蓋樣式表中的常規優先級.使用方法是: `property: value !important;`
+```css
+#mydiv{
+ 	font-weight: bold !important; /* 這個屬性不會被下面的規則覆蓋 */
 }
-#outerdiv #mydiv {
- font-weight: normal; /* #mydiv font-weight won't be set to normal
- even if it has a higher specificity because
- of the !important declaration above */
+#outerdiv #mydiv{
+ 	font-weight: normal; /* 即使 #mydiv font-weight 具有更高的優先級,由於上面的 !important 聲明,也不會被設置為正常 */
 }
-Avoiding the usage of !important is strongly recommended (unless absolutely necessary), because it will disturb
-the natural flow of css rules which can bring uncertainty in your style sheet. Also it is important to note that when
-multiple !important declarations are applied to the same rule on a certain element, the one with the higher
-specificity will be the ona applied.
-Here are some examples where using !important declaration can be justified:
-If your rules shouldn't be overridden by any inline style of the element which is written inside style attribute
-of the html element.
-To give the user more control over the web accessibility, like increasing or decreasing size of the font-size, by
-overriding the author style using !important.
-For testing and debugging using inspect element.
-See also:
-W3C - 6 Assigning property values, Cascading, and Inheritance -- 6.4.2 !important rules
-Section 17.3: Cascading
-Cascading and specificity are used together to determine the final value of a css styling property. They also define
-the mechanisms for resolving conflicts in css rule sets.
-css Loading order
-Styles are read from the following sources, in this order:
-1. User Agent stylesheet (The styles supplied by the browser vendor)
-2. User stylesheet (The additional styling a user has set on his/her browser)
-3. Author stylesheet (Author here means the creator of the webpage/website)
-Maybe one or more .css files
-In the <style> element of the html document
-1. Inline styles (In the style attribute on an html element)
-The browser will lookup the corresponding style(s) when rendering an element.
-How are conflicts resolved?
-When only one css rule set is trying to set a style for an element, then there is no conflict, and that rule set is used.
-When multiple rule sets are found with conflicting settings, first the Specificty rules, and then the Cascading rules
-are used to determine what style to use.
-Example 1 - Specificity rules
-.mystyle { color: blue; } /* specificity: 0, 0, 1, 0 */
-div { color: red; } /* specificity: 0, 0, 0, 1 */
+```
+
+**強烈建議避免使用!important**(除非絕對必要)因為它會干擾css規則的自然流程,可能會在您的樣式表中帶來不確定性.此外請注意當有多個!important聲明應用於同一元素的同一規則時應用具有更高優先級的那一個.
+
+以下是一些可能正當使用!important聲明的例子:
+- 如果您的規則不應該被元素內html的style屬性中寫入的任何內聯樣式覆蓋.
+- 為了讓用戶對網絡無障礙性有更多控制(如使用!important覆蓋作者樣式來增加或減小字體大小).
+- 用於使用檢查元素進行測試和調試.
+
+[W3C - 6 Assigning property values, Cascading, and Inheritance -- 6.4.2 !important rules](https://www.w3.org/TR/css22/cascade.html#important-rules)
+
+### 17-3節: 級聯
+
+級聯和優先級一起用於確定css樣式屬性的最終值.它們還定義了解決css規則集衝突的機制.
+
+css加載順序
+樣式按以下順序讀取:
+1. 用戶代理樣式表(由瀏覽器供應商提供的樣式)
+2. 用戶樣式表(用戶在瀏覽器上設置的額外樣式)
+3. 作者樣式表(作者指網頁/網站的創建者)
+   - 可能一個或多個.css文件
+   - html文件中的`<style>`元素
+4. 內聯樣式(html元素的style屬性)
+
+瀏覽器在呈現元素時會查找相應的樣式.
+
+如何解決衝突?
+當只有一個css規則集試圖為一個元素設置樣式時,就沒有衝突,使用該規則集.
+
+當發現有多個規則集有衝突設置時,首先使用優先級規則,然後使用級聯規則來確定使用哪種樣式.
+
+#### 範例1: 優先級規則
+```css
+.mystyle{ color: blue; } /* 優先級: 0, 0, 1, 0 */
+div{ color: red; } /* 優先級: 0, 0, 0, 1 */
+```
+```html
 <div class="mystyle">Hello World</div>
-What color will the text be? (hover to see the answer)
-blue
-First the specificity rules are applied, and the one with the highest specificity "wins".
-Example 2 - Cascade rules with identical selectors
-External css file
-.class {
- background: #FFF;
-}
-Internal css (in html file)
+```
+
+文本的顏色會是==>藍色
+
+首先應用優先級規則具有最高優先級的"獲勝".
+
+#### 範例2: 具有相同選擇器的級聯規則
+外部css文件
+```css
+.class{
+ 	background: #FFF;
+}`
+```
+內部css(在html文件中)
+```html
 <style>
-.class {
- background: #000;
+.class{
+ 	background: #000;
 }
 <style>
-In this case, where you have identical selectors, the cascade kicks in, and determines that the last one loaded
-"wins".
-Example 3 - Cascade rules after Specificity rules
-body > .mystyle { background-color: blue; } /* specificity: 0, 0, 1, 1 */
-.otherstyle > div { background-color: red; } /* specificity: 0, 0, 1, 1 */
+```
+在這種情況下**當你有相同的選擇器時級聯會起作用並確定最後加載的那個"獲勝"**.
+
+#### 範例3: 優先級規則後的級聯規則
+```css
+body>.mystyle{ background-color: blue; } /* 優先級: 0, 0, 1, 1 */
+.otherstyle>div{ background-color: red; } /* 優先級: 0, 0, 1, 1 */
+```
+```html
 <body class="otherstyle">
- <div class="mystyle">Hello World</div>
+ 	<div class="mystyle">Hello World</div>
 </body>
-What color will the background be?
-red
-After applying the specificity rules, there's still a conflict between blue and red, so the cascading rules are applied
-on top of the specificity rules. Cascading looks at the load order of the rules, whether inside the same .css file or in
-the collection of style sources. The last one loaded overrides any earlier ones. In this case, the .otherstyle > div
-rule "wins".
-A final note
-Selector specificity always take precedence.
-Stylesheet order break ties.
-Inline styles trump everything.
-Section 17.4: More complex specificity example
-div {
- font-size: 7px;
- border: 3px dotted pink;
- background-color: yellow;
- color: purple;
+```
+背景顏色會是==>紅色
+
+在應用優先級規則後仍然存在藍色和紅色之間的衝突所以級聯規則被應用於優先級規則之上.級聯考慮規則的加載順序無論是在同一個.css文件中還是在一組樣式源中.最後加載的一個會覆蓋之前的任何一個.在這種情況下.otherstyle>div規則"獲勝".
+
+最後一點
+- 選擇器優先級始終優先.
+- 樣式表順序打破平局.
+- 內聯樣式凌駕一切.
+
+### 17-4節: 更複雜的優先級示例
+```css
+div{
+	font-size: 10px;
+	border: 3px dotted pink;
+	background: yellow;
+	color: purple;
 }
-body.mystyle > div.myotherstyle {
- font-size: 11px;
- background-color: green;
+
+body.mystyle>div.myotherstyle{
+	font-size: 15px;
+	background: green;
 }
-#elmnt1 {
- font-size: 24px;
- border-color: red;
+
+#elmnt1{
+	font-size: 25px;
+	border-color: red;
 }
-.mystyle .myotherstyle {
- font-size: 16px;
- background-color: black;
- color: red;
+
+.mystyle .myotherstyle{
+	font-size: 20px;
+	background: black;
+	color: red;
 }
+```
+```html
 <body class="mystyle">
- <div id="elmnt1" class="myotherstyle">
- Hello, world!
- </div>
+	<div id="elmnt1" class="myotherstyle">Hello, world!</div>
 </body>
-What borders, colors, and font-sizes will the text be?
-font-size:
-font-size: 24;, since #elmnt1 rule set has the highest specificity for the <div> in question, every
-property here is set.
-border:
-border: 3px dotted red;. The border-color red is taken from #elmnt1 rule set, since it has the highest
-specificity. The other properties of the border, border-thickness, and border-style are from the div rule
-set.
-background-color:
-background-color: green;. The background-color is set in the div, body.mystyle > div.myotherstyle,
-and .mystyle .myotherstyle rule sets. The specificities are (0, 0, 1) vs. (0, 2, 2) vs. (0, 2, 0), so the middle
-one "wins".
-color:
-color: red;. The color is set in both the div and .mystyle .myotherstyle rule sets. The latter has the
-higher specificity of (0, 2, 0) and "wins".
+```
+
+文本的邊框、顏色和字體大小會是==>
+
+- font-size: `font-size: 25px;` 因為#elmnt1規則集具有所涉及`<div>`的最高優先級這裡的每個屬性都已設置.
+
+- border: `border: 3px dotted red;`邊框顏色red取自#elmnt1規則集因為它具有最高優先級.邊框的其他屬性(粗細和樣式)來自div規則集.
+
+- background: `background: green;`背景顏色在 div、body.mystyle > div.myotherstyle 和 .mystyle .myotherstyle規則集中設置.優先級為(0,0,1)vs.(0,2,2)vs.(0,2,0),所以中間那個"獲勝".
+
+- color: `color: red;` 顏色在div和.mystyle .myotherstyle規則集中都有設置.後者的優先級為(0,2,0)"獲勝".
+
+<div style="page-break-after: always;"></div>
+
 Chapter 18: Colors
 Section 18.1: currentColor
 currentColor returns the computed color value of the current element.
@@ -8347,5 +8374,13 @@ Demo same animation, took 1.3ms for rendering, 2.0ms for painting.
 | *[condition\]* | 運算式 | |
 | *[expression\]* | 表達式 | |
 | *[expression\]* | 表達式 | |
+
+## 註解及參見
+
+## 註解
+
+## 參見
+### C17-2
+[W3C - 6 Assigning property values, Cascading, and Inheritance -- 6.4.2 !important rules](https://www.w3.org/TR/css22/cascade.html#important-rules)
 
 bata
