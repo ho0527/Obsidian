@@ -17,6 +17,8 @@
 		- [基本架構](#基本架構-1)
 		- [其他規範](#其他規範)
 	- [其他](#其他)
+	- [其他範例及規範](#其他範例及規範)
+		- [範例1: 網頁骨架](#範例1-網頁骨架)
 
 <div style="page-break-after: always;"></div>
 
@@ -197,6 +199,36 @@ function xxx(){
 如圖:
 ![tabimage01](image/codingstyle/tabsize.png)
 ![tabimage02](image/codingstyle/tabsize-2.png)
+- 不要寫可重用區塊
+範例:
 
+```html
+<div class="footer-container margin-top-5vw" id="footer"></div>
+<div class="footer-container-copy margin-top-5vw" id="footer-copy"></div>
+```
 
-*v001002000 / 20240708*
+應該改為
+```html
+<div class="footer-container" id="footer"></div>
+```
+
+## 其他範例及規範
+
+### 範例1: 網頁骨架
+錯誤示範:
+```html
+<div class="width-100vw flex justify-center items-center margin-top-5vw about-block"></div>
+```
+
+應該改為
+```html
+<div class="aboutblock"></div>
+```
+
+說明:
+
+about-block這個class名稱不符合命名規則所以應該改為aboutblock.
+
+而因為你都用了aboutblock了就將他都和到aboutblock內就好就不要再寫width-100vw flex justify-center items-center margin-top-5vw了。
+
+*v001003000 / 20241019*
