@@ -209,7 +209,7 @@ function xxx(){
 
 應該改為
 ```html
-<div class="footer-container" id="footer"></div>
+<div class="footerdiv" id="footer"></div>
 ```
 
 ## 其他範例及規範
