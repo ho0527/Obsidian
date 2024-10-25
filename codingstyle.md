@@ -103,7 +103,7 @@
 
 範例:
 
-`<input type="text" class="input" id="name" name="name" placeholder="請輸入您的姓名" value="abc" required>`
+`<input type="text" class="input" id="name" name="name" placeholder="請輸入您的姓名" value="abc" disabled required>`
 
 <div style="page-break-after: always;"></div>
 
