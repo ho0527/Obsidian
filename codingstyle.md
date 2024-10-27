@@ -179,7 +179,7 @@ function xxx(){
 ```
 
 ### 其他規範
-- 字元間不加多餘空白
+- 字元間不加多餘空白(如: `let x = "hello world"`應該改為`let x="hello world"`)
   - 但json格式會使用正規json表示
 - 結尾不加上分號
 - 先雙引號再單引號
