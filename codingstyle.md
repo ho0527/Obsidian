@@ -185,13 +185,12 @@ function xxx(){
 - 先雙引號再單引號
 - 基本上不用foreach
   - 除了dom控制
-- 不使用eval
-- 不用switch-case
-- 不用class
+- 不使用eval、switch-case、class
 - 盡量不用while loop
 - 能不用function就不用function
 - 遇到`,{,[[]]務必換行並加tab
-  - 但如果只有一行可以放在同一行但前後加空格(如: `{ "type": abc }`)
+  - 但如果只有一行可以放在同一行
+    - 如果是json前後加空格(如: `{ "type": abc }`)
 - 不用簡化表示法(如: i++等)
 
 ## 其他
