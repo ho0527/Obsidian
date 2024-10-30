@@ -19,6 +19,7 @@
 	- [其他](#其他)
 	- [其他範例及規範](#其他範例及規範)
 		- [範例1: 網頁骨架](#範例1-網頁骨架)
+	- [範例2: 奇怪的嵌套](#範例2-奇怪的嵌套)
 
 <div style="page-break-after: always;"></div>
 
@@ -225,6 +226,11 @@ function xxx(){
 ```
 
 說明:
+
+
+## 範例2: 奇怪的嵌套
+請不要給我寫出這種奇怪的東西謝謝
+![ps2](image/codingstyle/ps2.png)
 
 about-block這個class名稱不符合命名規則所以應該改為aboutblock.
 

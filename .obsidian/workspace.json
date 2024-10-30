@@ -215,12 +215,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "python/plugin/django.md",
+                "file": "git/commit.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from django"
+              "title": "Outgoing links from commit"
             }
           },
           {
@@ -296,11 +296,14 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "58e110c3ee68be50",
+  "active": "41b5fbacc8954a0c",
   "lastOpenFiles": [
+    "python/plugin/django.md",
+    "image/codingstyle/ps2.png",
+    "image/codingstyle/image.png",
+    "image.png",
     "codingstyle_tmp.html",
     "git/commit.md",
-    "python/plugin/django.md",
     "css/CSSNotesForProfessionals.pdf",
     "casual.md",
     "mongodb/commend.md",
@@ -331,9 +334,6 @@
     "server/ssl.md",
     "server/openansever.md",
     "css/image/index/Screenshot 2024-03-24 111948.png",
-    "css/image/index/070104.png",
-    "css/image/index/070103.png",
-    "css/image/index/Screenshot 2024-03-24 111858.png",
     "js/getcontext.md",
     "css/declarationlist.md",
     "css/cursordef.md",
