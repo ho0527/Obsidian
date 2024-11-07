@@ -182,7 +182,7 @@ function xxx(){
 ### 其他規範
 - 字元間不加多餘空白(如: `let x = "hello world"`應該改為`let x="hello world"`)
   - 但json格式會使用正規json表示
-- 結尾不加上分號
+- **結尾不加上分號**
 - 先雙引號再單引號
 - 基本上不用foreach
   - 除了dom控制
@@ -236,4 +236,4 @@ about-block這個class名稱不符合命名規則所以應該改為aboutblock.
 
 而因為你都用了aboutblock了就將他都和到aboutblock內就好就不要再寫width-100vw flex justify-center items-center margin-top-5vw了。
 
-*v001003000 / 20241019*
+*v001003000 / 20241107*
