@@ -4996,10 +4996,10 @@ body>.mystyle{ background-color: blue; } /* 優先級: 0, 0, 1, 1 */
 div{
 	font-size: 10px;
 	border: 3px dotted pink;
-	background: yellow;
+	background: yellow;0
 	color: purple;
 }
-
+0
 body.mystyle>div.myotherstyle{
 	font-size: 15px;
 	background: green;
