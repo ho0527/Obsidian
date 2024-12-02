@@ -4999,7 +4999,7 @@ div{
 	background: yellow;0
 	color: purple;
 }
-0
+
 body.mystyle>div.myotherstyle{
 	font-size: 15px;
 	background: green;

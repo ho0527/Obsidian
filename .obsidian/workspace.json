@@ -23,6 +23,18 @@
             }
           },
           {
+            "id": "c1faf94700c82663",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.7.7"
+              },
+              "icon": "lucide-file",
+              "title": "Release Notes 1.7.7"
+            }
+          },
+          {
             "id": "6815dd87e50ba5b8",
             "type": "leaf",
             "state": {
@@ -36,7 +48,8 @@
               "title": "declarationlist"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       },
       {
         "id": "0270fad5dccf6426",
@@ -215,12 +228,11 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "python/plugin/django.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from django"
+              "title": "Outgoing links"
             }
           },
           {
@@ -296,10 +308,17 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "58e110c3ee68be50",
+  "active": "c1faf94700c82663",
   "lastOpenFiles": [
-    "git/commit.md",
+    "postgresql/errorfix/permissiondeny.md",
+    "postgresql/errorfix/permissiondenyfix.md",
+    "postgresql/errorfix",
+    "postgresql/permissiondenyfix.md",
+    "postgresql",
+    "pgsql/permissiondenyfix.md",
+    "pgsql",
     "python/plugin/django.md",
+    "git/commit.md",
     "image/codingstyle/ps2.png",
     "image/codingstyle/image.png",
     "image.png",
@@ -314,13 +333,10 @@
     "test.pdf",
     "test_tmp.html",
     "ap.md",
-    "ap",
     "js/promiss.md",
-    "codingstyle.pdf",
     "codingstyle.md",
     "image/codingstyle/tabsize-2.png",
     "image/codingstyle/tabsize.png",
-    "image/codingstyle",
     "image/codingstyle.md",
     "image/tabsize-2.png",
     "image/Screenshot 2024-05-19 112857.png",
@@ -340,9 +356,6 @@
     "js/eventlistener.md",
     "abbreviationslist.md",
     "js/canvas.md",
-    "website/plugin/chrisplugin.md",
-    "temp.md",
-    "javascript.md",
     "Untitled.canvas"
   ]
 }
