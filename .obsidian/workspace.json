@@ -23,18 +23,6 @@
             }
           },
           {
-            "id": "c1faf94700c82663",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.7.7"
-              },
-              "icon": "lucide-file",
-              "title": "Release Notes 1.7.7"
-            }
-          },
-          {
             "id": "6815dd87e50ba5b8",
             "type": "leaf",
             "state": {
@@ -48,8 +36,7 @@
               "title": "declarationlist"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       },
       {
         "id": "0270fad5dccf6426",
@@ -228,11 +215,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "python/plugin/django.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links"
+              "title": "Outgoing links from django"
             }
           },
           {
@@ -308,8 +296,10 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "c1faf94700c82663",
+  "active": "58e110c3ee68be50",
   "lastOpenFiles": [
+    "git/howtouse.md",
+    "git/howtouse.mc",
     "postgresql/errorfix/permissiondeny.md",
     "postgresql/errorfix/permissiondenyfix.md",
     "postgresql/errorfix",
@@ -331,7 +321,6 @@
     "ap_tmp.html",
     "ap.pdf",
     "test.pdf",
-    "test_tmp.html",
     "ap.md",
     "js/promiss.md",
     "codingstyle.md",
@@ -355,7 +344,6 @@
     "css/cursordef.md",
     "js/eventlistener.md",
     "abbreviationslist.md",
-    "js/canvas.md",
     "Untitled.canvas"
   ]
 }

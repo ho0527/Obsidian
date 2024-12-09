@@ -46,7 +46,7 @@ chown -R postgres:postgres /var/lib/postgresql/data
 修正權限後，重新啟動容器：
 
 ```bash
-docker restart *{container_id}*
+docker restart {container_id}
 ```
 
 6. 檢查 Docker 日誌
