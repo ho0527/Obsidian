@@ -225,11 +225,19 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+<<<<<<< Updated upstream
+=======
+                "file": "git/commit.md",
+>>>>>>> Stashed changes
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
+<<<<<<< Updated upstream
               "title": "Outgoing links"
+=======
+              "title": "Outgoing links from commit"
+>>>>>>> Stashed changes
             }
           },
           {
@@ -305,8 +313,14 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
+<<<<<<< Updated upstream
   "active": "b335ba995ea3d912",
   "lastOpenFiles": [
+=======
+  "active": "41b5fbacc8954a0c",
+  "lastOpenFiles": [
+    "js/canvas.md",
+>>>>>>> Stashed changes
     "git/commit.md",
     "python/plugin/django.md",
     "git/howtouse.md",
@@ -352,7 +366,6 @@
     "css/declarationlist.md",
     "css/cursordef.md",
     "js/eventlistener.md",
-    "abbreviationslist.md",
     "Untitled.canvas"
   ]
 }

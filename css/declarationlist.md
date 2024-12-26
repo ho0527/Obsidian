@@ -3,7 +3,7 @@
 | declaration | w3c description | descriptionCH | how to use | ps | tag |
 | ----- | ----- | ----- | ----- | ----- | ----- |
 | A | A | A | A | A | A |
-| accent-color | Specifies an accent color for user-interface controls | 設定用戶界面控件的強調顏色 | accent-color: * \*auto | \[color\] * | | |
+| accent-color | Specifies an accent color for user-interface controls | 設定用戶界面控件的強調顏色 | accent-color: * \*auto \| \[color\] * | | |
 | align-content | Specifies the alignment between the lines inside a flexible container when the items do not use all available space | 當項目未使用所有可用空間時，指定彈性容器內部行之間的對齊方式 | align-content: * center \| flex-start \| flex-end \| space-between \| space-around \| space-evenly \| **\*stretch** * | 要加 display:flex 才可以使用 | |
 | align-items | Specifies the alignment for items inside a flexible container | 指定彈性容器內項目的對齊方式 | | | |
 | align-self | Specifies the alignment for selected items inside a flexible container | 指定彈性容器內選定項目的對齊方式 | | | |
