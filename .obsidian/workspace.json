@@ -201,6 +201,16 @@
               "icon": "lucide-archive",
               "title": "All properties"
             }
+          },
+          {
+            "id": "0979ad7c4810fde9",
+            "type": "leaf",
+            "state": {
+              "type": "reminder-list",
+              "state": {},
+              "icon": "clock",
+              "title": "Reminders"
+            }
           }
         ]
       },
@@ -215,12 +225,11 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "python/plugin/django.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from django"
+              "title": "Outgoing links"
             }
           },
           {
@@ -241,8 +250,8 @@
             "state": {
               "type": "calendar",
               "state": {},
-              "icon": "calendar-with-checkmark",
-              "title": "Calendar"
+              "icon": "lucide-file",
+              "title": "Plugin no longer active"
             }
           },
           {
@@ -251,8 +260,8 @@
             "state": {
               "type": "reminder-list",
               "state": {},
-              "icon": "clock",
-              "title": "Reminders"
+              "icon": "lucide-file",
+              "title": "Plugin no longer active"
             }
           }
         ]
@@ -296,8 +305,10 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "58e110c3ee68be50",
+  "active": "b335ba995ea3d912",
   "lastOpenFiles": [
+    "git/commit.md",
+    "python/plugin/django.md",
     "git/howtouse.md",
     "git/howtouse.mc",
     "postgresql/errorfix/permissiondeny.md",
@@ -307,8 +318,6 @@
     "postgresql",
     "pgsql/permissiondenyfix.md",
     "pgsql",
-    "python/plugin/django.md",
-    "git/commit.md",
     "image/codingstyle/ps2.png",
     "image/codingstyle/image.png",
     "image.png",
