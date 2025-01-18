@@ -201,16 +201,6 @@
               "icon": "lucide-archive",
               "title": "All properties"
             }
-          },
-          {
-            "id": "0979ad7c4810fde9",
-            "type": "leaf",
-            "state": {
-              "type": "reminder-list",
-              "state": {},
-              "icon": "clock",
-              "title": "Reminders"
-            }
           }
         ]
       },
@@ -251,8 +241,8 @@
             "state": {
               "type": "calendar",
               "state": {},
-              "icon": "lucide-file",
-              "title": "Plugin no longer active"
+              "icon": "calendar-with-checkmark",
+              "title": "Calendar"
             }
           },
           {
@@ -261,8 +251,8 @@
             "state": {
               "type": "reminder-list",
               "state": {},
-              "icon": "lucide-file",
-              "title": "Plugin no longer active"
+              "icon": "clock",
+              "title": "Reminders"
             }
           }
         ]
@@ -309,6 +299,7 @@
   "active": "58e110c3ee68be50",
   "lastOpenFiles": [
     "git/commit.md",
+    "js/canvas.md",
     "python/plugin/django.md",
     "git/howtouse.md",
     "git/howtouse.mc",
@@ -353,7 +344,6 @@
     "css/declarationlist.md",
     "css/cursordef.md",
     "js/eventlistener.md",
-    "abbreviationslist.md",
     "Untitled.canvas"
   ]
 }

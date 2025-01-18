@@ -8,19 +8,15 @@
   "collapse-color-groups": true,
   "colorGroups": [],
   "collapse-display": true,
-  "showArrow": true,
-  "textFadeMultiplier": -1.6,
-  "nodeSizeMultiplier": 0.891145833333333,
+  "showArrow": false,
+  "textFadeMultiplier": 0,
+  "nodeSizeMultiplier": 1,
   "lineSizeMultiplier": 1,
-  "collapse-forces": false,
-  "centerStrength": 0.5625,
-  "repelStrength": 9.47916666666667,
-  "linkStrength": 0.947916666666667,
-  "linkDistance": 253,
-<<<<<<< Updated upstream
-  "scale": 1.5849228293409174,
-=======
-  "scale": 0.24364003174287419,
->>>>>>> Stashed changes
-  "close": true
+  "collapse-forces": true,
+  "centerStrength": 0.518713248970312,
+  "repelStrength": 10,
+  "linkStrength": 1,
+  "linkDistance": 250,
+  "scale": 1,
+  "close": false
 }
