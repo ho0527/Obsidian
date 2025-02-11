@@ -58,6 +58,20 @@
             }
           },
           {
+            "id": "6cfd375d8db00812",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "self/main.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "main"
+            }
+          },
+          {
             "id": "c15f2ad7fc0a286a",
             "type": "leaf",
             "state": {
@@ -71,7 +85,8 @@
               "title": "index"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -210,7 +225,7 @@
       {
         "id": "76b89ead5106aa7f",
         "type": "tabs",
-        "dimension": 27.281460134486068,
+        "dimension": 30.25936599423631,
         "children": [
           {
             "id": "7928b7406f7be5e5",
@@ -218,12 +233,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "python/plugin/django.md",
+                "file": "self/main.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from django"
+              "title": "Outgoing links from main"
             }
           },
           {
@@ -263,16 +278,14 @@
       {
         "id": "d7aa03d199554215",
         "type": "tabs",
-        "dimension": 47.45437079731028,
+        "dimension": 44.47646493756004,
         "children": [
           {
             "id": "b335ba995ea3d912",
             "type": "leaf",
-            "pinned": true,
             "state": {
               "type": "graph",
               "state": {},
-              "pinned": true,
               "icon": "lucide-git-fork",
               "title": "Graph view"
             }
@@ -281,7 +294,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 286.5
+    "width": 357.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -299,54 +312,54 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "58e110c3ee68be50",
+  "active": "6cfd375d8db00812",
   "lastOpenFiles": [
+    "self/pin/新北市立新北高級工業職業學校.md",
+    "self/data/2025/01/20250123112100申訴寄送送達.md",
+    "self/data/2025/01/20250122194820申訴寄送送達.md",
+    "self/data/2025/pin/新北市立新北高級工業職業學校.md",
+    "self/data/2025/pin",
+    "self/data/2025/02/20250206080000收到申訴寄送回應.md",
+    "self/data/2025/02/20250226080000收到申訴寄送回應.md",
+    "self/data/2025/02/20250122194820收到申訴寄送回應.md",
+    "self/data/2025/02/20250211081000開學日.md",
+    "self/data/2025/02/20250122090000完成申訴寄送.md",
+    "self/data/2025/02",
+    "self/data/2025/01 copy/20250122090000完成申訴寄送.md",
+    "self/data/2025/01 copy",
+    "self/data/2025/01/20250122090000完成申訴寄送.md",
+    "self/data/2025/01",
+    "self/data/2025",
+    "self/data/20250122090000完成申訴寄送.md",
+    "self/main.md",
+    "css/index.md",
+    "self/appendix/20250122090000完成申訴寄送-114統測考生申訴書.pdf",
+    "self/pin/土城學府郵局.md",
+    "python/plugin/django.md",
+    "self/appendix/114統測考生申訴書.pdf",
+    "self/appendix/114統測考生申訴書 - Google 文件.pdf",
+    "self/appendix",
+    "self/pin",
+    "self/data/20250122194820完成申訴寄送.md",
     "git/commit.md",
     "js/canvas.md",
-    "python/plugin/django.md",
     "git/howtouse.md",
-    "git/howtouse.mc",
     "postgresql/errorfix/permissiondeny.md",
     "postgresql/errorfix/permissiondenyfix.md",
-    "postgresql/errorfix",
     "postgresql/permissiondenyfix.md",
-    "postgresql",
     "pgsql/permissiondenyfix.md",
-    "pgsql",
     "image/codingstyle/ps2.png",
     "image/codingstyle/image.png",
     "image.png",
-    "codingstyle_tmp.html",
-    "css/CSSNotesForProfessionals.pdf",
     "casual.md",
     "mongodb/commend.md",
-    "mongodb/download.md",
-    "mongodb",
-    "ap_tmp.html",
-    "ap.pdf",
-    "test.pdf",
-    "ap.md",
-    "js/promiss.md",
-    "codingstyle.md",
     "image/codingstyle/tabsize-2.png",
     "image/codingstyle/tabsize.png",
-    "image/codingstyle.md",
     "image/tabsize-2.png",
     "image/Screenshot 2024-05-19 112857.png",
     "image/tabsize.png",
     "image/Screenshot 2024-05-19 112728.png",
-    "codeingstyle.md",
-    "css/image/index/cursordef.md",
-    "css/index.md",
-    "test.md",
-    "function/objectswapplace.md",
-    "server/ssl.md",
-    "server/openansever.md",
     "css/image/index/Screenshot 2024-03-24 111948.png",
-    "js/getcontext.md",
-    "css/declarationlist.md",
-    "css/cursordef.md",
-    "js/eventlistener.md",
     "Untitled.canvas"
   ]
 }
